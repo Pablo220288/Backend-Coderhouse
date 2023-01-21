@@ -92,5 +92,3 @@ productos.addProduct("Billy Summers", "Libro Suspenso", 3500, "abc125", 3);
 productos.getProductById(5);
 //Segundo uno que si se enucuentra: Devuelve el Producto Encontrado
 productos.getProductById(2);
-
-console.log(productos.getProducts());

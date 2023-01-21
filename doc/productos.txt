@@ -1,0 +1,1 @@
+[{"id":1,"title":"Orgullo y Prejuicio","description":"Libro Romance","price":2500,"thumbnail":"https://Orgullo-y-prejuicio-jane-austen.jpeg","code":"abc123","stock":5},{"title":"Juego de Sombras","description":"Libro Infantil","price":2000,"thumbnail":"https://juego-de-sombras-herve-tullet.jpeg","code":"abc124","stock":3,"id":2}]
