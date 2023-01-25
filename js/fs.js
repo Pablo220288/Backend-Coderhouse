@@ -40,7 +40,7 @@ class ProductManager {
 
   getProducts = async () => {
     let productsAll = await this.readProducts();
-    console.log(productsAll);
+    //console.log(productsAll);
   };
 
   exist = async (id) => {
@@ -82,7 +82,9 @@ class ProductManager {
   };
 }
 
-const productos = new ProductManager();
+export default ProductManager;
+
+//const productos = new ProductManager();
 
 //Agregamos Productos
 /* productos.addProduct(
@@ -93,7 +95,6 @@ const productos = new ProductManager();
   "abc123",
   5
 );
-
 productos.addProduct(
   "Juego de Sombras",
   "Libro Infantil",
@@ -101,10 +102,18 @@ productos.addProduct(
   "https://juego-de-sombras-herve-tullet.jpeg",
   "abc124",
   3
+);
+productos.addProduct(
+  "Billy Summers",
+  "Libro Suspenso",
+  3500,
+  "https://billy-summers-stephen-king.jpeg",
+  "abc125",
+  7
 ); */
 
 //Consultamos todos los Productos existentes
-productos.getProducts();
+//productos.getProducts();
 
 //Consultamos un Producto por su ID
 //productos.getProductsById(2);
@@ -122,4 +131,3 @@ productos.getProducts();
 
 //eliminamos un Producto por su ID
 //productos.deleteProducts(2);
-
