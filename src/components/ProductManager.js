@@ -89,27 +89,83 @@ export default ProductManager;
 //Agregamos Productos
 /* productos.addProduct(
   "Orgullo y Prejuicio",
-  "Libro Romance",
+  "Romance",
   1500,
   "https://Orgullo-y-prejuicio-jane-austen.jpeg",
-  "abc123",
+  "abc121",
   5
 );
 productos.addProduct(
   "Juego de Sombras",
-  "Libro Infantil",
+  "Infantil",
   2000,
   "https://juego-de-sombras-herve-tullet.jpeg",
-  "abc124",
+  "abc122",
   3
 );
 productos.addProduct(
   "Billy Summers",
-  "Libro Suspenso",
+  "Suspenso",
   3500,
   "https://billy-summers-stephen-king.jpeg",
-  "abc125",
+  "abc123",
   7
+);
+productos.addProduct(
+  "Persuasion",
+  "Romance",
+  2700,
+  "https://billy-persuasion-jane-austen.jpeg",
+  "abc124",
+  10
+);
+productos.addProduct(
+  "Emma",
+  "Romance",
+  2300,
+  "ttps://billy-emma-jane-austen.jpeg",
+  "abc125",
+  4
+);
+productos.addProduct(
+  "El Principito",
+  "Infantil",
+  4500,
+  "https://el-principito-antoine-de-saint-exupery.jpeg",
+  "abc126",
+  9
+);
+productos.addProduct(
+  "Charlie y la fábrica de chocolate",
+  "Infantil",
+  3800,
+  "https://charlie-y-la-fabrica-de-chocolate-de-roald-dahl.jpeg",
+  "abc127",
+  2
+);
+productos.addProduct(
+  "El Resplandor",
+  "Suspenso",
+  5500,
+  "https://el-resplandor-stephen-king.jpeg",
+  "abc128",
+  3
+);
+productos.addProduct(
+  "El Cazador de Sueños",
+  "Suspenso",
+  4800,
+  "https://el-cazadorcde-suenos-stephen-king.jpeg",
+  "abc129",
+  5
+);
+productos.addProduct(
+  "Carrie",
+  "Suspenso",
+  4700,
+  "https://carrie-stephen-king.jpeg",
+  "abc130",
+  5
 ); */
 
 //Consultamos todos los Productos existentes
