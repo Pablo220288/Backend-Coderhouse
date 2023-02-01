@@ -3,167 +3,204 @@ import { promises as fs } from "fs";
 class ProductManager {
   constructor() {
     this.products = [];
-    this.path = "./doc/productos.txt";
+    this.pathProducts = "./json/productos.json";
+    this.pathCarts = "./json/carts.json";
   }
 
-  static id = 0;
-
-  writeProducts = async (productos) => {
-    await fs.writeFile(this.path, JSON.stringify(productos), (error) => {
+  writeProducts = async (path, productos) => {
+    await fs.writeFile(path, JSON.stringify(productos), (error) => {
       if (error) throw error;
     });
   };
 
-  readProducts = async () => {
-    let allProducts = await fs.readFile(this.path, "utf-8");
+  readProducts = async (path) => {
+    let allProducts = await fs.readFile(path, "utf-8");
     return JSON.parse(allProducts);
   };
-
-  addProduct = async (title, description, price, thumbnail, code, stock) => {
-    let newProduct = {
-      title,
-      description,
-      price,
-      thumbnail,
-      code,
-      stock,
-    };
-
-    ProductManager.id++;
-    this.products.push({
-      ...newProduct,
-      id: ProductManager.id,
+  generateId() {
+    let d = new Date().getTime();
+    let uuid = "xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+      let r = (d + Math.random() * 16) % 16 | 0;
+      d = Math.floor(d / 16);
+      return (c == "x" ? r : (r & 0x3) | 0x8).toString(16);
     });
+    return uuid;
+  }
 
-    await this.writeProducts(this.products);
+  addProduct = async (newProduct) => {
+    let productsOld = await this.readProducts(this.pathProducts);
+    newProduct.id = this.generateId();
+    let productsAll = [...productsOld, newProduct];
+    await this.writeProducts(this.pathProducts, productsAll);
   };
 
   getProducts = async () => {
-    let productsAll = await this.readProducts();
-    //console.log(productsAll);
+    let productsAll = await this.readProducts(this.pathProducts);
+    console.log(productsAll);
   };
 
-  exist = async (id) => {
-    let productsAll = await this.readProducts();
+  exist = async (id, path) => {
+    let productsAll = await this.readProducts(path);
     return productsAll.find((product) => product.id === id);
   };
 
   getProductsById = async (id) => {
-    (await this.exist(id))
+    (await this.exist(id, productos.pathProducts))
       ? console.log(await this.exist(id))
       : console.log("NOT FOUND");
   };
 
-  updateProduct = async ({ id, ...produt }) => {
-    if ((await this.deleteProducts(id)) === false) {
-      console.log("El Producto que intenta modificar no existe");
-    } else {
-      let prod = await this.readProducts();
-      let modifiedProducts = [
-        {
-          id: id,
-          ...produt,
-        },
-        ...prod,
-      ];
-      await this.writeProducts(modifiedProducts);
-      console.log("Producto modificado Correctamente");
-    }
+  updateProduct = async (id, product) => {
+    await this.deleteProducts(id,);
+    let prod = await this.readProducts(this.pathProducts);
+    let modifiedProducts = [
+      ...prod,
+      {
+        ...product,
+        id: id,
+      },
+    ];
+    await this.writeProducts(this.pathProducts, modifiedProducts);
   };
-  deleteProducts = async (id) => {
-    if (await this.exist(id)) {
-      let products = await this.readProducts();
-      let filterProducts = products.filter((prod) => prod.id != id);
-      await this.writeProducts(filterProducts);
-    } else {
-      console.log("NOT FOUND");
-      return false;
-    }
+  deleteProducts = async (id, path) => {
+    let products = await this.readProducts(path);
+    let filterProducts = products.filter((prod) => prod.id != id);
+    await this.writeProducts(path, filterProducts);
+    return filterProducts;
   };
 }
 
 export default ProductManager;
+
+//TEST//
 
 //const productos = new ProductManager();
 
 //Agregamos Productos
 /* productos.addProduct(
   "Orgullo y Prejuicio",
-  "Romance",
+  "Libro Romance",
   1500,
-  "https://Orgullo-y-prejuicio-jane-austen.jpeg",
+  true,
+  "Romance",
+  [
+    "https://Orgullo-y-prejuicio-jane-austen-1.jpeg",
+    "https://Orgullo-y-prejuicio-jane-austen-2.jpeg",
+  ],
   "abc121",
   5
 );
 productos.addProduct(
   "Juego de Sombras",
-  "Infantil",
+  "Libro Infantil",
   2000,
-  "https://juego-de-sombras-herve-tullet.jpeg",
+  true,
+  "Infantil",
+  [
+    "https://juego-de-sombras-herve-tullet-1.jpeg",
+    "https://juego-de-sombras-herve-tullet-2.jpeg",
+  ],
   "abc122",
   3
 );
 productos.addProduct(
   "Billy Summers",
-  "Suspenso",
+  "Libro Suspenso",
   3500,
-  "https://billy-summers-stephen-king.jpeg",
+  true,
+  "Suspenso",
+  [
+    "https://billy-summers-stephen-king-1.jpeg",
+    "https://billy-summers-stephen-king-2.jpeg",
+  ],
   "abc123",
   7
 );
 productos.addProduct(
   "Persuasion",
-  "Romance",
+  "Libro Romance",
   2700,
-  "https://billy-persuasion-jane-austen.jpeg",
+  true,
+  "Romance",
+  [
+    "https://billy-persuasion-jane-austen-1.jpeg",
+    "https://billy-persuasion-jane-austen-2.jpeg,",
+  ],
   "abc124",
   10
 );
 productos.addProduct(
   "Emma",
-  "Romance",
+  "Libro Romance",
   2300,
-  "ttps://billy-emma-jane-austen.jpeg",
+  true,
+  "Romance",
+  [
+    "https://billy-emma-jane-austen-1.jpeg",
+    "https://billy-emma-jane-austen-2.jpeg",
+  ],
   "abc125",
   4
 );
 productos.addProduct(
   "El Principito",
-  "Infantil",
+  "Libro Infantil",
   4500,
-  "https://el-principito-antoine-de-saint-exupery.jpeg",
+  true,
+  "Infantil",
+  [
+    "https://el-principito-antoine-de-saint-exupery-1.jpeg",
+    "https://el-principito-antoine-de-saint-exupery-2.jpeg",
+  ],
   "abc126",
   9
 );
 productos.addProduct(
   "Charlie y la fábrica de chocolate",
-  "Infantil",
+  "Libro Infantil",
   3800,
-  "https://charlie-y-la-fabrica-de-chocolate-de-roald-dahl.jpeg",
+  true,
+  "Infantil",
+  [
+    "https://charlie-y-la-fabrica-de-chocolate-de-roald-dahl-1.jpeg",
+    "https://charlie-y-la-fabrica-de-chocolate-de-roald-dahl-2.jpeg",
+  ],
   "abc127",
   2
 );
 productos.addProduct(
   "El Resplandor",
-  "Suspenso",
+  "Libro Suspenso",
   5500,
-  "https://el-resplandor-stephen-king.jpeg",
+  true,
+  "Suspenso",
+  [
+    "https://el-resplandor-stephen-king-1.jpeg",
+    "https://el-resplandor-stephen-king-2.jpeg",
+  ],
   "abc128",
   3
 );
 productos.addProduct(
   "El Cazador de Sueños",
-  "Suspenso",
+  "Libro Suspenso",
   4800,
-  "https://el-cazadorcde-suenos-stephen-king.jpeg",
+  true,
+  "Suspenso",
+  [
+    "https://el-cazadorcde-suenos-stephen-king-1.jpeg",
+    "https://el-cazadorcde-suenos-stephen-king-2.jpeg",
+  ],
   "abc129",
   5
 );
 productos.addProduct(
   "Carrie",
-  "Suspenso",
+  "Libro Suspenso",
   4700,
-  "https://carrie-stephen-king.jpeg",
+  true,
+  "Suspenso",
+  ["https://carrie-stephen-king-1.jpeg", "https://carrie-stephen-king-2.jpeg"],
   "abc130",
   5
 ); */
@@ -185,5 +222,5 @@ productos.addProduct(
   id: 1,
 }); */
 
-//eliminamos un Producto por su ID
+//Eliminamos un Producto por su ID
 //productos.deleteProducts(2);
