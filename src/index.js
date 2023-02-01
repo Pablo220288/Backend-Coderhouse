@@ -20,7 +20,7 @@ app.use("/api/carts", cartRouter);
 //Archivos Staticos
 hbs.registerPartials(__dirname + "/views", (err) => {});
 app.set("view engine", "hbs");
-app.set("views", __dirname + "/views");
+app.set("views", __dirname + "/views/components");
 app.use(express.static(__dirname + "/public"));
 
 //Creando Loacal host 8080

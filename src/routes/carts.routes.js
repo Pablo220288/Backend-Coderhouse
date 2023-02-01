@@ -1,5 +1,5 @@
 import { Router } from "express";
-import ProductManager from "../components/ProductManager.js";
+import ProductManager from "../models/ProductManager.js";
 
 const cartsRouter = Router();
 
@@ -49,9 +49,9 @@ cartsRouter.post("/:cid/product/:pid", async (req, res) => {
     });
 
   //Cargamos el Producto en el Carrito
-  console.log(cartById.productos.some(prod => prod.id === idProduct))
-  
-/*   cartById.productos.push({ id: productById.id, quantity: 1 });
+  console.log(cartById.productos.some((prod) => prod.id === idProduct));
+
+  /*   cartById.productos.push({ id: productById.id, quantity: 1 });
 
   //lo Eliminamos del Array
   const cartsOld = await productos.deleteProducts(idCart, productos.pathCarts);
@@ -59,7 +59,7 @@ cartsRouter.post("/:cid/product/:pid", async (req, res) => {
   //Lo subimos Modificado
   let allCarts = [...cartsOld, cartById];
   await productos.writeProducts(productos.pathCarts, allCarts);*/
-  res.send(`Producto "${productById.title}" agregado al carrito: ${idCart}`); 
+  res.send(`Producto "${productById.title}" agregado al carrito: ${idCart}`);
 });
 
 export default cartsRouter;
