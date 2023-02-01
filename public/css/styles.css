@@ -18,4 +18,36 @@ main .titulo {
   font-family: "Poppins", sans-serif;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .titulo {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.main404 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.main404 .gif404 {
+  width: 400px;
+}
+
 /*# sourceMappingURL=styles.css.map */
