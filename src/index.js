@@ -10,18 +10,19 @@ dotenv.config();
 
 //Creando Server Express
 const app = express();
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-//Routers
-app.use("/api/products", productRouter);
-app.use("/api/carts", cartRouter);
 
 //Archivos Staticos
 hbs.registerPartials(__dirname + "/views", (err) => {});
 app.set("view engine", "hbs");
 app.set("views", __dirname + "/views/components");
-app.use(express.static(__dirname + "/public"));
+app.use("/static", express.static(__dirname + "/public"));
+
+//Routers
+app.use("/api/products", productRouter);
+app.use("/api/carts", cartRouter);
 
 //Creando Loacal host 8080
 const PORT = process.env.PORT || 8080;
