@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BackEnd | Express</title>
+    <link rel="stylesheet" href="/public/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <div class="navContainer">
+          <div class="logo">
+            <img src="/public/img/nodejs.png" alt="Node.JS" />
+          </div>
+          <div class="menu">
+            <a href="#home" data-url="home" class="menu active"
+              ><span></span>Inicio</a
+            >
+            <a href="#productos" data-url="productos" class="menu"
+              ><span></span>Productos</a
+            >
+            <a href="#contacto" data-url="contacto" class="menu"
+              ><span></span>Contacto</a
+            >
+            <a href="#" id="carrito"
+              ><ion-icon class="shop-nav" name="cart-outline"></ion-icon>
+              <div id="cant-carrito-total" class="cant-carrito-total"></div
+            ></a>
+          </div>
+          <div class="burger">
+            <a href="#" id="carrito_xs"
+              ><ion-icon name="cart-outline"></ion-icon>
+              <div
+                id="cant-carrito-total-xs"
+                class="cant-carrito-total-xs"
+              ></div
+            ></a>
+            <button class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+      <nav class="nav-mobile">
+        <div class="nav-mobile-container">
+          <a class="nav-mobile-item" href="#home"><p>Inicio</p></a>
+          <a class="nav-mobile-item" href="#productos"><p>Productos</p></a>
+          <a class="nav-mobile-item" href="#contacto"><p>Contacto</p></a>
+        </div>
+      </nav>
+      <div class="modal-carrito" id="modal-carrito">
+        <div class="modal-container">
+          <h3 class="modal-title">Carrito</h3>
+          <ion-icon
+            class="close-carrito"
+            id="close-carrito"
+            name="close-outline"
+          ></ion-icon>
+          <!--Contenedor del Carrito-->
+          <div id="conten-carrito"></div>
+          <div class="total-carrito">
+            <p class="total-text">Total Carrito:</p>
+            <p id="total_carrito">$</p>
+          </div>
+          <div class="buttons-carrito">
+            <button class="vaciar" id="vaciar-carrito">
+              <ion-icon
+                class="button-icon"
+                name="close-circle-outline"
+              ></ion-icon>
+              <p class="button-text">Vaciar</p>
+            </button>
+            <button class="comprar" id="comprar">
+              <ion-icon class="button-icon" name="card-outline"></ion-icon>
+              <p class="button-text">Comprar</p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="mainIndex">
+      <h1 class="titulo">BackEnd con Express</h1>
+      <section class="consulta">
+        <form class="formConsulta" id="formConsulta">
+          <div class="inputId">
+            <label for="idProducto"> Id Producto</label>
+            <input id="idProducto" />
+          </div>
+          <div>
+            <button>Consultar</button>
+          </div>
+        </form>
+        <div id="response"></div>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
+  <script src="/public/js/index.js"></script>
+</html>

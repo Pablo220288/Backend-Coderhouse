@@ -4,6 +4,7 @@ import productRouter from "./routes/product.routes.js";
 import cartRouter from "./routes/carts.routes.js";
 import __dirname from "../utils.js";
 import hbs from "hbs";
+import cors from "cors"
 
 //Archivo ENV
 dotenv.config();
@@ -13,6 +14,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors())
 
 //Archivos Staticos
 hbs.registerPartials(__dirname + "/views", (err) => {});

@@ -1,10 +1,10 @@
 import { promises as fs } from "fs";
+import { nanoid } from "nanoid";
 
 class ProductManager {
   constructor() {
     this.path = "./src/models/productos.json";
   }
-
   readProducts = async () => {
     let allProducts = await fs.readFile(this.path, "utf-8");
     return JSON.parse(allProducts);
@@ -14,15 +14,6 @@ class ProductManager {
       if (error) throw error;
     });
   };
-  generateId() {
-    let d = new Date().getTime();
-    let uuid = "xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx".replace(/[xy]/g, (c) => {
-      let r = (d + Math.random() * 16) % 16 | 0;
-      d = Math.floor(d / 16);
-      return (c == "x" ? r : (r & 0x3) | 0x8).toString(16);
-    });
-    return uuid;
-  }
   exist = async (id) => {
     let productsAll = await this.readProducts(this.path);
     return productsAll.find((product) => product.id === id);
@@ -54,7 +45,7 @@ class ProductManager {
     //Comprobamos que no falte ningun campo
     if (this.objectKeys(newProduct) === 400) return 400;
     let productsOld = await this.readProducts();
-    newProduct.id = this.generateId();
+    newProduct.id = nanoid();
     let productsAll = [...productsOld, newProduct];
     await this.writeProducts(productsAll);
     return "Producto Agregado Correctamente";

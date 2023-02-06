@@ -1,5 +1,6 @@
 import { promises as fs } from "fs";
 import ProductManager from "./ProductManager.js";
+import { nanoid } from "nanoid";
 
 const products = new ProductManager();
 
@@ -16,15 +17,6 @@ class CartsManager {
       if (error) throw error;
     });
   };
-  generateId() {
-    let d = new Date().getTime();
-    let uuid = "xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx".replace(/[xy]/g, (c) => {
-      let r = (d + Math.random() * 16) % 16 | 0;
-      d = Math.floor(d / 16);
-      return (c == "x" ? r : (r & 0x3) | 0x8).toString(16);
-    });
-    return uuid;
-  }
   exist = async (id) => {
     let cartsAll = await this.readCarts(this.path);
     return cartsAll.find((cart) => cart.id === id);
@@ -36,7 +28,7 @@ class CartsManager {
     return filterCarts;
   };
   addCarts = async () => {
-    let id = this.generateId();
+    let id = nanoid();
     let cartsOld = await this.readCarts();
     let allCarts = [...cartsOld, { id: id, productos: [] }];
     await this.writeCarts(allCarts);
