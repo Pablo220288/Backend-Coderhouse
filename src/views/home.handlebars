@@ -1,0 +1,46 @@
+<main class="mainHome">
+  <h2>Lista de Productos</h2>
+  <div class="containerCards">
+    {{#each products}}
+      <div class="cardContainer">
+        <img
+          class="imgCard"
+          src={{this.thumbnail}}
+          alt={{this.title}}
+        />
+        <div class="priceCard">
+          <p>$</p>
+          <p class="price">{{this.price}}</p>
+        </div>
+        <div class="btnContainer">
+        <div class="btnCard">
+          <ion-icon class="icon" name="heart"></ion-icon>
+          <span class="iconTooltip">like</span>
+        </div>
+        <div class="btnCard">
+          <ion-icon class="icon more" name="add"></ion-icon>
+          <span class="iconTooltip">more</span>
+        </div>
+        <div class="btnCard">
+          <ion-icon class="icon" name="paper-plane"></ion-icon>
+          <span class="iconTooltip">share</span>
+        </div>
+        <div class="btnCard">
+          <ion-icon class="icon" name="cart-outline"></ion-icon>
+          <span class="iconTooltip">add to cart</span>
+        </div>
+        </div>
+        <div class="descriptionCard">
+          <h2 class="titleCard">{{this.title}}</h2>
+          <div class="authorStock">
+            <span>{{this.author}}</span>
+            <div class="stockCard">
+              <span>Stock:</span>
+              <span>{{this.stock}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</main>

@@ -1,0 +1,85 @@
+.containerTabs {
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+  .tabsSelector {
+    width: 100%;
+    min-width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: $colorIndex;
+    label {
+      width: 87.5px;
+      padding: 10px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      text-align: center;
+    }
+  }
+  .tabsSelected {
+    position: relative;
+    min-width: 350px;
+    height: 200px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    #tab1,
+    #tab2,
+    #tab3,
+    #tab4 {
+      display: none;
+    }
+    .tabs1,
+    .tabs2,
+    .tabs3,
+    .tabs4 {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(0.9);
+      padding: 20px;
+      transition: all 0.4s ease;
+      &::after {
+        position: absolute;
+        content: "";
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent transparent #ffffff transparent;
+        bottom: 100%;
+        left: 33.75px;
+      }
+      &:nth-child(4)::after {
+        left: 121.25px;
+      }
+      &:nth-child(6)::after {
+        left: 208.75px;
+      }
+      &:nth-child(8)::after {
+        left: 296.75px;
+      }
+    }
+    #tab1:checked ~ .tabs1,
+    #tab2:checked ~ .tabs2,
+    #tab3:checked ~ .tabs3,
+    #tab4:checked ~ .tabs4 {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+    }
+    .formTabs {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        .inputId {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          input {
+            width: 100%;
+          }
+        }
+      }
+  }
+}

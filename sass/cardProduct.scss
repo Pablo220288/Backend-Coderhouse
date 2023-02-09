@@ -1,0 +1,170 @@
+.containerCards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  grid-auto-rows: 16rem;
+  gap: 1rem;
+  padding: 1rem;
+  justify-items: center;
+  .cardContainer {
+    position: relative;
+    overflow: hidden;
+    width: 16rem;
+    height: 16rem;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
+      rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
+      rgba(0, 0, 0, 0.07) 0px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    &:hover .btnContainer .btnCard {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    &:hover .imgCard {
+      transform: scale(1.1);
+      filter: opacity(0.5);
+    }
+    &:hover .descriptionCard {
+      opacity: 1;
+      bottom: 10px;
+    }
+    .imgCard {
+      width: 100%;
+      transition: 0.7s ease-in-out;
+    }
+    .priceCard {
+      position: absolute;
+      background-color: $colorIndex;
+      padding: 0px 10px;
+      top: 5px;
+      left: 0;
+      display: flex;
+      font-weight: bold;
+      gap: 1px;
+      &::before {
+        content: "";
+        border-style: solid;
+        border-width: 12px 0px 0px 12px;
+        border-color: transparent transparent transparent $colorIndex;
+        position: absolute;
+        bottom: 0;
+        right: -12px;
+        width: 0;
+      }
+      &::after {
+        content: "";
+        border-style: solid;
+        border-width: 12px 12px 0px 12px;
+        border-color: $colorIndex transparent transparent;
+        position: absolute;
+        top: 0;
+        right: -12px;
+        width: 0;
+      }
+      p {
+        font-size: 0.7rem;
+      }
+      .price {
+        font-size: 1rem;
+        font-weight: bold;
+        font-style: italic;
+      }
+    }
+    .btnContainer {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      transition: 0.5s ease-in-out;
+      .btnCard {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5px;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+        position: relative;
+        opacity: 1;
+        transform: translateX(50px);
+        &:nth-child(2) {
+          transition-delay: 0.1s;
+        }
+        &:nth-child(3) {
+          transition-delay: 0.2s;
+        }
+        &:nth-child(4) {
+          transition-delay: 0.3s;
+        }
+        &:hover .icon {
+          color: $colorIndex;
+        }
+        &:hover .iconTooltip {
+          opacity: 1;
+          transform: translate(-10px, -50%);
+        }
+        .icon {
+          padding: 5px;
+          transition: 0.2s ease-in-out;
+        }
+        .more {
+          font-size: 1.2rem;
+        }
+        .iconTooltip {
+          position: absolute;
+          top: 50%;
+          right: 100%;
+          transform: translateY(-50%);
+          background-color: $colorIndex;
+          color: #ffffff;
+          font-size: 0.6rem;
+          text-transform: capitalize;
+          padding: 4px 8px;
+          white-space: nowrap;
+          opacity: 0;
+          transition: 0.3s ease;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translateY(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: transparent transparent transparent $colorIndex;
+          }
+        }
+      }
+    }
+    .descriptionCard {
+      position: absolute;
+      bottom: -50px;
+      width: 100%;
+      padding: 0px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      opacity: 0;
+      transition: 0.5s ease-in-out;
+      .authorStock {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.7rem;
+        color: rgb(113, 113, 113);
+        .stockCard {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+      }
+    }
+  }
+}

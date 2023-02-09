@@ -90,7 +90,7 @@ _Usamos las mejores Herramientas_
 
 - [React](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
 - [Node.JS](https://maven.apache.org/) - Manejador de dependencias
-- [Handel](https://rometools.github.io/rome/) - Usado para generar RSS
+- [Handlebars](https://rometools.github.io/rome/) - Usado para generar RSS
 
 ## Contribuyendo 🖇️
 
@@ -123,5 +123,5 @@ Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md
 - Invita una cerveza 🍺 o un café ☕ a alguien del equipo.
 - Da las gracias públicamente 🤓.
 - Dona con cripto a esta dirección: `0xf253fc233333078436d111175e5a76a649890000`
-- etc.
+
 ---
