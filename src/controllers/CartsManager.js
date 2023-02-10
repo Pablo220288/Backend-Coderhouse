@@ -56,7 +56,6 @@ class CartsManager {
         (prod) => prod.id === prodId
       );
       addMoreProducts.quantity++;
-      console.log(addMoreProducts);
       let allCarts = [...cartsOld, cartById];
       await this.writeCarts(allCarts);
       return `Producto "${productById.title}" agregado al carrito: ${cartId}\n Cantidad: ${addMoreProducts.quantity} `;

@@ -9,52 +9,70 @@
     <input type="radio" name="tabs" id="tab1" checked/>
     <div class="tabs1">
       <h3>Consulta</h3>
-      <form class="formTabs" id="formConsulta">
-        <div class="inputId">
+      <form class="formTabs" id="formGet">
+        <div class="inputTabs">
           <label for="idProducto">Id Producto</label>
-          <input type="text" id="idProducto" />
+          <span>Ingrese el ID del Producto a Consultar. Consulte vacio para ver todos los Productos.</span>
+          <input type="text" name="idProducto" id="getProduct" />
         </div>
-        <div>
-          <button>Consultar</button>
+        <div class="btnMassaje">
+          <div class="btnFormTabs">
+            <button class="btn">Consultar</button>
+          </div>
+          <strong class="massaje" id="resGet"></strong>
         </div>
       </form>
     </div>
     <input type="radio" name="tabs" id="tab2"/>
     <div class="tabs2">
-      <h3>Agregar</h3>
-      <form class="formTabs" id="formPoste">
-        <div class="inputId">
-          <label for="idProducto">Id Producto</label>
-          <input type="text" id="idProducto" />
+      <h3>Agregar Producto</h3>
+      <form class="formTabs" id="formPost">
+        <div class="inputTabs">
+          <label for="addProducto">JSON del Producto</label>
+          <span>Puede escribir o pegar un producto en formato objeto.json</span>
+          <textarea class="addProduct" name="addProduct" id="addProduct"></textarea>
         </div>
-        <div>
-          <button>Consultar</button>
+        <div class="btnMassaje">
+          <div class="btnFormTabs">
+            <button class="btn">Agregar</button>
+          </div>
+          <strong class="massaje" id="resAdd"></strong>
         </div>
       </form>
     </div>
     <input type="radio" name="tabs" id="tab3"/>
     <div class="tabs3">
-      <h3>Actualizar</h3>
+      <h3>Actualizar Producto</h3>
       <form class="formTabs" id="formPut">
-        <div class="inputId">
+        <div class="inputTabs">
           <label for="idProducto">Id Producto</label>
-          <input type="text" id="idProducto" />
+          <span>Ingrese el ID del Producto a Actualizar</span>
+          <input type="text" id="idPutProduct" />
+          <span>Puede escribir o pegar un producto en formato objeto.json</span>
+          <textarea class="addProduct" name="infoPutProduct" id="infoPutProduct"></textarea>
         </div>
-        <div>
-          <button>Consultar</button>
+        <div class="btnMassaje">
+          <div class="btnFormTabs">
+            <button class="btn">Actualizar</button>
+          </div>
+          <strong class="massaje" id="resPut"></strong>
         </div>
       </form>
     </div>
     <input type="radio" name="tabs" id="tab4"/>
     <div class="tabs4">
-      <h3>Eliminar</h3>
+      <h3>Eliminar Producto</h3>
       <form class="formTabs" id="formDelete">
-        <div class="inputId">
+        <div class="inputTabs">
           <label for="idProducto">Id Producto</label>
-          <input type="text" id="productDelete" />
+          <span>Ingrese el ID del Producto a Eliminar</span>
+          <input type="text" name="idProducto" id="productDelete" />
         </div>
-        <div>
-          <button>Consultar</button>
+        <div class="btnMassaje">
+          <div class="btnFormTabs">
+            <button class="btn">Eliminar</button>
+          </div>
+          <strong class="massaje" id="resDelete"></strong>
         </div>
       </form>
     </div>

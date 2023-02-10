@@ -18,7 +18,7 @@ productRouter.get("/", async (req, res) => {
 productRouter.get("/:id", async (req, res) => {
   try {
     let productById = await productos.getProductsById(req.params.id);
-    if (productById === 404)
+    if (productById === "Producto no Encontrado")
       return res.status(404).render("error", {
         title: "404 || Not Found",
         image: "/static/img/404.gif",
@@ -32,7 +32,7 @@ productRouter.get("/:id", async (req, res) => {
 //Ruta para agregar Producto
 productRouter.post("/", async (req, res) => {
   let addProduct = await productos.addProduct(req.body);
-  if (addProduct === 400)
+  if (addProduct === "JSON incompleto. Faltan 1 o mas Datos")
     return res.status(400).render("error", {
       title: "400 || Bad Request",
       image: "/static/img/404.gif",
@@ -45,13 +45,13 @@ productRouter.put("/:id", async (req, res) => {
   const { id } = req.params;
   const modify = req.body;
   let modifyProduct = await productos.updateProduct(id, modify);
-  if (modifyProduct === 404)
+  if (modifyProduct === "Producto a modificar no Existe")
     return res.status(404).render("error", {
       title: "404 || Not Found",
       image: "/static/img/404.gif",
       error: "El producto a Modificar no existe",
     });
-  if (modifyProduct === 400)
+  if (modifyProduct === "JSON incompleto. Faltan 1 o mas Datos")
     return res.status(400).render("error", {
       title: "400 || Bad Request",
       image: "/static/img/404.gif",
@@ -63,11 +63,11 @@ productRouter.put("/:id", async (req, res) => {
 productRouter.delete("/:id", async (req, res) => {
   let { id } = req.params;
   let productDelete = await productos.deleteProducts(id);
-  if (productDelete === 404)
+  if (productDelete === "Producto No Encontrado")
     return res.status(404).render("error", {
       title: "404 || Not Found",
       image: "/static/img/404.gif",
-      error: "El producto a Eliminar no existe",
+      error: "El Producto a Eliminar no Existe",
     });
   res.send(productDelete);
 });

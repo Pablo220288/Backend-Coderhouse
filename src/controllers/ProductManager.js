@@ -19,8 +19,10 @@ class ProductManager {
     return productsAll.find((product) => product.id === id);
   };
   objectKeys(object) {
+    console.log(object)
     if (
       !object.title ||
+      !object.author ||
       !object.description ||
       !object.price ||
       !object.status ||
@@ -38,34 +40,34 @@ class ProductManager {
   };
   getProductsById = async (id) => {
     let bookById = await this.exist(id);
-    if (!bookById) return 404;
+    if (!bookById) return "Producto no Encontrado";
     return bookById;
   };
   addProduct = async (newProduct) => {
     //Comprobamos que no falte ningun campo
-    if (this.objectKeys(newProduct) === 400) return 400;
+    if (this.objectKeys(newProduct) === 400) return "JSON incompleto. Faltan 1 o mas Datos";
     let productsOld = await this.readProducts();
     newProduct.id = nanoid();
-    let productsAll = [...productsOld, newProduct];
+    let productsAll = [newProduct, ...productsOld];
     await this.writeProducts(productsAll);
     return "Producto Agregado Correctamente";
   };
   updateProduct = async (id, product) => {
     //Consultamos si Existe
     let bookById = await this.exist(id);
-    if (!bookById) return 404;
+    if (!bookById) return "Producto a modificar no Existe";
     //Comprobamos que no falte ningun campo
-    if (this.objectKeys(product) === 400) return 400;
+    if (this.objectKeys(product) === 400) return "JSON incompleto. Faltan 1 o mas Datos";
     //Eliminamos el Producto a Modificar
     await this.deleteProducts(id);
     //Lo agregamos al Array conservando su ID
     let prod = await this.readProducts();
     let modifiedProducts = [
-      ...prod,
       {
         ...product,
         id: id,
       },
+      ...prod,
     ];
     await this.writeProducts(modifiedProducts);
     return `Producto ${product.title} Modificado con Exito`;
@@ -73,7 +75,7 @@ class ProductManager {
   deleteProducts = async (id) => {
     //Consultamos si Existe
     let bookById = await this.exist(id);
-    if (!bookById) return 404;
+    if (!bookById) return "Producto No Encontrado";
     let products = await this.readProducts();
     let filterProducts = products.filter((prod) => prod.id != id);
     await this.writeProducts(filterProducts);
