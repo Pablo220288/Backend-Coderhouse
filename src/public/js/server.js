@@ -20,7 +20,7 @@ const cargarDom = (prod) => {
   <img class="imgTable" src=${prod.thumbnail} alt=${prod.title}/></td>
   <td>${prod.code}</td>
   <td>${prod.stock}</td>
-</tr>
+  </tr>
   `;
 };
 
@@ -69,10 +69,10 @@ const resPut = document.getElementById("resPut");
 formPut.addEventListener("submit", (e) => {
   e.preventDefault();
   let idPutProduct = document.getElementById("idPutProduct").value;
-  let infoPutProduct = document.getElementById("infoPutProduct").value
+  let infoPutProduct = document.getElementById("infoPutProduct").value;
   socket.emit("putProduct", {
-    id : idPutProduct,
-    info : infoPutProduct
+    id: idPutProduct,
+    info: infoPutProduct,
   });
   resPut.innerHTML = "";
 });
@@ -84,7 +84,6 @@ socket.on("putProduct", (data) => {
     cargarDom(prod);
   });
 });
-
 
 //Eliminar por ID
 const formDelete = document.getElementById("formDelete");

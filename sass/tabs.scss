@@ -21,7 +21,7 @@
   .tabsSelected {
     position: relative;
     width: 350px;
-    height: 350px;
+    height: 400px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
     #tab1,
     #tab2,
@@ -104,8 +104,9 @@
       }
       .btnMassaje {
         display: flex;
-        align-items: center;
-        gap: 40px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
         .btnFormTabs {
           .btn {
             padding: 5px 10px;
