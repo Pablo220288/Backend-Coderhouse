@@ -11,6 +11,14 @@ html {
   scroll-behavior: smooth;
 }
 
+.mainPureba {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
 @font-face {
   font-family: Pablo;
   src: url("../font/TheScientist-L3EyW.ttf") format("truetype");
@@ -25,6 +33,14 @@ html {
 html {
   overflow-x: hidden;
   scroll-behavior: smooth;
+}
+
+.mainPureba {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .nav {
@@ -239,7 +255,7 @@ html {
 .nav-scroll {
   top: 0;
   background: #000000;
-  box-shadow: 0px 2px 5px #460000;
+  box-shadow: 0px 2px 5px #88c043;
 }
 
 .modal-carrito {
@@ -441,13 +457,10 @@ html {
 }
 
 .containerTabs {
-  width: 90%;
-  margin: auto;
   padding: 10px;
 }
 .containerTabs .tabsSelector {
-  width: 100%;
-  min-width: 350px;
+  width: 350px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -459,11 +472,15 @@ html {
   cursor: pointer;
   transition: all 0.4s ease;
   text-align: center;
+  background-color: #88c043;
+}
+.containerTabs .tabsSelector label:hover {
+  background-color: #699a2e;
 }
 .containerTabs .tabsSelected {
   position: relative;
-  min-width: 350px;
-  height: 200px;
+  width: 350px;
+  height: 400px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 }
 .containerTabs .tabsSelected #tab1,
@@ -476,6 +493,7 @@ html {
 .containerTabs .tabsSelected .tabs2,
 .containerTabs .tabsSelected .tabs3,
 .containerTabs .tabsSelected .tabs4 {
+  width: 100%;
   position: absolute;
   opacity: 0;
   visibility: hidden;
@@ -513,6 +531,13 @@ html {
 .containerTabs .tabsSelected .tabs4:nth-child(8)::after {
   left: 296.75px;
 }
+.containerTabs .tabsSelected .tabs1 span,
+.containerTabs .tabsSelected .tabs2 span,
+.containerTabs .tabsSelected .tabs3 span,
+.containerTabs .tabsSelected .tabs4 span {
+  font-size: 0.6rem;
+  color: #808080;
+}
 .containerTabs .tabsSelected #tab1:checked ~ .tabs1,
 .containerTabs .tabsSelected #tab2:checked ~ .tabs2,
 .containerTabs .tabsSelected #tab3:checked ~ .tabs3,
@@ -525,73 +550,118 @@ html {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 20px;
 }
-.containerTabs .tabsSelected .formTabs .inputId {
+.containerTabs .tabsSelected .formTabs .inputTabs {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-bottom: 10px;
 }
-.containerTabs .tabsSelected .formTabs .inputId input {
+.containerTabs .tabsSelected .formTabs .inputTabs input {
   width: 100%;
+  padding-left: 5px;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #000000;
+}
+.containerTabs .tabsSelected .formTabs .inputTabs textarea {
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100px;
+  max-height: 100px;
+  padding-left: 5px;
+  outline: none;
+  font-size: 0.7rem;
+}
+.containerTabs .tabsSelected .formTabs .btnMassaje {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 15px;
+}
+.containerTabs .tabsSelected .formTabs .btnMassaje .btnFormTabs .btn {
+  padding: 5px 10px;
+  border: none;
+  background-color: transparent;
+  color: #88c043;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.containerTabs .tabsSelected .formTabs .btnMassaje .btnFormTabs .btn:hover {
+  background-color: #88c043;
+  color: #ffffff;
 }
 
-.mainIndex {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+.contentTable {
+  padding: 10px 0px;
+  margin: 0px 35px 50px 35px;
+  font-size: 0.9rem;
+  overflow: auto;
+  height: 454px;
 }
-.mainIndex .titulo {
+.contentTable table {
+  min-width: 1200px;
+  border-collapse: collapse;
+}
+.contentTable thead tr {
+  background-color: #88c043;
+  color: #ffffff;
+  text-align: left;
+  padding: 12px 15px;
+  font-weight: bold;
+}
+.contentTable th,
+.contentTable td {
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  padding: 12px 15px;
 }
-.mainIndex .consulta {
-  width: 300px;
+.contentTable tbody tr {
+  border-bottom: 1px solid #dddddd;
+  max-height: 42px;
+  overflow: hidden;
+}
+.contentTable tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+.contentTable tbody tr:hover td {
+  background-color: rgba(136, 192, 67, 0.1529411765);
+}
+.contentTable tbody tr td {
+  font-size: 0.7rem;
+  text-align: center;
+}
+.contentTable tbody tr .itemLeft {
+  text-align: left;
+}
+.contentTable tbody tr .imgConten {
+  padding: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 40px;
 }
-.mainIndex .consulta .formConsulta {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+.contentTable tbody tr .imgConten .imgTable {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  cursor: pointer;
 }
-.mainIndex .consulta .formConsulta .inputId {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.contentTable ::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
 }
-.mainIndex .consulta .formConsulta .inputId input {
-  width: 100%;
+.contentTable ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
-.mainIndex .consulta #response {
-  width: 100%;
-}
-.mainIndex .consulta #response .productDatails {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-.mainIndex .consulta #response .productDatails div {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.mainIndex .consulta #response .productDatails div p {
-  padding-left: 10px;
+.contentTable ::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 .containerCards {

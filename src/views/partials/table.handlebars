@@ -1,0 +1,39 @@
+<div class="contentTable">
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Status</th>
+          <th>Category</th>
+          <th>thumbnail</th>
+          <th>Code</th>
+          <th>Stock</th>
+        </tr>
+      </thead>
+      <tbody id="itemTableContent">
+        {{#each products}}
+         <tr>
+           <td>{{this.id}}</td>
+           <td class="itemLeft">{{this.title}}</td>
+           <td class="itemLeft">{{this.author}}</td>
+           <td class="itemLeft">{{this.description}}</td>
+           <td>{{this.price}}</td>
+           <td>{{this.status}}</td>
+           <td>{{this.category}}</td>
+           <td class="imgConten">
+             <img 
+             class="imgTable" 
+             src={{this.thumbnail}}
+             alt={{this.title}}/></td>
+           <td>{{this.code}}</td>
+           <td>{{this.stock}}</td>
+         </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>

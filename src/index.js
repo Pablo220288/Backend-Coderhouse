@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import productRouter from "./routes/product.routes.js";
 import cartRouter from "./routes/carts.routes.js";
+import socketRouter from "./routes/socket.routes.js";
 import __dirname from "./utils.js";
 import { engine } from "express-handlebars";
 import * as path from "path";
@@ -43,34 +44,9 @@ app.get("/static", async (req, res) => {
   });
 });
 
-app.get("/static/realTimeProducts", async (req, res) => {
-  //Websockets
-  io.on("connection", (socket) => {
-    //Recibimos peticion Cliente
-    socket.on("messaje", (data) => {
-      console.log(data);
-    });
-    //Mensaje del Servidor
-    socket.emit("estado", "Conectado con el Servidor por Sockets");
-
-    //Recibimos peticion de Eliminar producto
-    socket.on("deleteProduct", async (data) => {
-      console.log(data)
-      let products = await productAll.readProducts();
-      let filterProducts = products.filter((prod) => prod.id != data);
-      io.sockets.emit("deleteProduct", filterProducts)
-    });
-  });
-
-  let products = await productAll.readProducts();
-  res.render("realTimeProducts", {
-    title: "Express | Websockets",
-    products,
-  });
-});
-
 //Routers
 app.use("/api/products", productRouter);
 app.use("/api/carts", cartRouter);
+app.use("/static/realTimeProducts", socketRouter);
 
-//server.on("error", (error) => console.log(`Error en servidor ${error}`));
+export default io
