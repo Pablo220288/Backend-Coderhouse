@@ -25,7 +25,7 @@ const PORT = process.env.PORT || 8080;
 const server = app.listen(PORT, () =>
   console.log(`Express por Loacal host ${server.address().port}`)
 );
-const io = new Server(server);
+
 
 //Handlebars
 app.engine("handlebars", engine());
@@ -49,4 +49,4 @@ app.use("/api/products", productRouter);
 app.use("/api/carts", cartRouter);
 app.use("/static/realTimeProducts", socketRouter);
 
-export default io
+export const io = new Server(server);
