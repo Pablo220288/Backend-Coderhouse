@@ -103,3 +103,4 @@ socket.on("deleteProduct", (data) => {
     cargarDom(prod);
   });
 });
+
