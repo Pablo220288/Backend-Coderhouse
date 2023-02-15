@@ -29,6 +29,6 @@ chatSend.addEventListener("click", (e) => {
 socket.on("messajeLogs", data => {
     massajesChat.innerHTML = ""
     data.forEach(massaje => {
-        massajesChat.innerHTML += `<p>${massaje.user} - ${massaje.massaje}</p>`
+        massajesChat.innerHTML += `<p>${massaje.user} dice: ${massaje.massaje}</p>`
     });
 })
