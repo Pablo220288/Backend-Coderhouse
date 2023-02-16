@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import productRouter from "./routes/product.routes.js";
 import cartRouter from "./routes/carts.routes.js";
 import socketRouter from "./routes/socket.routes.js";
-import chatRouter from "./routes/chat.routes.js"
+import chatRouter from "./routes/chat.routes.js";
 import __dirname from "./utils.js";
 import { engine } from "express-handlebars";
 import * as path from "path";
@@ -20,24 +20,39 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-//Creando Loacal host 8080
-const PORT = process.env.PORT || 8080;
-const server = app.listen(PORT, () =>
-  console.log(`Express por Loacal host ${server.address().port}`)
-);
-export const io = new Server(server);
-
 //Handlebars
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
 app.set("views", path.resolve(__dirname + "/views"));
 
 //Archivos Staticos
-app.use("/static", express.static(__dirname + "/public"));
+app.use("/", express.static(__dirname + "/public"));
+
+//Creando Loacal host 8080
+const PORT = process.env.PORT || 8080;
+const server = app.listen(PORT, () =>
+  console.log(`Express por Loacal host ${server.address().port}`)
+);
+server.on("error", (err) => {
+  console.log(`Algo salio mal: ${err}`);
+});
+export const io = new Server(server);
 
 //Middleware
+const massajeChat = [];
+io.on("connection", (socket) => {
+  console.log(socket.id, "Conectado");
+  socket.on("disconnect", () => {
+    console.log(socket.id, "Desconectado");
+  });
+  socket.on("massajeChat", (data) => {
+    massajeChat.push(data);
+    io.sockets.emit("messajeLogs", massajeChat);
+  });
+});
+
 const productAll = new ProductManager();
-app.get("/static", async (req, res) => {
+app.get("/", async (req, res) => {  
   let products = await productAll.readProducts();
   res.render("home", {
     title: "Backend | Express",
@@ -48,6 +63,7 @@ app.get("/static", async (req, res) => {
 //Routers
 app.use("/api/products", productRouter);
 app.use("/api/carts", cartRouter);
-app.use("/static/realTimeProducts", socketRouter);
-app.use("/static/chatSocket", chatRouter)
+app.use("/realTimeProducts", socketRouter);
+app.use("/chatSocket", chatRouter);
+
 

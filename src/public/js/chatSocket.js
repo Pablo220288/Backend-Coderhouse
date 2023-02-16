@@ -5,9 +5,9 @@ const socket = io();
 let user = "";
 
 Swal.fire({
-  title: "Nombre de Usuario",
+  title: "Usuario",
   input: "text",
-  text: "Ingrese su Nombre de usuario",
+  text: "Ingrese un Nombre",
   inputValidator: (data) => {
     return !data && "Ingrese un Nombre Valido";
   },

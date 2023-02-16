@@ -1,5 +1,5 @@
 <div align="center">
-<img src="./public/img/apibooks.png"/ alt="ApiBooks">
+<img src="./src/public/img/apibooks.png"/ alt="ApiBooks">
 </div>
 
 _Bienvenidos a mi proyecto BackEnd ._
