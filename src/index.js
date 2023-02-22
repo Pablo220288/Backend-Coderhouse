@@ -38,9 +38,13 @@ server.on("error", (err) => {
 });
 export const io = new Server(server);
 
+const date = () => {
+  let timeNow = new Date();
+  return timeNow.getHours() + ":" + timeNow.getMinutes();
+};
+
 //Middleware
-let timeNow = new Date();
-let time = timeNow.getHours() + ":" + timeNow.getMinutes();
+let time = date();
 export const messajeChat = [
   {
     user: "Administrador",
@@ -49,11 +53,25 @@ export const messajeChat = [
     id: "1234567890",
   },
 ];
-export const usersChat = [];
+export let usersChat = [];
 io.on("connection", (socket) => {
   console.log(socket.id, "Conectado");
   socket.on("disconnect", () => {
     console.log(socket.id, "Desconectado");
+    let time = date();
+    let user = usersChat.find((user) => user.id === socket.id);
+    if (user != undefined) {
+      messajeChat.push({
+        user: user.user,
+        messaje: "se desconecto",
+        time,
+        id: socket.id,
+        idConnection: "disConnection",
+      });
+      let userUpload = usersChat.filter((user) => user.id != socket.id);
+      usersChat = [...userUpload]
+      io.sockets.emit("userChat", usersChat, messajeChat);
+    }
   });
 
   socket.on("userChat", (data) => {

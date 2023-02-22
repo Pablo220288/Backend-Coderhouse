@@ -907,7 +907,7 @@ html {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 0px 12px;
+  padding: 10px 12px;
   overflow-y: scroll;
 }
 .wahtsapp_chat_container .wahtsapp_chat .massajesChat .chat_container {

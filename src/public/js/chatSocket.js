@@ -7,7 +7,6 @@ const usersConnection = document.getElementById("usersConnection");
 const socket = io();
 
 let user = "";
-let usersCaht = [];
 
 const date = () => {
   let timeNow = new Date();
@@ -43,7 +42,7 @@ const messajeChatInner = (data) => {
   let classMsg = "";
   let moreMsg = "";
   for (let i = 0; i < data.length; i++) {
-    if (data[i].idConnection === "Connection") {
+    if (data[i].idConnection === "Connection" || data[i].idConnection === "disConnection" ) {
       classMsg = "connection";
     } else if (socket.id != data[i].id) {
       classMsg = "";
@@ -92,11 +91,11 @@ socket.on("userChat", (users, messajes) => {
   let msgAll = messajeChatInner(messajes);
   usersConnection.innerHTML = userAll;
   messajesChat.innerHTML = msgAll;
+  messajesChat.scrollTop = messajesChat.scrollHeight;
 });
 
 chatSend.addEventListener("click", (e) => {
-  let timeNow = new Date();
-  let time = timeNow.getHours() + ":" + timeNow.getMinutes();
+  let time = date()
   if (chatBox.value.trim().length > 0)
     socket.emit("messajeChat", {
       user,
@@ -117,9 +116,15 @@ socket.on("messajeLogs", (data) => {
   let msgAll = messajeChatInner(data);
   messajesChat.innerHTML = msgAll;
   messajesChat.scrollTop = messajesChat.scrollHeight;
-  console.log(data);
 });
 
 socket.on("typing", (data) => {
   userTiping.textContent = `${data.user} escribiendo...`;
 });
+
+socket.on("userDisconnect", (data) => {
+  messajesChat.innerHTML = "";
+  let msgAll = messajeChatInner(data);
+  messajesChat.innerHTML = msgAll;
+  messajesChat.scrollTop = messajesChat.scrollHeight;
+})

@@ -19,3 +19,9 @@ const storage = multer.diskStorage({
 });
 
 export const uploader = multer({ storage });
+
+//time 
+export const date = () => {
+  let timeNow = new Date();
+  return timeNow.getHours() + ":" + timeNow.getMinutes();
+};
