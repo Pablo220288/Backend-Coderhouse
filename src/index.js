@@ -39,20 +39,50 @@ server.on("error", (err) => {
 export const io = new Server(server);
 
 //Middleware
-const massajeChat = [];
+let timeNow = new Date();
+let time = timeNow.getHours() + ":" + timeNow.getMinutes();
+export const messajeChat = [
+  {
+    user: "Administrador",
+    messaje: "Bienvenido al Chat 👋",
+    time,
+    id: "1234567890",
+  },
+];
+export const usersChat = [];
 io.on("connection", (socket) => {
   console.log(socket.id, "Conectado");
   socket.on("disconnect", () => {
     console.log(socket.id, "Desconectado");
   });
-  socket.on("massajeChat", (data) => {
-    massajeChat.push(data);
-    io.sockets.emit("messajeLogs", massajeChat);
+
+  socket.on("userChat", (data) => {
+    usersChat.push({
+      user: data.user,
+      id: data.id,
+    });
+    messajeChat.push({
+      user: data.user,
+      messaje: data.messaje,
+      time: data.time,
+      id: data.id,
+      idConnection: "Connection",
+    });
+    io.sockets.emit("userChat", usersChat, messajeChat);
+  });
+
+  socket.on("messajeChat", (data) => {
+    messajeChat.push(data);
+    io.sockets.emit("messajeLogs", messajeChat);
+  });
+
+  socket.on("typing", (data) => {
+    socket.broadcast.emit("typing", data);
   });
 });
 
 const productAll = new ProductManager();
-app.get("/", async (req, res) => {  
+app.get("/", async (req, res) => {
   let products = await productAll.readProducts();
   res.render("home", {
     title: "Backend | Express",
@@ -65,5 +95,3 @@ app.use("/api/products", productRouter);
 app.use("/api/carts", cartRouter);
 app.use("/realTimeProducts", socketRouter);
 app.use("/chatSocket", chatRouter);
-
-

@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BackEnd</title>
-    <link rel="stylesheet" href="./sass/css/styles.css">
-</head>
-<body>
-    <header></header>
-    <main>
-        <h1 class="titulo">Curso BackEnd</h1>
-    </main>
-    <footer></footer>
-</body>
-<!-- <script type="module" src="js/index.js"></script> -->
+    <link rel="stylesheet" href="./src/public//css/styles.css" />
+  </head>
+  <body>
+    <div class="mainHome">
+      <h2>Chat con Websocket</h2>
+      <div class="wahtsapp_chat_container">
+        <div class="wahtsapp_chat_title">
+          <div class="title_img">
+            <img src="./src/public/img/avatar.png" alt="Avatar" />
+          </div>
+          <div class="title_text">
+            <h2 class="title_text_name">Pablo Hernández</h2>
+            <p class="title_text_subname">Full Stack Developer</p>
+          </div>
+        </div>
+        <div class="wahtsapp_chat">
+          <div class="massajesChat" id="massajesChat">
+          </div>
+          <div class="imputChat">
+             <textarea rows="2" cols="15" id="chatBox" type="text" class="chatBox"/></textarea>
+            <button class="chatSend" id="chatSend"><ion-icon name="paper-plane"></ion-icon></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
+    <script type="module" src="./src/public/js/chatSocket.js"></script>
+  </body>
 </html>

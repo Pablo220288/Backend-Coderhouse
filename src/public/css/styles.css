@@ -833,6 +833,253 @@ html {
   gap: 5px;
 }
 
+.chatSocket {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.wahtsapp_chat_container {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 12px 24px 0px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+.wahtsapp_chat_container .wahtsapp_chat_title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #128c7e;
+  padding: 14px 20px;
+}
+.wahtsapp_chat_container .wahtsapp_chat_title .title_img {
+  width: 60px;
+  height: 60px;
+  position: relative;
+}
+.wahtsapp_chat_container .wahtsapp_chat_title .title_img::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #4ad504;
+  border-radius: 50%;
+  border: 2px solid #128c7e;
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+}
+.wahtsapp_chat_container .wahtsapp_chat_title .title_img img {
+  width: 100%;
+}
+.wahtsapp_chat_container .wahtsapp_chat_title .title_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 16px;
+}
+.wahtsapp_chat_container .wahtsapp_chat_title .title_text .title_text_name {
+  font-size: 1rem;
+  color: #ffffff;
+}
+.wahtsapp_chat_container .wahtsapp_chat_title .title_text .title_text_subname {
+  font-size: 0.8rem;
+  color: #ffffff;
+}
+.wahtsapp_chat_container .wahtsapp_chat {
+  width: 100%;
+  padding: 10px 8px;
+  background-color: #ece5dd;
+  position: relative;
+  height: 350px;
+  background-image: url("/img/fondo.png");
+  background-position: center center;
+  background-size: cover;
+}
+.wahtsapp_chat_container .wahtsapp_chat .massajesChat {
+  width: 100%;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0px 12px;
+  overflow-y: scroll;
+}
+.wahtsapp_chat_container .wahtsapp_chat .massajesChat .chat_container {
+  width: 340px;
+  padding: 7px 14px 6px;
+  background-color: #ffffff;
+  border-radius: 0px 8px 8px;
+  box-shadow: rgba(0, 0, 0, 0.13) 0px 1px 0.5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+.wahtsapp_chat_container .wahtsapp_chat .massajesChat .chat_container:before {
+  content: "";
+  position: absolute;
+  background-image: url("/img/chat.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 0px;
+  left: -12px;
+  width: 12px;
+  height: 19px;
+}
+.wahtsapp_chat_container .wahtsapp_chat .massajesChat .myMsg {
+  align-self: flex-end;
+  background-color: #dcf8c6;
+  border-radius: 8px 0px 8px 8px;
+}
+.wahtsapp_chat_container .wahtsapp_chat .massajesChat .myMsg:before {
+  background-image: url("/img/chat2.png");
+  left: 100%;
+}
+.wahtsapp_chat_container .wahtsapp_chat .massajesChat .moreMsg {
+  border-radius: 8px;
+}
+.wahtsapp_chat_container .wahtsapp_chat .massajesChat .moreMsg:before {
+  background-image: none;
+}
+.wahtsapp_chat_container .wahtsapp_chat .massajesChat .moreMsg .chat_title {
+  display: none;
+}
+.wahtsapp_chat_container .wahtsapp_chat .massajesChat .connection {
+  flex-direction: row;
+  align-self: center;
+  align-items: center;
+  gap: 5px;
+  background-color: #ccdceb;
+  border-radius: 8px;
+}
+.wahtsapp_chat_container .wahtsapp_chat .massajesChat .connection:before {
+  background-image: none;
+}
+.wahtsapp_chat_container .wahtsapp_chat .massajesChat .connection .chat_title {
+  font-size: 0.8rem;
+  font-style: italic;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.4);
+}
+.wahtsapp_chat_container .wahtsapp_chat .massajesChat .connection .chat_txt {
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-top: 0;
+  color: rgba(0, 0, 0, 0.4);
+}
+.wahtsapp_chat_container .wahtsapp_chat .massajesChat .connection .chat_hs {
+  align-self: center;
+  font-style: italic;
+  text-align: center;
+  margin: 0;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+.wahtsapp_chat_container .wahtsapp_chat .massajesChat .chat_title {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.4);
+}
+.wahtsapp_chat_container .wahtsapp_chat .massajesChat .chat_txt {
+  font-size: 14px;
+  line-height: 19px;
+  margin-top: 4px;
+  color: rgb(17, 17, 17);
+}
+.wahtsapp_chat_container .wahtsapp_chat .massajesChat .chat_hs {
+  align-self: flex-end;
+  text-align: right;
+  margin-top: -5px;
+  font-size: 12px;
+  line-height: 16px;
+  color: rgba(17, 17, 17, 0.5);
+  margin-right: -8px;
+  margin-bottom: -4px;
+}
+.wahtsapp_chat_container .wahtsapp_chat .imputChat {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.wahtsapp_chat_container .wahtsapp_chat .imputChat .chatBox {
+  all: unset;
+  resize: none;
+  min-width: 420px;
+  max-width: 420px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 14px 0px;
+  font-size: 0.8rem;
+}
+.wahtsapp_chat_container .wahtsapp_chat .imputChat .chatSend {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #25d366;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 14px 0px;
+  cursor: pointer;
+}
+.wahtsapp_chat_container .wahtsapp_chat .imputChat .chatSend ion-icon {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+.wahtsapp_chat_container .wahtsapp_chat .imputChat .chatSend:hover {
+  transform: scale(0.97);
+}
+
+.userConnection {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 12px 24px 0px;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+.userConnection .userTitle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #128c7e;
+  padding: 10px 20px;
+}
+.userConnection .userTitle strong {
+  color: #ffffff;
+}
+.userConnection .usersConnection {
+  padding: 10px 20px;
+}
+.userConnection .usersConnection .otherUser, .userConnection .usersConnection .myUser {
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.userConnection .usersConnection .otherUser:hover, .userConnection .usersConnection .myUser:hover {
+  margin-left: 2px;
+}
+.userConnection .usersConnection .myUser {
+  color: #25d366;
+}
+
 .main404 {
   width: 100%;
   height: 100vh;
