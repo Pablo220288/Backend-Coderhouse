@@ -13,13 +13,11 @@
     </div>
     <div class="wahtsapp_chat">
       <div class="massajesChat" id="messajesChat">
-        {{#each messajes}}
           <div class="chat_container">
-            <strong class="chat_title">{{this.user}}</strong>
-            <p class="chat_txt">{{this.messaje}}</p>
-            <span class="chat_hs">{{this.time}}</span>
+            <strong class="chat_title">{{messajes.user}}</strong>
+            <p class="chat_txt">{{messajes.messaje}}</p>
+            <span class="chat_hs">{{messajes.time}}</span>
           </div>
-        {{/each}}
       </div>
       <div class="imputChat">
          <textarea rows="1" cols="15" id="chatBox" type="text" class="chatBox" placeholder="Mensaje"/></textarea>

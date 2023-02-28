@@ -1,18 +1,18 @@
-import express from "express";
 import dotenv from "dotenv";
+import express from "express";
+import cors from "cors";
+import * as path from "path";
+import __dirname from "./utils.js";
+import { engine } from "express-handlebars";
+import ProductManager from "./controllers/ProductManager.js";
 import productRouter from "./routes/product.routes.js";
 import cartRouter from "./routes/carts.routes.js";
 import socketRouter from "./routes/socket.routes.js";
 import chatRouter from "./routes/chat.routes.js";
-import __dirname from "./utils.js";
-import { engine } from "express-handlebars";
-import * as path from "path";
-import cors from "cors";
 import { Server } from "socket.io";
-import ProductManager from "./controllers/ProductManager.js";
-
-//Archivo ENV
-dotenv.config();
+import { date } from "./utils.js";
+import connectionMongoose from "./db/mongoose.js"
+import mongooseRouter from "./routes/mongoose.routes.js";
 
 //Creando Server Express
 const app = express();
@@ -29,6 +29,7 @@ app.set("views", path.resolve(__dirname + "/views"));
 app.use("/", express.static(__dirname + "/public"));
 
 //Creando Loacal host 8080
+dotenv.config();
 const PORT = process.env.PORT || 8080;
 const server = app.listen(PORT, () =>
   console.log(`Express por Loacal host ${server.address().port}`)
@@ -38,12 +39,7 @@ server.on("error", (err) => {
 });
 export const io = new Server(server);
 
-const date = () => {
-  let timeNow = new Date();
-  return timeNow.getHours() + ":" + timeNow.getMinutes();
-};
-
-//Middleware
+//Middleware ChatSocket
 let time = date();
 export const messajeChat = [
   {
@@ -113,3 +109,4 @@ app.use("/api/products", productRouter);
 app.use("/api/carts", cartRouter);
 app.use("/realTimeProducts", socketRouter);
 app.use("/chatSocket", chatRouter);
+app.use("/mongoose/products", mongooseRouter);

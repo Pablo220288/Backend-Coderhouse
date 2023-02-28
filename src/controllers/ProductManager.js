@@ -3,7 +3,7 @@ import { nanoid } from "nanoid";
 
 class ProductManager {
   constructor() {
-    this.path = "./src/models/productos.json";
+    this.path = "./src/json/productos.json";
   }
   readProducts = async () => {
     let allProducts = await fs.readFile(this.path, "utf-8");
@@ -19,7 +19,6 @@ class ProductManager {
     return productsAll.find((product) => product.id === id);
   };
   objectKeys(object) {
-    console.log(object)
     if (
       !object.title ||
       !object.author ||
