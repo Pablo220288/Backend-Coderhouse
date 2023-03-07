@@ -4,15 +4,16 @@ import cors from "cors";
 import * as path from "path";
 import __dirname from "./utils.js";
 import { engine } from "express-handlebars";
-import ProductManager from "./controllers/ProductManager.js";
+import ProductManager from "./dao/FileSystem/controllers/ProductManager.js";
 import productRouter from "./routes/product.routes.js";
 import cartRouter from "./routes/carts.routes.js";
 import socketRouter from "./routes/socket.routes.js";
 import chatRouter from "./routes/chat.routes.js";
 import { Server } from "socket.io";
-import { date } from "./utils.js";
-import connectionMongoose from "./db/mongoose.js"
+import { dateShort } from "./utils.js";
+import connectionMongoose from "./connection/mongoose.js";
 import mongooseRouter from "./routes/mongoose.routes.js";
+import { chatModel } from "./dao/Mongoose/models/ChatSchema.js";
 
 //Creando Server Express
 const app = express();
@@ -40,56 +41,83 @@ server.on("error", (err) => {
 export const io = new Server(server);
 
 //Middleware ChatSocket
-let time = date();
-export const messajeChat = [
-  {
-    user: "Administrador",
-    messaje: "Bienvenido al Chat 👋",
-    time,
-    id: "1234567890",
-  },
-];
+let time = dateShort();
+//Usuarios Conectados
 export let usersChat = [];
+//Mensaje de Bienvenida
+const greeting = {
+  user: "Administrador",
+  messaje: "Bienvenido al Chat 👋",
+  time,
+  idUser: "1234567890",
+};
+//Funcion para subir mensajes a MongoDB
+const addChatMongoose = async (messaje) => {
+  await chatModel.create(messaje);
+};
 io.on("connection", (socket) => {
   console.log(socket.id, "Conectado");
   socket.on("disconnect", () => {
     console.log(socket.id, "Desconectado");
-    let time = date();
-    let user = usersChat.find((user) => user.id === socket.id);
+    let user = usersChat.find((user) => user.idUser === socket.id);
     if (user != undefined) {
-      messajeChat.push({
+      //Subimos a MongoDB Mensaje de Desconeccion
+      addChatMongoose({
         user: user.user,
-        messaje: "se desconecto",
-        time,
-        id: socket.id,
+        messaje: "se ha desconecto",
+        time: dateShort(),
+        idUser: socket.id,
         idConnection: "disConnection",
       });
-      let userUpload = usersChat.filter((user) => user.id != socket.id);
-      usersChat = [...userUpload]
-      io.sockets.emit("userChat", usersChat, messajeChat);
+      let userUpload = usersChat.filter((user) => user.idUser != socket.id);
+      usersChat = [...userUpload];
+      let findChatMongoose = async () => {
+        //Si se Desconecto el ultimo Usuario vaciamos el chat
+        if (usersChat.length === 0) await chatModel.deleteMany({});
+        //
+        let allMessajeMongoose = await chatModel.find();
+        io.sockets.emit("userChat", usersChat, allMessajeMongoose);
+      };
+      findChatMongoose();
     }
   });
-
   socket.on("userChat", (data) => {
     usersChat.push({
       user: data.user,
-      id: data.id,
+      idUser: data.id,
     });
-    messajeChat.push({
+    //Mensaje de Coneccion
+    let userConecction = {
       user: data.user,
       messaje: data.messaje,
-      time: data.time,
-      id: data.id,
+      time: dateShort(),
+      idUser: data.id,
       idConnection: "Connection",
-    });
-    io.sockets.emit("userChat", usersChat, messajeChat);
+    };
+    //Subimos el Mensaje a MongoDB
+    let chat = async () => {
+      let chats = await chatModel.find();
+      if (chats.length === 0) {
+        //Si el chat esta vacio, es decir que es la primer conneccion, lo envimos junto a un saludo
+        await chatModel.create([greeting, userConecction]);
+      } else {
+        await chatModel.create(userConecction);
+      }
+      let allMessajeMongoose = await chatModel.find();
+      io.sockets.emit("userChat", usersChat, allMessajeMongoose);
+    };
+    chat();
   });
 
   socket.on("messajeChat", (data) => {
-    messajeChat.push(data);
-    io.sockets.emit("messajeLogs", messajeChat);
+    //Subimos Mensaje a MongoDB
+    addChatMongoose(data);
+    let findChatMongoose = async () => {
+      let allMessajeMongoose = await chatModel.find();
+      io.sockets.emit("messajeLogs", allMessajeMongoose);
+    };
+    findChatMongoose();
   });
-
   socket.on("typing", (data) => {
     socket.broadcast.emit("typing", data);
   });

@@ -36,6 +36,15 @@ class CrudMongoose {
     return "Producto Agregado Correctamente";
   };
 
+  updateProducts = async (id, updateProduct) => {
+    let product = await this.exist(id);
+    if (!product) return "Producto no Encontrado";
+    if (this.objectKeys(updateProduct) === 400)
+      return "JSON incompleto. Faltan 1 o mas Datos";
+    await productModel.findByIdAndUpdate(id, updateProduct);
+    return "Producto Modificado Correctamente";
+  };
+
   deleteProductsById = async (id) => {
     let product = await this.exist(id);
     if (!product) return "Producto no Encontrado";

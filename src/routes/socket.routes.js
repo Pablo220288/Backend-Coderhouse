@@ -1,5 +1,5 @@
 import { Router } from "express";
-import ProductManager from "../controllers/ProductManager.js";
+import ProductManager from "../dao/FileSystem/controllers/ProductManager.js";
 import { io } from "../index.js";
 //import {body, validationResult} from "express-validator"
 

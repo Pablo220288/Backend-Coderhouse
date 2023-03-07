@@ -1,5 +1,5 @@
 import { Router } from "express";
-import CrudMongoose from "../controllers/CrudMongoose.js";
+import CrudMongoose from "../dao/Mongoose/controllers/ProductManager.js";
 
 const mongooseRouter = Router();
 const productsByMongoose = new CrudMongoose();
@@ -13,7 +13,9 @@ mongooseRouter.get("/", async (req, res) => {
 });
 mongooseRouter.get("/:id", async (req, res) => {
   try {
-    res.status(200).send(await productsByMongoose.findProductsById(req.params.id));
+    res
+      .status(200)
+      .send(await productsByMongoose.findProductsById(req.params.id));
   } catch (err) {
     res.status(404).send("Producto no encontrado", err);
   }
@@ -25,10 +27,21 @@ mongooseRouter.post("/", async (req, res) => {
     res.status(400).send("Error de sintaxis", err);
   }
 });
-mongooseRouter.delete("/:id", async (req, res) => {
-  console.log(req.params.id)
+mongooseRouter.put("/:id", async (req, res) => {
   try {
-    res.status(200).send(await productsByMongoose.deleteProductsById(req.params.id));
+    res
+      .status(200)
+      .send(await productsByMongoose.updateProducts(req.params.id, req.body));
+  } catch (err) {
+    res.status(400).send("Error de sintaxis", err);
+  }
+});
+mongooseRouter.delete("/:id", async (req, res) => {
+  console.log(req.params.id);
+  try {
+    res
+      .status(200)
+      .send(await productsByMongoose.deleteProductsById(req.params.id));
   } catch (err) {
     res.status(400).send("Error de sintaxis", err);
   }

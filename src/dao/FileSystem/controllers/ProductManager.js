@@ -3,7 +3,7 @@ import { nanoid } from "nanoid";
 
 class ProductManager {
   constructor() {
-    this.path = "./src/json/productos.json";
+    this.path = "./src//dao/FileSystem/json/productos.json";
   }
   readProducts = async () => {
     let allProducts = await fs.readFile(this.path, "utf-8");

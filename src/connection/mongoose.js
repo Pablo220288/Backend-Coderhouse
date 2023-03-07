@@ -15,7 +15,7 @@ const connectionMongoose = () => {
     .catch((err) => console.log(err));
 
   db.once("open", () => {
-    console.log("Database in connected to", process.env.mongooseAtlas);
+    console.log("Database in connected to MongoDB");
   });
 
   db.on("error", (err) => {

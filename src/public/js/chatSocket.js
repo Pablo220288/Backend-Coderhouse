@@ -8,7 +8,7 @@ const socket = io();
 
 let user = "";
 
-const date = () => {
+const dateShort = () => {
   let timeNow = new Date();
   return timeNow.getHours() + ":" + timeNow.getMinutes();
 };
@@ -28,11 +28,10 @@ Swal.fire({
   user = nombre;
   userName.textContent = user;
   messajesChat.scrollTop = messajesChat.scrollHeight;
-  let time = date();
   socket.emit("userChat", {
     user,
     messaje: `se ha conectado`,
-    time,
+    time: dateShort(),
     id: socket.id,
   });
 });
@@ -42,9 +41,12 @@ const messajeChatInner = (data) => {
   let classMsg = "";
   let moreMsg = "";
   for (let i = 0; i < data.length; i++) {
-    if (data[i].idConnection === "Connection" || data[i].idConnection === "disConnection" ) {
+    if (
+      data[i].idConnection === "Connection" ||
+      data[i].idConnection === "disConnection"
+    ) {
       classMsg = "connection";
-    } else if (socket.id != data[i].id) {
+    } else if (socket.id != data[i].idUser) {
       classMsg = "";
     } else {
       classMsg = "myMsg";
@@ -54,7 +56,7 @@ const messajeChatInner = (data) => {
       moreMsg = "";
     } else if (data[i - 1].idConnection === "Connection") {
       moreMsg = "";
-    } else if (data[i].id === data[i - 1].id) {
+    } else if (data[i].idUser === data[i - 1].idUser) {
       moreMsg = "moreMsg";
     } else {
       moreMsg = "";
@@ -74,7 +76,7 @@ const userChatInner = (data) => {
   let userAll = "";
   let classUser = "";
   for (let i = 0; i < data.length; i++) {
-    if (socket.id != data[i].id) {
+    if (socket.id != data[i].idUser) {
       classUser = "otherUser";
     } else {
       classUser = "myUser";
@@ -95,13 +97,12 @@ socket.on("userChat", (users, messajes) => {
 });
 
 chatSend.addEventListener("click", (e) => {
-  let time = date()
   if (chatBox.value.trim().length > 0)
     socket.emit("messajeChat", {
       user,
       messaje: chatBox.value,
-      time,
-      id: socket.id,
+      time: dateShort(),
+      idUser: socket.id,
     });
   chatBox.value = "";
 });
@@ -111,6 +112,7 @@ chatBox.addEventListener("keypress", () => {
 });
 
 socket.on("messajeLogs", (data) => {
+  console.log(data);
   userTiping.textContent = "";
   messajesChat.innerHTML = "";
   let msgAll = messajeChatInner(data);
@@ -127,4 +129,4 @@ socket.on("userDisconnect", (data) => {
   let msgAll = messajeChatInner(data);
   messajesChat.innerHTML = msgAll;
   messajesChat.scrollTop = messajesChat.scrollHeight;
-})
+});
