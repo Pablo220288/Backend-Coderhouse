@@ -12,7 +12,8 @@ import chatRouter from "./routes/chat.routes.js";
 import { Server } from "socket.io";
 import { dateShort } from "./utils.js";
 import connectionMongoose from "./connection/mongoose.js";
-import mongooseRouter from "./routes/mongoose.routes.js";
+import productMongooseRouter from "./routes/productMongoose.routes.js";
+import cartsMongooseRouter from "./routes/cartsMongoose.routes.js";
 import { chatModel } from "./dao/Mongoose/models/ChatSchema.js";
 
 //Creando Server Express
@@ -137,4 +138,5 @@ app.use("/api/products", productRouter);
 app.use("/api/carts", cartRouter);
 app.use("/realTimeProducts", socketRouter);
 app.use("/chatSocket", chatRouter);
-app.use("/mongoose/products", mongooseRouter);
+app.use("/mongoose/products", productMongooseRouter);
+app.use("/mongoose/carts", cartsMongooseRouter);

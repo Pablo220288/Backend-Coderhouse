@@ -1,17 +1,17 @@
 import { Router } from "express";
 import CrudMongoose from "../dao/Mongoose/controllers/ProductManager.js";
 
-const mongooseRouter = Router();
+const productMongooseRouter = Router();
 const productsByMongoose = new CrudMongoose();
 
-mongooseRouter.get("/", async (req, res) => {
+productMongooseRouter.get("/", async (req, res) => {
   try {
     res.status(200).send(await productsByMongoose.findProducts());
   } catch (err) {
     res.status(404).send("Error en la consulta", err);
   }
 });
-mongooseRouter.get("/:id", async (req, res) => {
+productMongooseRouter.get("/:id", async (req, res) => {
   try {
     res
       .status(200)
@@ -20,14 +20,14 @@ mongooseRouter.get("/:id", async (req, res) => {
     res.status(404).send("Producto no encontrado", err);
   }
 });
-mongooseRouter.post("/", async (req, res) => {
+productMongooseRouter.post("/", async (req, res) => {
   try {
     res.status(200).send(await productsByMongoose.createProducts(req.body));
   } catch (err) {
     res.status(400).send("Error de sintaxis", err);
   }
 });
-mongooseRouter.put("/:id", async (req, res) => {
+productMongooseRouter.put("/:id", async (req, res) => {
   try {
     res
       .status(200)
@@ -36,7 +36,7 @@ mongooseRouter.put("/:id", async (req, res) => {
     res.status(400).send("Error de sintaxis", err);
   }
 });
-mongooseRouter.delete("/:id", async (req, res) => {
+productMongooseRouter.delete("/:id", async (req, res) => {
   console.log(req.params.id);
   try {
     res
@@ -47,4 +47,4 @@ mongooseRouter.delete("/:id", async (req, res) => {
   }
 });
 
-export default mongooseRouter;
+export default productMongooseRouter;
