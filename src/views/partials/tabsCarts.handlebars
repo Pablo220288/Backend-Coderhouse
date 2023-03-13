@@ -1,0 +1,79 @@
+<div class="containerTabs">
+  <div class="tabsSelector">
+    <label for="tab1">GET</label>
+    <label for="tab2">POST</label>
+    <label for="tab3">PRODUCT</label>
+    <label for="tab4">DELETE</label>
+  </div>
+  <div class="tabsSelected">
+    <input type="radio" name="tabs" id="tab1" checked/>
+    <div class="tabs1">
+      <h3>Consulta</h3>
+      <form class="formTabs" id="formGetCart">
+        <div class="inputTabs">
+          <label for="idCart">Id Carrito</label>
+          <span>Ingrese el ID del Carrito a Consultar. Consulte vacio para ver todos los Carritos.</span>
+          <input type="text" name="idCart" id="getCart" />
+        </div>
+        <div class="btnMassaje">
+          <div class="btnFormTabs">
+            <button class="btn">Consultar</button>
+          </div>
+          <strong class="massaje" id="resGetCart"></strong>
+        </div>
+      </form>
+    </div>
+    <input type="radio" name="tabs" id="tab2"/>
+    <div class="tabs2">
+      <h3>Agregar Carrito</h3>
+      <form class="formTabs" id="formPostCart">
+        <div class="inputTabs">
+          <span>Puede agregar los carritos que desee precionando el botón AGREGAR</span>
+        </div>
+        <div class="btnMassaje">
+          <div class="btnFormTabs">
+            <button class="btn">Agregar</button>
+          </div>
+          <strong class="massaje" id="resAddCart"></strong>
+        </div>
+      </form>
+    </div>
+    <input type="radio" name="tabs" id="tab3"/>
+    <div class="tabs3">
+      <h3>Agregar Producto en Carrito</h3>
+      <form class="formTabs" id="formProdInCart">
+        <div class="inputTabs">
+          <label for="idProduct">Id Producto</label>
+          <span>Ingrese el ID del Producto a Agregar</span>
+          <input type="text" id="idProduct" />
+          <label for="idCart">Id Carrito</label>
+          <span>Ingrese el ID del Carrito</span>
+          <input type="text" id="idCart" />
+        </div>
+        <div class="btnMassaje">
+          <div class="btnFormTabs">
+            <button class="btn">Agregar</button>
+          </div>
+          <strong class="massaje" id="resProdInCart"></strong>
+        </div>
+      </form>
+    </div>
+    <input type="radio" name="tabs" id="tab4"/>
+    <div class="tabs4">
+      <h3>Eliminar Carrito</h3>
+      <form class="formTabs" id="formDeleteCart">
+        <div class="inputTabs">
+          <label for="idProducto">Id Carrito</label>
+          <span>Ingrese el ID del Carrito a Eliminar</span>
+          <input type="text" name="idProducto" id="productDeleteCart" />
+        </div>
+        <div class="btnMassaje">
+          <div class="btnFormTabs">
+            <button class="btn">Eliminar</button>
+          </div>
+          <strong class="massaje" id="resDeleteCart"></strong>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

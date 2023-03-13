@@ -14,6 +14,7 @@ import { dateShort } from "./utils.js";
 import connectionMongoose from "./connection/mongoose.js";
 import productMongooseRouter from "./routes/productMongoose.routes.js";
 import cartsMongooseRouter from "./routes/cartsMongoose.routes.js";
+import cartSocketRouter from "./routes/cartsSocket.routes.js";
 import { chatModel } from "./dao/Mongoose/models/ChatSchema.js";
 
 //Creando Server Express
@@ -140,3 +141,4 @@ app.use("/realTimeProducts", socketRouter);
 app.use("/chatSocket", chatRouter);
 app.use("/mongoose/products", productMongooseRouter);
 app.use("/mongoose/carts", cartsMongooseRouter);
+app.use("/realTimeCarts", cartSocketRouter);

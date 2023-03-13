@@ -1,7 +1,6 @@
 import { Router } from "express";
 import ProductManager from "../dao/FileSystem/controllers/ProductManager.js";
 import { io } from "../index.js";
-//import {body, validationResult} from "express-validator"
 
 const socketRouter = Router();
 const productAll = new ProductManager();

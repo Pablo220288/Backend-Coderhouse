@@ -39,7 +39,7 @@ class CartMongooseManager {
     if (!productInCart) {
       let addProduct = [{ id_product, quantity: 1 }, ...cart.products];
       await cartsModel.findByIdAndUpdate(id_cart, { products: addProduct });
-      return `Producto ${product.title} agregado al Carrito ${id_cart}. Cantidad: 1`;
+      return `Producto ${product.title} agregado al Carrito. Cantidad: 1`;
     } else {
       let indexProduct = cart.products.findIndex(
         (product) => product.id_product === id_product
@@ -47,10 +47,9 @@ class CartMongooseManager {
       cart.products[indexProduct].quantity++;
       let quantityProductInCart = cart.products[indexProduct].quantity;
       await cartsModel.findByIdAndUpdate(id_cart, { products: cart.products });
-      return `Producto ${product.title} agregado al Carrito ${id_cart}. Cantidad: ${quantityProductInCart}`;
+      return `Producto ${product.title} agregado al Carrito. Cantidad: ${quantityProductInCart}`;
     }
   };
-
   deleteCarts = async (id) => {
     let cart = await this.existCarts(id);
     if (!cart) return "Carrito no Encontrado";

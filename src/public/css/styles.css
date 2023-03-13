@@ -611,6 +611,9 @@ html {
   min-width: 1200px;
   border-collapse: collapse;
 }
+.contentTable .tableCart {
+  min-width: 450px;
+}
 .contentTable thead tr {
   background-color: #88c043;
   color: #ffffff;
