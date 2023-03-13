@@ -1,8 +1,14 @@
 import { Schema, model } from "mongoose";
 
 const ChatSchema = new Schema({
-  idUser: String,
-  user: String,
+  idUser: {
+    type: String,
+    index: true,
+  },
+  user: {
+    type: String,
+    index: true,
+  },
   messaje: String,
   time: String,
   idConnection: String,

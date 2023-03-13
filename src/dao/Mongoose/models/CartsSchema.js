@@ -1,7 +1,10 @@
 import { Schema, model } from "mongoose";
 
 const productInCart = new Schema({
-  id_product : String,
+  id_product: {
+    type: String,
+    index: true,
+  },
   quantity: Number,
 });
 

@@ -5,10 +5,12 @@ const ProductSchema = new Schema({
     type: String,
     unique: true,
     require: true,
+    index: true,
   },
   author: {
     type: String,
     require: true,
+    index: true,
   },
   description: {
     type: String,
@@ -38,4 +40,4 @@ const ProductSchema = new Schema({
   },
 });
 
-export const productModel = model("Product", ProductSchema)
+export const productModel = model("Product", ProductSchema);
