@@ -1,4 +1,5 @@
 import { productModel } from "../models/ProductSchema.js";
+import { PORT } from "../../../index.js";
 
 class CrudMongoose {
   objectKeys(object) {
@@ -19,9 +20,45 @@ class CrudMongoose {
     return products.find((prod) => prod.id === id);
   };
 
-  findProducts = async () => {
-    let products = await productModel.find();
-    return products;
+  findProducts = async (data) => {
+    if (data) {
+      let category =
+        data.category === undefined ? {} : { category: data.category };
+      let limit = parseInt(data.limit, 10) || 4;
+      let page = parseInt(data.page, 10) || 1;
+      let skip = limit * page - limit;
+      let sort = data.sort || "asc";
+      const filter = await productModel.paginate(category, {
+        limit,
+        page,
+        skip,
+        sort: { price: sort },
+      });
+      return [
+        {
+          ...filter,
+          prevLink: `http://localhost:${PORT}/${page - 1}`,
+          nextlink: `http://localhost:${PORT}/${page + 1}`,
+        },
+      ];
+    } else {
+      let limit = 4;
+      let page = 1;
+      let productsAll = await productModel.paginate(
+        {},
+        {
+          limit,
+          page,
+        }
+      );
+      return [
+        {
+          ...productsAll,
+          prevLink: `http://localhost:${PORT}/${page - 1}`,
+          nextlink: `http://localhost:${PORT}/${page + 1}`,
+        },
+      ];
+    }
   };
   findProductsById = async (id) => {
     let product = await this.exist(id);

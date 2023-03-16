@@ -5,20 +5,21 @@ import { chatModel } from "../dao/Mongoose/models/ChatSchema.js";
 
 const chatRouter = Router();
 
-chatRouter.get("/", (req, res) => {
-  let time = dateShort();
-  res.render("chat", {
-    title: "Chat Websocket",
-    messajes: {
-      user: "Administrador",
-      messaje: "Bienvenido al Chat 👋",
-      time,
-    },
-    users: usersChat,
+chatRouter
+  .get("/", (req, res) => {
+    let time = dateShort();
+    res.render("chat", {
+      title: "Chat Websocket",
+      messajes: {
+        user: "Administrador",
+        messaje: "Bienvenido al Chat 👋",
+        time,
+      },
+      users: usersChat,
+    });
+  })
+  .get("/messaje", async (req, res) => {
+    res.send(await chatModel.find());
   });
-});
-chatRouter.get("/messaje", async (req, res) => {
-  res.send(await chatModel.find());
-});
 
 export default chatRouter;

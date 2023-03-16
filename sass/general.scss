@@ -1,21 +1,24 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-html{
+html {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
-$colorIndex:#88c043;
+$colorIndex: #88c043;
 
-.mainPureba{
+.mainPureba {
   width: 95%;
   margin: auto;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+}
 
+p {
+  margin: 0 !important;
 }

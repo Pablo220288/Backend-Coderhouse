@@ -9,10 +9,7 @@ const productInCart = new Schema({
 });
 
 const CartsSchema = new Schema({
-  products: {
-    type: [productInCart],
-    default: [],
-  },
+  products: [{ type: Schema.Types.ObjectId, ref: "productModel" }],
 });
 
 export const cartsModel = model("Cart", CartsSchema);

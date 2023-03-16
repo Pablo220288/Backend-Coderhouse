@@ -1,0 +1,45 @@
+<nav>
+  <ul class="pagination justify-content-center">
+    {{#if hasPrevPage}}
+      <li class="page-item">
+        <a class="page-link text-bg-secondary" href={{prevLink}}><ion-icon name="chevron-back-outline"></ion-icon></a>
+      </li>
+      {{else}}
+      <li class="page-item disabled">
+        <a class="page-link text-bg-secondary"><ion-icon name="chevron-back-outline"></ion-icon></a>
+      </li>
+    {{/if}}
+    {{#if hasPrevPage}}
+      <li class="page-item ms-1">
+        <a class="page-link text-bg-secondary" href={{prevLink}}>{{prevPage}}</a>
+      </li>
+    {{/if}}
+      <li class="page-item active mx-1"> 
+        <a class="page-link" role="link" aria-disabled="true">{{page}}</a>
+      </li>
+    {{#if hasNextPage}}
+      <li class="page-item me-1">
+        <a class="page-link text-bg-secondary" href={{nextlink}}>{{nextPage}}</a>
+      </li>
+    {{/if}}
+    {{#if hasNextPage}}
+      <li class="page-item">
+        <a class="page-link text-bg-secondary" href={{nextlink}}><ion-icon name="chevron-forward-outline"></ion-icon></a>
+      </li>
+      {{else}}
+      <li class="page-item disabled">
+        <a class="page-link text-bg-secondary"><ion-icon name="chevron-forward-outline"></ion-icon></a>
+      </li>
+    {{/if}}
+  </ul>
+</nav>
+
+{{!-- <div>
+  {{#if hasPrevPage}}
+    <a href={{linkPrevPage}}>{{prevPage}}</a>
+  {{/if}}
+  <a role="link" aria-disabled="true">{{page}}</a>
+  {{#if hasNextPage}}
+    <a href={{linkNextPage}}>{{nextPage}}</a>
+  {{/if}}
+</div> --}}

@@ -15,16 +15,37 @@ import connectionMongoose from "./connection/mongoose.js";
 import productMongooseRouter from "./routes/productMongoose.routes.js";
 import cartsMongooseRouter from "./routes/cartsMongoose.routes.js";
 import cartSocketRouter from "./routes/cartsSocket.routes.js";
+import productsRouter from "./routes/products.routes.js";
 import { chatModel } from "./dao/Mongoose/models/ChatSchema.js";
+import CrudMongoose from "./dao/Mongoose/controllers/ProductManager.js";
+import cookieParser from "cookie-parser";
+import session from "express-session";
 
 //Creando Server Express
+dotenv.config();
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.use(cookieParser())
+app.use(session({
+  secret: process.env.sessionSecret,
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}))
 
 //Handlebars
-app.engine("handlebars", engine());
+app.engine(
+  "handlebars",
+  engine({
+    runtimeOptions: {
+      allowProtoPropertiesByDefault: true,
+      allowedProtoMethodsByDefault: true,
+    },
+  })
+);
 app.set("view engine", "handlebars");
 app.set("views", path.resolve(__dirname + "/views"));
 
@@ -32,8 +53,7 @@ app.set("views", path.resolve(__dirname + "/views"));
 app.use("/", express.static(__dirname + "/public"));
 
 //Creando Loacal host 8080
-dotenv.config();
-const PORT = process.env.PORT || 8080;
+export const PORT = process.env.PORT || 8080;
 const server = app.listen(PORT, () =>
   console.log(`Express por Loacal host ${server.address().port}`)
 );
@@ -125,15 +145,6 @@ io.on("connection", (socket) => {
   });
 });
 
-const productAll = new ProductManager();
-app.get("/", async (req, res) => {
-  let products = await productAll.readProducts();
-  res.render("home", {
-    title: "Backend | Express",
-    products,
-  });
-});
-
 //Routers
 app.use("/api/products", productRouter);
 app.use("/api/carts", cartRouter);
@@ -142,3 +153,4 @@ app.use("/chatSocket", chatRouter);
 app.use("/mongoose/products", productMongooseRouter);
 app.use("/mongoose/carts", cartsMongooseRouter);
 app.use("/realTimeCarts", cartSocketRouter);
+app.use("/products", productsRouter);

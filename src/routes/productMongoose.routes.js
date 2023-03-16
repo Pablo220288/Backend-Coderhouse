@@ -6,7 +6,7 @@ const productsByMongoose = new CrudMongoose();
 
 productMongooseRouter.get("/", async (req, res) => {
   try {
-    res.status(200).send(await productsByMongoose.findProducts());
+    res.status(200).send(await productsByMongoose.findProducts(req.query));
   } catch (err) {
     res.status(404).send("Error en la consulta", err);
   }
