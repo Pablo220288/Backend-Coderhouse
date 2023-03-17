@@ -30,10 +30,10 @@ socket.on("getCart", (data) => {
     </tr>`;
     });
   } else {
-    data.carts.forEach((cart) => {
+    data.products.forEach((cart) => {
       cartsTableContent.innerHTML += `
       <tr>
-      <td>${cart.id_product}</td>
+      <td>${cart.title} - (id: ${cart.id})</td>
       <td>${cart.quantity}</td>
       </tr>`;
     });

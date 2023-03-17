@@ -37,8 +37,8 @@ class CrudMongoose {
       return [
         {
           ...filter,
-          prevLink: `http://localhost:${PORT}/${page - 1}`,
-          nextlink: `http://localhost:${PORT}/${page + 1}`,
+          prevLink: `http://localhost:${PORT}/products/${page - 1}`,
+          nextlink: `http://localhost:${PORT}/products/${page + 1}`,
         },
       ];
     } else {
@@ -49,13 +49,14 @@ class CrudMongoose {
         {
           limit,
           page,
+          sort: { price: "asc" }
         }
       );
       return [
         {
           ...productsAll,
-          prevLink: `http://localhost:${PORT}/${page - 1}`,
-          nextlink: `http://localhost:${PORT}/${page + 1}`,
+          prevLink: `http://localhost:${PORT}/products/${page - 1}`,
+          nextlink: `http://localhost:${PORT}/products/${page + 1}`,
         },
       ];
     }

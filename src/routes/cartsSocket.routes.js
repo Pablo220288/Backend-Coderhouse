@@ -32,11 +32,20 @@ cartSocketRouter.get("/", async (req, res) => {
           itemQuantity: "Productos",
         });
       } else {
+        let producsInCart = [];
+        for (let i = 0; i < byIdCart.products.length; i++) {
+          let product = {
+            id: byIdCart.products[i]._id._id,
+            title: byIdCart.products[i]._id.title,
+            quantity: byIdCart.products[i].quantity,
+          };
+          producsInCart.push(product);
+        }
         io.sockets.emit("getCart", {
           messaje: "Consulta Exitosa",
           cart: false,
-          carts: byIdCart,
-          itemId: "Id Producto",
+          products: producsInCart,
+          itemId: "Producto",
           itemQuantity: "Cantidad",
         });
       }
@@ -54,7 +63,10 @@ cartSocketRouter.get("/", async (req, res) => {
     });
     //Agregar Producto en Carrito
     socket.on("productInCart", async (data) => {
-      let addProduct = await cartsByMongoose.addProductToCart(data.idCart, data.idProduct);
+      let addProduct = await cartsByMongoose.addProductToCart(
+        data.idCart,
+        data.idProduct
+      );
       io.sockets.emit("productInCart", {
         messaje: addProduct,
         cart: true,

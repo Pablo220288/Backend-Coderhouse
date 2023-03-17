@@ -4,7 +4,6 @@ import cors from "cors";
 import * as path from "path";
 import __dirname from "./utils.js";
 import { engine } from "express-handlebars";
-import ProductManager from "./dao/FileSystem/controllers/ProductManager.js";
 import productRouter from "./routes/product.routes.js";
 import cartRouter from "./routes/carts.routes.js";
 import socketRouter from "./routes/socket.routes.js";
@@ -28,13 +27,13 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-app.use(cookieParser())
+/* app.use(cookieParser())
 app.use(session({
   secret: process.env.sessionSecret,
   resave: false,
   saveUninitialized: true,
   cookie: { secure: true }
-}))
+})) */
 
 //Handlebars
 app.engine(
@@ -62,7 +61,7 @@ server.on("error", (err) => {
 });
 export const io = new Server(server);
 
-//Middleware ChatSocket
+//ChatSocket
 let time = dateShort();
 //Usuarios Conectados
 export let usersChat = [];
@@ -153,4 +152,5 @@ app.use("/chatSocket", chatRouter);
 app.use("/mongoose/products", productMongooseRouter);
 app.use("/mongoose/carts", cartsMongooseRouter);
 app.use("/realTimeCarts", cartSocketRouter);
-app.use("/products", productsRouter);
+app.use("/products", productsRouter)
+

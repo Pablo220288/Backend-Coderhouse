@@ -1,15 +1,15 @@
 import { Schema, model } from "mongoose";
 
 const productInCart = new Schema({
-  id_product: {
-    type: String,
-    index: true,
+  _id: {
+    type: Schema.Types.ObjectId,
+    ref: "Product",
   },
   quantity: Number,
 });
 
 const CartsSchema = new Schema({
-  products: [{ type: Schema.Types.ObjectId, ref: "productModel" }],
+  products: [productInCart],
 });
 
 export const cartsModel = model("Cart", CartsSchema);
