@@ -1,5 +1,15 @@
 <main class="mainHome">
   <h2>Lista de Productos</h2>
+  <div class="filter">
+    <div>
+      <select id="selectCategory" class="form-select">
+        <option selected>Todas las Categorias</option>
+        {{#each category}}
+              <option value={{this}}>{{this}}</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
   <div class="containerCards">
     {{#each products}}
       <div class="cardContainer">

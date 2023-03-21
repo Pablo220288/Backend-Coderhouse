@@ -6,8 +6,8 @@ dotenv.config();
 
 const db = mongoose.connection;
 const connectionMongoose = () => {
-  mongoose.set("strictQuery", true);
   mongoose
+    .set("strictQuery", true)
     .connect(process.env.mongooseAtlas, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -21,6 +21,7 @@ const connectionMongoose = () => {
   db.on("error", (err) => {
     console.log(err);
   });
+
 };
 
 export default connectionMongoose();

@@ -19,8 +19,19 @@ class CrudMongoose {
     let products = await productModel.find();
     return products.find((prod) => prod.id === id);
   };
+  category = async () => {
+    let categorys = await productModel.find({});
+    let selectCategory = [];
+    for (let prodCategory of categorys) {
+      selectCategory.push(prodCategory.category);
+    }
+    let single = new Set(selectCategory);
+    let categorySingle = [...single].sort();
+    return categorySingle;
+  };
 
   findProducts = async (data) => {
+    let category = await this.category();
     if (data) {
       let category =
         data.category === undefined ? {} : { category: data.category };
@@ -39,6 +50,7 @@ class CrudMongoose {
           ...filter,
           prevLink: `http://localhost:${PORT}/products/${page - 1}`,
           nextlink: `http://localhost:${PORT}/products/${page + 1}`,
+          category,
         },
       ];
     } else {
@@ -49,7 +61,7 @@ class CrudMongoose {
         {
           limit,
           page,
-          sort: { price: "asc" }
+          sort: { price: "asc" },
         }
       );
       return [
@@ -57,6 +69,7 @@ class CrudMongoose {
           ...productsAll,
           prevLink: `http://localhost:${PORT}/products/${page - 1}`,
           nextlink: `http://localhost:${PORT}/products/${page + 1}`,
+          category,
         },
       ];
     }

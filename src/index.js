@@ -15,25 +15,45 @@ import productMongooseRouter from "./routes/productMongoose.routes.js";
 import cartsMongooseRouter from "./routes/cartsMongoose.routes.js";
 import cartSocketRouter from "./routes/cartsSocket.routes.js";
 import productsRouter from "./routes/products.routes.js";
+import sessionRouter from "./routes/session.routes.js";
 import { chatModel } from "./dao/Mongoose/models/ChatSchema.js";
-import CrudMongoose from "./dao/Mongoose/controllers/ProductManager.js";
+//import CrudMongoose from "./dao/Mongoose/controllers/ProductManager.js";
+import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import session from "express-session";
+import MongoStore from "connect-mongo";
 
 //Creando Server Express
+const app = express();
 dotenv.config();
 
-const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-/* app.use(cookieParser())
-app.use(session({
-  secret: process.env.sessionSecret,
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-})) */
+
+const skipLog = (req, res) => {
+  let url = req.url;
+  if (url.indexOf("?") > 0) url = url.substr(0, url.indexOf("?"));
+  if (url.match(/(js|jpg|png|ico|css|woff|woff2|eot)$/gi)) {
+    return true;
+  }
+  return false;
+};
+app.use(morgan("dev", { skip: skipLog }));
+app.use(cookieParser());
+app.use(
+  session({
+    store: MongoStore.create({
+      mongoUrl: process.env.mongooseAtlas,
+      mongoOption: { useNewUrlParser: true, useUnifiedTopology: true },
+      ttl: 30,
+    }),
+    secret: process.env.sessionSecret,
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true },
+  })
+);
 
 //Handlebars
 app.engine(
@@ -147,10 +167,10 @@ io.on("connection", (socket) => {
 //Routers
 app.use("/api/products", productRouter);
 app.use("/api/carts", cartRouter);
+app.use("/api/session", sessionRouter);
 app.use("/realTimeProducts", socketRouter);
 app.use("/chatSocket", chatRouter);
 app.use("/mongoose/products", productMongooseRouter);
 app.use("/mongoose/carts", cartsMongooseRouter);
 app.use("/realTimeCarts", cartSocketRouter);
-app.use("/products", productsRouter)
-
+app.use("/products", productsRouter);

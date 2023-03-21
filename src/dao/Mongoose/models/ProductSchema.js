@@ -20,6 +20,7 @@ const ProductSchema = new Schema({
   price: {
     type: Number,
     default: 0,
+    index: true,
   },
   status: {
     type: Boolean,
@@ -27,7 +28,6 @@ const ProductSchema = new Schema({
   },
   category: {
     type: String,
-    //enum:["Romance", "Ilustrado", "Misterio", "Suspenso"],
     require: true,
   },
   thumbnail: String,
