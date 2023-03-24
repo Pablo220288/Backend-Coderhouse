@@ -54,36 +54,15 @@
 .slide-controls label.signup {
   color: #000;
 }
-.slide-controls .slider-tab {
+.slider-tab {
   position: absolute;
   height: 100%;
   width: 50%;
   left: 0;
   z-index: 0;
   border-radius: 5px;
-  background: -webkit-linear-gradient(left, #2966cc, #3bd543);
+  background: -webkit-linear-gradient(left, #88c043, #6d9a36);
   transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-input[type="radio"] {
-  display: none;
-}
-#signup:checked ~ .slider-tab {
-  left: 50%;
-}
-#signup:checked ~ label.signup {
-  color: #fff;
-  cursor: default;
-  user-select: none;
-}
-#signup:checked ~ label.login {
-  color: #000;
-}
-#login:checked ~ label.signup {
-  color: #000;
-}
-#login:checked ~ label.login {
-  cursor: default;
-  user-select: none;
 }
 .wrapper .form-container {
   width: 100%;
@@ -92,6 +71,7 @@ input[type="radio"] {
 .form-container .form-inner {
   display: flex;
   width: 200%;
+  position: relative;
 }
 .form-container .form-inner form {
   width: 50%;
@@ -102,8 +82,10 @@ input[type="radio"] {
   width: 100%;
   margin-top: 20px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .form-inner form .field input {
   height: 100%;
@@ -121,10 +103,51 @@ input[type="radio"] {
 }
 .form-inner form .field input::placeholder {
   color: #999;
+  font-size: 0.8rem;
   transition: all 0.3s ease;
 }
 form .field input:focus::placeholder {
   color: #b3b3b3;
+}
+.form-inner form .field .eyeBtn, .eyeBtnSignup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-inner form .field .eyeBtn::before {
+  content: "\f06e";
+  font-family: fontAwesome;
+}
+.form-inner form .field .eyeBtn.hide::before {
+  content: "\f070";
+}
+.form-inner form .field .eyeBtnSignup::before {
+  content: "\f06e";
+  font-family: fontAwesome;
+}
+.form-inner form .field .eyeBtnSignup.hide::before {
+  content: "\f070";
+}
+.form-inner form .inputsSignup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.form-inner form .ageSignup {
+  flex: 1;
+}
+.form-inner form .emailSignup {
+  flex: 5;
 }
 .form-inner form .pass-link {
   margin-top: 5px;
@@ -142,6 +165,21 @@ form .field input:focus::placeholder {
 .form-inner form .signup-link a:hover {
   text-decoration: underline;
 }
+.messageError, .messageNewUser {
+  position: absolute;
+  bottom: 275px;
+  left: 0;
+  font-size: 0.8rem;
+  color: #ff0000;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.messageNewUser {
+  color: #88c043;
+}
+.signupError{
+  left: 50%;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
 form .btn {
   height: 50px;
   width: 100%;
@@ -156,10 +194,10 @@ form .btn .btn-layer {
   left: -100%;
   background: -webkit-linear-gradient(
     right,
-    #2966cc,
-    #3bd543,
-    #2966cc,
-    #3bd543
+    #88c043,
+    #6d9a36,
+    #88c043,
+    #6d9a36
   );
   border-radius: 5px;
   transition: all 0.4s ease;
@@ -180,4 +218,31 @@ form .btn input[type="submit"] {
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
+}
+.active {
+  .slider-tab {
+    left: 50%;
+  }
+  label.signup {
+    color: #fff;
+    cursor: default;
+    user-select: none;
+    pointer-events: none;
+  }
+  label.login {
+    color: #000;
+    pointer-events: all;
+  }
+  form.login {
+    margin-left: -50%;
+  }
+  .title-text .login {
+    margin-left: -50%;
+  }
+  .messageError, .messageNewUser{
+    left: -50%;
+  }
+  .signupError{
+    left: 0;
+  }
 }

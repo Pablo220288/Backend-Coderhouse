@@ -1162,42 +1162,15 @@ p {
   color: #000;
 }
 
-.slide-controls .slider-tab {
+.slider-tab {
   position: absolute;
   height: 100%;
   width: 50%;
   left: 0;
   z-index: 0;
   border-radius: 5px;
-  background: -webkit-linear-gradient(left, #2966cc, #3bd543);
+  background: -webkit-linear-gradient(left, #88c043, #6d9a36);
   transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-input[type=radio] {
-  display: none;
-}
-
-#signup:checked ~ .slider-tab {
-  left: 50%;
-}
-
-#signup:checked ~ label.signup {
-  color: #fff;
-  cursor: default;
-  user-select: none;
-}
-
-#signup:checked ~ label.login {
-  color: #000;
-}
-
-#login:checked ~ label.signup {
-  color: #000;
-}
-
-#login:checked ~ label.login {
-  cursor: default;
-  user-select: none;
 }
 
 .wrapper .form-container {
@@ -1208,6 +1181,7 @@ input[type=radio] {
 .form-container .form-inner {
   display: flex;
   width: 200%;
+  position: relative;
 }
 
 .form-container .form-inner form {
@@ -1220,8 +1194,10 @@ input[type=radio] {
   width: 100%;
   margin-top: 20px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .form-inner form .field input {
@@ -1242,11 +1218,60 @@ input[type=radio] {
 
 .form-inner form .field input::placeholder {
   color: #999;
+  font-size: 0.8rem;
   transition: all 0.3s ease;
 }
 
 form .field input:focus::placeholder {
   color: #b3b3b3;
+}
+
+.form-inner form .field .eyeBtn, .eyeBtnSignup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-inner form .field .eyeBtn::before {
+  content: "\f06e";
+  font-family: fontAwesome;
+}
+
+.form-inner form .field .eyeBtn.hide::before {
+  content: "\f070";
+}
+
+.form-inner form .field .eyeBtnSignup::before {
+  content: "\f06e";
+  font-family: fontAwesome;
+}
+
+.form-inner form .field .eyeBtnSignup.hide::before {
+  content: "\f070";
+}
+
+.form-inner form .inputsSignup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.form-inner form .ageSignup {
+  flex: 1;
+}
+
+.form-inner form .emailSignup {
+  flex: 5;
 }
 
 .form-inner form .pass-link {
@@ -1269,6 +1294,24 @@ form .field input:focus::placeholder {
   text-decoration: underline;
 }
 
+.messageError, .messageNewUser {
+  position: absolute;
+  bottom: 275px;
+  left: 0;
+  font-size: 0.8rem;
+  color: #ff0000;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.messageNewUser {
+  color: #88c043;
+}
+
+.signupError {
+  left: 50%;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
 form .btn {
   height: 50px;
   width: 100%;
@@ -1282,7 +1325,7 @@ form .btn .btn-layer {
   width: 300%;
   position: absolute;
   left: -100%;
-  background: -webkit-linear-gradient(right, #2966cc, #3bd543, #2966cc, #3bd543);
+  background: -webkit-linear-gradient(right, #88c043, #6d9a36, #88c043, #6d9a36);
   border-radius: 5px;
   transition: all 0.4s ease;
 }
@@ -1304,6 +1347,170 @@ form .btn input[type=submit] {
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
+}
+
+.active .slider-tab {
+  left: 50%;
+}
+.active label.signup {
+  color: #fff;
+  cursor: default;
+  user-select: none;
+  pointer-events: none;
+}
+.active label.login {
+  color: #000;
+  pointer-events: all;
+}
+.active form.login {
+  margin-left: -50%;
+}
+.active .title-text .login {
+  margin-left: -50%;
+}
+.active .messageError, .active .messageNewUser {
+  left: -50%;
+}
+.active .signupError {
+  left: 0;
+}
+
+.navigation {
+  position: fixed;
+  top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+.navigation .menuToggle {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background: #000000;
+  border-radius: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 15px 25px rgba(136, 192, 67, 0.15);
+  cursor: pointer;
+  transition: 1s;
+}
+.navigation .userIcon {
+  content: "+";
+  position: absolute;
+  font-size: 2rem;
+  font-weight: 200;
+  color: rgb(136, 192, 67);
+  transition: 1s;
+}
+.navigation .emailUser {
+  position: absolute;
+  transform: translate(-20px, -2px);
+  color: #e0e0e0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+  transition-delay: 0s;
+}
+.navigation .active {
+  width: 300px;
+}
+.navigation .active .userIcon {
+  transform: translateX(-110px) rotate(360deg);
+}
+.navigation .active .emailUser {
+  transform: translate(10px, -2px);
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.75s;
+}
+.navigation .menu {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #000000;
+  border-radius: 70px;
+  z-index: -1;
+  transition: transform 0.5s, width 0.5s, height 0.5s;
+  transition-delay: 1s, 0.5s, 0.5s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  display: flex;
+}
+.navigation .menu::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: calc(50% - 8px);
+  top: 4px;
+  transform: rotate(45deg);
+  background: #000000;
+  border-radius: 2px;
+  transition: 0.5s;
+}
+.navigation .menu ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  gap: 40px;
+}
+.navigation .menu ul li {
+  list-style: none;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.25s;
+  transition-delay: calc(0s + var(--i));
+  transform: translateY(30px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.navigation .menu ul li a {
+  display: block;
+  font-size: 2em;
+  text-decoration: none;
+  color: #e0e0e0;
+}
+.navigation .menu ul li a:hover {
+  color: #88c043;
+}
+.navigation .menu ul li a:hover ~ span {
+  opacity: 1;
+  visibility: visible;
+  bottom: -3px;
+  color: #e0e0e0;
+}
+.navigation .menu ul li span {
+  font-size: 0.5rem;
+  position: absolute;
+  bottom: -15px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+}
+.navigation .active ~ .menu {
+  width: 240px;
+  height: 70px;
+  z-index: 1;
+  transform: translateY(100px);
+  transition-delay: 0s, 0.5s, 0.5s;
+  box-shadow: 1px 15px 25px rgba(136, 192, 67, 0.15);
+}
+.navigation .active ~ .menu::before {
+  transition-delay: 0.5s;
+  top: -6px;
+}
+.navigation .active ~ .menu ul li {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+  transition-delay: calc(0.75s + var(--i));
 }
 
 .main404 {

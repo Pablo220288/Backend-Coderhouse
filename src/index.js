@@ -4,23 +4,15 @@ import cors from "cors";
 import * as path from "path";
 import __dirname from "./utils.js";
 import { engine } from "express-handlebars";
-import productRouter from "./routes/product.routes.js";
-import cartRouter from "./routes/carts.routes.js";
-import socketRouter from "./routes/socket.routes.js";
-import chatRouter from "./routes/chat.routes.js";
+import router from "./routes/routes.routes.js";
 import { Server } from "socket.io";
 import { dateShort } from "./utils.js";
 import connectionMongoose from "./connection/mongoose.js";
-import productMongooseRouter from "./routes/productMongoose.routes.js";
-import cartsMongooseRouter from "./routes/cartsMongoose.routes.js";
-import cartSocketRouter from "./routes/cartsSocket.routes.js";
-import productsRouter from "./routes/products.routes.js";
-import sessionRouter from "./routes/session.routes.js";
 import { chatModel } from "./dao/Mongoose/models/ChatSchema.js";
-//import CrudMongoose from "./dao/Mongoose/controllers/ProductManager.js";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import session from "express-session";
+import flash from "connect-flash";
 import MongoStore from "connect-mongo";
 
 //Creando Server Express
@@ -30,6 +22,7 @@ dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.use(flash());
 
 const skipLog = (req, res) => {
   let url = req.url;
@@ -46,15 +39,15 @@ app.use(
     store: MongoStore.create({
       mongoUrl: process.env.mongooseAtlas,
       mongoOption: { useNewUrlParser: true, useUnifiedTopology: true },
-      ttl: 30,
+      ttl: 600,
     }),
-    secret: process.env.sessionSecret,
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true },
+    secret: process.env.sessionSecret || "1234567890",
+    resave: true,
+    rolling: true,
+    saveUninitialized: false,
+    cookie: { maxAge: 1000 * 60 * 10 },
   })
 );
-
 //Handlebars
 app.engine(
   "handlebars",
@@ -71,6 +64,9 @@ app.set("views", path.resolve(__dirname + "/views"));
 //Archivos Staticos
 app.use("/", express.static(__dirname + "/public"));
 
+//Routers
+app.use("/", router);
+
 //Creando Loacal host 8080
 export const PORT = process.env.PORT || 8080;
 const server = app.listen(PORT, () =>
@@ -80,7 +76,6 @@ server.on("error", (err) => {
   console.log(`Algo salio mal: ${err}`);
 });
 export const io = new Server(server);
-
 //ChatSocket
 let time = dateShort();
 //Usuarios Conectados
@@ -163,14 +158,3 @@ io.on("connection", (socket) => {
     socket.broadcast.emit("typing", data);
   });
 });
-
-//Routers
-app.use("/api/products", productRouter);
-app.use("/api/carts", cartRouter);
-app.use("/api/session", sessionRouter);
-app.use("/realTimeProducts", socketRouter);
-app.use("/chatSocket", chatRouter);
-app.use("/mongoose/products", productMongooseRouter);
-app.use("/mongoose/carts", cartsMongooseRouter);
-app.use("/realTimeCarts", cartSocketRouter);
-app.use("/products", productsRouter);

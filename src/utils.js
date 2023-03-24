@@ -2,6 +2,10 @@ import multer from "multer";
 import path from "path";
 import { fileURLToPath } from "url";
 import moment from "moment";
+import bcrypt from "bcrypt";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 //__filename && __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -26,3 +30,12 @@ export const dateShort = () => {
   let date = moment().format("HH:mm");
   return date;
 };
+
+//bcrypt
+export const createHash = (password) => 
+  bcrypt.hashSync(password, bcrypt.genSaltSync(12));
+;
+
+export const validatePassword = (passwordSend, passwordDB) => 
+  bcrypt.compareSync(passwordSend, passwordDB)
+;

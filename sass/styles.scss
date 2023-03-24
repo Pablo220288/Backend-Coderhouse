@@ -5,11 +5,12 @@
   src: url("../font/TheScientist-L3EyW.ttf") format("truetype");
 }
 @import "general.scss";
-@import "nav.scss";
-@import "home.scss";
-@import "tabs.scss";
-@import "table.scss";
-@import "cardProduct.scss";
-@import "chat.scss";
-@import "login.scss";
-@import "404.scss";
+@import "components/nav.scss";
+@import "components/home.scss";
+@import "components/tabs.scss";
+@import "components/table.scss";
+@import "components/cardProduct.scss";
+@import "components/chat.scss";
+@import "components/login.scss";
+@import "components/user.scss";
+@import "components/404.scss";

@@ -2,6 +2,7 @@ import CrudMongoose from "../dao/Mongoose/controllers/ProductManager.js";
 import __dirname from "../utils.js";
 import express from "express";
 import { Router } from "express";
+import { userModel } from "../dao/Mongoose/models/UserSchema.js";
 
 const productsRouter = Router();
 const productAll = new CrudMongoose();
@@ -26,12 +27,17 @@ const products = async (options) => {
 productsRouter
   .use("/", express.static(__dirname + "/public"))
   .get("/", async (req, res) => {
-    let data = await products();
-    res.render("home", data);
+    if (req.session.login) {
+      let data = await products();
+      let dataUser = await userModel.find({email: req.session.email})
+      res.render("home", { ...data, nameUser: `${dataUser[0].firstName} ${dataUser[0].lastName}` });
+    } else {
+      return res.status(200).redirect("/api/session");
+    }
   })
   .get("/:page", async (req, res) => {
     let data = await products(req.params);
-    res.render("home", data);
+    res.render("home", { ...data, email: req.session.email });
   });
 
 export default productsRouter;

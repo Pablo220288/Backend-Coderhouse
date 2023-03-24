@@ -1,40 +1,24 @@
 import { Router } from "express";
 import __dirname from "../utils.js";
 import express from "express";
-import { io } from "../index.js";
-import { userModel } from "../dao/Mongoose/models/UserSchema.js";
+import SessionManager from "../dao/Mongoose/controllers/SessionManager.js";
 
 const sessionRouter = Router();
+const session = new SessionManager();
 
 sessionRouter
   .use("/", express.static(__dirname + "/public"))
   .get("/", (req, res, next) => {
-    res.render("home");
+    session.getSession(req, res, next);
   })
-  .get("/login", (req, res, next) => {
-    io.on("connection", (socket) => {
-      socket.on("login", async (data) => {
-        let user = await userModel.findOne({ email: data.email });
-        if (user == null) {
-          io.sockets.emit("login", {
-            messaje: "Email no registrado",
-          });
-        } else if (data.password === user.password) {
-          io.sockets.emit("login", {
-            messaje: "Login exitoso",
-            link: "/products",
-          });
-        } else {
-          io.sockets.emit("login", {
-            messaje: "Password incorrecto",
-          });
-        }
-      });
-    });
-    return res.render("login", {
-      title: "Login | Signup",
-      noNav: true,
-    });
+  .post("/login", (req, res, next) => {
+    session.testLogin(req, res, next);
+  })
+  .post("/register", (req, res, next) => {
+    session.createUser(req, res, next);
+  })
+  .get("/logout", (req, res, next) => {
+    session.destroySession(req, res, next);
   });
 
 export default sessionRouter;

@@ -1,50 +1,61 @@
 <main class="mainLogin">
-  <div class="wrapper">
+  <div
+    {{#if signup}}
+      class="wrapper active"
+    {{else}} 
+      class="wrapper"
+    {{/if}}  id="wrapper">
     <div class="title-text">
       <div class="title login">Login</div>
       <div class="title signup">Signup</div>
     </div>
     <div class="form-container">
       <div class="slide-controls">
-        <input type="radio" name="slide" id="login" checked />
-        <input type="radio" name="slide" id="signup" />
-        <label for="login" class="slide login">Login</label>
-        <label for="signup" class="slide signup">Signup</label>
+        <label for="login" id="slideLogin" class="slide login">Login</label>
+        <label for="signup" id="slideSignup" class="slide signup">Signup</label>
         <div class="slider-tab"></div>
       </div>
       <div class="form-inner">
-        <form id="formLogin" class="login">
+        <form id="formLogin" action="/api/session/login" method="post" class="login">
           <div class="field">
-            <input type="text" placeholder="Email Address"/>
+            <input type="text" name="email" placeholder="Email Address" value={{email}}>
           </div>
           <div class="field">
-            <input type="password" placeholder="Password"/>
+            <input id="passwordLogin" type="password" name="password" placeholder="Password"/>
+            <span class="eyeBtn" id="eyeBtn"></span>
           </div>
           <div class="pass-link">
             <a href="#">Forgot password?</a>
           </div>
           <div class="field btn">
             <div class="btn-layer"></div>
-            <input type="submit" value="Login" />
+            <input type="submit" value="Login"/>
           </div>
+          <label for="login" class="messageError">{{messageLogin}}</label>
+          <label for="newUser" class="messageNewUser">{{messageNewUser}}</label>
           <div class="signup-link">
             Not a member? <a href="">Signup now</a>
           </div>
         </form>
-        <form id="formSignup" class="signup">
-          <div class="field">
-            <input type="text" placeholder="Email Address"/>
+        <form id="formSignup" action="/api/session/register" method="post" class="signup">
+          <div class="field inputsSignup">
+            <input type="text" name="firstName" placeholder="First Name" value={{firstName}}>
+            <input type="text" name="lastName" placeholder="Last Name"value={{lastName}}>
           </div>
-          <div class="field">
-            <input type="password" placeholder="Password"/>
+          <div class="field inputsSignup">
+            <input class="ageSignup" name="age" type="text" placeholder="Age"value={{age}}>
+            <input class="emailSignup" name="emailRegister" type="text" placeholder="Email"value={{emailRegister}}>
           </div>
-          <div class="field">
-            <input type="password" placeholder="Confirm password"/>
+          <div class="field inputsSignup">
+            <input type="password" id="passwordSignup1" name="password" placeholder="Password" maxlength="10"/>
+            <input type="password" id="passwordSignup2" name="passwordConfirm" placeholder="Confirm Pass" maxlength="10"/> 
+            <span class="eyeBtnSignup" id="eyeBtnSignup"></span>
           </div>
           <div class="field btn">
             <div class="btn-layer"></div>
             <input type="submit" value="Signup" />
           </div>
+        <label for="signup" class="messageError signupError">{{messageSignup}}</label>
         </form>
       </div>
     </div>

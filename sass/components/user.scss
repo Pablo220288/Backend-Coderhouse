@@ -1,0 +1,137 @@
+.navigation {
+  position: fixed;
+  top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  .menuToggle {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background: #000000;
+    border-radius: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 15px 25px rgb(136, 192, 67, 0.15);
+    cursor: pointer;
+    transition: 1s;
+  }
+  .userIcon {
+    content: "+";
+    position: absolute;
+    font-size: 2rem;
+    font-weight: 200;
+    color: rgb(136, 192, 67);
+    transition: 1s;
+  }
+  .emailUser {
+    position: absolute;
+    transform: translate(-20px, -2px);
+    color: #e0e0e0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+    transition-delay: 0s;
+  }
+  .active {
+    width: 300px;
+  }
+  .active .userIcon {
+    transform: translateX(-110px) rotate(360deg);
+  }
+  .active .emailUser {
+    transform: translate(10px, -2px);
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.75s;
+  }
+  .menu {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #000000;
+    border-radius: 70px;
+    z-index: -1;
+    transition: transform 0.5s, width 0.5s, height 0.5s;
+    transition-delay: 1s, 0.5s, 0.5s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    display: flex;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      left: calc(50% - 8px);
+      top: 4px;
+      transform: rotate(45deg);
+      background: #000000;
+      border-radius: 2px;
+      transition: 0.5s;
+    }
+    ul {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80px;
+      gap: 40px;
+      li {
+        list-style: none;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.25s;
+        transition-delay: calc(0s + var(--i));
+        transform: translateY(30px);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        a {
+          display: block;
+          font-size: 2em;
+          text-decoration: none;
+          color: #e0e0e0;
+          &:hover {
+            color: #88c043;
+          }
+          &:hover ~ span {
+            opacity: 1;
+            visibility: visible;
+            bottom: -3px;
+            color: #e0e0e0;
+          }
+        }
+        span {
+          font-size: 0.5rem;
+          position: absolute;
+          bottom: -15px;
+          opacity: 0;
+          visibility: hidden;
+          transition: 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+  .active ~ .menu {
+    width: 240px;
+    height: 70px;
+    z-index: 1;
+    transform: translateY(100px);
+    transition-delay: 0s, 0.5s, 0.5s;
+    box-shadow: 1px 15px 25px rgb(136, 192, 67, 0.15);
+  }
+  .active ~ .menu::before {
+    transition-delay: 0.5s;
+    top: -6px;
+  }
+  .active ~ .menu ul li {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+    transition-delay: calc(0.75s + var(--i));
+  }
+}

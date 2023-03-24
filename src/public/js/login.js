@@ -1,49 +1,42 @@
-const loginText = document.querySelector(".title-text .login");
-const loginForm = document.querySelector("form.login");
-const loginBtn = document.querySelector("label.login");
-const signupBtn = document.querySelector("label.signup");
 const signupLink = document.querySelector("form .signup-link a");
-const formLogin = document.getElementById("formLogin");
-const formSignup = document.getElementById("formSignup");
-const socket = io();
+const passwordLogin = document.getElementById("passwordLogin");
+const eyeBtn = document.getElementById("eyeBtn");
+const wrapper = document.getElementById("wrapper");
+const slideLogin = document.getElementById("slideLogin");
+const slideSignup = document.getElementById("slideSignup");
+const eyeBtnSignup = document.getElementById('eyeBtnSignup')
+const passwordSignup1 = document.getElementById('passwordSignup1')
+const passwordSignup2 = document.getElementById('passwordSignup2')
 
-signupBtn.onclick = () => {
-  loginForm.style.marginLeft = "-50%";
-  loginText.style.marginLeft = "-50%";
-};
-loginBtn.onclick = () => {
-  loginForm.style.marginLeft = "0%";
-  loginText.style.marginLeft = "0%";
-};
+eyeBtn.addEventListener("click", () => {
+  if (passwordLogin.type === "password") {
+    passwordLogin.setAttribute("type", "text");
+    eyeBtn.classList.add("hide");
+  } else {
+    passwordLogin.setAttribute("type", "password");
+    eyeBtn.classList.remove("hide");
+  }
+});
+
+eyeBtnSignup.addEventListener("click", () => {
+  if (passwordSignup1.type === "password") {
+    passwordSignup1.setAttribute("type", "text");
+    passwordSignup2.setAttribute("type", "text");
+    eyeBtnSignup.classList.add("hide");
+  } else {
+    passwordSignup1.setAttribute("type", "password");
+    passwordSignup2.setAttribute("type", "password");
+    eyeBtnSignup.classList.remove("hide");
+  }
+});
+
+slideLogin.addEventListener("click", () => {
+  wrapper.classList.toggle("active");
+});
+slideSignup.addEventListener("click", () => {
+  wrapper.classList.toggle("active");
+});
 signupLink.onclick = () => {
-  signupBtn.click();
+  slideSignup.click();
   return false;
 };
-
-formLogin.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let email = e.target[0].value;
-  let password = e.target[1].value;
-  socket.emit("login", {
-    email,
-    password,
-  });
-});
-socket.on("login", (data) => {
-  if (data.link) {
-    setTimeout(() => {
-      window.location.href = `http://localhost:8080${data.link}`
-    },2000);
-  }
-  Toastify({
-    text: data.messaje,
-    className: "info",
-    position: "left",
-    style: {
-      background: "linear-gradient(to right,#2966cc,#3bd543)",
-    }
-  }).showToast();
-});
-formSignup.addEventListener("submit", (e) => {
-  e.preventDefault();
-});
