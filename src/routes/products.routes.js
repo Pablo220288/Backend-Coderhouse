@@ -29,15 +29,24 @@ productsRouter
   .get("/", async (req, res) => {
     if (req.session.login) {
       let data = await products();
-      let dataUser = await userModel.find({email: req.session.email})
-      res.render("home", { ...data, nameUser: `${dataUser[0].firstName} ${dataUser[0].lastName}` });
+      let dataUser = await userModel.find({ email: req.session.email });
+      res.render("home", {
+        ...data,
+        nameUser: `${dataUser[0].firstName} ${dataUser[0].lastName}`,
+        rol: dataUser[0].rol,
+      });
     } else {
       return res.status(200).redirect("/api/session");
     }
   })
   .get("/:page", async (req, res) => {
     let data = await products(req.params);
-    res.render("home", { ...data, email: req.session.email });
+    let dataUser = await userModel.find({ email: req.session.email });
+    res.render("home", {
+      ...data,
+      nameUser: `${dataUser[0].firstName} ${dataUser[0].lastName}`,
+      rol: dataUser[0].rol,
+    });
   });
 
 export default productsRouter;

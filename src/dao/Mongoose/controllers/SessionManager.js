@@ -3,6 +3,7 @@ import { createHash } from "../../../utils.js";
 import { validatePassword } from "../../../utils.js";
 class SessionManager {
   getSession = (req, res, next) => {
+    console.log(req.session);
     try {
       if (req.session.login) {
         return res.status(200).redirect("/products");

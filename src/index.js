@@ -14,6 +14,8 @@ import cookieParser from "cookie-parser";
 import session from "express-session";
 import flash from "connect-flash";
 import MongoStore from "connect-mongo";
+import passport from "passport";
+import initializePassword from "./config/passport.js";
 
 //Creando Server Express
 const app = express();
@@ -48,6 +50,10 @@ app.use(
     cookie: { maxAge: 1000 * 60 * 10 },
   })
 );
+//Passport
+initializePassword()
+app.use(passport.initialize())
+app.use(passport.session())
 //Handlebars
 app.engine(
   "handlebars",
