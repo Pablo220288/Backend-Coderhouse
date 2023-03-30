@@ -1,4 +1,5 @@
-const signupLink = document.querySelector("form .signup-link a");
+const signupLink = document.getElementById("signup-link");
+const loginLink = document.getElementById("login-link");
 const passwordLogin = document.getElementById("passwordLogin");
 const eyeBtn = document.getElementById("eyeBtn");
 const wrapper = document.getElementById("wrapper");
@@ -38,5 +39,9 @@ slideSignup.addEventListener("click", () => {
 });
 signupLink.onclick = () => {
   slideSignup.click();
+  return false;
+};
+loginLink.onclick = () => {
+  slideLogin.click();
   return false;
 };

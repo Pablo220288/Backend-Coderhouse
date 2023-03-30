@@ -32,10 +32,7 @@ export const dateShort = () => {
 };
 
 //bcrypt
-export const createHash = (password) => 
-  bcrypt.hashSync(password, bcrypt.genSaltSync(12));
-;
-
-export const validatePassword = (passwordSend, passwordDB) => 
-  bcrypt.compareSync(passwordSend, passwordDB)
-;
+export const createHash = (password) =>
+  bcrypt.hashSync(password, bcrypt.genSaltSync(parseInt(process.env.salt)));
+export const validatePassword = (passwordSend, passwordDB) =>
+  bcrypt.compareSync(passwordSend, passwordDB);

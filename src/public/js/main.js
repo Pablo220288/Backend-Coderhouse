@@ -69,7 +69,6 @@ const alertVacio = () => {
 
 openCarritoXs.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log(carrito.length);
   carrito.length === 0
     ? alertVacio()
     : modalCarrito.classList.add("modal_show");

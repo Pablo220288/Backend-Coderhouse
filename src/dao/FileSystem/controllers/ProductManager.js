@@ -33,7 +33,6 @@ class ProductManager {
   }
   getProducts = async (limit) => {
     let allBooks = await this.readProducts();
-    console.log(allBooks)
     if (!limit) return allBooks;
     let bookFilter = allBooks.slice(0, parseInt(limit));
     return bookFilter;

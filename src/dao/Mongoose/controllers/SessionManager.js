@@ -3,9 +3,8 @@ import { createHash } from "../../../utils.js";
 import { validatePassword } from "../../../utils.js";
 class SessionManager {
   getSession = (req, res, next) => {
-    console.log(req.session);
     try {
-      if (req.session.login) {
+      if (req.isAuthenticated() && req.session.login) {
         return res.status(200).redirect("/products");
       } else {
         let register = req.session.register;
@@ -58,31 +57,24 @@ class SessionManager {
   };
   createUser = async (req, res, next) => {
     try {
-      const {
-        firstName,
-        lastName,
-        age,
-        emailRegister,
-        password,
-        passwordConfirm,
-      } = req.body;
+      const { firstName, lastName, age, email, password, passwordConfirm } =
+        req.body;
       req.session.messageErrorLogin = "";
       req.session.messageNewUser = "";
       req.session.register = {
         firstName,
         lastName,
         age,
-        emailRegister,
+        emailRegister: email,
         password,
         passwordConfirm,
       };
-      let user = await userModel.findOne({ email: emailRegister });
-
+      let user = await userModel.findOne({ email: email });
       if (
         !firstName ||
         !lastName ||
         !age ||
-        !emailRegister ||
+        !email ||
         !password ||
         !passwordConfirm
       ) {
@@ -92,12 +84,12 @@ class SessionManager {
       } else if (user != null) {
         req.session.messageErrorSignup = "Registered User. Log in..";
         req.session.signup = true;
-        req.session.email = emailRegister;
+        req.session.email = email;
         return res.status(200).redirect("/api/session");
       } else if (password != passwordConfirm) {
         req.session.messageErrorSignup = "Password do not match, check again..";
         req.session.signup = true;
-        req.session.email = emailRegister;
+        req.session.email = email;
         return res.status(200).redirect("/api/session");
       } else {
         let passEncripted = createHash(password);
@@ -105,13 +97,13 @@ class SessionManager {
           firstName: firstName,
           lastName: lastName,
           age: parseInt(age),
-          email: emailRegister,
+          email: email,
           password: passEncripted,
         };
         await userModel.create(newUser);
         req.session.messageErrorSignup = "";
         req.session.signup = false;
-        req.session.email = emailRegister;
+        req.session.email = email;
         req.session.messageNewUser = "You are registered. Log in..";
         return res.status(200).redirect("/api/session");
       }

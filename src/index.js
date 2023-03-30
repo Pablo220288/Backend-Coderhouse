@@ -50,10 +50,12 @@ app.use(
     cookie: { maxAge: 1000 * 60 * 10 },
   })
 );
+app.use(flash());
 //Passport
-initializePassword()
-app.use(passport.initialize())
-app.use(passport.session())
+initializePassword();
+app.use(passport.initialize());
+app.use(passport.session());
+
 //Handlebars
 app.engine(
   "handlebars",

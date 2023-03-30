@@ -9,6 +9,7 @@ import cartSocketRouter from "./cartsSocket.routes.js";
 import productsRouter from "./products.routes.js";
 import sessionRouter from "./session.routes.js";
 import usersRouter from "./users.routes.js";
+import githubRouter from "./github.routes.js";
 
 const router = Router();
 
@@ -22,6 +23,7 @@ router
   .use("/mongoose/carts", cartsMongooseRouter)
   .use("/realTimeCarts", cartSocketRouter)
   .use("/products", productsRouter)
-  .use("/users", usersRouter);
+  .use("/users", usersRouter)
+  .use("/session", githubRouter);
 
 export default router;
