@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { dateShort } from "../utils.js";
+import { dateShort } from "../../utils/dateShort.js";
 import { usersChat } from "../index.js";
 import { chatModel } from "../dao/Mongoose/models/ChatSchema.js";
 

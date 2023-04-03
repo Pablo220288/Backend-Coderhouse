@@ -6,7 +6,7 @@ import __dirname from "./utils.js";
 import { engine } from "express-handlebars";
 import router from "./routes/routes.routes.js";
 import { Server } from "socket.io";
-import { dateShort } from "./utils.js";
+import { dateShort } from "../utils/dateShort.js";
 import connectionMongoose from "./connection/mongoose.js";
 import { chatModel } from "./dao/Mongoose/models/ChatSchema.js";
 import morgan from "morgan";
@@ -35,7 +35,7 @@ const skipLog = (req, res) => {
   return false;
 };
 app.use(morgan("dev", { skip: skipLog }));
-app.use(cookieParser());
+app.use(cookieParser(process.env.JWT_PRIVATE_KEY));
 app.use(
   session({
     store: MongoStore.create({

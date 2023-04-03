@@ -1,62 +1,92 @@
-import dotenv from "dotenv";
 import local from "passport-local";
 import passport from "passport";
 import { userModel } from "../dao/Mongoose/models/UserSchema.js";
-import { createHash, validatePassword } from "../utils.js";
+import { createHash, validatePassword } from "../../utils/bcrypt.js";
 import GitHubStrategy from "passport-github2";
 import FacebookStrategy from "passport-facebook";
+import jwt from "passport-jwt";
+import { generateToken } from "../../utils/jwt.js";
 
-dotenv.config();
 const LocarStrategy = local.Strategy;
+const JWTStrategy = jwt.Strategy;
+const ExtractJWT = jwt.ExtractJwt;
 
 const initializePassword = () => {
-  passport.use(
-    "register",
-    new LocarStrategy(
-      { passReqToCallback: true, usernameField: "email" },
-      async (req, username, password, done) => {
-        try {
-          const { firstName, lastName, age, passwordConfirm } = req.body;
-          req.session.register = {
-            firstName,
-            lastName,
-            age,
-            emailRegister: username,
-          };
-          let user = await userModel.findOne({ email: username });
-          if (user) {
-            req.session.signup = true;
-            req.session.email = username;
-            req.session.messageErrorSignup = "Registered User. Log in..";
-            return done(null, false);
+  const cookieExtractor = (req) => {
+    const token = req && req.cookies ? req.cookies("jwtCookies") : null;
+    return token
+  };
+
+  passport
+    .use(
+      "jwt",
+      new JWTStrategy(
+        {
+          jwtFromRequest: ExtractJWT.fromExtractors([cookieExtractor]),
+          secretOrKey: process.env.JWT_PRIVATE_KEY,
+        },
+        async (jwt_payload, done) => {
+          try {
+            return done(null, jwt_payload);
+          } catch (error) {
+            return done(error);
           }
-          if (password != passwordConfirm) {
-            req.session.signup = true;
-            req.session.email = "";
-            req.session.messageErrorSignup =
-              "Password do not match, check again..";
-            return done(null, false);
-          }
-          let passHash = createHash(password);
-          let newUser = await userModel.create({
-            firstName: firstName,
-            lastName: lastName,
-            age: parseInt(age),
-            email: username,
-            password: passHash,
-          });
-          req.session.signup = false;
-          req.session.email = username;
-          req.session.messageNewUser = "You are registered. Log in..";
-          return done(null, newUser);
-        } catch (error) {
-          return done(error);
         }
-      }
+      )
     )
-  );
+
+    .use(
+      "register",
+      new LocarStrategy(
+        { passReqToCallback: true, usernameField: "email" },
+        async (req, username, password, done) => {
+          try {
+            const { firstName, lastName, age, passwordConfirm } = req.body;
+            req.session.register = {
+              firstName,
+              lastName,
+              age,
+              emailRegister: username,
+            };
+            let user = await userModel.findOne({ email: username });
+            if (user) {
+              req.session.signup = true;
+              req.session.email = username;
+              req.session.messageErrorSignup = "Registered User. Log in..";
+              return done(null, false);
+            }
+            if (password != passwordConfirm) {
+              req.session.signup = true;
+              req.session.email = "";
+              req.session.messageErrorSignup =
+                "Password do not match, check again..";
+              return done(null, false);
+            }
+            let passHash = createHash(password);
+            let newUser = await userModel.create({
+              firstName: firstName,
+              lastName: lastName,
+              age: parseInt(age),
+              email: username,
+              password: passHash,
+            });
+            req.session.signup = false;
+            req.session.email = username;
+            req.session.messageNewUser = "You are registered. Log in..";
+
+            const accessToken = generateToken(newUser);
+            return done(null, accessToken);
+          } catch (error) {
+            return done(error);
+          }
+        }
+      )
+    );
 
   passport.serializeUser((user, done) => {
+    if (Array.isArray(user)) {
+      done(null, user[0]._id);
+    }
     done(null, user._id);
   });
 
@@ -80,6 +110,8 @@ const initializePassword = () => {
               return done(null, false);
             }
             if (validatePassword(password, user.password)) {
+              const accessToken = generateToken(user);
+              console.log(accessToken);
               return done(null, user);
             }
             req.session.signup = false;
@@ -125,7 +157,7 @@ const initializePassword = () => {
           }
         }
       )
-    )
+    );
 };
 
 export default initializePassword;

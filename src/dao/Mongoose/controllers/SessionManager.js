@@ -1,6 +1,5 @@
 import { userModel } from "../models/UserSchema.js";
-import { createHash } from "../../../utils.js";
-import { validatePassword } from "../../../utils.js";
+import { createHash, validatePassword } from "../../../../utils/bcrypt.js";
 class SessionManager {
   getSession = (req, res, next) => {
     try {

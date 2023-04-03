@@ -50,6 +50,12 @@ sessionRouter
   )
   .get("/logout", (req, res, next) => {
     session.destroySession(req, res, next);
-  });
+  })
+  .get(
+    "/jwt",
+    passport.authenticate("jwt", { session: false }, (req, res) => {
+      res.status(200).send(req.user);
+    })
+  );
 
 export default sessionRouter;

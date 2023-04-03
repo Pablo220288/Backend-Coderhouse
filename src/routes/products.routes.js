@@ -29,7 +29,7 @@ productsRouter
   .get("/", async (req, res) => {
     if (req.isAuthenticated()) {
       let data = await products();
-      req.session.login = true
+      req.session.login = true;
       let dataUser = await userModel.findById(req.session.passport.user).exec();
       res.render("home", {
         ...data,
