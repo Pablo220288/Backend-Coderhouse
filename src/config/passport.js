@@ -1,9 +1,7 @@
 import local from "passport-local";
 import passport from "passport";
-import { userModel } from "../dao/Mongoose/models/UserSchema.js";
-import { createHash, validatePassword } from "../../utils/bcrypt.js";
+import userModel from "../dao/Mongoose/models/UserSchema.js";
 import GitHubStrategy from "passport-github2";
-import FacebookStrategy from "passport-facebook";
 import jwt from "passport-jwt";
 import { generateToken } from "../../utils/jwt.js";
 
@@ -14,7 +12,7 @@ const ExtractJWT = jwt.ExtractJwt;
 const initializePassword = () => {
   const cookieExtractor = (req) => {
     const token = req && req.cookies ? req.cookies("jwtCookies") : null;
-    return token
+    return token;
   };
 
   passport
@@ -62,20 +60,19 @@ const initializePassword = () => {
                 "Password do not match, check again..";
               return done(null, false);
             }
-            let passHash = createHash(password);
+            //let passHash = createHash(password);
             let newUser = await userModel.create({
               firstName: firstName,
               lastName: lastName,
               age: parseInt(age),
               email: username,
-              password: passHash,
+              password: await userModel.encryptPassword(password),
             });
             req.session.signup = false;
             req.session.email = username;
             req.session.messageNewUser = "You are registered. Log in..";
-
-            const accessToken = generateToken(newUser);
-            return done(null, accessToken);
+            //const accessToken = generateToken(newUser);
+            return done(null, false);
           } catch (error) {
             return done(error);
           }
@@ -101,7 +98,6 @@ const initializePassword = () => {
       new LocarStrategy(
         { passReqToCallback: true, usernameField: "email" },
         async (req, username, password, done) => {
-          console.log(req.session);
           try {
             let user = await userModel.findOne({ email: username });
             if (user == null) {
@@ -109,9 +105,9 @@ const initializePassword = () => {
               req.session.messageErrorLogin = "Invalid email";
               return done(null, false);
             }
-            if (validatePassword(password, user.password)) {
+            if (await userModel.comparePassword(password, user.password)) {
               const accessToken = generateToken(user);
-              console.log(accessToken);
+              //console.log(accessToken);
               return done(null, user);
             }
             req.session.signup = false;

@@ -2,7 +2,7 @@ import CrudMongoose from "../dao/Mongoose/controllers/ProductManager.js";
 import __dirname from "../utils.js";
 import express from "express";
 import { Router } from "express";
-import { userModel } from "../dao/Mongoose/models/UserSchema.js";
+import userModel from "../dao/Mongoose/models/UserSchema.js";
 
 const productsRouter = Router();
 const productAll = new CrudMongoose();

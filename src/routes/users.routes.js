@@ -1,6 +1,6 @@
 import { Router } from "express";
 import passport from "passport";
-import { userModel } from "../dao/Mongoose/models/UserSchema.js";
+import userModel from "../dao/Mongoose/models/UserSchema.js";
 
 const usersRouter = Router();
 
