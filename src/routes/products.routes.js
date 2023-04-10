@@ -90,10 +90,15 @@ productsRouter
           let products = await cartProduct(idCart);
           io.sockets.emit("deleteProductToCart", products);
         });
+        socket.on("emptyCart", async () => {
+          await carts.emptycart(idCart);
+          let products = await cartProduct(idCart);
+          io.sockets.emit("emptyCart", products);
+        });
       });
     } else {
       return res.status(200).redirect("/api/session");
     }
-  })
+  });
 
 export default productsRouter;

@@ -1,0 +1,47 @@
+$combinations: ((1, 5), (2, 6), (3, 7), (4, 8));
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+@each $pos in $combinations {
+  .load2 path:nth-of-type(#{nth($pos, 1)}),
+  .load2 path:nth-of-type(#{nth($pos, 2)}) {
+    animation: spin_full 2s linear infinite;
+  }
+}
+.pre path {
+  transform-origin: center;
+  transform-box: fill-box;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+@keyframes spin_full {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  background: #ffffff;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  clip-path: circle(150% at 100% 100%);
+  transition: clip-path 1s ease-in-out;
+}
+.loader-hide {
+  clip-path: circle(0% at 100% 100%);
+}

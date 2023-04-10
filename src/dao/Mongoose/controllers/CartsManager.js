@@ -93,6 +93,12 @@ class CartMongooseManager {
       return `Producto eliminado del Carrito.`;
     }
   };
+  emptycart = async (id) => {
+    let cart = await this.existCarts(id);
+    if (!cart) return "Carrito no Encontrado";
+    await cartsModel.findByIdAndUpdate(id, { products: [] });
+    return "Carrito Vaciado Exitosamente";
+  };
 }
 
 export default CartMongooseManager;
