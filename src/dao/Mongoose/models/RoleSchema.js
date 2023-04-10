@@ -2,9 +2,9 @@ import { Schema, model } from "mongoose";
 
 const RoleSchema = new Schema(
   {
-    name: { type: String },
+    name: { type: String, default: "User" },
     description: { type: String },
-    permissiond: { type: String },
+    permissions: { type: String },
   },
   {
     versionKey: false,

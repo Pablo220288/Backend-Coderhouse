@@ -2,7 +2,7 @@
   <nav class="nav">
     <div class="navContainer">
       <div class="logo">
-        <img src="img/nodejs.png" alt="Node.JS" />
+        <img src="/img/nodejs.png" alt="Node.JS" />
       </div>
       <div class="menu">
         <a href="#home" data-url="home" class="menu active"
@@ -51,10 +51,74 @@
         name="close-outline"
       ></ion-icon>
       <!--Contenedor del Carrito-->
-      <div id="conten-carrito"></div>
+      <div class="conten-carrito">
+        <ul class="cardPrevius" id="cardPrevius">
+          {{#if emptyCart}}
+            <div class="preloader">
+            	<svg class="cart" role="img" aria-label="Shopping cart line animation" viewBox="0 0 128 128" width="128px" height="128px" xmlns="http://www.w3.org/2000/svg">
+            		<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
+            			<g class="cart__track" stroke="hsla(0,10%,10%,0.1)">
+            				<polyline points="4,4 21,4 26,22 124,22 112,64 35,64 39,80 106,80" />
+            				<circle cx="43" cy="111" r="13" />
+            				<circle cx="102" cy="111" r="13" />
+            			</g>
+            			<g class="cart__lines" stroke="currentColor">
+            				<polyline class="cart__top" points="4,4 21,4 26,22 124,22 112,64 35,64 39,80 106,80" stroke-dasharray="338 338" stroke-dashoffset="-338" />
+            				<g class="cart__wheel1" transform="rotate(-90,43,111)">
+            					<circle class="cart__wheel-stroke" cx="43" cy="111" r="13" stroke-dasharray="81.68 81.68" stroke-dashoffset="81.68" />
+            				</g>
+            				<g class="cart__wheel2" transform="rotate(90,102,111)">
+            					<circle class="cart__wheel-stroke" cx="102" cy="111" r="13" stroke-dasharray="81.68 81.68" stroke-dashoffset="81.68" />
+            				</g>
+            			</g>
+            		</g>
+            	</svg>
+            	<div class="preloader__text">
+            		<p class="preloader__msg">Empty Cart</p>
+            	</div>
+            </div>
+          {{else}}
+            {{#each cartsProducts}}
+              <li class="cardPreviusItems">
+                 <div class="img-info">
+                  <img
+                    alt={{this.title}}
+                    class="imgCartPrevius"
+                    src={{this.thumbnail}}
+                  ></img>
+                  <div class="infoPrevius">
+                    <p class="infoTitle">{{this.title}}</p>
+                    <p class="infoCant">
+                      <strong>{{this.quantity}} </strong>x<strong> {{this.price}}</strong>
+                    </p>
+                    <div class="infoFin">
+                      <p class="fin">
+                        <strong>12</strong> pagos con
+                      </p>
+                      <img class="visa" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Visa_Logo.png/640px-Visa_Logo.png" alt="Visa"></img>
+                    </div>
+                  </div>
+                </div>
+                <div class="delete-price">
+                  <div class="cartDelete" id="cartDelete" data-id={{this.id}}>
+                    <ion-icon name="trash-outline"></ion-icon>
+                  </div>
+                  <div class="price-conten">
+                    <p>$</p>
+                    <p class="price">{{this.totalPrice}}</p>
+                  </div>
+                </div>
+              </li>
+            {{/each}}
+          {{/if}}
+        </ul>
+      </div>
       <div class="total-carrito">
         <p class="total-text">Total Carrito:</p>
-        <p id="total_carrito">$</p>
+          <div class="price-conten">
+            <p>$</p>
+            <p class="price" id="totalCart">{{totalCart}}</p>
+          </div>
       </div>
       <div class="buttons-carrito">
         <button class="vaciar" id="vaciar-carrito">

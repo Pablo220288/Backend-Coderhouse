@@ -10,6 +10,7 @@ import productsRouter from "./products.routes.js";
 import sessionRouter from "./session.routes.js";
 import usersRouter from "./users.routes.js";
 import githubRouter from "./github.routes.js";
+import error404Router from "./error404.routes.js";
 
 const router = Router();
 
@@ -24,6 +25,7 @@ router
   .use("/realTimeCarts", cartSocketRouter)
   .use("/products", productsRouter)
   .use("/users", usersRouter)
-  .use("/session", githubRouter);
+  .use("/session", githubRouter)
+  .use("*", error404Router);
 
 export default router;

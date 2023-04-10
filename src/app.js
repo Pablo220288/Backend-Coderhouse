@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 import express from "express";
+import { createRoles } from "./libs/roleSetup.js";
 import cors from "cors";
 import * as path from "path";
 import __dirname from "./utils.js";
@@ -16,6 +17,9 @@ import initializePassword from "./config/passport.js";
 
 //Creando Server Express
 const app = express();
+
+//Creando Roles
+createRoles();
 
 //Configuracion de variables de entorno
 dotenv.config();
@@ -41,11 +45,11 @@ app.use(cookieParser(process.env.JWT_PRIVATE_KEY));
 app.use(
   session({
     store: MongoStore.create({
-      mongoUrl: process.env.mongooseAtlas,
+      mongoUrl: process.env.MOONGOOSE_ATLAS_URL,
       mongoOption: { useNewUrlParser: true, useUnifiedTopology: true },
       ttl: 600,
     }),
-    secret: process.env.sessionSecret || "1234567890",
+    secret: process.env.SESSION_SECRET,
     resave: true,
     rolling: true,
     saveUninitialized: false,

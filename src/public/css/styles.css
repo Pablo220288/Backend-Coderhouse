@@ -307,64 +307,75 @@ p {
   font-size: 1.5rem;
   cursor: pointer;
 }
-.modal-carrito .modal-container #conten-carrito {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  margin-bottom: 15px;
-  height: 240px;
-  overflow: scroll;
-}
-.modal-carrito .modal-container #conten-carrito .item-carrito {
+.modal-carrito .modal-container .conten-carrito {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-right: 15px;
-}
-.modal-carrito .modal-container #conten-carrito .item-carrito .vino_img_carrito {
-  width: 80px;
-}
-.modal-carrito .modal-container #conten-carrito .item-carrito .datos-item {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10px;
-}
-.modal-carrito .modal-container #conten-carrito .item-carrito .datos-item .precio-item {
-  font-size: 1rem;
-  font-style: italic;
-}
-.modal-carrito .modal-container #conten-carrito .item-carrito .datos-item .cant-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-}
-.modal-carrito .modal-container #conten-carrito .item-carrito .datos-item .cant-item p {
-  flex: 1;
-}
-.modal-carrito .modal-container #conten-carrito .item-carrito .datos-item .cant-item .cant-carrito {
-  flex: 1;
+  margin: auto;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  max-height: 246px;
+  overflow: scroll;
+  text-transform: capitalize;
+}
+.modal-carrito .modal-container .conten-carrito .cardPrevius {
+  width: 100%;
+  padding: 0 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  gap: 10px;
 }
-.modal-carrito .modal-container #conten-carrito .item-carrito .datos-item .cant-item .cant-carrito .arrow-carrito {
-  cursor: pointer;
-  font-size: 1.1rem;
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5px;
 }
-.modal-carrito .modal-container #conten-carrito .item-carrito .datos-item .cant-item .cant-carrito .arrow-carrito:hover {
-  color: #88c043;
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .img-info {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
 }
-.modal-carrito .modal-container #conten-carrito .item-carrito .datos-item .delete-item {
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .img-info .imgCartPrevius {
+  width: 80px;
+}
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .img-info .infoPrevius {
+  justify-self: flex-start;
+}
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .img-info .infoPrevius .infoTitle {
+  font-weight: bold;
+}
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .img-info .infoPrevius .infoCant {
+  font-size: 0.8rem;
+  color: #6c6c6c;
+}
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .img-info .infoPrevius .infoFin {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .img-info .infoPrevius .infoFin .fin {
+  font-size: 0.8rem;
+}
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .img-info .infoPrevius .infoFin .visa {
+  width: 30px;
+}
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .delete-price {
+  width: 90px;
+  display: flex;
+  justify-content: space-between;
+}
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .delete-price .cartDelete {
   font-size: 1.2rem;
-  transition: color 300ms ease;
+  cursor: pointer;
+  transition: 0.4s;
 }
-.modal-carrito .modal-container #conten-carrito .item-carrito .datos-item .delete-item:hover {
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .delete-price .cartDelete:hover {
   color: #88c043;
 }
 .modal-carrito .modal-container .total-carrito {
@@ -425,6 +436,19 @@ p {
 .modal-carrito .modal-container .buttons-carrito .vaciar:hover .button-text,
 .modal-carrito .modal-container .buttons-carrito .comprar:hover .button-text {
   opacity: 1;
+}
+
+.price-conten {
+  display: flex;
+  font-weight: bold;
+  gap: 1px;
+}
+.price-conten p {
+  font-size: 0.8rem;
+}
+.price-conten .price {
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .modal_show {
@@ -1554,8 +1578,209 @@ form .btn input[type=submit] {
   align-items: center;
   gap: 10px;
 }
-.main404 .gif404 {
-  width: 400px;
+.main404 .gif {
+  background-image: url("https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif");
+  background-position: center;
+  background-size: cover, contain;
+  height: 300px;
+  width: 550px;
+  position: relative;
+  margin-bottom: 40px;
+}
+.main404 .gif .errorNumber {
+  position: absolute;
+  bottom: -55px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 5rem;
+  font-weight: bold;
+}
+.main404 .errorMessage {
+  text-align: center;
+}
+.main404 .box__button {
+  display: block;
+  position: relative;
+  background: #88c043;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  line-height: 50px;
+  font-size: 1.2rem;
+  padding: 0 30px;
+  white-space: nowrap;
+  transition: background 0.5s ease;
+  overflow: hidden;
+  mask-image: -webkit-radial-gradient(white, black);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+.main404 .box__button:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 100px;
+  background: #ffffff;
+  bottom: -25px;
+  left: 0;
+  border: 2px solid #ffffff;
+  transform: translateX(-50px) rotate(45deg);
+  transition: transform 0.5s ease;
+}
+.main404 .box__button:hover {
+  background: transparent;
+  border-color: #88c043;
+  color: #88c043;
+}
+.main404 .box__button:hover::before {
+  transform: translateX(250px) rotate(45deg);
+}
+
+:root {
+  --hue: 223;
+  --bg: hsl(var(--hue), 10%, 90%);
+  --fg: hsl(var(--hue), 10%, 10%);
+  --primary: hsl(87, 50%, 51%);
+  --trans-dur: 0.3s;
+  font-size: calc(16px + 4 * (100vw - 320px) / 960);
+}
+
+.preloader {
+  text-align: center;
+  max-width: 20em;
+  width: 100%;
+}
+
+.preloader__text {
+  position: relative;
+  height: 1.5em;
+}
+
+.preloader__msg {
+  animation: msg 0.3s 13.7s linear forwards;
+  position: absolute;
+  width: 100%;
+}
+
+.preloader__msg--last {
+  animation-direction: reverse;
+  animation-delay: 14s;
+  visibility: hidden;
+}
+
+.cart {
+  display: block;
+  margin: 0 auto 1.5em auto;
+  width: 8em;
+  height: 8em;
+}
+
+.cart__lines,
+.cart__top,
+.cart__wheel1,
+.cart__wheel2,
+.cart__wheel-stroke {
+  animation: cartLines 2s ease-in-out infinite;
+}
+
+.cart__lines {
+  stroke: var(--primary);
+}
+
+.cart__top {
+  animation-name: cartTop;
+}
+
+.cart__wheel1 {
+  animation-name: cartWheel1;
+  transform: rotate(-0.25turn);
+  transform-origin: 43px 111px;
+}
+
+.cart__wheel2 {
+  animation-name: cartWheel2;
+  transform: rotate(0.25turn);
+  transform-origin: 102px 111px;
+}
+
+.cart__wheel-stroke {
+  animation-name: cartWheelStroke;
+}
+
+.cart__track {
+  stroke: hsla(var(--hue), 10%, 10%, 0.1);
+  transition: stroke var(--trans-dur);
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: hsl(var(--hue), 10%, 10%);
+    --fg: hsl(var(--hue), 10%, 90%);
+  }
+  .cart__track {
+    stroke: hsla(var(--hue), 10%, 90%, 0.1);
+  }
+}
+/* Animations */
+@keyframes msg {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  99.9% {
+    opacity: 0;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes cartLines {
+  from, to {
+    opacity: 0;
+  }
+  8%, 92% {
+    opacity: 1;
+  }
+}
+@keyframes cartTop {
+  from {
+    stroke-dashoffset: -338;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 338;
+  }
+}
+@keyframes cartWheel1 {
+  from {
+    transform: rotate(-0.25turn);
+  }
+  to {
+    transform: rotate(2.75turn);
+  }
+}
+@keyframes cartWheel2 {
+  from {
+    transform: rotate(0.25turn);
+  }
+  to {
+    transform: rotate(3.25turn);
+  }
+}
+@keyframes cartWheelStroke {
+  from, to {
+    stroke-dashoffset: 81.68;
+  }
+  50% {
+    stroke-dashoffset: 40.84;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

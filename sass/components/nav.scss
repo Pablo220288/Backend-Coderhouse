@@ -253,61 +253,72 @@
       font-size: 1.5rem;
       cursor: pointer;
     }
-    #conten-carrito {
+    .conten-carrito {
+      width: 100%;
+      margin: auto;
       display: flex;
-      flex-direction: column;
-      justify-content: start;
-      align-items: center;
+      justify-content: center;
+      align-items: flex-start;
       margin-bottom: 15px;
-      height: 240px;
+      max-height: 246px;
       overflow: scroll;
-      .item-carrito {
+      text-transform: capitalize;
+      .cardPrevius {
         width: 100%;
+        padding: 0 10px 0 0;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: flex-start;
         align-items: center;
-        padding-right: 15px;
-        .vino_img_carrito {
-          width: 80px;
-        }
-        .datos-item {
+        gap: 10px;
+        .cardPreviusItems {
           width: 100%;
+          list-style: none;
           display: flex;
           justify-content: space-between;
-          align-items: center;
-          padding: 0 10px;
-          .precio-item {
-            font-size: 1rem;
-            font-style: italic;
-          }
-          .cant-item {
+          align-items: flex-start;
+          padding: 5px;
+          .img-info {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 50px;
-            height: 50px;
-            p {
-              flex: 1;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 15px;
+            .imgCartPrevius {
+              width: 80px;
             }
-            .cant-carrito {
-              flex: 1;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              .arrow-carrito {
-                cursor: pointer;
-                font-size: 1.1rem;
-                &:hover {
-                  color: $colorIndex;
+            .infoPrevius {
+              justify-self: flex-start;
+              .infoTitle {
+                font-weight: bold;
+              }
+              .infoCant {
+                font-size: 0.8rem;
+                color: #6c6c6c;
+              }
+              .infoFin {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                .fin {
+                  font-size: 0.8rem;
+                }
+                .visa {
+                  width: 30px;
                 }
               }
             }
           }
-          .delete-item {
-            font-size: 1.2rem;
-            transition: color 300ms ease;
-            &:hover {
-              color: $colorIndex;
+          .delete-price {
+            width: 90px;
+            display: flex;
+            justify-content: space-between;
+            .cartDelete {
+              font-size: 1.2rem;
+              cursor: pointer;
+              transition: 0.4s;
+              &:hover {
+                color: $colorIndex;
+              }
             }
           }
         }
@@ -369,6 +380,18 @@
         }
       }
     }
+  }
+}
+.price-conten {
+  display: flex;
+  font-weight: bold;
+  gap: 1px;
+  p {
+    font-size: 0.8rem;
+  }
+  .price {
+    font-size: 1rem;
+    font-weight: bold;
   }
 }
 .modal_show {

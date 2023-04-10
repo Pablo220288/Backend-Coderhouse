@@ -3,6 +3,8 @@ import __dirname from "../utils.js";
 import express from "express";
 import SessionManager from "../dao/Mongoose/controllers/SessionManager.js";
 import passport from "passport";
+import { passportCall } from "../../utils/passportCall.js";
+import { authorizationRole } from "../../utils/role.js";
 
 const sessionRouter = Router();
 const session = new SessionManager();
@@ -15,7 +17,7 @@ sessionRouter
   .post(
     "/login",
     passport.authenticate("login", {
-      successRedirect: "/products",
+      successRedirect: "/products/1",
       failureRedirect: "/api/session",
       passReqToCallback: true,
       failureFlash: true,
@@ -56,6 +58,14 @@ sessionRouter
     passport.authenticate("jwt", { session: false }, (req, res) => {
       res.status(200).send(req.user);
     })
+  )
+  .get(
+    "/current",
+    passportCall("jwt"),
+    authorizationRole("User"),
+    (req, res) => {
+      res.send(req.user);
+    }
   );
 
 export default sessionRouter;

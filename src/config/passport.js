@@ -3,7 +3,7 @@ import passport from "passport";
 import userModel from "../dao/Mongoose/models/UserSchema.js";
 import GitHubStrategy from "passport-github2";
 import jwt from "passport-jwt";
-import { generateToken } from "../../utils/jwt.js";
+import { roleModel } from "../dao/Mongoose/models/RoleSchema.js";
 
 const LocarStrategy = local.Strategy;
 const JWTStrategy = jwt.Strategy;
@@ -11,7 +11,7 @@ const ExtractJWT = jwt.ExtractJwt;
 
 const initializePassword = () => {
   const cookieExtractor = (req) => {
-    const token = req && req.cookies ? req.cookies("jwtCookies") : null;
+    const token = req.cookies ? req.cookies.jwtCookie : {};
     return token;
   };
 
@@ -32,14 +32,14 @@ const initializePassword = () => {
         }
       )
     )
-
     .use(
       "register",
       new LocarStrategy(
         { passReqToCallback: true, usernameField: "email" },
         async (req, username, password, done) => {
           try {
-            const { firstName, lastName, age, passwordConfirm } = req.body;
+            const { firstName, lastName, age, passwordConfirm, roles } =
+              req.body;
             req.session.register = {
               firstName,
               lastName,
@@ -47,12 +47,14 @@ const initializePassword = () => {
               emailRegister: username,
             };
             let user = await userModel.findOne({ email: username });
+            //Comprobamos si el email ya sta Registrado
             if (user) {
               req.session.signup = true;
               req.session.email = username;
               req.session.messageErrorSignup = "Registered User. Log in..";
               return done(null, false);
             }
+            //Confirmamos que los Password Coincidan
             if (password != passwordConfirm) {
               req.session.signup = true;
               req.session.email = "";
@@ -60,18 +62,38 @@ const initializePassword = () => {
                 "Password do not match, check again..";
               return done(null, false);
             }
-            //let passHash = createHash(password);
-            let newUser = await userModel.create({
+
+            //Creando Nuevo Usuario
+            let newUser = {
               firstName: firstName,
               lastName: lastName,
               age: parseInt(age),
               email: username,
               password: await userModel.encryptPassword(password),
-            });
+            };
+
+            //Asignamos un rol al nuevo usuario: si no lo especifica sera "user"
+            if (roles) {
+              const foundRoles = await roleModel.find({
+                name: { $in: roles },
+              });
+              newUser.roles = foundRoles.map((role) => role._id);
+            } else {
+              const role = await roleModel.findOne({ name: "user" });
+              newUser.roles = [role._id];
+            }
+
+            //Le Asignamos un Carrito
+            let newCart = await userModel.addCartToUser()
+            newUser.cart = newCart
+
+            //Lo guardamos en la DB
+            await userModel.create(newUser);
+
+            //Lo enviamos a Login para que Ininie Session
             req.session.signup = false;
             req.session.email = username;
             req.session.messageNewUser = "You are registered. Log in..";
-            //const accessToken = generateToken(newUser);
             return done(null, false);
           } catch (error) {
             return done(error);
@@ -80,11 +102,12 @@ const initializePassword = () => {
       )
     );
 
-  passport.serializeUser((user, done) => {
+  passport.serializeUser(async (user, done) => {
     if (Array.isArray(user)) {
       done(null, user[0]._id);
+    } else {
+      done(null, user._id);
     }
-    done(null, user._id);
   });
 
   passport.deserializeUser(async (id, done) => {
@@ -99,15 +122,17 @@ const initializePassword = () => {
         { passReqToCallback: true, usernameField: "email" },
         async (req, username, password, done) => {
           try {
-            let user = await userModel.findOne({ email: username });
+            let user = await userModel
+              .findOne({ email: username })
+              .populate("roles");
             if (user == null) {
               req.session.signup = false;
               req.session.messageErrorLogin = "Invalid email";
               return done(null, false);
             }
             if (await userModel.comparePassword(password, user.password)) {
-              const accessToken = generateToken(user);
-              //console.log(accessToken);
+              //const token = await userModel.createToken(user);
+              //const accessToken = generateToken(user); Consultamos JWT pero no lo usamos por ahora
               return done(null, user);
             }
             req.session.signup = false;
@@ -139,12 +164,14 @@ const initializePassword = () => {
             if (userGithub) {
               return done(null, userGithub);
             } else {
+              const role = await roleModel.findOne({ name: "user" });
               let newUser = await userModel.create({
                 firstName: profile._json.name,
                 lastName: "", //Github no poseee lastName
                 age: 18, // Github no define age
                 email: profile.emails[0].value,
                 password: "", // Github ya ofrece una contraseña
+                roles: [role._id],
               });
               return done(null, newUser);
             }

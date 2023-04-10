@@ -6,7 +6,7 @@ const usersRouter = Router();
 
 usersRouter
   .get("/", async (req, res) => {
-    let users = await userModel.find({});
+    let users = await userModel.find({}).populate("roles").populate("cart", "products");
     return res.status(200).send(users);
   })
   .post("/register", passport.authenticate("register"), async (req, res) => {
