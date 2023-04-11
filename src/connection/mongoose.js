@@ -8,7 +8,7 @@ const db = mongoose.connection;
 const connectionMongoose = () => {
   mongoose
     .set("strictQuery", true)
-    .connect(process.env.mongooseAtlas, {
+    .connect(process.env.MOONGOOSE_ATLAS_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
@@ -21,7 +21,6 @@ const connectionMongoose = () => {
   db.on("error", (err) => {
     console.log(err);
   });
-
 };
 
 export default connectionMongoose();

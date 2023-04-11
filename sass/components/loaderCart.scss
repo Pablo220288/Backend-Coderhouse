@@ -4,7 +4,7 @@
   --fg: hsl(var(--hue), 10%, 10%);
   --primary: hsl(87, 50%, 51%);
   --trans-dur: 0.3s;
-  font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1280 - 320));
+  //font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1280 - 320));
 }
 .preloader {
   text-align: center;
@@ -16,14 +16,11 @@
   height: 1.5em;
 }
 .preloader__msg {
-  animation: msg 0.3s 13.7s linear forwards;
+  animation: msg 6s linear forwards infinite;
   position: absolute;
   width: 100%;
-}
-.preloader__msg--last {
-  animation-direction: reverse;
-  animation-delay: 14s;
   visibility: hidden;
+  opacity: 0;
 }
 .cart {
   display: block;
@@ -76,11 +73,11 @@
 /* Animations */
 @keyframes msg {
   from {
-    opacity: 1;
-    visibility: visible;
-  }
-  99.9% {
     opacity: 0;
+    visibility: hidden;
+  }
+  50% {
+    opacity: 1;
     visibility: visible;
   }
   to {

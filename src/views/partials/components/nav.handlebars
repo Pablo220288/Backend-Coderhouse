@@ -16,17 +16,24 @@
         >
         <a href="#" id="carrito"
           ><ion-icon class="shop-nav" name="cart-outline"></ion-icon>
-          <div id="cant-carrito-total" class="cant-carrito-total"></div
+          <div 
+            id="popupCart" 
+            class="cant-carrito-total" 
+            {{#if emptyCart}} {{else}} style="opacity: 1" {{/if}}>
+            <p>{{countCart}}</p>
+          </div
         ></a>
       </div>
       <div class="burger">
         <a href="#" id="carrito_xs"
           ><ion-icon name="cart-outline"></ion-icon>
           <div
-            id="cant-carrito-total-xs"
-            class="cant-carrito-total-xs"
-          ></div
-        ></a>
+            id="popupCartXs"
+            class="cant-carrito-total-xs" 
+            {{#if emptyCart}} {{else}} style="opacity: 1" {{/if}}>
+            <p>{{countCart}}</p>
+          </div>
+        </a>
         <button class="hamburger">
           <span></span>
           <span></span>
@@ -113,14 +120,14 @@
           {{/if}}
         </ul>
       </div>
-      <div class="total-carrito">
+      <div class="total-carrito" id="sectionTotal" {{#if emptyCart}} style="display:none" {{else}} {{/if}}>
         <p class="total-text">Total Carrito:</p>
           <div class="price-conten">
             <p>$</p>
             <p class="price" id="totalCart">{{totalCart}}</p>
           </div>
       </div>
-      <div class="buttons-carrito">
+      <div class="buttons-carrito" id="sectionButtons" {{#if emptyCart}} style="display:none" {{else}} {{/if}}>
         <button class="vaciar" id="vaciar-carrito">
           <ion-icon
             class="button-icon"

@@ -43,8 +43,11 @@ const cartProduct = async (idCart) => {
     (accumulator, currentValue) => accumulator + currentValue.totalPrice,
     0
   );
-
-  return { productsInCart, totalCart };
+  let countCart = productsInCart.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.quantity,
+    0
+  );
+  return { productsInCart, totalCart, countCart };
 };
 
 productsRouter
@@ -77,6 +80,7 @@ productsRouter
         cartsProducts: productsCart.productsInCart,
         totalCart: productsCart.totalCart,
         emptyCart,
+        countCart: productsCart.countCart,
       });
       io.on("connection", (socket) => {
         let idCart = user.cart._id.toString();

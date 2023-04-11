@@ -27,7 +27,23 @@ for (let i = 0; i < addToCart.length; i++) {
 //Agregamos Productos al Carrito
 const cardPrevius = document.getElementById("cardPrevius");
 const totalCart = document.getElementById("totalCart");
+const cartDelete = document.querySelectorAll(".cartDelete");
 const vaciarcarrito = document.getElementById("vaciar-carrito");
+const sectionTotal = document.getElementById("sectionTotal");
+const sectionButtons = document.getElementById("sectionButtons");
+const popupCartXs = document.getElementById("popupCartXs");
+const popupCart = document.getElementById("popupCart");
+
+//Si ahi Productos le genero las funciones a los botones para eliminar los productos
+if (cartDelete) {
+  for (let i = 0; i < cartDelete.length; i++) {
+    cartDelete[i].addEventListener("click", (e) => {
+      let idProduct = cartDelete[i].getAttribute("data-id");
+      socket.emit("deleteProductToCart", idProduct);
+    });
+  }
+}
+
 const updatecart = (data) => {
   cardPrevius.innerHTML += `
   <li class="cardPreviusItems">
@@ -81,6 +97,19 @@ const emptyCart = () => {
   </div>
 `;
 };
+const popupVisible = (data) => {
+  popupCart.innerHTML = `<p>${data.countCart}</p>`;
+  popupCart.style.opacity = "1";
+  popupCartXs.innerHTML = `<p>${data.countCart}</p>`;
+  popupCartXs.style.opacity = "1";
+};
+const popupHidden = () => {
+  popupCart.innerHTML = "";
+  popupCart.style.opacity = "0";
+  popupCartXs.innerHTML = "";
+  popupCartXs.style.opacity = "0";
+};
+
 socket.on("addProductToCart", (data) => {
   cardPrevius.textContent = "";
   totalCart.textContent = "";
@@ -88,6 +117,9 @@ socket.on("addProductToCart", (data) => {
     updatecart(prod);
   });
   totalCart.innerHTML = data.totalCart;
+  sectionTotal.style.display = "flex";
+  sectionButtons.style.display = "flex";
+  popupVisible(data);
   //Creamos funcion para elimiar del Carrito
   const cartDelete = document.querySelectorAll(".cartDelete");
   for (let i = 0; i < cartDelete.length; i++) {
@@ -103,10 +135,14 @@ socket.on("deleteProductToCart", (data) => {
   totalCart.textContent = "";
   if (data.totalCart === 0) {
     emptyCart();
+    sectionTotal.style.display = "none";
+    sectionButtons.style.display = "none";
+    popupHidden();
   } else {
     data.productsInCart.forEach((prod) => {
       updatecart(prod);
     });
+    popupVisible(data);
     totalCart.innerHTML = data.totalCart;
   }
 });
@@ -118,4 +154,7 @@ socket.on("emptyCart", (data) => {
   cardPrevius.textContent = "";
   totalCart.textContent = "";
   emptyCart();
+  sectionTotal.style.display = "none";
+  sectionButtons.style.display = "none";
+  popupHidden();
 });
