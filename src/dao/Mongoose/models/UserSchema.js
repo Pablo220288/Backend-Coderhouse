@@ -1,7 +1,7 @@
-import { Schema, model } from "mongoose";
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
-import { cartsModel } from "./CartsSchema.js";
+import { Schema, model } from 'mongoose'
+import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
+import { cartsModel } from './CartsSchema.js'
 
 const UserSchema = new Schema(
   {
@@ -12,52 +12,52 @@ const UserSchema = new Schema(
     roles: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Role",
-        index: true,
-      },
+        ref: 'Role',
+        index: true
+      }
     ],
     cart: {
       type: Schema.Types.ObjectId,
-      ref: "Cart",
+      ref: 'Cart'
     },
-    password: { type: String },
+    password: { type: String }
   },
   {
     timestamps: true,
-    versionKey: false,
+    versionKey: false
   }
-);
+)
 
-UserSchema.static("encryptPassword", async (password) => {
+UserSchema.static('encryptPassword', async password => {
   return bcrypt.hashSync(
     password,
     bcrypt.genSaltSync(parseInt(process.env.BCRYPT_SALT))
-  );
-});
+  )
+})
 
-UserSchema.static("comparePassword", async (password, receivedPassword) => {
-  return bcrypt.compareSync(password, receivedPassword);
-});
+UserSchema.static('comparePassword', async (password, receivedPassword) => {
+  return bcrypt.compareSync(password, receivedPassword)
+})
 
-UserSchema.static("createToken", async (user) => {
+UserSchema.static('createToken', async user => {
   const token = jwt.sign(
     { id: user._id, email: user.email, roles: user.roles[0].name },
     process.env.JWT_PRIVATE_KEY,
     {
-      expiresIn: "12h",
+      expiresIn: '12h'
     }
-  );
-  return token;
-});
+  )
+  return token
+})
 
-UserSchema.static("verifyToken", async (token) => {
-  const verifyToken = jwt.verify(token, process.env.JWT_PRIVATE_KEY);
-  return verifyToken;
-});
+UserSchema.static('verifyToken', async token => {
+  const verifyToken = jwt.verify(token, process.env.JWT_PRIVATE_KEY)
+  return verifyToken
+})
 
-UserSchema.static("addCartToUser", async () => {
-  let newCart = await cartsModel.create({ products: [] });
-  return newCart._id;
-});
+UserSchema.static('addCartToUser', async () => {
+  const newCart = await cartsModel.create({ products: [] })
+  return newCart._id
+})
 
-export default model("User", UserSchema);
+export default model('User', UserSchema)

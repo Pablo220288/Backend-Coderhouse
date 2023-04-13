@@ -1,7 +1,7 @@
-import moment from "moment";
+import moment from 'moment'
 
-//time
+// time
 export const dateShort = () => {
-  let date = moment().format("HH:mm");
-  return date;
-};
+  const date = moment().format('HH:mm')
+  return date
+}

@@ -1,17 +1,17 @@
-import { Schema, model } from "mongoose";
+import { Schema, model } from 'mongoose'
 
 const ChatSchema = new Schema({
   idUser: {
     type: String,
-    index: true,
+    index: true
   },
   user: {
     type: String,
-    index: true,
+    index: true
   },
   messaje: String,
   time: String,
-  idConnection: String,
-});
+  idConnection: String
+})
 
-export const chatModel = model("Chat", ChatSchema);
+export const chatModel = model('Chat', ChatSchema)

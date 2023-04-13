@@ -1,4 +1,4 @@
-//Loader
+// Loader
 window.addEventListener('load', () => {
-    document.getElementById('loader').classList.toggle('loader-hide');
-  });
+  document.getElementById('loader').classList.toggle('loader-hide')
+})

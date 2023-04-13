@@ -1,10 +1,10 @@
-const itemTableContent = document.getElementById("itemTableContent");
-const socket = io();
-socket.emit("messaje", "Conectado con el Cliente por Sockets");
+const itemTableContent = document.getElementById('itemTableContent')
+const socket = io()
+socket.emit('messaje', 'Conectado con el Cliente por Sockets')
 
-socket.on("estado", (data) => {
-  console.log(data);
-});
+socket.on('estado', (data) => {
+  console.log(data)
+})
 
 const cargarDom = (prod) => {
   itemTableContent.innerHTML += `
@@ -21,86 +21,85 @@ const cargarDom = (prod) => {
   <td>${prod.code}</td>
   <td>${prod.stock}</td>
   </tr>
-  `;
-};
+  `
+}
 
-//Consultar Producto
-const formGet = document.getElementById("formGet");
-const resGet = document.getElementById("resGet");
+// Consultar Producto
+const formGet = document.getElementById('formGet')
+const resGet = document.getElementById('resGet')
 
-formGet.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let getProduct = document.getElementById("getProduct").value;
-  socket.emit("getProduct", getProduct);
-  resGet.innerHTML = "";
-});
+formGet.addEventListener('submit', (e) => {
+  e.preventDefault()
+  const getProduct = document.getElementById('getProduct').value
+  socket.emit('getProduct', getProduct)
+  resGet.innerHTML = ''
+})
 
-socket.on("getProduct", (data) => {
-  resGet.innerHTML = data.messaje;
-  itemTableContent.innerHTML = "";
+socket.on('getProduct', (data) => {
+  resGet.innerHTML = data.messaje
+  itemTableContent.innerHTML = ''
   data.products.forEach((prod) => {
-    cargarDom(prod);
-  });
-});
+    cargarDom(prod)
+  })
+})
 
-//Agregar Producto
-const formPost = document.getElementById("formPost");
-const resAdd = document.getElementById("resAdd");
+// Agregar Producto
+const formPost = document.getElementById('formPost')
+const resAdd = document.getElementById('resAdd')
 
-formPost.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let newProduct = document.getElementById("addProduct").value;
-  socket.emit("addProduct", newProduct);
-  resAdd.innerHTML = "";
-});
+formPost.addEventListener('submit', (e) => {
+  e.preventDefault()
+  const newProduct = document.getElementById('addProduct').value
+  socket.emit('addProduct', newProduct)
+  resAdd.innerHTML = ''
+})
 
-socket.on("addProduct", (data) => {
-  resAdd.innerHTML = data.messaje;
-  itemTableContent.innerHTML = "";
+socket.on('addProduct', (data) => {
+  resAdd.innerHTML = data.messaje
+  itemTableContent.innerHTML = ''
   data.products.forEach((prod) => {
-    cargarDom(prod);
-  });
-});
+    cargarDom(prod)
+  })
+})
 
-//Actualizar Producto
-const formPut = document.getElementById("formPut");
-const resPut = document.getElementById("resPut");
+// Actualizar Producto
+const formPut = document.getElementById('formPut')
+const resPut = document.getElementById('resPut')
 
-formPut.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let idPutProduct = document.getElementById("idPutProduct").value;
-  let infoPutProduct = document.getElementById("infoPutProduct").value;
-  socket.emit("putProduct", {
+formPut.addEventListener('submit', (e) => {
+  e.preventDefault()
+  const idPutProduct = document.getElementById('idPutProduct').value
+  const infoPutProduct = document.getElementById('infoPutProduct').value
+  socket.emit('putProduct', {
     id: idPutProduct,
-    info: infoPutProduct,
-  });
-  resPut.innerHTML = "";
-});
+    info: infoPutProduct
+  })
+  resPut.innerHTML = ''
+})
 
-socket.on("putProduct", (data) => {
-  resPut.innerHTML = data.messaje;
-  itemTableContent.innerHTML = "";
+socket.on('putProduct', (data) => {
+  resPut.innerHTML = data.messaje
+  itemTableContent.innerHTML = ''
   data.products.forEach((prod) => {
-    cargarDom(prod);
-  });
-});
+    cargarDom(prod)
+  })
+})
 
-//Eliminar por ID
-const formDelete = document.getElementById("formDelete");
-const resDelete = document.getElementById("resDelete");
+// Eliminar por ID
+const formDelete = document.getElementById('formDelete')
+const resDelete = document.getElementById('resDelete')
 
-formDelete.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let id = document.getElementById("productDelete").value;
-  socket.emit("deleteProduct", id);
-  resDelete.innerHTML = "";
-});
+formDelete.addEventListener('submit', (e) => {
+  e.preventDefault()
+  const id = document.getElementById('productDelete').value
+  socket.emit('deleteProduct', id)
+  resDelete.innerHTML = ''
+})
 
-socket.on("deleteProduct", (data) => {
-  resDelete.innerHTML = data.messaje;
-  itemTableContent.innerHTML = "";
+socket.on('deleteProduct', (data) => {
+  resDelete.innerHTML = data.messaje
+  itemTableContent.innerHTML = ''
   data.products.forEach((prod) => {
-    cargarDom(prod);
-  });
-});
-
+    cargarDom(prod)
+  })
+})

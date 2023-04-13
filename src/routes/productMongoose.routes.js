@@ -1,51 +1,51 @@
-import { Router } from "express";
-import CrudMongoose from "../dao/Mongoose/controllers/ProductManager.js";
+import { Router } from 'express'
+import CrudMongoose from '../dao/Mongoose/controllers/ProductManager.js'
+import { isAdmin, isModerator } from '../middlewares/authRole.js'
 
-const productMongooseRouter = Router();
-const productsByMongoose = new CrudMongoose();
-import { isAdmin, isModerator } from "../middlewares/authRole.js";
+const productMongooseRouter = Router()
+const productsByMongoose = new CrudMongoose()
 
-productMongooseRouter.get("/", async (req, res) => {
+productMongooseRouter.get('/', async (req, res) => {
   try {
-    res.status(200).send(await productsByMongoose.findProducts(req.query));
+    res.status(200).send(await productsByMongoose.findProducts(req.query))
   } catch (err) {
-    res.status(404).send("Error en la consulta", err);
+    res.status(404).send('Error en la consulta', err)
   }
-});
-productMongooseRouter.get("/:id", async (req, res) => {
+})
+productMongooseRouter.get('/:id', async (req, res) => {
   try {
     res
       .status(200)
-      .send(await productsByMongoose.findProductsById(req.params.id));
+      .send(await productsByMongoose.findProductsById(req.params.id))
   } catch (err) {
-    res.status(404).send("Producto no encontrado", err);
+    res.status(404).send('Producto no encontrado', err)
   }
-});
-productMongooseRouter.post("/",isModerator, async (req, res) => {
+})
+productMongooseRouter.post('/', isModerator, async (req, res) => {
   try {
-    res.status(200).send(await productsByMongoose.createProducts(req.body));
+    res.status(200).send(await productsByMongoose.createProducts(req.body))
   } catch (err) {
-    res.status(400).send("Error de sintaxis", err);
+    res.status(400).send('Error de sintaxis', err)
   }
-});
-productMongooseRouter.put("/:id",isAdmin, async (req, res) => {
-  try {
-    res
-      .status(200)
-      .send(await productsByMongoose.updateProducts(req.params.id, req.body));
-  } catch (err) {
-    res.status(400).send("Error de sintaxis", err);
-  }
-});
-productMongooseRouter.delete("/:id",isAdmin, async (req, res) => {
-  console.log(req.params.id);
+})
+productMongooseRouter.put('/:id', isAdmin, async (req, res) => {
   try {
     res
       .status(200)
-      .send(await productsByMongoose.deleteProductsById(req.params.id));
+      .send(await productsByMongoose.updateProducts(req.params.id, req.body))
   } catch (err) {
-    res.status(400).send("Error de sintaxis", err);
+    res.status(400).send('Error de sintaxis', err)
   }
-});
+})
+productMongooseRouter.delete('/:id', isAdmin, async (req, res) => {
+  console.log(req.params.id)
+  try {
+    res
+      .status(200)
+      .send(await productsByMongoose.deleteProductsById(req.params.id))
+  } catch (err) {
+    res.status(400).send('Error de sintaxis', err)
+  }
+})
 
-export default productMongooseRouter;
+export default productMongooseRouter

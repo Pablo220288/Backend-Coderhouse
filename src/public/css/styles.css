@@ -123,7 +123,7 @@ p {
   align-items: center;
 }
 .nav .navContainer .menu a .cant-carrito-total p {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 .nav .navContainer .menu a .cant-carrito-total-show {
   opacity: 1;
@@ -371,12 +371,87 @@ p {
   justify-content: space-between;
 }
 .modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .delete-price .cartDelete {
-  font-size: 1.2rem;
+  position: relative;
+  width: 25px;
+  height: 25px;
   cursor: pointer;
   transition: 0.4s;
 }
 .modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .delete-price .cartDelete:hover {
   color: #88c043;
+}
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .delete-price .cartDelete .icon {
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  width: 25px;
+  height: 25px;
+  transform: translate(-50%, -50%);
+}
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .delete-price .cartDelete .icon .lid {
+  position: absolute;
+  z-index: 2;
+  right: 50%;
+  top: 23%;
+  width: 70%;
+  height: 10%;
+  background-color: #6c6c6c;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transform: translateX(50%);
+  transform-origin: left bottom;
+  transition: transform 0.3s ease-in-out;
+}
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .delete-price .cartDelete .icon .lid::before {
+  content: "";
+  position: absolute;
+  right: 50%;
+  bottom: 100%;
+  width: 30%;
+  height: 70%;
+  border: 2px solid #6c6c6c;
+  transform: translateX(50%) translateY(2px);
+}
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .delete-price .cartDelete .icon:hover .lid {
+  transform: translateX(50%) rotate(-35deg);
+}
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .delete-price .cartDelete .icon .can {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 0%;
+  width: 60%;
+  height: 60%;
+  background-color: #6c6c6c;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transform: translateX(-50%);
+}
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .delete-price .cartDelete .icon .can::before, .modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .delete-price .cartDelete .icon .can::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  bottom: 20%;
+  width: 20%;
+  background-color: #fff;
+}
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .delete-price .cartDelete .icon .can::before {
+  left: 20%;
+}
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .delete-price .cartDelete .icon .can::after {
+  left: 60%;
+}
+.modal-carrito .modal-container .conten-carrito .cardPrevius .cardPreviusItems .delete-price .cartDelete .icon .trash {
+  position: absolute;
+  z-index: 1;
+  left: 100%;
+  top: 0;
+  width: 20%;
+  height: 20%;
+  border-radius: 25%;
+  background-color: #6c6c6c;
+  opacity: 0;
 }
 .modal-carrito .modal-container .total-carrito {
   display: flex;
@@ -459,6 +534,15 @@ p {
   --transition: transform 0.8s 0.8s;
 }
 
+.clicked .icon .lid {
+  transition-delay: 0.5s;
+  transform: translateX(50%) rotate(0deg);
+}
+
+.clicked .icon .trash {
+  animation: trash 0.5s forwards linear;
+}
+
 @media (min-width: 768px) {
   .nav .navContainer .burger {
     display: none;
@@ -476,6 +560,27 @@ p {
   }
   100% {
     width: 100%;
+  }
+}
+@keyframes trash {
+  0% {
+    left: 100%;
+    top: 0;
+    transform: rotate(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  50% {
+    left: 40%;
+    top: 10%;
+  }
+  100% {
+    left: 40%;
+    top: 50%;
+    transform: rotate(-180deg);
+    opacity: 1;
   }
 }
 .mainHome {
@@ -787,10 +892,11 @@ p {
   top: 10px;
   right: 10px;
   transition: 0.5s ease-in-out;
+  z-index: 1;
 }
 .containerCards .cardContainer .btnContainer .btnCard {
-  width: 35px;
-  height: 35px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
   display: flex;
@@ -798,7 +904,7 @@ p {
   align-items: center;
   margin-bottom: 5px;
   cursor: pointer;
-  transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out, background-color 0ms linear;
   position: relative;
   opacity: 1;
   transform: translateX(50px);
@@ -823,9 +929,6 @@ p {
   padding: 5px;
   transition: 0.2s ease-in-out;
 }
-.containerCards .cardContainer .btnContainer .btnCard .more {
-  font-size: 1.2rem;
-}
 .containerCards .cardContainer .btnContainer .btnCard .iconTooltip {
   position: absolute;
   top: 50%;
@@ -849,6 +952,20 @@ p {
   border-width: 6px;
   border-style: solid;
   border-color: transparent transparent transparent #88c043;
+}
+.containerCards .cardContainer .btnContainer .more .icon {
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+.containerCards .cardContainer .btnContainer .more:hover .icon {
+  color: #e09524;
+}
+.containerCards .cardContainer .btnContainer .addToCart:hover .icon {
+  color: #2495e0;
+  transform: rotate(-25deg);
+}
+.containerCards .cardContainer .btnContainer .is-selected .icon {
+  transform: rotate(90deg);
 }
 .containerCards .cardContainer .descriptionCard {
   position: absolute;
@@ -876,6 +993,44 @@ p {
   gap: 5px;
 }
 
+.like {
+  display: block;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  border-radius: 999px;
+  overflow: visible;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+.like .hearthButton {
+  display: none;
+}
+.like .hearthButton:checked + .hearth {
+  animation: like 1s steps(59);
+  animation-fill-mode: forwards;
+}
+.like:hover .hearth {
+  background-position-x: -2318px;
+}
+.like .hearth {
+  background-image: url("https://assets.codepen.io/23500/Hashflag-AppleEvent.svg");
+  background-size: 2356px 38px;
+  background-repeat: no-repeat;
+  background-position-x: -2280px;
+  background-position-y: 0.76px;
+  width: 38px;
+  height: 38px;
+}
+
+@keyframes like {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -2242px;
+  }
+}
 .chatSocket {
   display: flex;
   align-items: flex-start;
@@ -1448,7 +1603,7 @@ form .btn input[type=submit] {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 1px 15px 25px rgba(136, 192, 67, 0.15);
+  box-shadow: 0px 0px 5px #88c043;
   cursor: pointer;
   transition: 1s;
 }
@@ -1837,5 +1992,3 @@ form .btn input[type=submit] {
 .loader-hide {
   clip-path: circle(0% at 100% 100%);
 }
-
-/*# sourceMappingURL=styles.css.map */

@@ -1,25 +1,25 @@
-import { Router } from "express";
-import { dateShort } from "../../utils/dateShort.js";
-import { usersChat } from "../index.js";
-import { chatModel } from "../dao/Mongoose/models/ChatSchema.js";
+import { Router } from 'express'
+import { dateShort } from '../../utils/dateShort.js'
+import { usersChat } from '../index.js'
+import { chatModel } from '../dao/Mongoose/models/ChatSchema.js'
 
-const chatRouter = Router();
+const chatRouter = Router()
 
 chatRouter
-  .get("/", (req, res) => {
-    let time = dateShort();
-    res.render("chat", {
-      title: "Chat Websocket",
+  .get('/', (req, res) => {
+    const time = dateShort()
+    res.render('chat', {
+      title: 'Chat Websocket',
       messajes: {
-        user: "Administrador",
-        messaje: "Bienvenido al Chat 👋",
-        time,
+        user: 'Administrador',
+        messaje: 'Bienvenido al Chat 👋',
+        time
       },
-      users: usersChat,
-    });
+      users: usersChat
+    })
   })
-  .get("/messaje", async (req, res) => {
-    res.send(await chatModel.find());
-  });
+  .get('/messaje', async (req, res) => {
+    res.send(await chatModel.find())
+  })
 
-export default chatRouter;
+export default chatRouter

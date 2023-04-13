@@ -1,26 +1,26 @@
-import dotenv from "dotenv";
-import mongoose from "mongoose";
+import dotenv from 'dotenv'
+import mongoose from 'mongoose'
 
-//Archivo ENV
-dotenv.config();
+// Archivo ENV
+dotenv.config()
 
-const db = mongoose.connection;
+const db = mongoose.connection
 const connectionMongoose = () => {
   mongoose
-    .set("strictQuery", true)
+    .set('strictQuery', true)
     .connect(process.env.MOONGOOSE_ATLAS_URL, {
       useNewUrlParser: true,
-      useUnifiedTopology: true,
+      useUnifiedTopology: true
     })
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err))
 
-  db.once("open", () => {
-    console.log("Database in connected to MongoDB");
-  });
+  db.once('open', () => {
+    console.log('Database in connected to MongoDB')
+  })
 
-  db.on("error", (err) => {
-    console.log(err);
-  });
-};
+  db.on('error', (err) => {
+    console.log(err)
+  })
+}
 
-export default connectionMongoose();
+export default connectionMongoose()

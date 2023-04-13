@@ -7,8 +7,10 @@
     "doc": "doc"
   },
   "scripts": {
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "sass-watch": "sass --no-source-map --watch sass/styles.scss src/public/css/styles.css",
+    "nodemon-watch": "nodemon src/index.js",
+    "dev": "npm-run-all --parallel sass-watch nodemon-watch",
+    "lint": "eslint . --fix"
   },
   "repository": {
     "type": "git",
@@ -23,7 +25,14 @@
   "homepage": "https://github.com/Pablo220288/Backend-Coderhouse#readme",
   "description": "",
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "nodemon": "^2.0.20",
+    "npm-run-all": "^4.1.5"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
@@ -49,6 +58,7 @@
     "passport-github2": "^0.1.12",
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
+    "sass": "^1.61.0",
     "socket.io": "^4.6.1"
   }
 }

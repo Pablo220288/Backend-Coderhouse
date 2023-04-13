@@ -78,9 +78,10 @@
       top: 10px;
       right: 10px;
       transition: 0.5s ease-in-out;
+      z-index: 1;
       .btnCard {
-        width: 35px;
-        height: 35px;
+        width: 38px;
+        height: 38px;
         border-radius: 50%;
         box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
         display: flex;
@@ -88,7 +89,7 @@
         align-items: center;
         margin-bottom: 5px;
         cursor: pointer;
-        transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out, background-color 0ms linear;
         position: relative;
         opacity: 1;
         transform: translateX(50px);
@@ -111,9 +112,6 @@
         .icon {
           padding: 5px;
           transition: 0.2s ease-in-out;
-        }
-        .more {
-          font-size: 1.2rem;
         }
         .iconTooltip {
           position: absolute;
@@ -138,6 +136,26 @@
             border-style: solid;
             border-color: transparent transparent transparent $colorIndex;
           }
+        }
+      }
+      .more {
+        .icon {
+          font-size: 1.2rem;
+          transition: 0.3s;
+        }
+        &:hover .icon {
+          color: #e09524;
+        }
+      }
+      .addToCart {
+        &:hover .icon {
+          color: #2495e0;
+          transform: rotate(-25deg);
+        }
+      }
+      .is-selected {
+        .icon {
+          transform: rotate(90deg);
         }
       }
     }
@@ -166,5 +184,46 @@
         }
       }
     }
+  }
+}
+
+.like {
+  display: block;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  border-radius: 999px;
+  overflow: visible;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  .hearthButton {
+    display: none;
+    &:checked + .hearth {
+      animation: like 1s steps(calc(62 - 3));
+      animation-fill-mode: forwards;
+    }
+  }
+  &:hover {
+    //background-color: #e1255e15;
+    .hearth {
+      background-position-x: calc(38px * (62 * -1 + 1));
+    }
+  }
+  .hearth {
+    background-image: url("https://assets.codepen.io/23500/Hashflag-AppleEvent.svg");
+    background-size: calc(38px * 62) 38px;
+    background-repeat: no-repeat;
+    background-position-x: calc(38px * (62 * -1 + 2));
+    background-position-y: calc(38px * 0.02);
+    width: 38px;
+    height: 38px;
+  }
+}
+@keyframes like {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: calc(38px * (62 * -1 + 3));
   }
 }

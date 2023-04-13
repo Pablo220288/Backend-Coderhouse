@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 1px 15px 25px rgb(136, 192, 67, 0.15);
+    box-shadow: 0px 0px 5px $colorIndex;
     cursor: pointer;
     transition: 1s;
   }

@@ -313,11 +313,87 @@
             display: flex;
             justify-content: space-between;
             .cartDelete {
-              font-size: 1.2rem;
+              position: relative;
+              width: 25px;
+              height: 25px;
               cursor: pointer;
               transition: 0.4s;
               &:hover {
                 color: $colorIndex;
+              }
+              .icon {
+                position: absolute;
+                display: block;
+                left: 50%;
+                top: 50%;
+                width: 25px;
+                height: 25px;
+                transform: translate(-50%, -50%);
+                .lid {
+                  position: absolute;
+                  z-index: 2;
+                  right: 50%;
+                  top: 23%;
+                  width: 70%;
+                  height: 10%;
+                  background-color: #6c6c6c;
+                  border-top-left-radius: 5px;
+                  border-top-right-radius: 5px;
+                  transform: translateX(50%);
+                  transform-origin: left bottom;
+                  transition: transform 0.3s ease-in-out;
+                  &::before {
+                    content: "";
+                    position: absolute;
+                    right: 50%;
+                    bottom: 100%;
+                    width: 30%;
+                    height: 70%;
+                    border: 2px solid #6c6c6c;
+                    transform: translateX(50%) translateY(2px);
+                  }
+                }
+                &:hover .lid {
+                  transform: translateX(50%) rotate(-35deg);
+                }
+                .can {
+                  position: absolute;
+                  z-index: 2;
+                  left: 50%;
+                  bottom: 0%;
+                  width: 60%;
+                  height: 60%;
+                  background-color: #6c6c6c;
+                  border-bottom-left-radius: 5px;
+                  border-bottom-right-radius: 5px;
+                  transform: translateX(-50%);
+                  &::before,
+                  &::after {
+                    content: "";
+                    position: absolute;
+                    top: 20%;
+                    bottom: 20%;
+                    width: 20%;
+                    background-color: #fff;
+                  }
+                  &::before {
+                    left: 20%;
+                  }
+                  &::after {
+                    left: 60%;
+                  }
+                }
+                .trash {
+                  position: absolute;
+                  z-index: 1;
+                  left: 100%;
+                  top: 0;
+                  width: 20%;
+                  height: 20%;
+                  border-radius: 25%;
+                  background-color: #6c6c6c;
+                  opacity: 0;
+                }
               }
             }
           }
@@ -401,6 +477,13 @@
   --transform: traslateY(0);
   --transition: transform 0.8s 0.8s;
 }
+.clicked .icon .lid {
+  transition-delay: 0.5s;
+  transform: translateX(50%) rotate(0deg);
+}
+.clicked .icon .trash {
+  animation: trash 0.5s forwards linear;
+}
 @media (min-width: 768px) {
   .nav .navContainer {
     .burger {
@@ -420,5 +503,26 @@
   }
   100% {
     width: 100%;
+  }
+}
+@keyframes trash {
+  0% {
+    left: 100%;
+    top: 0;
+    transform: rotate(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  50% {
+    left: 40%;
+    top: 10%;
+  }
+  100% {
+    left: 40%;
+    top: 50%;
+    transform: rotate(-180deg);
+    opacity: 1;
   }
 }

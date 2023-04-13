@@ -1,46 +1,47 @@
-const menuToggle = document.querySelector(".menuToggle");
-const addToCart = document.querySelectorAll(".addToCart");
-const socket = io();
+const menuToggle = document.querySelector('.menuToggle')
+const addToCart = document.querySelectorAll('.addToCart')
+const socket = io()
 
-menuToggle.addEventListener("click", () => {
-  menuToggle.classList.toggle("active");
-});
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('active')
+})
 
 for (let i = 0; i < addToCart.length; i++) {
-  addToCart[i].addEventListener("click", (e) => {
-    let idProduct = addToCart[i].getAttribute("data-id");
-    socket.emit("addProductToCart", idProduct);
+  addToCart[i].addEventListener('click', (e) => {
+    const idProduct = addToCart[i].getAttribute('data-id')
+    socket.emit('addProductToCart', idProduct)
     Toastify({
-      text: "Product in Cart",
-      className: "info",
+      text: 'Product in Cart',
+      className: 'info',
       style: {
-        background: "linear-gradient(to right, #88c043, #6d9a36)",
+        background: 'linear-gradient(to right, #88c043, #6d9a36)'
       },
       offset: {
         x: 0,
-        y: 55,
-      },
-    }).showToast();
-  });
+        y: 55
+      }
+    }).showToast()
+  })
 }
 
-//Agregamos Productos al Carrito
-const cardPrevius = document.getElementById("cardPrevius");
-const totalCart = document.getElementById("totalCart");
-const cartDelete = document.querySelectorAll(".cartDelete");
-const vaciarcarrito = document.getElementById("vaciar-carrito");
-const sectionTotal = document.getElementById("sectionTotal");
-const sectionButtons = document.getElementById("sectionButtons");
-const popupCartXs = document.getElementById("popupCartXs");
-const popupCart = document.getElementById("popupCart");
+// Agregamos Productos al Carrito
+const cardPrevius = document.getElementById('cardPrevius')
+const totalCart = document.getElementById('totalCart')
+const cartDelete = document.querySelectorAll('.cartDelete')
+const vaciarcarrito = document.getElementById('vaciar-carrito')
+const sectionTotal = document.getElementById('sectionTotal')
+const sectionButtons = document.getElementById('sectionButtons')
+const popupCartXs = document.getElementById('popupCartXs')
+const popupCart = document.getElementById('popupCart')
 
-//Si ahi Productos le genero las funciones a los botones para eliminar los productos
+// Si ahi Productos le genero las funciones a los botones para eliminar los productos
 if (cartDelete) {
   for (let i = 0; i < cartDelete.length; i++) {
-    cartDelete[i].addEventListener("click", (e) => {
-      let idProduct = cartDelete[i].getAttribute("data-id");
-      socket.emit("deleteProductToCart", idProduct);
-    });
+    cartDelete[i].addEventListener('click', (e) => {
+      const idProduct = cartDelete[i].getAttribute('data-id')
+      socket.emit('deleteProductToCart', idProduct)
+      cartDelete[i].classList.add('clicked')
+    })
   }
 }
 
@@ -60,7 +61,11 @@ const updatecart = (data) => {
     </div>
       <div class="delete-price">
       <div class="cartDelete" id="cartDelete" data-id=${data.id}>
-        <ion-icon name="trash-outline"></ion-icon>
+      <span class="icon">
+        <span class="lid"></span>
+        <span class="can"></span>
+        <span class="trash"></span>
+      </span>
       </div>
       <div class="price-conten">
         <p>$</p>
@@ -68,8 +73,8 @@ const updatecart = (data) => {
       </div>
     </div>
   </li>
-  `;
-};
+  `
+}
 const emptyCart = () => {
   cardPrevius.innerHTML += `
   <div class="preloader">
@@ -95,66 +100,72 @@ const emptyCart = () => {
       <p class="preloader__msg">Empty Cart</p>
     </div>
   </div>
-`;
-};
+`
+}
 const popupVisible = (data) => {
-  popupCart.innerHTML = `<p>${data.countCart}</p>`;
-  popupCart.style.opacity = "1";
-  popupCartXs.innerHTML = `<p>${data.countCart}</p>`;
-  popupCartXs.style.opacity = "1";
-};
-const popupHidden = () => {
-  popupCart.innerHTML = "";
-  popupCart.style.opacity = "0";
-  popupCartXs.innerHTML = "";
-  popupCartXs.style.opacity = "0";
-};
+  popupCart.innerHTML = `<p>${data.countCart}</p>`
+  popupCart.style.opacity = '1'
+  popupCartXs.innerHTML = `<p>${data.countCart}</p>`
+  popupCartXs.style.opacity = '1'
+}
+const domHidden = () => {
+  sectionTotal.style.display = 'none'
+  sectionButtons.style.display = 'none'
+  popupCart.innerHTML = ''
+  popupCart.style.opacity = '0'
+  popupCartXs.innerHTML = ''
+  popupCartXs.style.opacity = '0'
+}
 
-socket.on("addProductToCart", (data) => {
-  cardPrevius.textContent = "";
-  totalCart.textContent = "";
+socket.on('addProductToCart', (data) => {
+  cardPrevius.textContent = ''
+  totalCart.textContent = ''
   data.productsInCart.forEach((prod) => {
-    updatecart(prod);
-  });
-  totalCart.innerHTML = data.totalCart;
-  sectionTotal.style.display = "flex";
-  sectionButtons.style.display = "flex";
-  popupVisible(data);
-  //Creamos funcion para elimiar del Carrito
-  const cartDelete = document.querySelectorAll(".cartDelete");
+    updatecart(prod)
+  })
+  totalCart.innerHTML = data.totalCart
+  sectionTotal.style.display = 'flex'
+  sectionButtons.style.display = 'flex'
+  popupVisible(data)
+  // Creamos funcion para elimiar del Carrito
+  const cartDelete = document.querySelectorAll('.cartDelete')
   for (let i = 0; i < cartDelete.length; i++) {
-    cartDelete[i].addEventListener("click", (e) => {
-      let idProduct = cartDelete[i].getAttribute("data-id");
-      socket.emit("deleteProductToCart", idProduct);
-    });
+    cartDelete[i].addEventListener('click', (e) => {
+      const idProduct = cartDelete[i].getAttribute('data-id')
+      socket.emit('deleteProductToCart', idProduct)
+      cartDelete[i].classList.add('clicked')
+    })
   }
-});
+})
 
-socket.on("deleteProductToCart", (data) => {
-  cardPrevius.textContent = "";
-  totalCart.textContent = "";
-  if (data.totalCart === 0) {
-    emptyCart();
-    sectionTotal.style.display = "none";
-    sectionButtons.style.display = "none";
-    popupHidden();
-  } else {
-    data.productsInCart.forEach((prod) => {
-      updatecart(prod);
-    });
-    popupVisible(data);
-    totalCart.innerHTML = data.totalCart;
-  }
-});
+socket.on('deleteProductToCart', (data) => {
+  setTimeout(() => {
+    cardPrevius.textContent = ''
+    totalCart.textContent = ''
+    if (data.totalCart === 0) {
+      emptyCart()
+      domHidden()
+    } else {
+      data.productsInCart.forEach((prod) => {
+        updatecart(prod)
+      })
+      popupVisible(data)
+      totalCart.innerHTML = data.totalCart
+    }
+  }, 500)
+})
 
-vaciarcarrito.addEventListener("click", () => {
-  socket.emit("emptyCart");
-});
-socket.on("emptyCart", (data) => {
-  cardPrevius.textContent = "";
-  totalCart.textContent = "";
-  emptyCart();
-  sectionTotal.style.display = "none";
-  sectionButtons.style.display = "none";
-  popupHidden();
-});
+vaciarcarrito.addEventListener('click', () => {
+  socket.emit('emptyCart')
+})
+socket.on('emptyCart', (data) => {
+  cardPrevius.textContent = ''
+  totalCart.textContent = ''
+  emptyCart()
+  domHidden()
+})
+
+const cardMore = document.getElementById('cardMore')
+cardMore.addEventListener('click', () => {
+  cardMore.classList.toggle('is-selected')
+})
