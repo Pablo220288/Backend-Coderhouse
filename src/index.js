@@ -8,7 +8,7 @@ export const PORT = process.env.PORT || 8080
 const server = app.listen(PORT, () =>
   console.log(`Express por Loacal host ${server.address().port}`)
 )
-server.on('error', (err) => {
+server.on('error', err => {
   console.log(`Algo salio mal: ${err}`)
 })
 export const io = new Server(server)
@@ -24,14 +24,14 @@ const greeting = {
   idUser: '1234567890'
 }
 // Funcion para subir mensajes a MongoDB
-const addChatMongoose = async (messaje) => {
+const addChatMongoose = async messaje => {
   await chatModel.create(messaje)
 }
-io.on('connection', (socket) => {
+io.on('connection', socket => {
   console.log(socket.id, 'Conectado')
   socket.on('disconnect', () => {
     console.log(socket.id, 'Desconectado')
-    const user = usersChat.find((user) => user.idUser === socket.id)
+    const user = usersChat.find(user => user.idUser === socket.id)
     if (user !== undefined) {
       // Subimos a MongoDB Mensaje de Desconeccion
       addChatMongoose({
@@ -41,19 +41,19 @@ io.on('connection', (socket) => {
         idUser: socket.id,
         idConnection: 'disConnection'
       })
-      const userUpload = usersChat.filter((user) => user.idUser !== socket.id)
+      const userUpload = usersChat.filter(user => user.idUser !== socket.id)
       usersChat = [...userUpload]
       const findChatMongoose = async () => {
         // Si se Desconecto el ultimo Usuario vaciamos el chat
         if (usersChat.length === 0) await chatModel.deleteMany({})
-        //
+
         const allMessajeMongoose = await chatModel.find()
         io.sockets.emit('userChat', usersChat, allMessajeMongoose)
       }
       findChatMongoose()
     }
   })
-  socket.on('userChat', (data) => {
+  socket.on('userChat', data => {
     usersChat.push({
       user: data.user,
       idUser: data.id
@@ -81,7 +81,7 @@ io.on('connection', (socket) => {
     chat()
   })
 
-  socket.on('messajeChat', (data) => {
+  socket.on('messajeChat', data => {
     // Subimos Mensaje a MongoDB
     addChatMongoose(data)
     const findChatMongoose = async () => {
@@ -90,7 +90,7 @@ io.on('connection', (socket) => {
     }
     findChatMongoose()
   })
-  socket.on('typing', (data) => {
+  socket.on('typing', data => {
     socket.broadcast.emit('typing', data)
   })
 })

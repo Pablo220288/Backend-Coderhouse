@@ -1,30 +1,30 @@
-import { cartsModel } from '../models/CartsSchema.js'
-import { productModel } from '../models/ProductSchema.js'
+import { findProducts } from '../../../services/productService.js'
+import * as cartService from '../../../services/cartService.js'
 
 class CartMongooseManager {
-  existCarts = async (id) => {
-    const cartsAll = await cartsModel.find()
-    return cartsAll.find((cart) => cart.id === id)
+  existCarts = async id => {
+    const cartsAll = await cartService.findCarts()
+    return cartsAll.find(cart => cart.id === id)
   }
 
-  existProduct = async (id) => {
-    const productsAll = await productModel.find()
-    return productsAll.find((product) => product.id === id)
+  existProduct = async id => {
+    const productsAll = await findProducts()
+    return productsAll.find(product => product.id === id)
   }
 
   findCarts = async () => {
-    const carts = await cartsModel.find()
+    const carts = await cartService.findCarts()
     return carts
   }
 
-  findCartsById = async (id) => {
+  findCartsById = async id => {
     const cart = await this.existCarts(id)
     if (!cart) return 'Carrito no Encontrado'
-    return await cartsModel.findById(id).populate('products._id')
+    return await cartService.findCartsById(id)
   }
 
   createCarts = async () => {
-    await cartsModel.create({ products: [] })
+    await cartService.createCart()
     return 'Carrito Creado Correctamente'
   }
 
@@ -36,19 +36,21 @@ class CartMongooseManager {
     if (!product) return 'Producto no Encontrado'
 
     const productInCart = cart.products.some(
-      (product) => product.id === idProduct
+      product => product.id === idProduct
     )
     if (!productInCart) {
       const addProduct = [{ _id: product.id, quantity: 1 }, ...cart.products]
-      await cartsModel.findByIdAndUpdate(idCart, { products: addProduct })
+      await cartService.findCartByIdAndUpdate(idCart, { products: addProduct })
       return `Producto ${product.title} agregado al Carrito. Cantidad: 1`
     } else {
       const indexProduct = cart.products.findIndex(
-        (product) => product.id === idProduct
+        product => product.id === idProduct
       )
       cart.products[indexProduct].quantity++
       const quantityProductInCart = cart.products[indexProduct].quantity
-      await cartsModel.findByIdAndUpdate(idCart, { products: cart.products })
+      await cartService.findCartByIdAndUpdate(idCart, {
+        products: cart.products
+      })
       return `Producto ${product.title} agregado al Carrito. Cantidad: ${quantityProductInCart}`
     }
   }
@@ -58,24 +60,26 @@ class CartMongooseManager {
     if (!cart) return 'Carrito no Encontrado'
 
     const productInCart = cart.products.some(
-      (product) => product.id === idProduct
+      product => product.id === idProduct
     )
     if (!productInCart) {
       return 'Producto no Encontrado'
     } else {
       const indexProduct = cart.products.findIndex(
-        (product) => product.id === idProduct
+        product => product.id === idProduct
       )
       cart.products[indexProduct].quantity = newQuantity
-      await cartsModel.findByIdAndUpdate(idCart, { products: cart.products })
+      await cartService.findCartByIdAndUpdate(idCart, {
+        products: cart.products
+      })
       return `Producto actualizado. Cantidad: ${newQuantity}`
     }
   }
 
-  deleteCarts = async (id) => {
+  deleteCarts = async id => {
     const cart = await this.existCarts(id)
     if (!cart) return 'Carrito no Encontrado'
-    await cartsModel.findByIdAndDelete(id)
+    await cartService.findCartByIdAndDelete(id)
     return 'Carrito Eliminado Exitosamente'
   }
 
@@ -84,23 +88,25 @@ class CartMongooseManager {
     if (!cart) return 'Carrito no Encontrado'
 
     const productInCart = cart.products.some(
-      (product) => product.id === idProduct
+      product => product.id === idProduct
     )
     if (!productInCart) {
       return 'Producto no Encontrado'
     } else {
       const productsUpdate = cart.products.filter(
-        (product) => product.id !== idProduct
+        product => product.id !== idProduct
       )
-      await cartsModel.findByIdAndUpdate(idCart, { products: productsUpdate })
+      await cartService.findCartByIdAndUpdate(idCart, {
+        products: productsUpdate
+      })
       return 'Producto eliminado del Carrito.'
     }
   }
 
-  emptycart = async (id) => {
+  emptycart = async id => {
     const cart = await this.existCarts(id)
     if (!cart) return 'Carrito no Encontrado'
-    await cartsModel.findByIdAndUpdate(id, { products: [] })
+    await cartService.findCartByIdAndUpdate(id, { products: [] })
     return 'Carrito Vaciado Exitosamente'
   }
 }

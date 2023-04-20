@@ -1992,3 +1992,196 @@ form .btn input[type=submit] {
 .loader-hide {
   clip-path: circle(0% at 100% 100%);
 }
+
+.footer {
+  width: 100%;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-image: url("https://1.bp.blogspot.com/-HHKFUhwPWVA/XJDvmX5uj1I/AAAAAAAABC4/LfnI6Avw_LI-Mc-0qPEG3m2oROJQ8SQFQCLcBGAs/s1600/289C130A-B56D-4178-BAFF-844D5899CC1C.JPG");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.footer::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0.484));
+  z-index: 0;
+}
+.footer .subscribe {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 50px 0px;
+}
+.footer .subscribe .subscribeTitle {
+  text-align: center;
+}
+.footer .subscribe .subscribeText {
+  text-align: center;
+}
+.footer .subscribe .subscribeForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 30px 0px 10px 0px;
+}
+.footer .subscribe .subscribeForm .subscribeButton {
+  all: unset;
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0px 0px 5px rgba(136, 192, 67, 0.3333333333);
+  transition: 0.4s;
+  position: relative;
+  cursor: pointer;
+}
+.footer .subscribe .subscribeForm .subscribeButton:hover {
+  background: #88c043;
+  color: #fff;
+}
+.footer .subscribe .subscribeForm .subscribeButton:hover .love {
+  transform: translate(-50%, -140%);
+  opacity: 1;
+  visibility: visible;
+}
+.footer .subscribe .subscribeForm .subscribeButton:hover .sad {
+  transform: translate(-50%, -170%);
+  opacity: 1;
+  visibility: visible;
+}
+.footer .subscribe .subscribeForm .subscribeButton .love {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  transition: 0.3s ease-in-out;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+}
+.footer .subscribe .subscribeForm .subscribeButton .sad {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  transition: 0.3s ease-in-out;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+}
+.footer .redes-card {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 10px;
+}
+.footer .redes-card p {
+  text-align: center;
+}
+.footer .redes-card .redes {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.footer .redes-card .redes .iconRedes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.footer .redes-card .redes .iconRedes ion-icon {
+  font-size: 2rem;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.footer .redes-card .redes .iconRedes ion-icon:hover {
+  opacity: 0.7;
+}
+.footer .redes-card .cardFooter {
+  flex: 1;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.footer .redes-card .cardFooter .footer-tarjetas {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+.footer .redes-card .cardFooter .footer-tarjetas .visaCard {
+  width: 50px;
+}
+.footer .redes-card .cardFooter .footer-tarjetas .mastercardCard {
+  width: 40px;
+}
+.footer .redes-card .cardFooter .footer-tarjetas .mercadoPago {
+  width: 80px;
+}
+.footer .copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 90%;
+  margin: auto;
+  padding: 10px 0px 20px 0px;
+  font-size: 0.8rem;
+}
+.footer .copy .footerCopy {
+  font-weight: 500;
+}
+.footer .copy .footerDisen a {
+  font-size: 1.5rem;
+  font-family: Pablo;
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (min-width: 700px) {
+  .footer .redes-card {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .footer .copy {
+    width: 80%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

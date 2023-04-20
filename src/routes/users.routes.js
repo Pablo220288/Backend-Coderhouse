@@ -1,12 +1,13 @@
 import { Router } from 'express'
 import passport from 'passport'
-import userModel from '../dao/Mongoose/models/UserSchema.js'
+import UserService from '../services/userService.js'
 
 const usersRouter = Router()
+const userService = new UserService()
 
 usersRouter
   .get('/', async (req, res) => {
-    const users = await userModel.find({}).populate('roles').populate('cart', 'products')
+    const users = await userService.findAllUsers()
     return res.status(200).send(users)
   })
   .post('/register', passport.authenticate('register'), async (req, res) => {

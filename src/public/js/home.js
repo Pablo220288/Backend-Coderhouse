@@ -7,7 +7,7 @@ menuToggle.addEventListener('click', () => {
 })
 
 for (let i = 0; i < addToCart.length; i++) {
-  addToCart[i].addEventListener('click', (e) => {
+  addToCart[i].addEventListener('click', e => {
     const idProduct = addToCart[i].getAttribute('data-id')
     socket.emit('addProductToCart', idProduct)
     Toastify({
@@ -37,7 +37,7 @@ const popupCart = document.getElementById('popupCart')
 // Si ahi Productos le genero las funciones a los botones para eliminar los productos
 if (cartDelete) {
   for (let i = 0; i < cartDelete.length; i++) {
-    cartDelete[i].addEventListener('click', (e) => {
+    cartDelete[i].addEventListener('click', e => {
       const idProduct = cartDelete[i].getAttribute('data-id')
       socket.emit('deleteProductToCart', idProduct)
       cartDelete[i].classList.add('clicked')
@@ -45,7 +45,7 @@ if (cartDelete) {
   }
 }
 
-const updatecart = (data) => {
+const updatecart = data => {
   cardPrevius.innerHTML += `
   <li class="cardPreviusItems">
     <div class="img-info">
@@ -102,7 +102,7 @@ const emptyCart = () => {
   </div>
 `
 }
-const popupVisible = (data) => {
+const popupVisible = data => {
   popupCart.innerHTML = `<p>${data.countCart}</p>`
   popupCart.style.opacity = '1'
   popupCartXs.innerHTML = `<p>${data.countCart}</p>`
@@ -117,10 +117,10 @@ const domHidden = () => {
   popupCartXs.style.opacity = '0'
 }
 
-socket.on('addProductToCart', (data) => {
+socket.on('addProductToCart', data => {
   cardPrevius.textContent = ''
   totalCart.textContent = ''
-  data.productsInCart.forEach((prod) => {
+  data.productsInCart.forEach(prod => {
     updatecart(prod)
   })
   totalCart.innerHTML = data.totalCart
@@ -130,7 +130,7 @@ socket.on('addProductToCart', (data) => {
   // Creamos funcion para elimiar del Carrito
   const cartDelete = document.querySelectorAll('.cartDelete')
   for (let i = 0; i < cartDelete.length; i++) {
-    cartDelete[i].addEventListener('click', (e) => {
+    cartDelete[i].addEventListener('click', e => {
       const idProduct = cartDelete[i].getAttribute('data-id')
       socket.emit('deleteProductToCart', idProduct)
       cartDelete[i].classList.add('clicked')
@@ -138,7 +138,7 @@ socket.on('addProductToCart', (data) => {
   }
 })
 
-socket.on('deleteProductToCart', (data) => {
+socket.on('deleteProductToCart', data => {
   setTimeout(() => {
     cardPrevius.textContent = ''
     totalCart.textContent = ''
@@ -146,7 +146,7 @@ socket.on('deleteProductToCart', (data) => {
       emptyCart()
       domHidden()
     } else {
-      data.productsInCart.forEach((prod) => {
+      data.productsInCart.forEach(prod => {
         updatecart(prod)
       })
       popupVisible(data)
@@ -158,7 +158,7 @@ socket.on('deleteProductToCart', (data) => {
 vaciarcarrito.addEventListener('click', () => {
   socket.emit('emptyCart')
 })
-socket.on('emptyCart', (data) => {
+socket.on('emptyCart', data => {
   cardPrevius.textContent = ''
   totalCart.textContent = ''
   emptyCart()
@@ -168,4 +168,24 @@ socket.on('emptyCart', (data) => {
 const cardMore = document.getElementById('cardMore')
 cardMore.addEventListener('click', () => {
   cardMore.classList.toggle('is-selected')
+})
+
+const subscribeForm = document.getElementById('subscribeForm')
+const subscribeButton = document.querySelector('.subscribeButton')
+subscribeForm.addEventListener('submit', e => {
+  e.preventDefault()
+  const text = e.submitter.lastChild.textContent
+  if (text === 'Suscribirme') {
+    subscribeButton.innerHTML = ''
+    subscribeButton.innerHTML = `
+    <img class='sad'
+    src='https://cdn-icons-png.flaticon.com/512/42/42735.png?w=740&t=st=1681834410~exp=1681835010~hmac=44aaabd977b39096b49d092cf827f696b8f9b4af1681edd7eefd32bed66aa6ef'
+    alt='Enamorado'/><span>Ya no Enviar</span>`
+  } else {
+    subscribeButton.innerHTML = ''
+    subscribeButton.innerHTML = `
+    <img class='love'
+    src='https://cdn-icons-png.flaticon.com/512/48/48974.png?w=740&t=st=1681832071~exp=1681832671~hmac=e140682aed2184e0652ba559185586d6a731bfd6a567e8cedc9125d52597cf5a'
+    alt='Enamorado'/><span>Suscribirme</span>`
+  }
 })

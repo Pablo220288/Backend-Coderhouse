@@ -6,7 +6,7 @@ import * as path from 'path'
 import __dirname from './utils.js'
 import { engine } from 'express-handlebars'
 import router from './routes/routes.routes.js'
-import connectionMongoose from './connection/mongoose.js'
+import connectionMongoose from './connection/mongoose.js' // eslint-disable-line
 import morgan from 'morgan'
 import cookieParser from 'cookie-parser'
 import session from 'express-session'

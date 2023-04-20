@@ -2,15 +2,15 @@ import CrudMongoose from '../dao/Mongoose/controllers/ProductManager.js'
 import CartMongooseManager from '../dao/Mongoose/controllers/CartsManager.js'
 import __dirname from '../utils.js'
 import express, { Router } from 'express'
-
-import userModel from '../dao/Mongoose/models/UserSchema.js'
 import { io } from '../index.js'
+import UserService from '../services/userService.js'
 
 const productsRouter = Router()
 const productAll = new CrudMongoose()
 const carts = new CartMongooseManager()
+const userService = new UserService()
 
-const products = async (options) => {
+const products = async options => {
   const products = await productAll.findProducts(options)
   const data = {
     title: 'Backend | Express',
@@ -26,7 +26,7 @@ const products = async (options) => {
   }
   return data
 }
-const cartProduct = async (idCart) => {
+const cartProduct = async idCart => {
   const prod = await carts.findCartsById(idCart)
   const productsInCart = []
   for (let i = 0; i < prod.products.length; i++) {
@@ -59,10 +59,7 @@ productsRouter
       // Confirmamos Login del User
       req.session.login = true
       // Obtenemos los Datos del User y guardamos en Session
-      const user = await userModel
-        .findById(req.session.passport.user)
-        .populate('roles')
-        .exec()
+      const user = await userService.findByIdUser(req.session.passport.user)
       req.session.nameUser = `${user.firstName} ${user.lastName}`
       req.session.role = user.roles[0].name
       // Comprobamos si tiene productos en el Carrito
@@ -70,7 +67,7 @@ productsRouter
       let emptyCart = false
       if (productsCart.totalCart === 0) emptyCart = true
       // Generamos JWT y lo guardamos en una Cookie
-      const token = await userModel.createToken(user)
+      const token = await userService.createToken(user)
       res.cookie('jwtCookie', token)
       // Renderizamos Vista con los Productos, Datos del User y Productos en Carrito del User si existen
       res.render('home', {
@@ -82,14 +79,14 @@ productsRouter
         emptyCart,
         countCart: productsCart.countCart
       })
-      io.on('connection', (socket) => {
+      io.on('connection', socket => {
         const idCart = user.cart._id.toString()
-        socket.on('addProductToCart', async (idProduct) => {
+        socket.on('addProductToCart', async idProduct => {
           await carts.addProductToCart(idCart, idProduct)
           const products = await cartProduct(idCart)
           io.sockets.emit('addProductToCart', products)
         })
-        socket.on('deleteProductToCart', async (idProduct) => {
+        socket.on('deleteProductToCart', async idProduct => {
           await carts.deleteProductToCart(idCart, idProduct)
           const products = await cartProduct(idCart)
           io.sockets.emit('deleteProductToCart', products)

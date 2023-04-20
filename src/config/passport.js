@@ -1,14 +1,15 @@
 import local from 'passport-local'
 import passport from 'passport'
-import userModel from '../dao/Mongoose/models/UserSchema.js'
 import GitHubStrategy from 'passport-github2'
 import jwt from 'passport-jwt'
-import { roleModel } from '../dao/Mongoose/models/RoleSchema.js'
-import { findOneUser } from '../service/userService.js'
+import UserService from '../services/userService.js'
+import * as roleService from '../services/roleService.js'
 
 const LocarStrategy = local.Strategy
 const JWTStrategy = jwt.Strategy
 const ExtractJWT = jwt.ExtractJwt
+
+const userService = new UserService()
 
 const initializePassword = () => {
   const cookieExtractor = req => {
@@ -47,7 +48,7 @@ const initializePassword = () => {
               age,
               emailRegister: username
             }
-            const user = await userModel.findOne({ email: username })
+            const user = await userService.findOneUser(username)
             // Comprobamos si el email ya sta Registrado//
             if (user) {
               req.session.signup = true
@@ -70,26 +71,26 @@ const initializePassword = () => {
               lastName,
               age: parseInt(age),
               email: username,
-              password: await userModel.encryptPassword(password)
+              password: await userService.encryptPassword(password)
             }
 
             // Asignamos un rol al nuevo usuario: si no lo especifica sera "user"
             if (roles) {
-              const foundRoles = await roleModel.find({
+              const foundRoles = await roleService.findRoles({
                 name: { $in: roles }
               })
               newUser.roles = foundRoles.map(role => role._id)
             } else {
-              const role = await roleModel.findOne({ name: 'user' })
+              const role = await roleService.findOneRole('user')
               newUser.roles = [role._id]
             }
 
             // Le Asignamos un Carrito
-            const newCart = await userModel.addCartToUser()
+            const newCart = await userService.addCartToUser()
             newUser.cart = newCart
 
             // Lo guardamos en la DB
-            await userModel.create(newUser)
+            await userService.createUser(newUser)
 
             // Lo enviamos a Login para que Ininie Session
             req.session.signup = false
@@ -112,7 +113,7 @@ const initializePassword = () => {
   })
 
   passport.deserializeUser(async (id, done) => {
-    const user = await userModel.findById(id)
+    const user = await userService.findByIdUser(id)
     done(null, user)
   })
 
@@ -123,13 +124,13 @@ const initializePassword = () => {
         { passReqToCallback: true, usernameField: 'email' },
         async (req, username, password, done) => {
           try {
-            const user = await findOneUser(username)
+            const user = await userService.findOneUser(username)
             if (user == null) {
               req.session.signup = false
               req.session.messageErrorLogin = 'Invalid email'
               return done(null, false)
             }
-            if (await userModel.comparePassword(password, user.password)) {
+            if (await userService.comparePassword(password, user.password)) {
               // const token = await userModel.createToken(user);
               // const accessToken = generateToken(user); Consultamos JWT pero no lo usamos por ahora
               return done(null, user)
@@ -157,20 +158,22 @@ const initializePassword = () => {
         },
         async (req, accessToken, refreshToken, profile, done) => {
           try {
-            const userGithub = await userModel.findOne({
+            const userGithub = await userService.findOneUser({
               email: profile.emails[0].value
             })
             if (userGithub) {
               return done(null, userGithub)
             } else {
-              const role = await roleModel.findOne({ name: 'user' })
-              const newUser = await userModel.create({
+              const role = await roleService.findOneRole('user')
+              const cart = await userService.addCartToUser()
+              const newUser = await userService.createUser({
                 firstName: profile._json.name,
                 lastName: '', // Github no poseee lastName
                 age: 18, // Github no define age
                 email: profile.emails[0].value,
                 password: '', // Github ya ofrece una contraseña
-                roles: [role._id]
+                roles: [role._id],
+                cart
               })
               return done(null, newUser)
             }

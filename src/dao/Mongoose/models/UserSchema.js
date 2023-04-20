@@ -51,8 +51,7 @@ UserSchema.static('createToken', async user => {
 })
 
 UserSchema.static('verifyToken', async token => {
-  const verifyToken = jwt.verify(token, process.env.JWT_PRIVATE_KEY)
-  return verifyToken
+  return jwt.verify(token, process.env.JWT_PRIVATE_KEY)
 })
 
 UserSchema.static('addCartToUser', async () => {

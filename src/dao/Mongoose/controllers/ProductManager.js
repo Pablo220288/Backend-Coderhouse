@@ -1,5 +1,5 @@
-import { productModel } from '../models/ProductSchema.js'
 import { PORT } from '../../../index.js'
+import * as productService from '../../../services/productService.js'
 
 class CrudMongoose {
   objectKeys (object) {
@@ -12,16 +12,18 @@ class CrudMongoose {
       !object.category ||
       !object.code ||
       !object.stock
-    ) { return 400 }
+    ) {
+      return 400
+    }
   }
 
-  exist = async (id) => {
-    const products = await productModel.find()
-    return products.find((prod) => prod.id === id)
+  exist = async id => {
+    const products = await productService.findProducts()
+    return products.find(prod => prod.id === id)
   }
 
   category = async () => {
-    const categorys = await productModel.find({})
+    const categorys = await productService.findProducts({})
     const selectCategory = []
     for (const prodCategory of categorys) {
       selectCategory.push(prodCategory.category)
@@ -31,7 +33,7 @@ class CrudMongoose {
     return categorySingle
   }
 
-  findProducts = async (data) => {
+  findProducts = async data => {
     const category = await this.category()
     if (data) {
       const category =
@@ -40,7 +42,7 @@ class CrudMongoose {
       const page = parseInt(data.page, 10) || 1
       const skip = limit * page - limit
       const sort = data.sort || 'asc'
-      const filter = await productModel.paginate(category, {
+      const filter = await productService.findPaginateProducts(category, {
         limit,
         page,
         skip,
@@ -57,7 +59,7 @@ class CrudMongoose {
     } else {
       const limit = 4
       const page = 1
-      const productsAll = await productModel.paginate(
+      const productsAll = await productService.findPaginateProducts(
         {},
         {
           limit,
@@ -76,30 +78,34 @@ class CrudMongoose {
     }
   }
 
-  findProductsById = async (id) => {
+  findProductsById = async id => {
     const product = await this.exist(id)
     if (!product) return 'Producto no Encontrado'
     return product
   }
 
-  createProducts = async (newProduct) => {
-    if (this.objectKeys(newProduct) === 400) { return 'JSON incompleto. Faltan 1 o mas Datos' }
-    await productModel.create(newProduct)
+  createProducts = async newProduct => {
+    if (this.objectKeys(newProduct) === 400) {
+      return 'JSON incompleto. Faltan 1 o mas Datos'
+    }
+    await productService.createProduct(newProduct)
     return 'Producto Agregado Correctamente'
   }
 
   updateProducts = async (id, updateProduct) => {
     const product = await this.exist(id)
     if (!product) return 'Producto no Encontrado'
-    if (this.objectKeys(updateProduct) === 400) { return 'JSON incompleto. Faltan 1 o mas Datos' }
-    await productModel.findByIdAndUpdate(id, updateProduct)
+    if (this.objectKeys(updateProduct) === 400) {
+      return 'JSON incompleto. Faltan 1 o mas Datos'
+    }
+    await productService.findByIdAndUpdate(id, updateProduct)
     return 'Producto Modificado Correctamente'
   }
 
-  deleteProductsById = async (id) => {
+  deleteProductsById = async id => {
     const product = await this.exist(id)
     if (!product) return 'Producto no Encontrado'
-    const result = await productModel.findByIdAndDelete(id)
+    const result = await productService.findByIdAndDelete(id)
     return `Producto ${result.title} Eliminado`
   }
 }

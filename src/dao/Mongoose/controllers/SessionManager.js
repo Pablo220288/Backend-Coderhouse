@@ -18,6 +18,7 @@ class SessionManager {
         return res.status(200).render('login', {
           title: 'Login | Signup',
           noNav: true,
+          noFooter: true,
           email: req.session.email,
           messageLogin: req.session.messageErrorLogin,
           signup: req.session.signup,
