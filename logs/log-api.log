@@ -1,0 +1,51 @@
+{"level":"info","message":"Express por Loacal host 8080","timestamp":"2023-04-21T14:17:17.418Z"}
+{"level":"info","message":"j4f-lOC2qEfg3GBtAAAB: Conectado","timestamp":"2023-04-21T14:17:17.601Z"}
+{"level":"info","message":"Express por Loacal host 8080","timestamp":"2023-04-21T14:17:53.593Z"}
+{"level":"info","message":"DuZXr8h7Qd8QLkLRAAAB: Conectado","timestamp":"2023-04-21T14:17:53.720Z"}
+{"level":"info","message":"Express por Loacal host 8080","timestamp":"2023-04-21T14:17:57.893Z"}
+{"level":"info","message":"Zu-a8Z5pKBwawgBYAAAB: Conectado","timestamp":"2023-04-21T14:17:58.021Z"}
+{
+  level: 'info',
+  message: 'Express por Loacal host 8080',
+  timestamp: '2023-04-21T14:19:19.891Z'
+}
+{
+  level: 'info',
+  message: '4Ffigo7GVlTzYR-vAAAB: Conectado',
+  timestamp: '2023-04-21T14:19:20.134Z'
+}
+{
+  level: 'info',
+  message: 'Express por Loacal host 8080',
+  timestamp: '2023-04-21T14:19:33.533Z'
+}
+{
+  level: 'info',
+  message: 'Cpjm4dJBInGec32OAAAB: Conectado',
+  timestamp: '2023-04-21T14:19:33.686Z'
+}
+{
+  level: 'info',
+  message: 'Express por Loacal host 8080',
+  timestamp: '2023-04-21T14:19:42.835Z'
+}
+{
+  level: 'info',
+  message: 'fmQW9XZh3DzkhLF5AAAB: Conectado',
+  timestamp: '2023-04-21T14:19:42.998Z'
+}
+{
+  level: 'info',
+  message: 'fmQW9XZh3DzkhLF5AAAB: Desconectado',
+  timestamp: '2023-04-21T14:20:10.011Z'
+}
+{
+  level: 'info',
+  message: 'q_LbZYpaD2Hh8i8EAAAD: Conectado',
+  timestamp: '2023-04-21T14:20:15.752Z'
+}
+{
+  level: 'info',
+  message: 'q_LbZYpaD2Hh8i8EAAAD: Desconectado',
+  timestamp: '2023-04-21T14:20:41.981Z'
+}

@@ -1,5 +1,0 @@
-GET /realTimeCarts 304 162.460 ms - - Fri, 17 Mar 2023 22:05:19 GMT : type
-GET /css/styles.css 304 24.813 ms - - Fri, 17 Mar 2023 22:05:20 GMT : type
-GET /js/carts.js 304 12.577 ms - - Fri, 17 Mar 2023 22:05:20 GMT : type
-GET /js/main.js 304 8.862 ms - - Fri, 17 Mar 2023 22:05:20 GMT : type
-GET /img/nodejs.png 304 0.984 ms - - Fri, 17 Mar 2023 22:05:20 GMT : type

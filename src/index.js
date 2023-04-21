@@ -2,14 +2,15 @@ import app from './app.js'
 import { Server } from 'socket.io'
 import { dateShort } from '../utils/dateShort.js'
 import { chatModel } from './dao/Mongoose/models/ChatSchema.js'
+import { logger } from '../utils/logger.js'
 
 // Creando Loacal host 8080
 export const PORT = process.env.PORT || 8080
 const server = app.listen(PORT, () =>
-  console.log(`Express por Loacal host ${server.address().port}`)
+  logger.log('info', `Express por Loacal host ${server.address().port}`)
 )
 server.on('error', err => {
-  console.log(`Algo salio mal: ${err}`)
+  logger.log('error', `Algo salio mal: ${err}`)
 })
 export const io = new Server(server)
 // ChatSocket
@@ -28,9 +29,9 @@ const addChatMongoose = async messaje => {
   await chatModel.create(messaje)
 }
 io.on('connection', socket => {
-  console.log(socket.id, 'Conectado')
+  logger.log('info', `${socket.id}: Conectado`)
   socket.on('disconnect', () => {
-    console.log(socket.id, 'Desconectado')
+    logger.log('info', `${socket.id}: Desconectado`)
     const user = usersChat.find(user => user.idUser === socket.id)
     if (user !== undefined) {
       // Subimos a MongoDB Mensaje de Desconeccion
