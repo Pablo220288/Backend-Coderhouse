@@ -1,51 +1,4855 @@
-{"level":"info","message":"Express por Loacal host 8080","timestamp":"2023-04-21T14:17:17.418Z"}
-{"level":"info","message":"j4f-lOC2qEfg3GBtAAAB: Conectado","timestamp":"2023-04-21T14:17:17.601Z"}
-{"level":"info","message":"Express por Loacal host 8080","timestamp":"2023-04-21T14:17:53.593Z"}
-{"level":"info","message":"DuZXr8h7Qd8QLkLRAAAB: Conectado","timestamp":"2023-04-21T14:17:53.720Z"}
-{"level":"info","message":"Express por Loacal host 8080","timestamp":"2023-04-21T14:17:57.893Z"}
-{"level":"info","message":"Zu-a8Z5pKBwawgBYAAAB: Conectado","timestamp":"2023-04-21T14:17:58.021Z"}
 {
   level: 'info',
-  message: 'Express por Loacal host 8080',
-  timestamp: '2023-04-21T14:19:19.891Z'
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T10:12:58.942Z'
 }
 {
   level: 'info',
-  message: '4Ffigo7GVlTzYR-vAAAB: Conectado',
-  timestamp: '2023-04-21T14:19:20.134Z'
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T10:22:25.212Z'
 }
 {
   level: 'info',
-  message: 'Express por Loacal host 8080',
-  timestamp: '2023-04-21T14:19:33.533Z'
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T10:22:29.973Z'
 }
 {
   level: 'info',
-  message: 'Cpjm4dJBInGec32OAAAB: Conectado',
-  timestamp: '2023-04-21T14:19:33.686Z'
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T10:22:36.532Z'
 }
 {
   level: 'info',
-  message: 'Express por Loacal host 8080',
-  timestamp: '2023-04-21T14:19:42.835Z'
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T10:23:22.586Z'
 }
 {
   level: 'info',
-  message: 'fmQW9XZh3DzkhLF5AAAB: Conectado',
-  timestamp: '2023-04-21T14:19:42.998Z'
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T10:23:31.094Z'
 }
 {
   level: 'info',
-  message: 'fmQW9XZh3DzkhLF5AAAB: Desconectado',
-  timestamp: '2023-04-21T14:20:10.011Z'
+  message: 'YurSQC5ZSnnJPOPkAAAB: Conectado',
+  timestamp: '2023-04-28T10:30:20.239Z'
 }
 {
   level: 'info',
-  message: 'q_LbZYpaD2Hh8i8EAAAD: Conectado',
-  timestamp: '2023-04-21T14:20:15.752Z'
+  message: 'YurSQC5ZSnnJPOPkAAAB: Desconectado',
+  timestamp: '2023-04-28T10:30:21.336Z'
 }
 {
   level: 'info',
-  message: 'q_LbZYpaD2Hh8i8EAAAD: Desconectado',
-  timestamp: '2023-04-21T14:20:41.981Z'
+  message: 'EekIxyk5dgHNlmALAAAD: Conectado',
+  timestamp: '2023-04-28T10:30:38.706Z'
+}
+{
+  level: 'info',
+  message: 'EekIxyk5dgHNlmALAAAD: Desconectado',
+  timestamp: '2023-04-28T10:30:44.021Z'
+}
+{
+  level: 'info',
+  message: 'kvLtObU5GYEss-9qAAAF: Conectado',
+  timestamp: '2023-04-28T10:31:20.501Z'
+}
+{
+  level: 'info',
+  message: 'kvLtObU5GYEss-9qAAAF: Desconectado',
+  timestamp: '2023-04-28T10:31:24.063Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T10:32:57.108Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T10:33:23.258Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T10:33:30.267Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T10:33:45.881Z'
+}
+{
+  level: 'info',
+  message: 'v-2wNL84SluvJjCAAAAB: Conectado',
+  timestamp: '2023-04-28T10:33:46.124Z'
+}
+{
+  level: 'info',
+  message: 'v-2wNL84SluvJjCAAAAB: Desconectado',
+  timestamp: '2023-04-28T10:33:48.253Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T10:34:14.192Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T10:35:09.804Z'
+}
+{
+  level: 'info',
+  message: 'JB2aPDs3qHoFePSOAAAB: Conectado',
+  timestamp: '2023-04-28T10:37:38.256Z'
+}
+{
+  level: 'info',
+  message: 'JB2aPDs3qHoFePSOAAAB: Desconectado',
+  timestamp: '2023-04-28T10:37:41.965Z'
+}
+{
+  level: 'info',
+  message: 'KpWA6OpiROSjARtfAAAD: Conectado',
+  timestamp: '2023-04-28T10:42:28.792Z'
+}
+{
+  level: 'info',
+  message: 'KpWA6OpiROSjARtfAAAD: Desconectado',
+  timestamp: '2023-04-28T10:42:32.283Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T11:14:55.622Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T12:18:27.673Z'
+}
+{
+  level: 'info',
+  message: 'UZR3zGa_brbgsS-YAAAB: Conectado',
+  timestamp: '2023-04-28T12:34:08.852Z'
+}
+{
+  level: 'info',
+  message: 'UZR3zGa_brbgsS-YAAAB: Desconectado',
+  timestamp: '2023-04-28T12:34:13.549Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T12:55:34.598Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T12:56:32.572Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T12:56:44.305Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T15:59:31.472Z'
+}
+{
+  level: 'info',
+  message: '2KbrPb75KOaYtFD2AAAB: Conectado',
+  timestamp: '2023-04-28T15:59:41.388Z'
+}
+{
+  level: 'info',
+  message: '2KbrPb75KOaYtFD2AAAB: Desconectado',
+  timestamp: '2023-04-28T15:59:47.738Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:00:20.012Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:01:30.632Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:01:37.043Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:01:41.476Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:02:25.882Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:04:42.931Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:04:46.395Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:04:50.157Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:04:57.715Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:05:13.549Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:05:20.986Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:05:46.533Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:08:57.153Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:10:06.022Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:10:34.094Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:10:38.049Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:10:41.890Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:10:48.446Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:11:03.666Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:11:07.981Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:11:23.202Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:11:47.575Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:11:52.231Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:11:58.029Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:12:14.685Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:12:22.008Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:12:27.852Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:13:00.574Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:13:11.439Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:13:54.820Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:17:21.473Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:17:26.984Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:17:32.810Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:17:38.401Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:19:12.416Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:19:21.322Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:22:51.159Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:23:10.649Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:23:19.997Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:23:57.637Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:24:07.104Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:24:10.697Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:24:16.341Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:24:20.416Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:24:34.700Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:25:02.797Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:25:42.039Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:25:49.647Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:25:55.636Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:26:58.091Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:27:54.669Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:28:07.015Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:28:17.233Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:28:21.874Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:28:27.030Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:28:42.507Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:28:46.638Z'
+}
+{
+  level: 'info',
+  message: 'lh5BlXs398a-O2yPAAAB: Conectado',
+  timestamp: '2023-04-28T16:28:59.871Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:29:54.558Z'
+}
+{
+  level: 'info',
+  message: 'mmZEBtdEFcTTi5U4AAAB: Conectado',
+  timestamp: '2023-04-28T16:29:55.211Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:29:59.120Z'
+}
+{
+  level: 'info',
+  message: 'F_4GFVLZ_iCsRQeGAAAB: Conectado',
+  timestamp: '2023-04-28T16:30:04.021Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:36:27.844Z'
+}
+{
+  level: 'info',
+  message: 'jx7lg6dHEC4FYSUqAAAB: Conectado',
+  timestamp: '2023-04-28T16:36:28.063Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:37:33.521Z'
+}
+{
+  level: 'info',
+  message: 'rd7glSHaar6Itn1MAAAB: Conectado',
+  timestamp: '2023-04-28T16:37:33.653Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:38:07.469Z'
+}
+{
+  level: 'info',
+  message: 'um2b7p_JarqAxAKfAAAB: Conectado',
+  timestamp: '2023-04-28T16:38:07.690Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:41:54.669Z'
+}
+{
+  level: 'info',
+  message: 'KyMfN1sJSDqg1qxdAAAB: Conectado',
+  timestamp: '2023-04-28T16:41:54.783Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:41:56.955Z'
+}
+{
+  level: 'info',
+  message: '7_YUp2xN5UQRAhEZAAAB: Conectado',
+  timestamp: '2023-04-28T16:41:57.178Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:42:06.067Z'
+}
+{
+  level: 'info',
+  message: '4pr7JlJw6Qz5Z0LCAAAB: Conectado',
+  timestamp: '2023-04-28T16:42:06.216Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:42:10.176Z'
+}
+{
+  level: 'info',
+  message: 'eocfh4OUDMZ7FBbNAAAB: Conectado',
+  timestamp: '2023-04-28T16:42:10.309Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:42:15.849Z'
+}
+{
+  level: 'info',
+  message: 'uIzUeIn0JRafyGyoAAAB: Conectado',
+  timestamp: '2023-04-28T16:42:15.940Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:42:18.611Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:42:23.506Z'
+}
+{
+  level: 'info',
+  message: 'D2HjyiiO6td0km7OAAAB: Conectado',
+  timestamp: '2023-04-28T16:42:23.650Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:42:52.252Z'
+}
+{
+  level: 'info',
+  message: 'lufKcA2o7ugexRjfAAAB: Conectado',
+  timestamp: '2023-04-28T16:42:52.440Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:42:55.164Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:42:57.245Z'
+}
+{
+  level: 'info',
+  message: 'hEsAWqzmIrULcwtVAAAB: Conectado',
+  timestamp: '2023-04-28T16:42:57.434Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:49:38.134Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:50:00.014Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:50:03.712Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:50:09.477Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:50:18.519Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:50:23.148Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:50:25.291Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:50:30.625Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:50:34.312Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:50:54.815Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:51:01.873Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:51:03.933Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:51:07.314Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:51:31.156Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:52:17.001Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:52:24.018Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:52:26.562Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:52:37.528Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:52:46.529Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:52:53.330Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:53:05.660Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:53:22.018Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:53:25.405Z'
+}
+{
+  level: 'info',
+  message: 'f-sUc2f1lWqQ-hfYAAAB: Conectado',
+  timestamp: '2023-04-28T16:53:38.124Z'
+}
+{
+  level: 'info',
+  message: 'f-sUc2f1lWqQ-hfYAAAB: Desconectado',
+  timestamp: '2023-04-28T16:53:43.515Z'
+}
+{
+  level: 'info',
+  message: 'u6JiatxQeE9MVpnqAAAD: Conectado',
+  timestamp: '2023-04-28T16:53:45.616Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:54:27.618Z'
+}
+{
+  level: 'info',
+  message: '9OdVoek-BP77bSjvAAAB: Conectado',
+  timestamp: '2023-04-28T16:54:30.578Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:55:17.983Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:55:20.902Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:55:33.437Z'
+}
+{
+  level: 'info',
+  message: 'K07m__gctoOVvfptAAAB: Conectado',
+  timestamp: '2023-04-28T16:55:39.777Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:56:22.081Z'
+}
+{
+  level: 'info',
+  message: 'vbY6xJ-gsUN2HLtrAAAB: Conectado',
+  timestamp: '2023-04-28T16:56:22.284Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T16:59:58.640Z'
+}
+{
+  level: 'info',
+  message: 'FtUEh4kWLMpdPl3OAAAB: Conectado',
+  timestamp: '2023-04-28T16:59:59.009Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:00:12.159Z'
+}
+{
+  level: 'info',
+  message: '43jEkClRBBqQ8n2oAAAB: Conectado',
+  timestamp: '2023-04-28T17:00:18.788Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:00:52.149Z'
+}
+{
+  level: 'info',
+  message: 'BqfIB20laPNko14EAAAB: Conectado',
+  timestamp: '2023-04-28T17:00:56.811Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:01:28.606Z'
+}
+{
+  level: 'info',
+  message: 'Bjgng2YUrEIN5fWFAAAB: Conectado',
+  timestamp: '2023-04-28T17:01:32.401Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:02:01.688Z'
+}
+{
+  level: 'info',
+  message: 'hNbS2CV8UK5DELIaAAAB: Conectado',
+  timestamp: '2023-04-28T17:02:05.849Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:03:02.740Z'
+}
+{
+  level: 'info',
+  message: 'cLs-CruhModLdmqkAAAB: Conectado',
+  timestamp: '2023-04-28T17:03:03.090Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:03:24.439Z'
+}
+{
+  level: 'info',
+  message: 'I3qyYme0ThglgLOmAAAB: Conectado',
+  timestamp: '2023-04-28T17:03:25.282Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:03:40.206Z'
+}
+{
+  level: 'info',
+  message: 'P2OLLkE_uzZZ9L5-AAAB: Conectado',
+  timestamp: '2023-04-28T17:03:43.649Z'
+}
+{
+  level: 'info',
+  message: 'P2OLLkE_uzZZ9L5-AAAB: Desconectado',
+  timestamp: '2023-04-28T17:04:39.666Z'
+}
+{
+  level: 'info',
+  message: 'FWRuuRt20QL0KwNeAAAD: Conectado',
+  timestamp: '2023-04-28T17:04:40.820Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:11:40.126Z'
+}
+{
+  level: 'info',
+  message: 'dlijf7uZffRzhDjVAAAB: Conectado',
+  timestamp: '2023-04-28T17:11:40.448Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:11:45.559Z'
+}
+{
+  level: 'info',
+  message: 'ouVCFvcgRN_Tn2VhAAAB: Conectado',
+  timestamp: '2023-04-28T17:11:49.992Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:12:17.478Z'
+}
+{
+  level: 'info',
+  message: 'GEWXEhqkiFtLbcoqAAAB: Conectado',
+  timestamp: '2023-04-28T17:12:17.824Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:12:20.670Z'
+}
+{
+  level: 'info',
+  message: 'PjFN_4ZuijsgNQ2NAAAB: Conectado',
+  timestamp: '2023-04-28T17:12:20.915Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:12:27.581Z'
+}
+{
+  level: 'info',
+  message: 'Pkdj9jTXmk91BNgWAAAB: Conectado',
+  timestamp: '2023-04-28T17:12:27.682Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:12:36.468Z'
+}
+{
+  level: 'info',
+  message: '4lAfzRIrcsEYK6g5AAAB: Conectado',
+  timestamp: '2023-04-28T17:12:36.647Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:12:46.444Z'
+}
+{
+  level: 'info',
+  message: 'LvWAfZVW18XpM0XTAAAB: Conectado',
+  timestamp: '2023-04-28T17:12:46.654Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:12:59.397Z'
+}
+{
+  level: 'info',
+  message: 'EswJPoMrX6JEDX8DAAAB: Conectado',
+  timestamp: '2023-04-28T17:12:59.556Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:13:10.934Z'
+}
+{
+  level: 'info',
+  message: '_t3dynsmD5S8dUcTAAAB: Conectado',
+  timestamp: '2023-04-28T17:13:11.168Z'
+}
+{
+  level: 'info',
+  message: '_t3dynsmD5S8dUcTAAAB: Desconectado',
+  timestamp: '2023-04-28T17:13:16.452Z'
+}
+{
+  level: 'info',
+  message: 'ri2O5FCwC6HjSo87AAAD: Conectado',
+  timestamp: '2023-04-28T17:13:18.831Z'
+}
+{
+  level: 'info',
+  message: 'ri2O5FCwC6HjSo87AAAD: Desconectado',
+  timestamp: '2023-04-28T17:17:53.722Z'
+}
+{
+  level: 'info',
+  message: '0Y6ESdAlCTIG5nXxAAAF: Conectado',
+  timestamp: '2023-04-28T17:17:57.607Z'
+}
+{
+  level: 'info',
+  message: '0Y6ESdAlCTIG5nXxAAAF: Desconectado',
+  timestamp: '2023-04-28T17:18:01.054Z'
+}
+{
+  level: 'info',
+  message: 'QjJvhg4cb9dqv-MgAAAH: Conectado',
+  timestamp: '2023-04-28T17:19:52.220Z'
+}
+{
+  level: 'info',
+  message: 'QjJvhg4cb9dqv-MgAAAH: Desconectado',
+  timestamp: '2023-04-28T17:21:13.864Z'
+}
+{
+  level: 'info',
+  message: 'btmMcuI-DLBIXQdCAAAJ: Conectado',
+  timestamp: '2023-04-28T17:21:14.967Z'
+}
+{
+  level: 'info',
+  message: 'btmMcuI-DLBIXQdCAAAJ: Desconectado',
+  timestamp: '2023-04-28T17:21:30.232Z'
+}
+{
+  level: 'info',
+  message: 'OdV6DX-661WBeNAlAAAL: Conectado',
+  timestamp: '2023-04-28T17:21:30.689Z'
+}
+{
+  level: 'info',
+  message: 'OdV6DX-661WBeNAlAAAL: Desconectado',
+  timestamp: '2023-04-28T17:21:40.192Z'
+}
+{
+  level: 'info',
+  message: '_M8LxKS5sUPymwF3AAAN: Conectado',
+  timestamp: '2023-04-28T17:21:41.718Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:24:46.886Z'
+}
+{
+  level: 'info',
+  message: 'IuP1RSb9IBVh2a6EAAAB: Conectado',
+  timestamp: '2023-04-28T17:24:47.137Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:25:08.618Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:25:12.060Z'
+}
+{
+  level: 'info',
+  message: '_gukT0brFNE-e31HAAAB: Conectado',
+  timestamp: '2023-04-28T17:25:14.698Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:28:43.307Z'
+}
+{
+  level: 'info',
+  message: 'ob4axKW6cWztHktDAAAB: Conectado',
+  timestamp: '2023-04-28T17:28:46.365Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:29:25.703Z'
+}
+{
+  level: 'info',
+  message: 'dScMh3AirCRsfimZAAAB: Conectado',
+  timestamp: '2023-04-28T17:29:25.976Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:29:29.133Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:29:32.852Z'
+}
+{
+  level: 'info',
+  message: 'MOm6iy2rnJPju4zpAAAB: Conectado',
+  timestamp: '2023-04-28T17:29:35.993Z'
+}
+{
+  level: 'info',
+  message: 'MOm6iy2rnJPju4zpAAAB: Desconectado',
+  timestamp: '2023-04-28T17:29:59.855Z'
+}
+{
+  level: 'info',
+  message: 'Uzxctwxscxwp7cxUAAAD: Conectado',
+  timestamp: '2023-04-28T17:30:07.031Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:30:59.549Z'
+}
+{
+  level: 'info',
+  message: 'K5bldoWTU64fs2zyAAAB: Conectado',
+  timestamp: '2023-04-28T17:30:59.783Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:31:22.078Z'
+}
+{
+  level: 'info',
+  message: 'XPP3aMF86Gr-cMYdAAAB: Conectado',
+  timestamp: '2023-04-28T17:31:22.238Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:31:26.565Z'
+}
+{
+  level: 'info',
+  message: 'MlM3M8PO4rrOqs60AAAB: Conectado',
+  timestamp: '2023-04-28T17:31:26.704Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:32:06.987Z'
+}
+{
+  level: 'info',
+  message: '0aHCQ6plssQI0hJNAAAB: Conectado',
+  timestamp: '2023-04-28T17:32:07.402Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:32:24.271Z'
+}
+{
+  level: 'info',
+  message: 'gBi_ZkyNd37JLz4kAAAB: Conectado',
+  timestamp: '2023-04-28T17:32:24.435Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:32:29.906Z'
+}
+{
+  level: 'info',
+  message: 'Lk0dHdlugt03uXEwAAAB: Conectado',
+  timestamp: '2023-04-28T17:32:30.201Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:33:37.997Z'
+}
+{
+  level: 'info',
+  message: 'Ufcwgc9KxqxIYrJDAAAB: Conectado',
+  timestamp: '2023-04-28T17:33:40.045Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:33:46.175Z'
+}
+{
+  level: 'info',
+  message: 'vBXHDiw70_Swr5TVAAAB: Conectado',
+  timestamp: '2023-04-28T17:33:46.440Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:35:52.314Z'
+}
+{
+  level: 'info',
+  message: 'ZHneGbx0FOwJssDQAAAB: Conectado',
+  timestamp: '2023-04-28T17:35:52.572Z'
+}
+{
+  level: 'info',
+  message: 'ZHneGbx0FOwJssDQAAAB: Desconectado',
+  timestamp: '2023-04-28T17:36:18.022Z'
+}
+{
+  level: 'info',
+  message: 'pV3RktwY7zGg-EwBAAAD: Conectado',
+  timestamp: '2023-04-28T17:36:20.463Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:39:13.013Z'
+}
+{
+  level: 'info',
+  message: '70j0ox2pRJD-zyT-AAAB: Conectado',
+  timestamp: '2023-04-28T17:39:15.303Z'
+}
+{
+  level: 'info',
+  message: '70j0ox2pRJD-zyT-AAAB: Desconectado',
+  timestamp: '2023-04-28T17:39:26.708Z'
+}
+{
+  level: 'info',
+  message: 'GmBYruA_6CKgTZyyAAAD: Conectado',
+  timestamp: '2023-04-28T17:39:43.807Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:41:20.658Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:41:29.055Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:41:35.143Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:41:46.793Z'
+}
+{
+  level: 'info',
+  message: 'KJ0h_SaO6dLAW7wUAAAB: Conectado',
+  timestamp: '2023-04-28T17:41:49.062Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:41:57.362Z'
+}
+{
+  level: 'info',
+  message: 'UyyZuh3UcnZQMKiRAAAB: Conectado',
+  timestamp: '2023-04-28T17:41:57.608Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:42:36.541Z'
+}
+{
+  level: 'info',
+  message: 'o5u-JUeIecpiTNIaAAAB: Conectado',
+  timestamp: '2023-04-28T17:42:36.683Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:42:57.510Z'
+}
+{
+  level: 'info',
+  message: 'gI9RHZ9WEwTV9J3UAAAB: Conectado',
+  timestamp: '2023-04-28T17:42:57.790Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:43:15.567Z'
+}
+{
+  level: 'info',
+  message: 'ELKPI0sefOm80kffAAAB: Conectado',
+  timestamp: '2023-04-28T17:43:15.726Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:43:21.952Z'
+}
+{
+  level: 'info',
+  message: 'ZbN-K24JnhOrc2lMAAAB: Conectado',
+  timestamp: '2023-04-28T17:43:22.180Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:43:24.868Z'
+}
+{
+  level: 'info',
+  message: 'XCmk1rjuPQdCcv9fAAAB: Conectado',
+  timestamp: '2023-04-28T17:43:24.966Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:43:54.623Z'
+}
+{
+  level: 'info',
+  message: 'nQJ3wn0uqw5XmjpnAAAB: Conectado',
+  timestamp: '2023-04-28T17:43:54.849Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:45:15.438Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:45:18.707Z'
+}
+{
+  level: 'info',
+  message: 'Fr5P4iP10BMQsav1AAAB: Conectado',
+  timestamp: '2023-04-28T17:45:18.918Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:45:22.234Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:45:30.068Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:46:01.699Z'
+}
+{
+  level: 'info',
+  message: 'bbDX4XkX_MXe-fDnAAAB: Conectado',
+  timestamp: '2023-04-28T17:46:01.868Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:46:09.488Z'
+}
+{
+  level: 'info',
+  message: 'XoS8Til4KvcAengkAAAB: Conectado',
+  timestamp: '2023-04-28T17:46:09.645Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:46:46.375Z'
+}
+{
+  level: 'info',
+  message: '3s0os7gBqbOUQFndAAAB: Conectado',
+  timestamp: '2023-04-28T17:46:46.450Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:47:01.310Z'
+}
+{
+  level: 'info',
+  message: 'Hh3CknBUhJSoxC4hAAAB: Conectado',
+  timestamp: '2023-04-28T17:47:01.446Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:47:21.778Z'
+}
+{
+  level: 'info',
+  message: 'JD0fKMJmqV0GQRAOAAAB: Conectado',
+  timestamp: '2023-04-28T17:47:21.948Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:47:26.763Z'
+}
+{
+  level: 'info',
+  message: 'xM8tr4OwCvEecTPsAAAB: Conectado',
+  timestamp: '2023-04-28T17:47:26.943Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:47:31.306Z'
+}
+{
+  level: 'info',
+  message: 'p-flpghtI_lRpnKuAAAB: Conectado',
+  timestamp: '2023-04-28T17:47:31.439Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:47:43.896Z'
+}
+{
+  level: 'info',
+  message: '6srFemW4do1LnKBQAAAB: Conectado',
+  timestamp: '2023-04-28T17:47:44.426Z'
+}
+{
+  level: 'info',
+  message: '6srFemW4do1LnKBQAAAB: Desconectado',
+  timestamp: '2023-04-28T17:48:00.990Z'
+}
+{
+  level: 'info',
+  message: 'u5NOU9z3-4-x8ZPPAAAD: Conectado',
+  timestamp: '2023-04-28T17:48:05.957Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:48:55.755Z'
+}
+{
+  level: 'info',
+  message: 'QdaDN0JfSFPz6kFLAAAB: Conectado',
+  timestamp: '2023-04-28T17:48:56.357Z'
+}
+{
+  level: 'info',
+  message: 'QdaDN0JfSFPz6kFLAAAB: Desconectado',
+  timestamp: '2023-04-28T17:49:11.300Z'
+}
+{
+  level: 'info',
+  message: 'lIxNi9jjpMQ1foGtAAAD: Conectado',
+  timestamp: '2023-04-28T17:49:14.688Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:49:44.785Z'
+}
+{
+  level: 'info',
+  message: 'wMC1eYBSKj8S1UGyAAAB: Conectado',
+  timestamp: '2023-04-28T17:49:45.055Z'
+}
+{
+  level: 'info',
+  message: 'wMC1eYBSKj8S1UGyAAAB: Desconectado',
+  timestamp: '2023-04-28T17:49:45.234Z'
+}
+{
+  level: 'info',
+  message: 'j5R3xzUwxlk06tMSAAAD: Conectado',
+  timestamp: '2023-04-28T17:49:50.088Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T17:59:16.566Z'
+}
+{
+  level: 'info',
+  message: 'bz3DjmGmZ8aV1zjSAAAB: Conectado',
+  timestamp: '2023-04-28T17:59:19.426Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T18:01:46.765Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T18:01:49.796Z'
+}
+{
+  level: 'info',
+  message: 'UUXBtgQ_CJPjixgDAAAB: Conectado',
+  timestamp: '2023-04-28T18:01:50.209Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T18:01:54.895Z'
+}
+{
+  level: 'info',
+  message: 'KgCzzXcEJrEz-QbRAAAB: Conectado',
+  timestamp: '2023-04-28T18:01:55.044Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T18:02:20.451Z'
+}
+{
+  level: 'info',
+  message: 'fcvZE8pmfjnGnyq-AAAB: Conectado',
+  timestamp: '2023-04-28T18:02:20.631Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T18:02:25.342Z'
+}
+{
+  level: 'info',
+  message: 'f2g057kUOH5f-bB8AAAB: Conectado',
+  timestamp: '2023-04-28T18:02:25.450Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T18:02:28.595Z'
+}
+{
+  level: 'info',
+  message: 'yYRbKCgEsw9mzIDKAAAB: Conectado',
+  timestamp: '2023-04-28T18:02:28.912Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T18:02:53.197Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T18:02:57.756Z'
+}
+{
+  level: 'info',
+  message: 'pVSg1L__7ayZOFBJAAAB: Conectado',
+  timestamp: '2023-04-28T18:03:05.039Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T18:03:18.968Z'
+}
+{
+  level: 'info',
+  message: '0P4PJEYSGeNgVVV2AAAB: Conectado',
+  timestamp: '2023-04-28T18:03:19.196Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T18:03:27.991Z'
+}
+{
+  level: 'info',
+  message: 'C9PkF6hrCUZtr95rAAAB: Conectado',
+  timestamp: '2023-04-28T18:03:28.185Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T18:03:34.536Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T18:03:47.192Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T18:03:56.085Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T18:04:06.332Z'
+}
+{
+  level: 'info',
+  message: 'wSsZIrr-ka4rFgizAAAB: Conectado',
+  timestamp: '2023-04-28T18:04:29.406Z'
+}
+{
+  level: 'info',
+  message: 'wSsZIrr-ka4rFgizAAAB: Desconectado',
+  timestamp: '2023-04-28T18:04:34.794Z'
+}
+{
+  level: 'info',
+  message: 'RFIMzRDxpvcLz6OpAAAD: Conectado',
+  timestamp: '2023-04-28T18:04:39.722Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T18:05:27.581Z'
+}
+{
+  level: 'info',
+  message: 'JPDb7hOsLUlwZNERAAAB: Conectado',
+  timestamp: '2023-04-28T18:05:27.650Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T18:05:38.651Z'
+}
+{
+  level: 'info',
+  message: 'hi13e_OHuwBq3Tj2AAAB: Conectado',
+  timestamp: '2023-04-28T18:05:38.776Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-28T18:05:48.991Z'
+}
+{
+  level: 'info',
+  message: 'BfnCpNPlO5Ik2UnmAAAB: Conectado',
+  timestamp: '2023-04-28T18:05:49.961Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T18:52:38.444Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T18:52:58.747Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T18:53:09.301Z'
+}
+{
+  level: 'info',
+  message: 'MJiKedAzozQf9STzAAAB: Conectado',
+  timestamp: '2023-04-29T18:53:25.517Z'
+}
+{
+  level: 'info',
+  message: 'MJiKedAzozQf9STzAAAB: Desconectado',
+  timestamp: '2023-04-29T18:53:45.583Z'
+}
+{
+  level: 'info',
+  message: 'Pr4x6Ifg4oPNeklqAAAD: Conectado',
+  timestamp: '2023-04-29T18:53:50.531Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:00:27.037Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:00:36.078Z'
+}
+{
+  level: 'info',
+  message: 'lbufm4r3u4BKviE8AAAB: Conectado',
+  timestamp: '2023-04-29T19:00:44.067Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:01:17.206Z'
+}
+{
+  level: 'info',
+  message: 'QX7eaA2wn5LlbCQpAAAB: Conectado',
+  timestamp: '2023-04-29T19:01:17.550Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:01:26.619Z'
+}
+{
+  level: 'info',
+  message: 'wBKxxi8fzCcejzkiAAAB: Conectado',
+  timestamp: '2023-04-29T19:01:26.730Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:01:32.969Z'
+}
+{
+  level: 'info',
+  message: 'SFib7f55JSmLAti4AAAB: Conectado',
+  timestamp: '2023-04-29T19:01:33.128Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:01:37.851Z'
+}
+{
+  level: 'info',
+  message: 'zDLNjqtn33wp_j93AAAB: Conectado',
+  timestamp: '2023-04-29T19:01:37.913Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:02:09.483Z'
+}
+{
+  level: 'info',
+  message: 'KPpPqsypZVGeqUIzAAAB: Conectado',
+  timestamp: '2023-04-29T19:02:09.631Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:02:13.147Z'
+}
+{
+  level: 'info',
+  message: 'nntGlQAlR54ILA3iAAAB: Conectado',
+  timestamp: '2023-04-29T19:02:13.229Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:02:17.814Z'
+}
+{
+  level: 'info',
+  message: 'b6dMtTu6nMG3ZNQHAAAB: Conectado',
+  timestamp: '2023-04-29T19:02:17.981Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:02:23.816Z'
+}
+{
+  level: 'info',
+  message: 'ozbkOjVHY0JDuK5uAAAB: Conectado',
+  timestamp: '2023-04-29T19:02:23.892Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:02:30.025Z'
+}
+{
+  level: 'info',
+  message: '06yZ8wWjyC3kdI4AAAAB: Conectado',
+  timestamp: '2023-04-29T19:02:30.341Z'
+}
+{
+  level: 'info',
+  message: '06yZ8wWjyC3kdI4AAAAB: Desconectado',
+  timestamp: '2023-04-29T19:03:02.541Z'
+}
+{
+  level: 'info',
+  message: 'a2tuROjwruJUqg5oAAAD: Conectado',
+  timestamp: '2023-04-29T19:03:08.172Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:03:23.340Z'
+}
+{
+  level: 'info',
+  message: 'eFaFgPIOmPO16KBHAAAB: Conectado',
+  timestamp: '2023-04-29T19:03:24.156Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:03:40.397Z'
+}
+{
+  level: 'info',
+  message: 'TaSQ8EP4oWT0qq0DAAAB: Conectado',
+  timestamp: '2023-04-29T19:03:40.693Z'
+}
+{
+  level: 'info',
+  message: 'TaSQ8EP4oWT0qq0DAAAB: Desconectado',
+  timestamp: '2023-04-29T19:03:47.126Z'
+}
+{
+  level: 'info',
+  message: 'LeFZmLC9AuozYNhiAAAD: Conectado',
+  timestamp: '2023-04-29T19:03:53.689Z'
+}
+{
+  level: 'info',
+  message: 'LeFZmLC9AuozYNhiAAAD: Desconectado',
+  timestamp: '2023-04-29T19:04:01.213Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:05:33.116Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:07:52.828Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:08:03.082Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:08:09.543Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:08:22.253Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:08:28.266Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:08:31.308Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:08:57.144Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:09:48.131Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:09:52.745Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:10:13.153Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:11:11.480Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:11:17.372Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:11:25.171Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:11:28.217Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:11:32.102Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:11:50.095Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:11:55.518Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:12:25.866Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:12:28.679Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:12:32.846Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:12:41.115Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:12:50.742Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:13:07.740Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:13:25.040Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:14:25.392Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:14:33.910Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:14:45.543Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:14:57.428Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:15:09.714Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:15:13.352Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:15:23.962Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:15:35.336Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:15:44.197Z'
+}
+{
+  level: 'info',
+  message: 'bBAYeSaygVf9H2PPAAAB: Conectado',
+  timestamp: '2023-04-29T19:16:01.059Z'
+}
+{
+  level: 'info',
+  message: 'bBAYeSaygVf9H2PPAAAB: Desconectado',
+  timestamp: '2023-04-29T19:16:37.643Z'
+}
+{
+  level: 'info',
+  message: 'Hure8kRxoWKlfLp0AAAD: Conectado',
+  timestamp: '2023-04-29T19:16:54.159Z'
+}
+{
+  level: 'info',
+  message: 'Hure8kRxoWKlfLp0AAAD: Desconectado',
+  timestamp: '2023-04-29T19:18:34.171Z'
+}
+{
+  level: 'info',
+  message: 'UDCvGXCfEVftzssZAAAF: Conectado',
+  timestamp: '2023-04-29T19:18:39.328Z'
+}
+{
+  level: 'info',
+  message: 'UDCvGXCfEVftzssZAAAF: Desconectado',
+  timestamp: '2023-04-29T19:19:10.364Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:22:40.645Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:22:44.263Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:23:23.282Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:23:35.877Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:23:52.729Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:24:07.428Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:24:16.503Z'
+}
+{
+  level: 'info',
+  message: 'wyn0nZp9iw1LZThOAAAB: Conectado',
+  timestamp: '2023-04-29T19:24:43.169Z'
+}
+{
+  level: 'info',
+  message: 'wyn0nZp9iw1LZThOAAAB: Desconectado',
+  timestamp: '2023-04-29T19:24:44.908Z'
+}
+{
+  level: 'info',
+  message: 'nhtrf-maEaynt0mmAAAD: Conectado',
+  timestamp: '2023-04-29T19:24:49.535Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:25:20.369Z'
+}
+{
+  level: 'info',
+  message: 'iZrUQz1vjxRhzsl5AAAB: Conectado',
+  timestamp: '2023-04-29T19:25:20.677Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:25:24.343Z'
+}
+{
+  level: 'info',
+  message: 'zH5N10RdPuula_uzAAAB: Conectado',
+  timestamp: '2023-04-29T19:25:24.422Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:25:35.692Z'
+}
+{
+  level: 'info',
+  message: 'Qs0xxC0xmNTvPp6gAAAB: Conectado',
+  timestamp: '2023-04-29T19:25:35.830Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:25:46.397Z'
+}
+{
+  level: 'info',
+  message: 'Xi_s_9TdCNzg59l3AAAB: Conectado',
+  timestamp: '2023-04-29T19:25:46.802Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:25:54.702Z'
+}
+{
+  level: 'info',
+  message: 'iFv0nqOhtHKSCinvAAAB: Conectado',
+  timestamp: '2023-04-29T19:26:04.664Z'
+}
+{
+  level: 'info',
+  message: 'iFv0nqOhtHKSCinvAAAB: Desconectado',
+  timestamp: '2023-04-29T19:26:39.670Z'
+}
+{
+  level: 'info',
+  message: 'fLdAf3mnC93p0V_cAAAD: Conectado',
+  timestamp: '2023-04-29T19:26:44.458Z'
+}
+{
+  level: 'info',
+  message: 'fLdAf3mnC93p0V_cAAAD: Desconectado',
+  timestamp: '2023-04-29T19:26:48.703Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:27:26.152Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:27:39.279Z'
+}
+{
+  level: 'info',
+  message: 'YlAZBJqARcLUcv3HAAAB: Conectado',
+  timestamp: '2023-04-29T19:28:40.639Z'
+}
+{
+  level: 'info',
+  message: 'YlAZBJqARcLUcv3HAAAB: Desconectado',
+  timestamp: '2023-04-29T19:28:42.772Z'
+}
+{
+  level: 'info',
+  message: 'WRVxHNA7todhSi7jAAAD: Conectado',
+  timestamp: '2023-04-29T19:28:46.782Z'
+}
+{
+  level: 'info',
+  message: 'WRVxHNA7todhSi7jAAAD: Desconectado',
+  timestamp: '2023-04-29T19:28:49.640Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:29:42.537Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:29:51.537Z'
+}
+{
+  level: 'info',
+  message: 'YUB0hNHR5nI9wms7AAAB: Conectado',
+  timestamp: '2023-04-29T19:29:55.233Z'
+}
+{
+  level: 'info',
+  message: 'YUB0hNHR5nI9wms7AAAB: Desconectado',
+  timestamp: '2023-04-29T19:30:02.490Z'
+}
+{
+  level: 'info',
+  message: 'W4_bqFpp6AzUCvhEAAAD: Conectado',
+  timestamp: '2023-04-29T19:30:08.243Z'
+}
+{
+  level: 'info',
+  message: 'W4_bqFpp6AzUCvhEAAAD: Desconectado',
+  timestamp: '2023-04-29T19:30:11.151Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:30:35.657Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:30:44.383Z'
+}
+{
+  level: 'info',
+  message: 'cocVNDoXc_J6QzkfAAAB: Conectado',
+  timestamp: '2023-04-29T19:30:45.620Z'
+}
+{
+  level: 'info',
+  message: 'cocVNDoXc_J6QzkfAAAB: Desconectado',
+  timestamp: '2023-04-29T19:30:47.076Z'
+}
+{
+  level: 'info',
+  message: '8ZEQd1I9cj-YvkHcAAAD: Conectado',
+  timestamp: '2023-04-29T19:30:54.322Z'
+}
+{
+  level: 'info',
+  message: '8ZEQd1I9cj-YvkHcAAAD: Desconectado',
+  timestamp: '2023-04-29T19:30:59.282Z'
+}
+{
+  level: 'info',
+  message: 'wSCDEqyhAxRuh2HNAAAF: Conectado',
+  timestamp: '2023-04-29T19:31:05.428Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:31:50.834Z'
+}
+{
+  level: 'info',
+  message: 'NfGllTGZ-muFrl9eAAAB: Conectado',
+  timestamp: '2023-04-29T19:31:51.353Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:31:56.845Z'
+}
+{
+  level: 'info',
+  message: 'wGF3H-eTbv007skCAAAB: Conectado',
+  timestamp: '2023-04-29T19:31:57.198Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:32:00.290Z'
+}
+{
+  level: 'info',
+  message: 'scBuVoj2XYFF8xNyAAAB: Conectado',
+  timestamp: '2023-04-29T19:32:00.510Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:32:30.170Z'
+}
+{
+  level: 'info',
+  message: '7OXZxYZoOx8diZ63AAAB: Conectado',
+  timestamp: '2023-04-29T19:32:30.302Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:32:43.899Z'
+}
+{
+  level: 'info',
+  message: 'bT4pcSGxBFVdXtCxAAAB: Conectado',
+  timestamp: '2023-04-29T19:32:45.155Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:32:58.177Z'
+}
+{
+  level: 'info',
+  message: 'UxZaBzoFVF8tnJg8AAAB: Conectado',
+  timestamp: '2023-04-29T19:32:58.366Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:33:05.801Z'
+}
+{
+  level: 'info',
+  message: 'TWOBQkFlj4pS6F2jAAAB: Conectado',
+  timestamp: '2023-04-29T19:33:15.469Z'
+}
+{
+  level: 'info',
+  message: 'TWOBQkFlj4pS6F2jAAAB: Desconectado',
+  timestamp: '2023-04-29T19:33:19.678Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:33:46.151Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:34:45.467Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:34:58.368Z'
+}
+{
+  level: 'info',
+  message: 'uEaMiomdUNGvVrASAAAB: Conectado',
+  timestamp: '2023-04-29T19:35:09.992Z'
+}
+{
+  level: 'info',
+  message: 'uEaMiomdUNGvVrASAAAB: Desconectado',
+  timestamp: '2023-04-29T19:35:13.805Z'
+}
+{
+  level: 'info',
+  message: 'slQfoPuUTWLerIkiAAAD: Conectado',
+  timestamp: '2023-04-29T19:35:17.991Z'
+}
+{
+  level: 'info',
+  message: 'slQfoPuUTWLerIkiAAAD: Desconectado',
+  timestamp: '2023-04-29T19:35:29.194Z'
+}
+{
+  level: 'info',
+  message: '8wzK3jbsJCgFwjo4AAAF: Conectado',
+  timestamp: '2023-04-29T19:35:34.193Z'
+}
+{
+  level: 'info',
+  message: '8wzK3jbsJCgFwjo4AAAF: Desconectado',
+  timestamp: '2023-04-29T19:36:06.306Z'
+}
+{
+  level: 'info',
+  message: 'HgcWGmfCY9hD5mcRAAAH: Conectado',
+  timestamp: '2023-04-29T19:36:10.490Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:37:05.405Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:37:50.559Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:39:41.091Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:40:59.148Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:41:41.071Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:42:03.083Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:45:01.482Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:45:57.711Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:48:09.179Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-29T19:49:55.503Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T03:55:12.327Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T03:55:32.662Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:00:48.439Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:00:59.507Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:01:21.103Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:01:29.661Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:01:36.020Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:01:53.733Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:02:01.454Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:14:41.181Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:14:47.781Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:15:07.567Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:16:00.606Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:16:38.335Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:16:44.699Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:16:51.764Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:17:33.806Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:18:16.723Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:18:59.913Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:19:07.642Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:19:12.272Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:19:22.548Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:19:28.597Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:19:34.730Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:20:04.798Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:20:10.841Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:21:05.812Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:21:09.853Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:21:14.265Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:21:17.001Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:21:37.962Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:24:44.334Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:25:15.710Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:25:19.641Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:25:23.777Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:25:53.855Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:25:59.532Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:27:36.255Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:30:23.680Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:30:29.004Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:30:41.141Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:31:47.162Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:32:04.372Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:32:07.336Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:32:13.679Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:33:16.369Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:33:21.168Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:33:23.724Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:33:29.630Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:34:17.771Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:36:28.264Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:36:31.031Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:37:25.838Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:37:41.538Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:37:44.217Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:37:48.333Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:38:02.005Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:38:06.397Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:38:10.790Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:38:15.307Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:38:26.095Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:40:07.244Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:41:03.263Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:41:08.929Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:41:33.767Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:42:08.478Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:42:11.062Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:44:13.544Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:44:15.522Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:44:19.937Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:44:35.415Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:45:56.144Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:46:27.591Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:47:21.574Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:47:30.594Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:47:56.700Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:48:06.655Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:48:11.916Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:48:17.275Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:48:21.516Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:48:25.598Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:48:44.961Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:52:02.354Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:52:16.319Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:52:34.611Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:52:43.626Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:52:58.776Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:53:20.537Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:53:23.300Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:53:32.806Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:53:38.327Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:53:43.056Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:54:41.094Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:55:03.987Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:55:42.437Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:56:30.135Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:56:51.972Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:56:59.318Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:57:50.862Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:57:54.910Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:58:19.274Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:59:07.576Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T04:59:42.820Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:00:02.260Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:00:15.494Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:00:24.379Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:00:33.578Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:00:38.329Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:01:29.259Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:01:36.371Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:01:42.687Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:02:35.779Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:02:42.502Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:02:53.699Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:03:12.564Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:03:46.219Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:04:04.701Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:04:11.657Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:04:28.047Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:04:55.612Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:05:10.976Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:05:19.836Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:07:27.338Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:07:47.396Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:07:57.211Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:08:02.492Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:08:20.512Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:08:29.985Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:09:07.538Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:09:20.837Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:09:27.961Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:09:36.150Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:11:11.736Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:12:50.687Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:12:52.998Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:12:59.862Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:13:23.901Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:13:44.558Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:14:43.794Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:17:57.169Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:19:22.229Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:19:26.602Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:20:15.344Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:20:22.886Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:20:30.899Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:20:59.760Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:22:50.001Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:23:06.320Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:23:32.427Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:24:03.447Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:24:08.755Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:26:34.784Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:29:49.319Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:29:51.782Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:29:57.875Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:30:19.733Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:30:29.907Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:30:34.339Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:31:15.869Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:31:33.585Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:31:58.797Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:32:10.814Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:32:17.995Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:33:06.195Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:38:06.250Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:43:27.102Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:47:11.142Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:47:17.062Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:47:20.953Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:47:28.172Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:52:14.064Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:52:21.054Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:52:45.679Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:52:57.535Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:56:25.130Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:56:48.713Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:56:59.872Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:58:57.542Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T05:59:39.167Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:01:25.624Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:01:32.915Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:01:44.709Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:01:59.354Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:03:32.529Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:03:35.862Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:03:44.293Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:04:56.863Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:05:20.769Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:05:29.429Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:05:50.291Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:06:45.755Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:08:57.010Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:21:58.882Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:22:10.661Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:22:33.043Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:24:16.210Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:24:18.297Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:24:29.957Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:26:44.367Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:26:58.700Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:27:51.950Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:28:32.969Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:28:51.433Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:29:11.625Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:30:22.332Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:30:28.942Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:30:38.494Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:30:41.454Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:30:54.996Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:31:20.733Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:31:23.124Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:32:18.451Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:32:40.127Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:32:43.230Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:32:49.587Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:33:01.372Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:33:17.134Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:33:24.121Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:33:26.356Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:33:33.510Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:33:47.514Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:34:04.163Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:34:09.007Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:34:14.607Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:35:33.791Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:35:54.496Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:36:04.217Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:36:17.513Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:36:51.980Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:37:28.645Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:38:23.866Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:39:15.612Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:39:58.175Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:40:04.474Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:40:16.985Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:40:23.252Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:40:36.930Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:40:40.480Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:40:46.861Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:40:58.976Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:41:05.898Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:41:14.721Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:41:19.769Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:41:48.649Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:41:58.911Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:42:09.937Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T06:42:16.868Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:18:22.133Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:18:34.891Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:18:50.769Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:19:03.404Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:20:11.161Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:23:13.916Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:25:07.960Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:38:18.009Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:40:09.493Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:40:13.911Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:40:26.310Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:40:41.981Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:45:23.744Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:45:55.810Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:47:13.228Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:47:45.026Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:48:06.013Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:48:50.187Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:49:24.059Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:49:58.930Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:50:04.167Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:50:11.810Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:51:19.928Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:53:15.139Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:53:59.261Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:55:55.558Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:56:46.667Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:57:46.692Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:57:51.980Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T20:58:00.943Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T21:01:21.441Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T21:02:10.682Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T21:02:16.952Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T21:02:32.769Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T21:02:48.061Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T21:04:39.222Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T21:04:50.986Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T21:05:00.874Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-04-30T21:05:06.866Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T09:59:41.428Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:00:04.449Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:00:29.698Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:01:45.061Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:02:23.008Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:02:39.025Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:03:01.384Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:03:29.547Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:03:39.953Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:03:53.442Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:05:23.777Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:05:43.802Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:06:13.039Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:06:27.752Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:07:39.482Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:16:42.368Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:16:54.464Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:17:05.064Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:17:22.132Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:17:27.770Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:17:36.393Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:17:52.988Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:19:08.438Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:20:08.325Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:20:44.933Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:21:21.510Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:33:21.259Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:34:12.917Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:34:24.739Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:34:39.976Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:34:46.973Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:37:17.954Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:38:22.886Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:44:35.013Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:44:40.554Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:44:45.619Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:44:54.426Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:45:11.082Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:47:44.798Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:47:55.423Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:49:36.180Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:49:58.318Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:50:12.452Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:50:28.387Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:50:36.915Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:50:49.584Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:50:57.773Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:51:09.203Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:51:14.590Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:52:19.388Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:52:28.351Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:53:30.611Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T10:54:56.383Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T11:00:27.393Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T11:37:05.823Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T11:37:39.335Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T11:38:06.159Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T11:38:25.602Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T11:38:31.206Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T11:38:39.083Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T11:38:44.172Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T11:39:46.258Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T11:41:31.781Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T11:41:58.620Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T11:42:21.912Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T11:42:30.575Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T11:54:39.316Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T11:54:53.323Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T11:55:52.793Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T11:55:56.223Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T11:56:36.491Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T11:56:55.671Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T12:00:32.835Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T12:00:50.348Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T12:00:56.541Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T12:01:37.405Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T12:01:55.285Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T12:02:10.403Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T12:05:18.406Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T12:05:49.197Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T12:06:21.351Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T12:06:29.764Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T12:06:47.478Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T12:07:26.331Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T12:08:00.276Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T12:10:05.778Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T12:10:15.211Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T12:10:24.410Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T12:10:35.035Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T12:10:40.741Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T12:11:49.727Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-02T12:11:54.293Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:03:54.999Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:04:15.365Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:04:36.994Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:11:14.015Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:11:25.645Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:12:16.434Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:14:33.885Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:16:05.971Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:16:15.790Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:16:22.294Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:16:46.177Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:16:58.323Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:17:05.504Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:17:13.390Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:19:43.835Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:20:28.033Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:20:33.437Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:20:44.028Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:22:18.807Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:22:39.607Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:22:46.574Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:23:19.318Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:23:30.379Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:23:36.983Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:23:50.706Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:23:59.649Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:24:06.039Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:24:10.811Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:24:20.820Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:24:28.285Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:24:44.077Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:26:26.477Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:31:50.876Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:32:06.322Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:32:18.889Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:32:23.169Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:33:35.307Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:33:43.119Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:33:58.439Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:34:04.841Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:34:24.023Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:34:39.162Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:34:43.703Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:34:57.780Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:35:06.156Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:35:12.352Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:35:20.847Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:35:37.751Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:35:41.050Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:36:59.207Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:37:03.371Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:38:47.787Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:39:02.049Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:39:07.539Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:39:21.053Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:39:31.224Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:39:38.556Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:40:18.400Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:40:30.530Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:43:02.736Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:43:35.102Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:45:15.829Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:51:14.569Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:52:18.843Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:53:41.560Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:54:58.163Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T09:57:02.115Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:00:36.162Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:01:16.716Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:01:30.385Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:02:07.873Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:10:12.358Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:11:14.533Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:13:10.624Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:13:35.336Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:13:40.446Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:13:48.095Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:15:00.368Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:22:58.350Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:23:12.651Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:23:23.214Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:24:04.487Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:24:51.250Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:26:29.916Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:26:40.224Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:35:12.831Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:37:08.028Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:37:16.090Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:37:40.039Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:38:16.780Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:38:29.153Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:38:38.859Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:50:12.041Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:51:03.583Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:51:09.635Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:51:29.429Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:51:35.972Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:52:11.916Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:52:19.653Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:52:27.855Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:52:33.517Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:52:40.035Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:54:05.135Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:54:36.565Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:54:48.393Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:57:32.345Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:57:41.195Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:57:51.119Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:58:25.626Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:59:40.459Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T10:59:51.348Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T11:00:56.138Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T11:01:30.082Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T11:02:40.899Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T11:03:36.200Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T11:04:24.524Z'
+}
+{
+  level: 'info',
+  message: 'Express por Local host 8080',
+  timestamp: '2023-05-03T11:04:46.438Z'
 }

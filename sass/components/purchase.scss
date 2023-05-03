@@ -1,0 +1,261 @@
+.checkout-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 0px 20px;
+  .cart-purchase {
+    width: 100%;
+    .cart-purchase-title {
+      margin-bottom: 20px;
+    }
+    .total-pay {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+  }
+  .form-purchase {
+    width: 100%;
+    .form-purchase-title {
+      margin-bottom: 20px;
+    }
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    form .field {
+      height: 50px;
+      width: 100%;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      position: relative;
+      input {
+        height: 100%;
+        width: 100%;
+        outline: none;
+        padding-left: 10px;
+        border: none;
+        border-bottom: 1px solid lightgrey;
+        border-bottom-width: 2px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        &:focus {
+          border-color: #64d569;
+        }
+        &::placeholder {
+          color: #999;
+          font-size: 0.8rem;
+          transition: all 0.3s ease;
+        }
+        &:focus::placeholder {
+          color: #b3b3b3;
+        }
+      }
+      .name {
+        height: 100%;
+        flex: 2;
+      }
+      .dni {
+        flex: 1;
+      }
+      .address {
+        flex: 4;
+      }
+      .addressNumber {
+        flex: 1;
+      }
+    }
+    .btn-purchase {
+      all: unset;
+      width: 160px;
+      padding: 10px 15px;
+      margin-top: 30px;
+      border-radius: 5px;
+      color: #fff;
+      text-align: center;
+      align-self: flex-end;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -200%;
+        width: 300%;
+        height: 100%;
+        background: -webkit-linear-gradient(
+          right,
+          #88c043,
+          #6d9a36,
+          #88c043,
+          #6d9a36
+        );
+        z-index: -1;
+        transition: all 0.4s ease;
+      }
+      .input-purchase {
+        all: unset;
+      }
+      &:hover::before {
+        left: 0;
+      }
+    }
+  }
+}
+
+.checkout-footer-container {
+  width: 100%;
+}
+.checkout-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  justify-content: center;
+  gap: 50px;
+  padding: 0px 20px;
+  .fin-chechout-container {
+    width: 100%;
+  }
+  .footer-benefits,
+  .financiacion-chechout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    justify-content: center;
+    gap: 10px;
+  }
+  .footer-checkout-title {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    .mercadoPago {
+      width: 100px;
+    }
+  }
+  .checkout-benefits {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 20px;
+    gap: 10px;
+    .benefits {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      .check {
+        color: #4fb6ec;
+      }
+      p {
+        width: 100%;
+        color: #838383;
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .fin-chechout {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    p {
+      font-size: 0.9rem;
+    }
+    div {
+      align-items: center;
+      background: $colorIndex;
+      border-bottom-right-radius: 8px;
+      display: flex;
+      justify-content: center;
+      margin-left: 10px;
+      padding: 6px 8px 4px;
+      span {
+        color: #fff;
+        font-size: 0.7rem;
+      }
+    }
+  }
+  .cart-footer-checkout {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+    padding-left: 20px;
+    .visaCard {
+      width: 50px;
+    }
+    .mastercardCard {
+      width: 40px;
+    }
+    .mercadoPago {
+      width: 90px;
+    }
+  }
+}
+.footer-end {
+  width: 100%;
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 80px;
+  .condition-checkout,
+  .politic-checkout {
+    width: 100%;
+    text-align: center;
+    strong {
+      cursor: pointer;
+    }
+  }
+  .politic-checkout {
+    color: #838383;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .checkout-footer {
+    flex-direction: row;
+    gap: 50px;
+    .footer-benefits {
+      padding-left: 30px;
+    }
+  }
+}
+@media (min-width: 850px) {
+  .checkout-main {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .checkout-footer {
+    gap: 10px;
+    .financiacion-chechout {
+      flex-direction: row;
+    }
+  }
+}

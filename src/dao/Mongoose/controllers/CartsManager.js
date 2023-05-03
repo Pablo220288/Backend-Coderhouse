@@ -46,12 +46,16 @@ class CartMongooseManager {
       const indexProduct = cart.products.findIndex(
         product => product.id === idProduct
       )
-      cart.products[indexProduct].quantity++
-      const quantityProductInCart = cart.products[indexProduct].quantity
-      await cartService.findCartByIdAndUpdate(idCart, {
-        products: cart.products
-      })
-      return `Producto ${product.title} agregado al Carrito. Cantidad: ${quantityProductInCart}`
+      if (cart.products[indexProduct].quantity === product.stock) {
+        return 'Stock Insuficiente'
+      } else {
+        cart.products[indexProduct].quantity++
+        const quantityProductInCart = cart.products[indexProduct].quantity
+        await cartService.findCartByIdAndUpdate(idCart, {
+          products: cart.products
+        })
+        return `Producto ${product.title} agregado al Carrito. Cantidad: ${quantityProductInCart}`
+      }
     }
   }
 

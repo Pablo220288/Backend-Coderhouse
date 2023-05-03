@@ -1,0 +1,50 @@
+<main class='mainHome'>
+  <div class='ticket-container'>
+    <span class='ticket-border'></span>
+    <span class='ticket-border'></span>
+    <img src='/img/nodejs.png' alt='Node.JS' />
+    <div class='ticket-info'>
+      <p>Proyecto creado para</p>
+      <p>Coder por Pablo Hernandez</p>
+      <p>Todos los derechos reservados.</p>
+    </div>
+    <h3>Ticket de Compra</h3>
+    <div class='ticket-items'>
+      <span>Ud</span>
+      <span>Titulo</span>
+      <span>Precio</span>
+      <span>Total</span>
+    </div>
+    {{#each products}}
+      <div class='ticket-products'>
+        <div class='quantity-name'>
+          <span>{{this.quantity}}</span>
+          <p class='product-title'>{{this.name}}</p>
+        </div>
+        <div class='prices'>
+          <div class='price-conten ticket-price'>
+            <p>$</p>
+            <p class='price'>{{this.price}}</p>
+          </div>
+          <div class='price-conten ticket-price'>
+            <p>$</p>
+            <p class='price'>{{this.totalPrice}}</p>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+    <div class='ticket-count'>
+      <span>Total Compra</span>
+      <div class='price-conten ticket-price'>
+        <p>$</p>
+        <p class='price'>{{amount}}</p>
+      </div>
+    </div>
+    <div class='ticket-data'>Destinatario:
+      <strong>{{namePurchase}}</strong></div>
+    <div class='ticket-data'>DNI: <strong>{{dni}}</strong></div>
+    <div class='ticket-data'>Dirección: <strong>{{address}}</strong></div>
+    <span class='ticket-tanks'>Gracias por su compra</span>
+    <div class='bar--code'><span>{{code}}</span></div>
+  </div>
+</main>

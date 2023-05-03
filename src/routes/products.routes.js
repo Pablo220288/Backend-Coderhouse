@@ -26,7 +26,7 @@ const products = async options => {
   }
   return data
 }
-const cartProduct = async idCart => {
+export const cartProduct = async idCart => {
   const prod = await carts.findCartsById(idCart)
   const productsInCart = []
   for (let i = 0; i < prod.products.length; i++) {
@@ -77,16 +77,22 @@ productsRouter
         cartsProducts: productsCart.productsInCart,
         totalCart: productsCart.totalCart,
         emptyCart,
-        countCart: productsCart.countCart
+        countCart: productsCart.countCart,
+        purchaserCart: `/purchase/${user.cart._id.toString()}`
       })
       io.on('connection', socket => {
         const idCart = user.cart._id.toString()
         socket.on('addProductToCart', async idProduct => {
-          await carts.addProductToCart(idCart, idProduct)
-          const products = await cartProduct(idCart)
-          io.sockets.emit('addProductToCart', products)
+          const addProduct = await carts.addProductToCart(idCart, idProduct)
+          if (addProduct === 'Stock Insuficiente') {
+            io.sockets.emit('stockInsufficient')
+          } else {
+            const products = await cartProduct(idCart)
+            io.sockets.emit('addProductToCart', products)
+          }
         })
         socket.on('deleteProductToCart', async idProduct => {
+          console.log('aqui')
           await carts.deleteProductToCart(idCart, idProduct)
           const products = await cartProduct(idCart)
           io.sockets.emit('deleteProductToCart', products)
@@ -95,6 +101,27 @@ productsRouter
           await carts.emptycart(idCart)
           const products = await cartProduct(idCart)
           io.sockets.emit('emptyCart', products)
+        })
+        socket.on('purchaserCart', async () => {
+          const productInCart = await carts.findCartsById(idCart)
+          const productOutOfStock = []
+          for (let i = 0; i < productInCart.products.length; i++) {
+            const quantityCart = productInCart.products[i].quantity
+            const idProduct = productInCart.products[i]._id._id.toString()
+            const product = await productAll.findProductsById(idProduct)
+            const stockProduct = product.stock
+            if (quantityCart > stockProduct) {
+              productOutOfStock.push({
+                idProduct,
+                title: productInCart.products[i]._id.title
+              })
+            }
+          }
+          if (!productOutOfStock.length) {
+            io.sockets.emit('purchaserCart')
+          } else {
+            io.sockets.emit('insufficientStock', productOutOfStock)
+          }
         })
       })
     } else {

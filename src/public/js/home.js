@@ -1,26 +1,10 @@
-const menuToggle = document.querySelector('.menuToggle')
 const addToCart = document.querySelectorAll('.addToCart')
 const socket = io()
-
-menuToggle.addEventListener('click', () => {
-  menuToggle.classList.toggle('active')
-})
 
 for (let i = 0; i < addToCart.length; i++) {
   addToCart[i].addEventListener('click', e => {
     const idProduct = addToCart[i].getAttribute('data-id')
     socket.emit('addProductToCart', idProduct)
-    Toastify({
-      text: 'Product in Cart',
-      className: 'info',
-      style: {
-        background: 'linear-gradient(to right, #88c043, #6d9a36)'
-      },
-      offset: {
-        x: 0,
-        y: 55
-      }
-    }).showToast()
   })
 }
 
@@ -136,6 +120,30 @@ socket.on('addProductToCart', data => {
       cartDelete[i].classList.add('clicked')
     })
   }
+  // Mostramos mensaje de Producto Agregado
+  Toastify({
+    text: 'Product in Cart',
+    className: 'info',
+    style: {
+      background: 'linear-gradient(to right, #88c043, #6d9a36)'
+    },
+    offset: {
+      x: 0,
+      y: 55
+    }
+  }).showToast()
+})
+
+socket.on('stockInsufficient', () => {
+  // Mostramos mensaje de Stock Insuficiente
+  Toastify({
+    text: 'Producto sin Stock',
+    className: 'warning',
+    offset: {
+      x: 0,
+      y: 55
+    }
+  }).showToast()
 })
 
 socket.on('deleteProductToCart', data => {
@@ -170,22 +178,38 @@ cardMore.addEventListener('click', () => {
   cardMore.classList.toggle('is-selected')
 })
 
-const subscribeForm = document.getElementById('subscribeForm')
-const subscribeButton = document.querySelector('.subscribeButton')
-subscribeForm.addEventListener('submit', e => {
+const purchaserLink = document.getElementById('purchaser-link')
+purchaserLink.addEventListener('click', e => {
   e.preventDefault()
-  const text = e.submitter.lastChild.textContent
-  if (text === 'Suscribirme') {
-    subscribeButton.innerHTML = ''
-    subscribeButton.innerHTML = `
-    <img class='sad'
-    src='https://cdn-icons-png.flaticon.com/512/42/42735.png?w=740&t=st=1681834410~exp=1681835010~hmac=44aaabd977b39096b49d092cf827f696b8f9b4af1681edd7eefd32bed66aa6ef'
-    alt='Enamorado'/><span>Ya no Enviar</span>`
-  } else {
-    subscribeButton.innerHTML = ''
-    subscribeButton.innerHTML = `
-    <img class='love'
-    src='https://cdn-icons-png.flaticon.com/512/48/48974.png?w=740&t=st=1681832071~exp=1681832671~hmac=e140682aed2184e0652ba559185586d6a731bfd6a567e8cedc9125d52597cf5a'
-    alt='Enamorado'/><span>Suscribirme</span>`
-  }
+  socket.emit('purchaserCart')
+})
+
+socket.on('insufficientStock', data => {
+  const productTitle = data.map(data => data.title)
+  Swal.fire({
+    title: 'Stock Insuficiente',
+    html:
+      `<h6> Los productos "${productTitle.toString()}" no cuentan con Stock</h6>` +
+      '<p>Desea eliminarlos del carrito para continuar con la compra.?</p>',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!',
+    customClass: {
+      htmlContainer: 'swalText'
+    }
+  }).then(result => {
+    if (result.isConfirmed) {
+      const productId = data.map(data => data.idProduct)
+      console.log(productId[0])
+      for (let i = 0; i < productId.length; i++) {
+        socket.emit('deleteProductToCart', productId[i])
+      }
+      Swal.fire('Deleted!', 'Your product has been deleted.', 'success')
+    }
+  })
+})
+socket.on('purchaserCart', () => {
+  window.location = purchaserLink.href
 })

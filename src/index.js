@@ -1,19 +1,20 @@
 import app from './app.js'
 import { Server } from 'socket.io'
-import { dateShort } from '../utils/dateShort.js'
-import { chatModel } from './dao/Mongoose/models/ChatSchema.js'
+// import { dateShort } from '../utils/dateShort.js'
+// import { chatModel } from './dao/Mongoose/models/ChatSchema.js'
 import { logger } from '../utils/logger.js'
 
 // Creando Loacal host 8080
 export const PORT = process.env.PORT || 8080
 const server = app.listen(PORT, () =>
-  logger.log('info', `Express por Loacal host ${server.address().port}`)
+  logger.log('info', `Express por Local host ${server.address().port}`)
 )
 server.on('error', err => {
   logger.log('error', `Algo salio mal: ${err}`)
 })
 export const io = new Server(server)
-// ChatSocket
+
+/* // ChatSocket
 const time = dateShort()
 // Usuarios Conectados
 export let usersChat = []
@@ -94,4 +95,4 @@ io.on('connection', socket => {
   socket.on('typing', data => {
     socket.broadcast.emit('typing', data)
   })
-})
+}) */

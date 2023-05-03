@@ -188,7 +188,7 @@
         z-index: 2;
       }
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         bottom: 0;
         left: 0;
@@ -271,133 +271,6 @@
         justify-content: flex-start;
         align-items: center;
         gap: 10px;
-        .cardPreviusItems {
-          width: 100%;
-          list-style: none;
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          padding: 5px;
-          .img-info {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 15px;
-            .imgCartPrevius {
-              width: 80px;
-            }
-            .infoPrevius {
-              justify-self: flex-start;
-              .infoTitle {
-                font-weight: bold;
-              }
-              .infoCant {
-                font-size: 0.8rem;
-                color: #6c6c6c;
-              }
-              .infoFin {
-                display: flex;
-                align-items: center;
-                gap: 5px;
-                .fin {
-                  font-size: 0.8rem;
-                }
-                .visa {
-                  width: 30px;
-                }
-              }
-            }
-          }
-          .delete-price {
-            width: 90px;
-            display: flex;
-            justify-content: space-between;
-            .cartDelete {
-              position: relative;
-              width: 25px;
-              height: 25px;
-              cursor: pointer;
-              transition: 0.4s;
-              &:hover {
-                color: $colorIndex;
-              }
-              .icon {
-                position: absolute;
-                display: block;
-                left: 50%;
-                top: 50%;
-                width: 25px;
-                height: 25px;
-                transform: translate(-50%, -50%);
-                .lid {
-                  position: absolute;
-                  z-index: 2;
-                  right: 50%;
-                  top: 23%;
-                  width: 70%;
-                  height: 10%;
-                  background-color: #6c6c6c;
-                  border-top-left-radius: 5px;
-                  border-top-right-radius: 5px;
-                  transform: translateX(50%);
-                  transform-origin: left bottom;
-                  transition: transform 0.3s ease-in-out;
-                  &::before {
-                    content: "";
-                    position: absolute;
-                    right: 50%;
-                    bottom: 100%;
-                    width: 30%;
-                    height: 70%;
-                    border: 2px solid #6c6c6c;
-                    transform: translateX(50%) translateY(2px);
-                  }
-                }
-                &:hover .lid {
-                  transform: translateX(50%) rotate(-35deg);
-                }
-                .can {
-                  position: absolute;
-                  z-index: 2;
-                  left: 50%;
-                  bottom: 0%;
-                  width: 60%;
-                  height: 60%;
-                  background-color: #6c6c6c;
-                  border-bottom-left-radius: 5px;
-                  border-bottom-right-radius: 5px;
-                  transform: translateX(-50%);
-                  &::before,
-                  &::after {
-                    content: "";
-                    position: absolute;
-                    top: 20%;
-                    bottom: 20%;
-                    width: 20%;
-                    background-color: #fff;
-                  }
-                  &::before {
-                    left: 20%;
-                  }
-                  &::after {
-                    left: 60%;
-                  }
-                }
-                .trash {
-                  position: absolute;
-                  z-index: 1;
-                  left: 100%;
-                  top: 0;
-                  width: 20%;
-                  height: 20%;
-                  border-radius: 25%;
-                  background-color: #6c6c6c;
-                  opacity: 0;
-                }
-              }
-            }
-          }
-        }
       }
     }
     .total-carrito {
@@ -431,6 +304,9 @@
         justify-content: center;
         align-items: center;
         position: relative;
+        .purchaser-link {
+          all: unset;
+        }
         .button-icon {
           font-size: 2rem;
         }
@@ -453,6 +329,133 @@
         }
         &:hover .button-text {
           opacity: 1;
+        }
+      }
+    }
+  }
+}
+.cardPreviusItems {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5px;
+  .img-info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    .imgCartPrevius {
+      width: 80px;
+    }
+    .infoPrevius {
+      justify-self: flex-start;
+      .infoTitle {
+        font-weight: bold;
+      }
+      .infoCant {
+        font-size: 0.8rem;
+        color: #6c6c6c;
+      }
+      .infoFin {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        .fin {
+          font-size: 0.8rem;
+        }
+        .visa {
+          width: 30px;
+        }
+      }
+    }
+  }
+  .delete-price {
+    width: 90px;
+    display: flex;
+    justify-content: space-between;
+    .cartDelete {
+      position: relative;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      transition: 0.4s;
+      &:hover {
+        color: $colorIndex;
+      }
+      .icon {
+        position: absolute;
+        display: block;
+        left: 50%;
+        top: 50%;
+        width: 25px;
+        height: 25px;
+        transform: translate(-50%, -50%);
+        .lid {
+          position: absolute;
+          z-index: 2;
+          right: 50%;
+          top: 23%;
+          width: 70%;
+          height: 10%;
+          background-color: #6c6c6c;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          transform: translateX(50%);
+          transform-origin: left bottom;
+          transition: transform 0.3s ease-in-out;
+          &::before {
+            content: '';
+            position: absolute;
+            right: 50%;
+            bottom: 100%;
+            width: 30%;
+            height: 70%;
+            border: 2px solid #6c6c6c;
+            transform: translateX(50%) translateY(2px);
+          }
+        }
+        &:hover .lid {
+          transform: translateX(50%) rotate(-35deg);
+        }
+        .can {
+          position: absolute;
+          z-index: 2;
+          left: 50%;
+          bottom: 0%;
+          width: 60%;
+          height: 60%;
+          background-color: #6c6c6c;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+          transform: translateX(-50%);
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            top: 20%;
+            bottom: 20%;
+            width: 20%;
+            background-color: #fff;
+          }
+          &::before {
+            left: 20%;
+          }
+          &::after {
+            left: 60%;
+          }
+        }
+        .trash {
+          position: absolute;
+          z-index: 1;
+          left: 100%;
+          top: 0;
+          width: 20%;
+          height: 20%;
+          border-radius: 25%;
+          background-color: #6c6c6c;
+          opacity: 0;
         }
       }
     }

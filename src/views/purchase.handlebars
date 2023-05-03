@@ -1,0 +1,145 @@
+<main class="mainHome">
+  {{> user}}
+  <div class="checkout-main">
+    <div class="cart-purchase">
+      <h6 class="cart-purchase-title">Resumen de la Compra</h6>
+      {{#each cartsProducts}}
+        <li class="cardPreviusItems">
+           <div class="img-info">
+            <img
+              alt={{this.title}}
+              class="imgCartPrevius"
+              src={{this.thumbnail}}
+            ></img>
+            <div class="infoPrevius">
+              <p class="infoTitle">{{this.title}}</p>
+              <p class="infoCant">
+                <strong>{{this.quantity}} </strong>x<strong> {{this.price}}</strong>
+              </p>
+              <div class="infoFin">
+                <p class="fin">
+                  <strong>12</strong> pagos con
+                </p>
+                <img class="visa" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Visa_Logo.png/640px-Visa_Logo.png" alt="Visa"></img>
+              </div>
+            </div>
+          </div>
+          <div class="delete-price">
+            <div class="cartDelete" id="cartDelete" data-id={{this.id}}>
+              <span class="icon">
+	            	<span class="lid"></span>
+	            	<span class="can"></span>
+	            	<span class="trash"></span>
+	            </span>
+              {{!-- <ion-icon name="trash-outline"></ion-icon> --}}
+            </div>
+            <div class="price-conten">
+              <p>$</p>
+              <p class="price">{{this.totalPrice}}</p>
+            </div>
+          </div>
+        </li>
+      {{/each}}
+      <div class="total-pay">
+        <h6>Total de la Compra</h6>
+        <div class="price-conten">
+          <p>$</p>
+          <p class="price">{{totalCart}}</p>
+        </div>
+        </div>
+    </div>
+    <div class="form-purchase">
+      <h6 class="form-purchase-title">Datos de Facturación y Envío</h6>
+      <form id="form-purchase" action="/purchase" method="post">
+        <div class="field">
+          <input class="name" type="text" name="name" placeholder="Name *">
+          <input class="dni" type="text" name="dni" placeholder="DNI *">
+        </div>
+        <div class="field">
+          <input class="address" name="address" type="text" placeholder="Address *">
+          <input class="addressNumber" name="addressNumber" type="text" placeholder="N° *">
+        </div>
+        <div class="btn-purchase" >
+          <input class="input-purchase" type="submit" value="Confirmar Compra">
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="checkout-footer">
+    <div class="footer-benefits">
+      <label class="footer-checkout-title">
+        Paga más rápido con:
+        <img
+          class='mercadoPago'
+          src='https://1000marcas.net/wp-content/uploads/2023/01/Mercado-Pago-Logo.png'
+          alt='Mercado Pago'
+        />
+      </label>
+      <div class="checkout-benefits">
+        <div class="benefits">
+          <ion-icon class="check" name="checkmark-done-outline"></ion-icon>
+          <p>
+            Si ya tienes una cuenta de Mercado Libre, usa el mismo
+            mail y contraseña
+          </p>
+        </div>
+        <div class="benefits">
+          <ion-icon class="check" name="checkmark-done-outline"></ion-icon>
+          <p>Compra con tu dinero disponible o tarjetas guardadas</p>
+        </div>
+      </div>
+    </div>
+    <div class="financiacion-chechout">
+      <div class="fin-chechout-container">
+        <div class="fin-chechout">
+          <p>Cuotas sin Tarjeta</p>
+          <div>
+            <span>HASTA 12 CUOTAS</span>
+          </div>
+        </div>
+        <div class="cart-footer-checkout">
+          <img
+            class='mercadoPago'
+            src='https://1000marcas.net/wp-content/uploads/2023/01/Mercado-Pago-Logo.png'
+            alt='Mercado Pago'
+          />
+        </div>
+      </div>
+      <div class="fin-chechout-container">
+        <div class="fin-chechout">
+          <p>Tarjeta de Credito</p>
+          <div>
+            <span>HASTA 12 CUOTAS</span>
+          </div>
+        </div>
+        <div class="cart-footer-checkout">
+          <img
+            class='visaCard'
+            src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/800px-Visa_Inc._logo.svg.png'
+            alt='Visa'
+          />
+          <img
+            class='mastercardCard'
+            src='https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg'
+            alt='Mastercard'
+          />
+          <img
+            class='mercadoPago'
+            src='https://1000marcas.net/wp-content/uploads/2023/01/Mercado-Pago-Logo.png'
+            alt='Mercado Pago'
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-end">
+    <p class="condition-checkout"> Al continuar, aceptas nuestros
+      <strong> Términos y condiciones</strong>
+    </p>
+    <p class="politic-checkout">Sus datos personales se utilizarán para procesar su pedido,
+      respaldar su experiencia en este sitio web y para otros fines descritos en nuestro 
+      <strong>política de privacidad</strong>.
+    </p>
+  </div>
+</main>
+<script type="module" src="/js/purchase.js"></script>
