@@ -1,4 +1,5 @@
 <main class='mainHome'>
+  {{> user}}
   <div class='ticket-container'>
     <span class='ticket-border'></span>
     <span class='ticket-border'></span>
@@ -46,5 +47,9 @@
     <div class='ticket-data'>Dirección: <strong>{{address}}</strong></div>
     <span class='ticket-tanks'>Gracias por su compra</span>
     <div class='bar--code'><span>{{code}}</span></div>
+  </div>
+  <div class="btn-ticket-container">
+    <div class="btn-purchase">Enviar por Email</div>
+    <a class="btn-purchase" href="/products/1">Back Home</a>
   </div>
 </main>

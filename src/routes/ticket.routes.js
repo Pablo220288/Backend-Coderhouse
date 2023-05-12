@@ -12,6 +12,9 @@ ticketRouter
     // Renderizamos el Ticket
     res.render('ticket', {
       title: 'Ticket | Backend',
+      nameUser: req.session.nameUser,
+      rol: req.session.role,
+      emptyCart: true,
       products: ticket[0].products,
       amount: ticket[0].amount,
       namePurchase: ticket[0].namePurchase,

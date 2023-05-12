@@ -1,27 +1,28 @@
 import { Router } from 'express'
-import ProductManager from '../dao/FileSystem/controllers/ProductManager.js'
+import CrudMongoose from '../dao/Mongoose/controllers/ProductManager.js'
 import { io } from '../index.js'
 
 const socketRouter = Router()
-const productAll = new ProductManager()
+const Products = new CrudMongoose()
 
 socketRouter.get('/', async (req, res) => {
   // Websockets
+  const products = await Products.findProductsAll()
   // Recibimos peticion de coneccion Cliente
-  io.on('connection', (socket) => {
-    socket.on('messaje', (data) => {
+  io.on('connection', socket => {
+    socket.on('messaje', data => {
       console.log(data)
       // Mensaje del Servidor
       io.sockets.emit('estado', 'Conectado con el Servidor por Sockets')
     })
 
     // Recivimos peticion de Consultar producto del cliente
-    socket.on('getProduct', async (data) => {
-      const byIdProducts = await productAll.getProductsById(data)
+    socket.on('getProduct', async data => {
+      const byIdProducts = await Products.findProductsById(data)
       if (data === '') {
         io.sockets.emit('getProduct', {
           messaje: 'Se consultaron todos los Productos',
-          products: await productAll.getProducts()
+          products
         })
       } else if (byIdProducts === 'Producto no Encontrado') {
         io.sockets.emit('getProduct', {
@@ -37,40 +38,41 @@ socketRouter.get('/', async (req, res) => {
     })
 
     // Recivimos peticion de Agergar producto del cliente
-    socket.on('addProduct', async (data) => {
-      const addProduct = await productAll.addProduct(JSON.parse(data))
+    socket.on('addProduct', async data => {
+      const addProduct = await Products.createProducts(JSON.parse(data))
       io.sockets.emit('addProduct', {
         messaje: addProduct,
-        products: await productAll.readProducts()
+        products
       })
     })
 
     // Recibimos peticion de Actualizar producto
-    socket.on('putProduct', async (data) => {
-      const updateProduct = await productAll.updateProduct(
+    socket.on('putProduct', async data => {
+      const updateProduct = await Products.updateProducts(
         data.id,
         JSON.parse(data.info)
       )
       io.sockets.emit('putProduct', {
         messaje: updateProduct,
-        products: await productAll.readProducts()
+        products
       })
     })
 
     // Recibimos peticion de Eliminar producto
-    socket.on('deleteProduct', async (data) => {
-      const deleteProduct = await productAll.deleteProducts(data)
+    socket.on('deleteProduct', async data => {
+      const deleteProduct = await Products.deleteProductsById(data)
       io.sockets.emit('deleteProduct', {
         messaje: deleteProduct,
-        products: await productAll.readProducts()
+        products
       })
     })
   })
 
   // Render por defecto
-  const products = await productAll.readProducts()
   res.render('realTimeProducts', {
     title: 'Express | Websockets',
+    noNav: true,
+    noFooter: true,
     products
   })
 })

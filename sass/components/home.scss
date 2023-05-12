@@ -6,6 +6,7 @@
   align-items: center;
   gap: 50px;
   margin-top: 120px;
+  position: relative;
   .filter {
     width: 90%;
     align-self: flex-start;
@@ -15,6 +16,6 @@
     margin: auto;
   }
 }
-.swal2-html-container{
+.swal2-html-container {
   font-size: 0.8rem !important;
 }

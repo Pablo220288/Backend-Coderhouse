@@ -596,6 +596,7 @@ p {
   align-items: center;
   gap: 50px;
   margin-top: 120px;
+  position: relative;
 }
 .mainHome .filter {
   width: 90%;
@@ -608,6 +609,24 @@ p {
 
 .swal2-html-container {
   font-size: 0.8rem !important;
+}
+
+.backgroundHome {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("https://global-uploads.webflow.com/6034d7d1f3e0f52c50b2adee/63081b19a5f67d8610e55bff_6034d7d1f3e0f571ffb2b629_OG-Pockets-Editoral-Alma.jpeg");
+  background-position: 50% 100%;
+  background-size: cover;
+  position: relative;
+}
+.backgroundHome::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, #fff, transparent);
+  z-index: 2;
 }
 
 .containerTabs {
@@ -2260,6 +2279,15 @@ form .btn input[type=submit] {
     flex-direction: row;
   }
 }
+.mainticket {
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("https://global-uploads.webflow.com/6034d7d1f3e0f52c50b2adee/60c35aa7d3f2ca36d20bf01a_IMG-2525%20(1)-p-2000.jpeg");
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
 .ticket-container {
   background: #f1f1f1;
   position: relative;
@@ -2269,7 +2297,6 @@ form .btn input[type=submit] {
   align-items: center;
   width: 270px;
   box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.3);
-  margin-bottom: 80px;
   position: relative;
   padding: 20px 0;
 }
@@ -2396,11 +2423,51 @@ form .btn input[type=submit] {
 }
 .ticket-container .bar--code span {
   position: absolute;
-  bottom: -4px;
+  padding: 0px 5px;
+  bottom: 12px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #f1f1f1;
   z-index: 1;
+}
+
+.btn-ticket-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 80px;
+}
+.btn-ticket-container .btn-purchase {
+  all: unset;
+  width: 160px;
+  padding: 10px 15px;
+  margin-top: 30px;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  align-self: flex-end;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.btn-ticket-container .btn-purchase::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -200%;
+  width: 300%;
+  height: 100%;
+  background: -webkit-linear-gradient(right, #88c043, #6d9a36, #88c043, #6d9a36);
+  z-index: -1;
+  transition: all 0.4s ease;
+}
+.btn-ticket-container .btn-purchase .input-purchase {
+  all: unset;
+}
+.btn-ticket-container .btn-purchase:hover::before {
+  left: 0;
 }
 
 .footer {

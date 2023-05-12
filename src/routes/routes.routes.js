@@ -11,9 +11,10 @@ import sessionRouter from './session.routes.js'
 import usersRouter from './users.routes.js'
 import githubRouter from './github.routes.js'
 import error404Router from './error404.routes.js'
-import mailRouter from './mail.routes.js'
 import ticketRouter from './ticket.routes.js'
 import purchaseRouter from './purchase.routes.js'
+import mockingRouter from './mocking.routes.js'
+import { isAuthenticated } from '../middlewares/isAuthenticated.js'
 
 const router = Router()
 
@@ -29,9 +30,10 @@ router
   .use('/products', productsRouter)
   .use('/users', usersRouter)
   .use('/session', githubRouter)
-  .use('/mail', mailRouter)
   .use('/purchase', purchaseRouter)
   .use('/ticket', ticketRouter)
+  .use('/mockingProducts', mockingRouter)
+  .use('/', isAuthenticated)
   .use('*', error404Router)
 
 export default router

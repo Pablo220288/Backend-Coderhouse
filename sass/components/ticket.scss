@@ -1,5 +1,13 @@
 $container: #f1f1f1;
 
+.mainticket{
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('https://global-uploads.webflow.com/6034d7d1f3e0f52c50b2adee/60c35aa7d3f2ca36d20bf01a_IMG-2525%20(1)-p-2000.jpeg');
+  background-position: 50% 50%;
+  background-size: cover;
+}
 .ticket-container {
   background: $container;
   position: relative;
@@ -9,7 +17,6 @@ $container: #f1f1f1;
   align-items: center;
   width: 270px;
   box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.3);
-  margin-bottom: 80px;
   position: relative;
   padding: 20px 0;
   .ticket-border {
@@ -78,7 +85,7 @@ $container: #f1f1f1;
       justify-content: flex-start;
       gap: 20px;
     }
-    .prices{
+    .prices {
       justify-content: flex-end;
     }
     .product-title,
@@ -138,11 +145,57 @@ $container: #f1f1f1;
     }
     span {
       position: absolute;
-      bottom: -4px;
+      padding: 0px 5px;
+      bottom: 12px;
       left: 50%;
       transform: translateX(-50%);
       background-color: #f1f1f1;
       z-index: 1;
+    }
+  }
+}
+
+.btn-ticket-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 80px;
+  .btn-purchase {
+    all: unset;
+    width: 160px;
+    padding: 10px 15px;
+    margin-top: 30px;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    align-self: flex-end;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -200%;
+      width: 300%;
+      height: 100%;
+      background: -webkit-linear-gradient(
+        right,
+        #88c043,
+        #6d9a36,
+        #88c043,
+        #6d9a36
+      );
+      z-index: -1;
+      transition: all 0.4s ease;
+    }
+    .input-purchase {
+      all: unset;
+    }
+    &:hover::before {
+      left: 0;
     }
   }
 }

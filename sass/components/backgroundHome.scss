@@ -1,0 +1,17 @@
+.backgroundHome{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('https://global-uploads.webflow.com/6034d7d1f3e0f52c50b2adee/63081b19a5f67d8610e55bff_6034d7d1f3e0f571ffb2b629_OG-Pockets-Editoral-Alma.jpeg');
+    background-position: 50% 100%;
+    background-size: cover;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 40%;
+        background: linear-gradient(to top, #fff, transparent);
+        z-index: 2;
+      }
+}

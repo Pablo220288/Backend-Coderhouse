@@ -84,6 +84,10 @@ class CrudMongoose {
     return product
   }
 
+  findProductsAll = async () => {
+    return productService.findProducts()
+  }
+
   createProducts = async newProduct => {
     if (this.objectKeys(newProduct) === 400) {
       return 'JSON incompleto. Faltan 1 o mas Datos'

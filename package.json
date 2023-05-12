@@ -25,6 +25,7 @@
   "homepage": "https://github.com/Pablo220288/Backend-Coderhouse#readme",
   "description": "",
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-config-standard": "^17.0.0",
@@ -43,6 +44,7 @@
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
+    "express-compression": "^1.0.2",
     "express-handlebars": "^6.0.7",
     "express-session": "^1.17.3",
     "express-validator": "^6.15.0",

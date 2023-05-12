@@ -9,7 +9,7 @@ socket.on('estado', (data) => {
 const cargarDom = (prod) => {
   itemTableContent.innerHTML += `
   <tr>
-  <td>${prod.id}</td>
+  <td>${prod._id}</td>
   <td class="itemLeft">${prod.title}</td>
   <td class="itemLeft">${prod.author}</td>
   <td class="itemLeft">${prod.description}</td>

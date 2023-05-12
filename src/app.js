@@ -14,6 +14,8 @@ import flash from 'connect-flash'
 import MongoStore from 'connect-mongo'
 import passport from 'passport'
 import initializePassword from './config/passport.js'
+import compression from 'express-compression'
+import errorsHandlers from './middlewares/errorHandler.js'
 
 // Configuracion de variables de entorno
 dotenv.config()
@@ -60,6 +62,13 @@ app.use(
 // Uso me mensajes Flash
 app.use(flash())
 
+// Express Compressiom
+app.use(
+  compression({
+    brotli: { enabled: true, zlib: {} }
+  })
+)
+
 // Configuracion Passport
 initializePassword()
 app.use(passport.initialize())
@@ -84,4 +93,6 @@ app.use('/', express.static(__dirname + '/public'))
 // Routers
 app.use('/', router)
 
+// Controlador de Errores
+app.use(errorsHandlers)
 export default app
