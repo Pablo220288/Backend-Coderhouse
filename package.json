@@ -10,7 +10,8 @@
     "sass-watch": "sass --no-source-map --watch sass/styles.scss src/public/css/styles.css",
     "nodemon-watch": "nodemon src/index.js",
     "dev": "npm-run-all --parallel sass-watch nodemon-watch",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
