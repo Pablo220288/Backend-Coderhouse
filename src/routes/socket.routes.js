@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import CrudMongoose from '../dao/Mongoose/controllers/ProductManager.js'
 import { io } from '../index.js'
+import { logger } from '../../utils/logger.js'
 
 const socketRouter = Router()
 const Products = new CrudMongoose()
@@ -11,7 +12,7 @@ socketRouter.get('/', async (req, res) => {
   // Recibimos peticion de coneccion Cliente
   io.on('connection', socket => {
     socket.on('messaje', data => {
-      console.log(data)
+      logger.info(data)
       // Mensaje del Servidor
       io.sockets.emit('estado', 'Conectado con el Servidor por Sockets')
     })

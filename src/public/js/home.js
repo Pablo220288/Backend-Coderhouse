@@ -202,7 +202,6 @@ socket.on('insufficientStock', data => {
   }).then(result => {
     if (result.isConfirmed) {
       const productId = data.map(data => data.idProduct)
-      console.log(productId[0])
       for (let i = 0; i < productId.length; i++) {
         socket.emit('deleteProductToCart', productId[i])
       }

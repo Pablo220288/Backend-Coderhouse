@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import { io } from '../index.js'
 import CartMongooseManager from '../dao/Mongoose/controllers/CartsManager.js'
+import { logger } from '../../utils/logger.js'
 
 const cartSocketRouter = Router()
 const cartsByMongoose = new CartMongooseManager()
@@ -8,7 +9,7 @@ const cartsByMongoose = new CartMongooseManager()
 cartSocketRouter.get('/', async (req, res) => {
   io.on('connection', (socket) => {
     socket.on('messaje', (data) => {
-      console.log(data)
+      logger.info(data)
       // Mensaje del Servidor
       io.sockets.emit('estado', 'Conectado con el Servidor por Sockets')
     })

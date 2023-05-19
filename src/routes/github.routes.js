@@ -10,7 +10,6 @@ githubRouter
     async (req, res) => {}
   )
   .get('/githubsession', passport.authenticate('github'), async (req, res) => {
-    console.log(req.session)
     req.session.user = req.user
     res.status(200).redirect('/products')
   })

@@ -7,10 +7,10 @@ import { logger } from '../utils/logger.js'
 // Creando Loacal host 8080
 export const PORT = process.env.PORT || 8080
 const server = app.listen(PORT, () =>
-  logger.log('info', `Express por Local host ${server.address().port}`)
+  logger.info(`Express por Local host ${server.address().port}`)
 )
 server.on('error', err => {
-  logger.log('error', `Algo salio mal: ${err}`)
+  logger.error(`Algo salio mal: ${err}`)
 })
 export const io = new Server(server)
 

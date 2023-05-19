@@ -92,7 +92,6 @@ productsRouter
           }
         })
         socket.on('deleteProductToCart', async idProduct => {
-          console.log('aqui')
           await carts.deleteProductToCart(idCart, idProduct)
           const products = await cartProduct(idCart)
           io.sockets.emit('deleteProductToCart', products)

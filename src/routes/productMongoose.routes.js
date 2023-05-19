@@ -38,7 +38,6 @@ productMongooseRouter.put('/:id', isAdmin, async (req, res) => {
   }
 })
 productMongooseRouter.delete('/:id', isAdmin, async (req, res) => {
-  console.log(req.params.id)
   try {
     res
       .status(200)

@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import ProductManager from '../dao/FileSystem/controllers/ProductManager.js'
+import { logger } from '../../utils/logger.js'
 
 const productRouter = Router()
 
@@ -11,7 +12,7 @@ productRouter.get('/', async (req, res) => {
   try {
     res.send(await productos.getProducts(req.query.limit))
   } catch (error) {
-    console.log(error)
+    logger.error(error)
   }
 })
 // Ruta a Producto por ID
@@ -26,7 +27,7 @@ productRouter
       }
       return res.send(productById)
     } catch (error) {
-      console.log(error)
+      logger.error(error)
     }
   })
   // Ruta para agregar Producto

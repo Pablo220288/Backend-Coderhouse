@@ -17,12 +17,12 @@ Swal.fire({
   title: 'Usuario',
   input: 'text',
   text: 'Ingrese un Nombre',
-  inputValidator: (data) => {
+  inputValidator: data => {
     return !data && 'Ingrese un Nombre Valido'
   },
   allowOutsideClick: false
-}).then((data) => {
-  const nombre = data.value.replace(/(^\w{1})|(\s+\w{1})/g, (letra) =>
+}).then(data => {
+  const nombre = data.value.replace(/(^\w{1})|(\s+\w{1})/g, letra =>
     letra.toUpperCase()
   )
   user = nombre
@@ -36,7 +36,7 @@ Swal.fire({
   })
 })
 
-const messajeChatInner = (data) => {
+const messajeChatInner = data => {
   let msgAll = ''
   let classMsg = ''
   let moreMsg = ''
@@ -72,7 +72,7 @@ const messajeChatInner = (data) => {
   }
   return msgAll
 }
-const userChatInner = (data) => {
+const userChatInner = data => {
   let userAll = ''
   let classUser = ''
   for (let i = 0; i < data.length; i++) {
@@ -96,7 +96,7 @@ socket.on('userChat', (users, messajes) => {
   messajesChat.scrollTop = messajesChat.scrollHeight
 })
 
-chatSend.addEventListener('click', (e) => {
+chatSend.addEventListener('click', e => {
   if (chatBox.value.trim().length > 0) {
     socket.emit('messajeChat', {
       user,
@@ -112,8 +112,7 @@ chatBox.addEventListener('keypress', () => {
   socket.emit('typing', { user })
 })
 
-socket.on('messajeLogs', (data) => {
-  console.log(data)
+socket.on('messajeLogs', data => {
   userTiping.textContent = ''
   messajesChat.innerHTML = ''
   const msgAll = messajeChatInner(data)
@@ -121,11 +120,11 @@ socket.on('messajeLogs', (data) => {
   messajesChat.scrollTop = messajesChat.scrollHeight
 })
 
-socket.on('typing', (data) => {
+socket.on('typing', data => {
   userTiping.textContent = `${data.user} escribiendo...`
 })
 
-socket.on('userDisconnect', (data) => {
+socket.on('userDisconnect', data => {
   messajesChat.innerHTML = ''
   const msgAll = messajeChatInner(data)
   messajesChat.innerHTML = msgAll

@@ -1,3 +1,4 @@
+import { logger } from '../../utils/logger.js'
 import { roleModel } from '../dao/Mongoose/models/RoleSchema.js'
 export const createRoles = async () => {
   try {
@@ -9,8 +10,8 @@ export const createRoles = async () => {
       roleModel.create({ name: 'moderator' }),
       roleModel.create({ name: 'user' })
     ])
-    console.log(values)
+    logger.info(values)
   } catch (error) {
-    console.log(error)
+    logger.error(error)
   }
 }
