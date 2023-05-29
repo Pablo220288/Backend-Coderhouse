@@ -1,15 +1,13 @@
-FROM node:18
+FROM node:18.16.0
 
-WORKDIR /app
+WORKDIR /backend-node
 
 COPY package*.json ./
 
-RUN npm install
-
-ENV NODE_ENV=production
-
 COPY . .
+
+RUN npm install
 
 EXPOSE 8080
 
-CMD ["npm","start"]
+CMD ["npm","run","dev"]

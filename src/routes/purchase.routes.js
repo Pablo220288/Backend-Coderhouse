@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid'
 import { findCartByIdAndUpdate } from '../services/cartService.js'
 import CrudMongoose from '../dao/Mongoose/controllers/ProductManager.js'
 import UserService from '../services/userService.js'
-import sendMail from '../../utils/mail.js'
+import sendMail from '../utils/mail.js'
 import ApiErrors from '../errors/apiErrors.js'
 
 const purchaseRouter = Router()

@@ -1,12 +1,13 @@
 import { Router } from 'express'
 import CrudMongoose from '../dao/Mongoose/controllers/ProductManager.js'
 import { io } from '../index.js'
-import { logger } from '../../utils/logger.js'
+import { logger } from '../utils/logger.js'
+import { isAdmin } from '../middlewares/authRole.js'
 
 const socketRouter = Router()
 const Products = new CrudMongoose()
 
-socketRouter.get('/', async (req, res) => {
+socketRouter.get('/', isAdmin, async (req, res) => {
   // Websockets
   const products = await Products.findProductsAll()
   // Recibimos peticion de coneccion Cliente

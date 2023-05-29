@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { dateShort } from '../../utils/dateShort.js'
+import { dateShort } from '../utils/dateShort.js'
 // import { usersChat } from '../index.js'
 import { findChats } from '../services/chatService.js'
 

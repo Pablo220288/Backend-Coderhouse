@@ -1,10 +1,9 @@
 import express, { Router } from 'express'
 import __dirname from '../utils.js'
-
 import SessionManager from '../dao/Mongoose/controllers/SessionManager.js'
 import passport from 'passport'
-import { passportCall } from '../../utils/passportCall.js'
-import { authorizationRole } from '../../utils/role.js'
+import { passportCall } from '../utils/passportCall.js'
+import { authorizationRole } from '../utils/role.js'
 
 const sessionRouter = Router()
 const session = new SessionManager()

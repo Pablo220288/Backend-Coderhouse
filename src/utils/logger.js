@@ -1,5 +1,5 @@
 import { createLogger, format, transports, addColors } from 'winston'
-import __dirname from '../src/utils.js'
+import __dirname from '../utils.js'
 // import MongoDB from 'winston-mongodb'
 
 const { timestamp, combine, printf, colorize, errors, json } = format

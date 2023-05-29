@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import { io } from '../index.js'
 import CartMongooseManager from '../dao/Mongoose/controllers/CartsManager.js'
-import { logger } from '../../utils/logger.js'
+import { logger } from '../utils/logger.js'
 
 const cartSocketRouter = Router()
 const cartsByMongoose = new CartMongooseManager()

@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import ProductManager from '../dao/FileSystem/controllers/ProductManager.js'
-import { logger } from '../../utils/logger.js'
+import { logger } from '../utils/logger.js'
 
 const productRouter = Router()
 

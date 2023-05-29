@@ -1,6 +1,6 @@
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
-import { logger } from '../../utils/logger.js'
+import { logger } from '../utils/logger.js'
 
 // Archivo ENV
 dotenv.config()
@@ -13,13 +13,13 @@ const connectionMongoose = () => {
       useNewUrlParser: true,
       useUnifiedTopology: true
     })
-    .catch((err) => logger.error(err))
+    .catch(err => logger.error(err))
 
   db.once('open', () => {
     logger.info('Database in connected to MongoDB')
   })
 
-  db.on('error', (err) => {
+  db.on('error', err => {
     logger.error(err)
   })
 }

@@ -2,7 +2,7 @@ import app from './app.js'
 import { Server } from 'socket.io'
 // import { dateShort } from '../utils/dateShort.js'
 // import { chatModel } from './dao/Mongoose/models/ChatSchema.js'
-import { logger } from '../utils/logger.js'
+import { logger } from '../src/utils/logger.js'
 
 // Creando Loacal host 8080
 export const PORT = process.env.PORT || 8080

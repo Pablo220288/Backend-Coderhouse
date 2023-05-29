@@ -1,5 +1,5 @@
-import { logger } from '../../utils/logger.js'
 import { roleModel } from '../dao/Mongoose/models/RoleSchema.js'
+import { logger } from '../utils/logger.js'
 export const createRoles = async () => {
   try {
     const count = await roleModel.estimatedDocumentCount()
