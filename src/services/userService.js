@@ -6,7 +6,10 @@ class UserService {
   }
 
   findAllUsers = async () => {
-    return await this.model.find({}).populate('roles').populate('cart', 'products')
+    return await this.model
+      .find({})
+      .populate('roles')
+      .populate('cart', 'products')
   }
 
   findOneUser = async email => {
@@ -39,6 +42,17 @@ class UserService {
 
   verifyToken = async token => {
     return await userModel.verifyToken(token)
+  }
+
+  recoveryPassword = async (id, newPassword) => {
+    const userUpdatePassword = await userModel.findByIdAndUpdate(
+      id,
+      {
+        password: newPassword
+      },
+      { new: true }
+    )
+    return userUpdatePassword
   }
 }
 

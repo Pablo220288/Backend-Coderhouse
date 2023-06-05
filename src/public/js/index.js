@@ -2,11 +2,11 @@ const itemTableContent = document.getElementById('itemTableContent')
 const socket = io()
 socket.emit('messaje', 'Conectado con el Cliente por Sockets')
 
-socket.on('estado', (data) => {
+socket.on('estado', data => {
   console.log(data)
 })
 
-const cargarDom = (prod) => {
+const cargarDom = prod => {
   itemTableContent.innerHTML += `
   <tr>
   <td>${prod._id}</td>
@@ -28,17 +28,17 @@ const cargarDom = (prod) => {
 const formGet = document.getElementById('formGet')
 const resGet = document.getElementById('resGet')
 
-formGet.addEventListener('submit', (e) => {
+formGet.addEventListener('submit', e => {
   e.preventDefault()
   const getProduct = document.getElementById('getProduct').value
   socket.emit('getProduct', getProduct)
   resGet.innerHTML = ''
 })
 
-socket.on('getProduct', (data) => {
+socket.on('getProduct', data => {
   resGet.innerHTML = data.messaje
   itemTableContent.innerHTML = ''
-  data.products.forEach((prod) => {
+  data.products.forEach(prod => {
     cargarDom(prod)
   })
 })
@@ -47,17 +47,17 @@ socket.on('getProduct', (data) => {
 const formPost = document.getElementById('formPost')
 const resAdd = document.getElementById('resAdd')
 
-formPost.addEventListener('submit', (e) => {
+formPost.addEventListener('submit', e => {
   e.preventDefault()
   const newProduct = document.getElementById('addProduct').value
   socket.emit('addProduct', newProduct)
   resAdd.innerHTML = ''
 })
 
-socket.on('addProduct', (data) => {
+socket.on('addProduct', data => {
   resAdd.innerHTML = data.messaje
   itemTableContent.innerHTML = ''
-  data.products.forEach((prod) => {
+  data.products.forEach(prod => {
     cargarDom(prod)
   })
 })
@@ -66,7 +66,7 @@ socket.on('addProduct', (data) => {
 const formPut = document.getElementById('formPut')
 const resPut = document.getElementById('resPut')
 
-formPut.addEventListener('submit', (e) => {
+formPut.addEventListener('submit', e => {
   e.preventDefault()
   const idPutProduct = document.getElementById('idPutProduct').value
   const infoPutProduct = document.getElementById('infoPutProduct').value
@@ -77,10 +77,10 @@ formPut.addEventListener('submit', (e) => {
   resPut.innerHTML = ''
 })
 
-socket.on('putProduct', (data) => {
+socket.on('putProduct', data => {
   resPut.innerHTML = data.messaje
   itemTableContent.innerHTML = ''
-  data.products.forEach((prod) => {
+  data.products.forEach(prod => {
     cargarDom(prod)
   })
 })
@@ -89,17 +89,17 @@ socket.on('putProduct', (data) => {
 const formDelete = document.getElementById('formDelete')
 const resDelete = document.getElementById('resDelete')
 
-formDelete.addEventListener('submit', (e) => {
+formDelete.addEventListener('submit', e => {
   e.preventDefault()
   const id = document.getElementById('productDelete').value
   socket.emit('deleteProduct', id)
   resDelete.innerHTML = ''
 })
 
-socket.on('deleteProduct', (data) => {
+socket.on('deleteProduct', data => {
   resDelete.innerHTML = data.messaje
   itemTableContent.innerHTML = ''
-  data.products.forEach((prod) => {
+  data.products.forEach(prod => {
     cargarDom(prod)
   })
 })

@@ -23,10 +23,6 @@ p {
   margin: 0 !important;
 }
 
-@font-face {
-  font-family: Pablo;
-  src: url("../font/TheScientist-L3EyW.ttf") format("truetype");
-}
 * {
   margin: 0;
   padding: 0;
@@ -1578,13 +1574,14 @@ form .field input:focus::placeholder {
   margin-top: 15px;
 }
 
-.form-inner form .pass-link a,
+.form-inner form .pass-link span,
 .form-inner form .signup-link a {
   color: #28922d;
   text-decoration: none;
+  cursor: pointer;
 }
 
-.form-inner form .pass-link a:hover,
+.form-inner form .pass-link span:hover,
 .form-inner form .signup-link a:hover {
   text-decoration: underline;
 }
@@ -2557,6 +2554,550 @@ form .btn input[type=submit] {
   left: 0;
 }
 
+.mailContainer h2 {
+  color: crimson;
+}
+
+.recoverContainer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4588235294);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s visibility ease-in, opacity 0.3s ease-out;
+  visibility: hidden;
+  opacity: 0;
+}
+.recoverContainer .recover-wrapper {
+  max-width: 360px;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+}
+.recoverContainer .recover-wrapper .recover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+.recoverContainer .recover-wrapper .recover header {
+  align-self: flex-start;
+}
+.recoverContainer .recover-wrapper .recover main {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.recoverContainer .recover-wrapper .recover main input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 15px;
+  border: none;
+  border-bottom: 1px solid lightgrey;
+  border-bottom-width: 2px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+.recoverContainer .recover-wrapper .recover main input:focus {
+  border-color: #64d569;
+}
+.recoverContainer .recover-wrapper .recover main input::placeholder {
+  color: #999;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+.recoverContainer .recover-wrapper .recover main input:focus::placeholder {
+  color: #b3b3b3;
+}
+.recoverContainer .recover-wrapper .recover .recoverMain {
+  transition: all 0.3s ease-out;
+}
+.recoverContainer .recover-wrapper .recover footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.recoverContainer .recover-wrapper .recover footer .recoverBtn {
+  height: 50px;
+  width: 120px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.recoverContainer .recover-wrapper .recover footer .recoverBtn .btn-layer {
+  height: 100%;
+  width: 360px;
+  position: absolute;
+  left: -100%;
+  background: -webkit-linear-gradient(right, #c04343, #9a3636, #c04343, #9a3636);
+  border-radius: 5px;
+  transition: all 0.4s ease;
+}
+.recoverContainer .recover-wrapper .recover footer .recoverBtn .send {
+  background: -webkit-linear-gradient(right, #88c043, #6d9a36, #88c043, #6d9a36);
+}
+.recoverContainer .recover-wrapper .recover footer .recoverBtn:hover .btn-layer {
+  left: 0;
+}
+.recoverContainer .recover-wrapper .recover footer .recoverBtn .btn-text {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  background: none;
+  border: none;
+  color: #fff;
+  padding-left: 0;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.recoverContainer .recover-wrapper .recover .recoveryMessage {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  font-size: 0.8rem;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  visibility: hidden;
+  opacity: 0;
+}
+.recoverContainer .recover-wrapper .recover .recoveryError,
+.recoverContainer .recover-wrapper .recover .recoveryExpired {
+  color: #ff0000;
+}
+.recoverContainer .recover-wrapper .recover .recoverySend {
+  color: #88c043;
+}
+.recoverContainer .recover-wrapper .recover .recoveryMessageShow {
+  visibility: visible;
+  opacity: 1;
+}
+
+.recoverShow {
+  visibility: visible;
+  opacity: 1;
+}
+
+.mainRecovery {
+  background-image: url("https://scontent.fcor10-3.fna.fbcdn.net/v/t1.6435-9/175182308_147164864077483_2775307833697034619_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=e3f864&_nc_ohc=wzCYgDQc_NwAX-kwuRt&_nc_ht=scontent.fcor10-3.fna&oh=00_AfBHRrAnhKNcO8fkhqYZkGXl9Oqm_YR6asZutGxSx75aTw&oe=64A04B03");
+}
+.mainRecovery .recoveryContainer {
+  width: 90%;
+  margin: auto;
+  max-width: 360px;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+}
+.mainRecovery .recoveryContainer header {
+  width: 100%;
+}
+.mainRecovery .recoveryContainer header h2 {
+  font-size: 1.8rem;
+  text-align: center;
+}
+.mainRecovery .recoveryContainer header p {
+  font-size: 0.8rem;
+}
+.mainRecovery .recoveryContainer header strong {
+  font-size: 0.9rem;
+}
+.mainRecovery .recoveryContainer main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px 40px 0px;
+  position: relative;
+}
+.mainRecovery .recoveryContainer main .recoveryPass {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.mainRecovery .recoveryContainer main .recoveryPass input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 15px;
+  border: none;
+  border-bottom: 1px solid lightgrey;
+  border-bottom-width: 2px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+.mainRecovery .recoveryContainer main .recoveryPass input:focus {
+  border-color: #64d569;
+}
+.mainRecovery .recoveryContainer main .recoveryPass input::placeholder {
+  color: #999;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+.mainRecovery .recoveryContainer main .recoveryPass input:focus::placeholder {
+  color: #b3b3b3;
+}
+.mainRecovery .recoveryContainer main .recoveryPass .eyeRecovery {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainRecovery .recoveryContainer main .recoveryPass .eyeRecovery::before {
+  content: "\f06e";
+  font-family: fontAwesome;
+}
+.mainRecovery .recoveryContainer main .recoveryPass .eyeRecovery.hide::before {
+  content: "\f070";
+}
+.mainRecovery .recoveryContainer .mainSendEmail {
+  padding: 5px 0px;
+}
+.mainRecovery .recoveryContainer .mainRecoveryPassword {
+  margin-top: 20px;
+}
+.mainRecovery .recoveryContainer footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainRecovery .recoveryContainer footer .recoverBtn {
+  height: 50px;
+  width: 120px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.mainRecovery .recoveryContainer footer .recoverBtn .btn-layer {
+  height: 100%;
+  width: 360px;
+  position: absolute;
+  left: -100%;
+  background: -webkit-linear-gradient(right, #88c043, #6d9a36, #88c043, #6d9a36);
+  border-radius: 5px;
+  transition: all 0.4s ease;
+}
+.mainRecovery .recoveryContainer footer .recoverBtn:hover .btn-layer {
+  left: 0;
+}
+.mainRecovery .recoveryContainer footer .recoverBtn .btn-text {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  background: none;
+  border: none;
+  color: #fff;
+  padding-left: 0;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainRecovery .recoveryContainer .footerSendEmail {
+  flex-direction: column;
+}
+.mainRecovery .recoveryContainer .footerSendEmail p {
+  text-align: center;
+  font-size: 0.7rem;
+}
+.mainRecovery .recoveryContainer .footerSendEmail .recoverySendMail {
+  font-size: 1rem;
+  padding-bottom: 10px;
+}
+.mainRecovery .recoveryContainer .footerSendEmail .recoverySendMail strong {
+  font-size: 0.9rem;
+}
+.mainRecovery .recoveryContainer .recoveryMessage {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  font-size: 0.8rem;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  visibility: hidden;
+  opacity: 0;
+}
+.mainRecovery .recoveryContainer .recoveryPasswordError,
+.mainRecovery .recoveryContainer .passwordNotMatch {
+  color: #ff0000;
+}
+.mainRecovery .recoveryContainer .recoveryPasswordSuccess {
+  color: #88c043;
+}
+.mainRecovery .recoveryContainer .recoveryMessageShow {
+  visibility: visible;
+  opacity: 1;
+}
+
+#anim-wrapper {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#anim-bg {
+  border-radius: 50%;
+  margin: 100px auto;
+  width: 0;
+  height: 0;
+  background-color: #88c043;
+  animation: 3s bg-pop ease-in-out infinite;
+  overflow: hidden;
+  transform: scale(0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#env-wrapper {
+  animation: 3s env-fly ease-in-out infinite;
+  position: relative;
+  margin-bottom: 6.6666666667px;
+}
+
+#env {
+  color: #fefefe;
+  font-size: 80px;
+  text-shadow: -15px 15px 0px rgba(255, 255, 255, 0.45);
+  animation: mail-stretch 3s linear infinite;
+}
+
+@keyframes mail-stretch {
+  0% {
+    transform: skew(-20deg, 0);
+  }
+  21% {
+    transform: skew(-20deg, 0);
+  }
+  26% {
+    transform: skew(10deg, 0);
+  }
+  30% {
+    transform: skew(0);
+  }
+  100% {
+    transform: skew(0);
+  }
+}
+@keyframes env-fly {
+  0% {
+    transform: translateX(-300px);
+  }
+  25% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+@keyframes bg-pop {
+  10% {
+    border: 35px solid #6d9a36;
+  }
+  25% {
+    width: 160px;
+    height: 160px;
+    transform: scale(1);
+    border: 0px solid #6d9a36;
+  }
+  100% {
+    width: 160px;
+    height: 160px;
+    border: 0px solid #6d9a36;
+    transform: scale(1);
+  }
+}
+.speedline {
+  position: absolute;
+  height: 3px;
+  background: rgb(0, 43, 84);
+  left: 0;
+  transform: translateX(-100%);
+  opacity: 0.35;
+  border-radius: 20px;
+}
+
+.line1 {
+  top: 25%;
+  width: 60.6060606061px;
+  animation: speedline1 3s linear infinite;
+}
+
+.line2 {
+  top: 50%;
+  width: 50px;
+  animation: speedline2 3s linear infinite;
+}
+
+.line3 {
+  top: 75%;
+  width: 40px;
+  animation: speedline3 3s linear infinite;
+}
+
+@keyframes speedline1 {
+  0% {
+    width: 90px;
+  }
+  20% {
+    width: 90px;
+  }
+  28% {
+    width: 0;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes speedline2 {
+  0% {
+    width: 75px;
+  }
+  20% {
+    width: 75px;
+  }
+  28% {
+    width: 0;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes speedline3 {
+  0% {
+    width: 60px;
+  }
+  20% {
+    width: 60px;
+  }
+  28% {
+    width: 0;
+  }
+  100% {
+    width: 0;
+  }
+}
+#check-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #64d569;
+  right: 43.4782608696px;
+  bottom: 66.6666666667px;
+  position: absolute;
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+  background: #ffffff;
+  overflow: visible;
+  border: 3px solid #88c043;
+  animation: 3s check-pop ease-in-out infinite;
+}
+
+@keyframes check-pop {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(0);
+  }
+  35% {
+    transform: scale(1);
+  }
+}
+.check-stroke1 {
+  width: 9px;
+  height: 4px;
+  position: absolute;
+  background: #4379c0;
+  border-radius: 5px;
+  top: 11px;
+  left: 2px;
+  transform: rotate(45deg);
+  animation: check-stroke1 3s linear infinite;
+}
+
+.check-stroke2 {
+  width: 15px;
+  height: 4px;
+  position: absolute;
+  background: #4379c0;
+  border-radius: 5px;
+  top: 10px;
+  left: 6px;
+  transform: rotate(-45deg);
+  animation: check-stroke2 3s linear infinite;
+}
+
+@keyframes check-stroke1 {
+  0% {
+    width: 0;
+  }
+  34% {
+    width: 0;
+  }
+  37% {
+    width: 9px;
+  }
+  100% {
+    width: 9px;
+  }
+}
+@keyframes check-stroke2 {
+  0% {
+    width: 0;
+  }
+  38% {
+    width: 0;
+  }
+  41% {
+    width: 15px;
+  }
+  100% {
+    width: 15px;
+  }
+}
 .footer {
   width: 100%;
   text-align: right;
@@ -2732,7 +3273,7 @@ form .btn input[type=submit] {
 }
 .footer .copy .footerDisen a {
   font-size: 1.5rem;
-  font-family: Pablo;
+  font-family: "The Scientist", sans-serif;
   text-decoration: none;
   color: inherit;
 }

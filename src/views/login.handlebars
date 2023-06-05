@@ -25,7 +25,7 @@
             <span class="eyeBtn" id="eyeBtn"></span>
           </div>
           <div class="pass-link">
-            <a href="#">Forgot password?</a>
+            <span id="recoverPassword">Forgot password?</span>
           </div>
           <div class="field btn">
             <div class="btn-layer"></div>
@@ -78,6 +78,44 @@
           <div class="signup-link" id="login-link">
             You are a member? <a href="">Login now</a>
           </div>
+        </form>
+      </div>
+    </div>
+    <div class=
+    {{#if emailExpired}} 
+      "recoverContainer recoverShow" 
+    {{else}} 
+      "recoverContainer"
+    {{/if}}   >
+      <div class="recover-wrapper">
+        <form class="recover" method="post" action="/recovery/sendEmail" id="formRecover">
+          <header>
+            <h2>Recovery email</h2>
+          </header>
+          <main class="recoverMain" {{#if emailExpired}}
+              style="margin-top: 25px;"
+            {{else}}{{/if}}>
+            <input type="text" name="email" placeholder="Email recovey" id="recoverInput"/>
+          </main>
+          <footer>
+            <div class="recoverBtn">
+              <div class="btn-layer"></div>
+              <div class="btn-text" id="recoverCancel">Cancel</div>
+            </div>
+            <div class="recoverBtn">
+              <div class="btn-layer send"></div>
+              <input class="btn-text" type="submit" value="Send" id="recoverSend"/>
+            </div>
+          </footer>
+            <label for="recoveryError" class="recoveryMessage recoveryError">Invalid Email</label>
+            <label for="recoveryExpired" class=
+            {{#if emailExpired}}
+              "recoveryMessage recoveryExpired recoveryMessageShow"
+            {{else}}
+              "recoveryMessage recoveryExpired"
+            {{/if}}
+            >Email Expired. Generate a recovery email again.</label>
+            <label for="recoverySend" class="recoveryMessage recoverySend">Email Send</label>
         </form>
       </div>
     </div>

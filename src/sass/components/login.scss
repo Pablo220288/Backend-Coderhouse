@@ -157,12 +157,13 @@ form .field input:focus::placeholder {
   text-align: center;
   margin-top: 15px;
 }
-.form-inner form .pass-link a,
+.form-inner form .pass-link span,
 .form-inner form .signup-link a {
   color: #28922d;
   text-decoration: none;
+  cursor: pointer;
 }
-.form-inner form .pass-link a:hover,
+.form-inner form .pass-link span:hover,
 .form-inner form .signup-link a:hover {
   text-decoration: underline;
 }

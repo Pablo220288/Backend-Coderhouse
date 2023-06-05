@@ -1,7 +1,7 @@
 import app from './app.js'
 import { Server } from 'socket.io'
-// import { dateShort } from '../utils/dateShort.js'
-// import { chatModel } from './dao/Mongoose/models/ChatSchema.js'
+import { dateShort } from './utils/dateShort.js'
+import { chatModel } from './dao/Mongoose/models/ChatSchema.js'
 import { logger } from '../src/utils/logger.js'
 
 // Creando Loacal host 8080
@@ -14,7 +14,7 @@ server.on('error', err => {
 })
 export const io = new Server(server)
 
-/* // ChatSocket
+// ChatSocket
 const time = dateShort()
 // Usuarios Conectados
 export let usersChat = []
@@ -95,4 +95,4 @@ io.on('connection', socket => {
   socket.on('typing', data => {
     socket.broadcast.emit('typing', data)
   })
-}) */
+})

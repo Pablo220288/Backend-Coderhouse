@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid'
 import { findCartByIdAndUpdate } from '../services/cartService.js'
 import CrudMongoose from '../dao/Mongoose/controllers/ProductManager.js'
 import UserService from '../services/userService.js'
-import sendMail from '../utils/mail.js'
+import { sendMailPurchase } from '../utils/mail.js'
 import ApiErrors from '../errors/apiErrors.js'
 
 const purchaseRouter = Router()
@@ -109,7 +109,7 @@ purchaseRouter
 
       // Enviamos Email con el Ticket de Compra
       const { email } = await User.findByIdUser(req.session.passport.user)
-      sendMail(email, dataTicket)
+      sendMailPurchase(email, dataTicket)
 
       // Redirigimos al Ticket
       return res.status(200).redirect('/ticket')

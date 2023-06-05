@@ -15,6 +15,7 @@ import ticketRouter from './ticket.routes.js'
 import purchaseRouter from './purchase.routes.js'
 import mockingRouter from './mocking.routes.js'
 import { isAuthenticated } from '../middlewares/isAuthenticated.js'
+import recoveryRouter from './recovery.routes.js'
 
 const router = Router()
 
@@ -33,6 +34,7 @@ router
   .use('/purchase', purchaseRouter)
   .use('/ticket', ticketRouter)
   .use('/mockingProducts', mockingRouter)
+  .use('/recovery', recoveryRouter)
   .use('/', isAuthenticated)
   .use('*', error404Router)
 

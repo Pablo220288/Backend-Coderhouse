@@ -45,3 +45,55 @@ loginLink.onclick = () => {
   slideLogin.click()
   return false
 }
+
+// Recovery Password
+const formRecover = document.getElementById('formRecover')
+const recoverPassword = document.getElementById('recoverPassword')
+const recoverModal = document.querySelector('.recoverContainer')
+const recoverCancel = document.getElementById('recoverCancel')
+const recoverSend = document.getElementById('recoverSend')
+const recoverInput = document.getElementById('recoverInput')
+const recoveryError = document.querySelector('.recoveryError')
+const recoverySend = document.querySelector('.recoverySend')
+const recoveryExpired = document.querySelector('.recoveryExpired')
+const recoverMain = document.querySelector('.recoverMain')
+const socket = io()
+
+recoverPassword.addEventListener('click', () => {
+  recoverModal.classList.add('recoverShow')
+})
+recoverCancel.addEventListener('click', () => {
+  recoverModal.classList.remove('recoverShow')
+})
+recoverSend.addEventListener('click', e => {
+  e.preventDefault()
+  socket.emit('recovery', recoverInput.value)
+})
+
+socket.on('recoveryError', () => {
+  if (recoverySend.classList.contains('recoveryMessageShow')) {
+    recoverySend.classList.remove('recoveryMessageShow')
+  }
+  if (recoveryExpired.classList.contains('recoveryMessageShow')) {
+    console.log('aqui')
+    recoveryExpired.classList.remove('recoveryMessageShow')
+  }
+  recoveryError.classList.add('recoveryMessageShow')
+  setTimeout(() => {
+    recoverMain.style.marginTop = '0px'
+  }, 500)
+})
+
+socket.on('recoverySend', () => {
+  if (recoveryError.classList.contains('recoveryMessageShow')) {
+    recoveryError.classList.remove('recoveryMessageShow')
+  }
+  if (recoveryExpired.classList.contains('recoveryMessageShow')) {
+    recoveryExpired.classList.remove('recoveryMessageShow')
+  }
+  recoverySend.classList.add('recoveryMessageShow')
+  recoverMain.style.marginTop = '0px'
+  setTimeout(() => {
+    formRecover.submit()
+  }, 1000)
+})

@@ -1,5 +1,10 @@
 import userModel from '../models/UserSchema.js'
 import { createHash, validatePassword } from '../../../utils/bcrypt.js'
+import { io } from '../../../index.js'
+import UserService from '../../../services/userService.js'
+import { sendMailRecovery } from '../../../utils/mail.js'
+
+const userService = new UserService()
 class SessionManager {
   getSession = (req, res, next) => {
     try {
@@ -15,7 +20,20 @@ class SessionManager {
             emailRegister: ''
           }
         }
-        return res.status(200).render('login', {
+        io.on('connection', socket => {
+          socket.on('recovery', async data => {
+            const user = await userService.findOneUser(data)
+            if (user == null) {
+              io.sockets.emit('recoveryError')
+            } else {
+              const id = user.id
+              const nameUser = `${user.firstName} ${user.lastName}`
+              sendMailRecovery(data, id, nameUser)
+              io.sockets.emit('recoverySend')
+            }
+          })
+        })
+        res.status(200).render('login', {
           title: 'Login | Signup',
           noNav: true,
           noFooter: true,
@@ -27,7 +45,8 @@ class SessionManager {
           lastName: register.lastName,
           age: register.age,
           emailRegister: register.emailRegister,
-          messageNewUser: req.session.messageNewUser
+          messageNewUser: req.session.messageNewUser,
+          emailExpired: req.query.emailExpired
         })
       }
     } catch (err) {

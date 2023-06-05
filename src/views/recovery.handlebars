@@ -1,0 +1,84 @@
+<main class='mainLogin mainRecovery'>
+  {{#if sendEmail}}
+    <div class='recoveryContainer'>
+      <header>
+        <h2>Check your email</h2>
+      </header>
+      <main class='mainSendEmail'>
+        <div id='anim-wrapper'>
+          <div id='anim-bg'>
+            <div id='env-wrapper'>
+              <div class='speedline line1'></div>
+              <div class='speedline line2'></div>
+              <div class='speedline line3'></div>
+              <i id='env' class='fas fa-envelope'></i>
+            </div>
+          </div>
+          <div id='check-container'>
+            <div class='check-stroke1'></div>
+            <div class='check-stroke2'></div>
+          </div>
+        </div>
+      </main>
+      <footer class='footerSendEmail'>
+        <p class='recoverySendMail'>We have sent an email to
+          <strong><i>{{emailUser}}</i></strong></p>
+        <p>Jus so you know: You have
+          <strong>24 Horas</strong>
+          to pick youy password. After that, you'll have to ask for new one.</p>
+      </footer>
+    </div>
+  {{else}}
+    <form class='recoveryContainer' method="get" action="/api/session" id="recoveryForm">
+      <header>
+        <h2>Recovery Password</h2>
+        <p>Hello <strong>{{nameUser}}</strong>,</p>
+        <p>let's reset your password</p>
+      </header>
+      <main class='mainRecoveryPassword'>
+        <div class='recoveryPass'>
+          <input
+            type='password'
+            name='password'
+            placeholder='Password'
+            id='recoveryPassFirst'
+          />
+          <span class='eyeRecovery' id='eyeRecoveryFrist'></span>
+        </div>
+        <div class='recoveryPass'>
+          <input
+            type='password'
+            name='retryPassword'
+            placeholder='Retry Password'
+            id='recoveryPassSecond'
+          />
+          <span class='eyeRecovery' id='eyeRecoverySecond'></span>
+        </div>
+        <label
+          for='recoveryPasswordError'
+          class='recoveryMessage recoveryPasswordError'
+        >Error: Your new password cannot be the same as the old one</label>
+        <label
+          for='passwordNotMatch'
+          class='recoveryMessage passwordNotMatch'
+        >Error: Passwords do not match.</label>
+        <label
+          for='recoveryPasswordSuccess'
+          class='recoveryMessage recoveryPasswordSuccess'
+        >Password recovered. Log in.</label>
+      </main>
+      <footer>
+        <div class='recoverBtn'>
+          <div class='btn-layer send'></div>
+          <input
+            class='btn-text'
+            type='submit'
+            value='Recovery'
+            id='recoverSend'
+          />
+        </div>
+      </footer>
+    </form>
+  {{/if}}
+</main>
+<script type='module' src='js/recovery.js'></script>
