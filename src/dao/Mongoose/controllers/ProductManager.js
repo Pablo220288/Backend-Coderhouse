@@ -88,10 +88,13 @@ class CrudMongoose {
     return productService.findProducts()
   }
 
-  createProducts = async newProduct => {
+  createProducts = async (newProduct, user) => {
+    // Comprobamos que no falte Ningun dato antes de crear el producto
     if (this.objectKeys(newProduct) === 400) {
       return 'JSON incompleto. Faltan 1 o mas Datos'
     }
+    // Le agregamos el Usario que lo creo
+    newProduct.owner = [user]
     await productService.createProduct(newProduct)
     return 'Producto Agregado Correctamente'
   }

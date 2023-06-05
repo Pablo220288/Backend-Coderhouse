@@ -66,5 +66,8 @@ sessionRouter
       res.send(req.user)
     }
   )
+  .get('/profile', (req, res, next) => {
+    session.profile(req, res, next)
+  })
 
 export default sessionRouter

@@ -16,7 +16,11 @@ export const isModerator = async (req, res, next) => {
   res.status(403).send({ error: 'Require Moderator role' })
 }
 export const isAdmin = async (req, res, next) => {
-  if (req.session.role === 'admin') next()
+  if (req.session.role === 'admin') {
+    return next()
+  } else {
+    res.status(403).send({ error: 'Require Admin role' })
+  }
   /* const user = await users.findByIdUser(req.session.passport.user)
   const roles = await findOneRole({ _id: { $in: user.roles } })
 
@@ -26,5 +30,4 @@ export const isAdmin = async (req, res, next) => {
       return
     }
   } */
-  res.status(403).send({ error: 'Require Admin role' })
 }

@@ -41,7 +41,10 @@ socketRouter.get('/', isAdmin, async (req, res) => {
 
     // Recivimos peticion de Agergar producto del cliente
     socket.on('addProduct', async data => {
-      const addProduct = await Products.createProducts(JSON.parse(data))
+      // Enviamos en ID del Usuario que Creo el Producto
+      const user = req.session.passport.user
+      // Enviamos el Producto creado
+      const addProduct = await Products.createProducts(JSON.parse(data), user)
       io.sockets.emit('addProduct', {
         messaje: addProduct,
         products
@@ -71,6 +74,7 @@ socketRouter.get('/', isAdmin, async (req, res) => {
   })
 
   // Render por defecto
+  //  res.send(products)
   res.render('realTimeProducts', {
     title: 'Express | Websockets',
     noNav: true,

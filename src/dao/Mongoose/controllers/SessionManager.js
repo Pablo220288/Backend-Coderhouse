@@ -3,6 +3,7 @@ import { createHash, validatePassword } from '../../../utils/bcrypt.js'
 import { io } from '../../../index.js'
 import UserService from '../../../services/userService.js'
 import { sendMailRecovery } from '../../../utils/mail.js'
+import { cartProduct } from '../../../routes/products.routes.js'
 
 const userService = new UserService()
 class SessionManager {
@@ -140,6 +141,42 @@ class SessionManager {
       return res.status(200).redirect('/api/session')
     } catch (err) {
       res.status(500).send('Error al cerrar sesion', err)
+    }
+  }
+
+  profile = async (req, res, next) => {
+    try {
+      const user = await userService.findByIdUser(req.session.passport.user)
+      // Cargamos los productos que tenga en el carrito
+      const productsCart = await cartProduct(user.cart._id.toString())
+      let emptyCart = false
+      if (productsCart.totalCart === 0) emptyCart = true
+      // Selector de Role
+      let { roleAdmin, roleModerator, roleUser } = false
+      if (user.roles[0].name === 'admin') {
+        roleAdmin = true
+      } else if (user.roles[0].name === 'moderator') {
+        roleModerator = true
+      } else {
+        roleUser = true
+      }
+      res.status(200).render('profile', {
+        title: 'Profile | Setting',
+        nameUser: `${user.firstName} ${user.lastName}`,
+        id: user.id,
+        email: user.email,
+        age: user.age,
+        roleAdmin,
+        roleModerator,
+        roleUser,
+        created: user.createdAt.toLocaleDateString(),
+        cartsProducts: productsCart.productsInCart,
+        totalCart: productsCart.totalCart,
+        emptyCart,
+        countCart: productsCart.countCart
+      })
+    } catch (error) {
+      res.status(500).send(`Error al Ingresar a Setting: ${error}`)
     }
   }
 }

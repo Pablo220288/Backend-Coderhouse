@@ -40,7 +40,14 @@ const ProductSchema = new Schema(
     stock: {
       type: Number,
       default: 1
-    }
+    },
+    owner: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        index: true
+      }
+    ]
   },
   {
     timestamps: true,

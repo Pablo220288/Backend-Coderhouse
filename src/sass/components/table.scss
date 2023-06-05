@@ -27,6 +27,7 @@
     border-bottom: 1px solid #dddddd;
     max-height: 42px;
     overflow: hidden;
+    white-space: nowrap;
     &:nth-of-type(even) {
       background-color: #f3f3f3;
     }
