@@ -3124,6 +3124,7 @@ form .btn input[type=submit] {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  margin-bottom: 80px;
 }
 .avatar__name .avatarContainer {
   width: 150px;
@@ -3229,14 +3230,51 @@ form .btn input[type=submit] {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  position: relative;
 }
 .userDataContainer .userData .dataInfoContainer .dataInfo {
   font-size: 1.5rem;
 }
-.userDataContainer .userData .dataInfoContainer .role {
+.userDataContainer .userData .dataInfoContainer .inputContainer {
+  min-width: 30px;
+  display: inline-block;
+}
+.userDataContainer .userData .dataInfoContainer .role,
+.userDataContainer .userData .dataInfoContainer .age {
   all: unset;
   font-size: 1.5rem;
   text-transform: capitalize;
+  padding-right: 50px;
+}
+.userDataContainer .userData .dataInfoContainer .age {
+  width: 30px;
+}
+.userDataContainer .userData .dataInfoContainer i {
+  position: absolute;
+  right: 15px;
+  top: calc(50% - 18px);
+  width: 16px;
+  height: 16px;
+  display: block;
+  border-left: 4px solid #88c043;
+  border-bottom: 4px solid #88c043;
+  transform: rotate(-45deg); /* Giramos el cuadrado */
+  transition: all 0.25s ease;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+}
+.userDataContainer .userData .dataInfoContainer .cursor {
+  cursor: pointer;
+}
+.userDataContainer .userData .dataInfoContainer .selectorShow {
+  opacity: 1;
+  visibility: visible;
+}
+.userDataContainer .userData .dataInfoContainer .selectorInputShow {
+  opacity: 1;
+  visibility: visible;
+  transform: rotate(45deg);
 }
 .userDataContainer .userData .dataInfoContainer .dataName {
   font-size: 0.7rem;

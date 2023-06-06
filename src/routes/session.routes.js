@@ -4,6 +4,7 @@ import SessionManager from '../dao/Mongoose/controllers/SessionManager.js'
 import passport from 'passport'
 import { passportCall } from '../utils/passportCall.js'
 import { authorizationRole } from '../utils/role.js'
+import { isAuthenticated } from '../middlewares/isAuthenticated.js'
 
 const sessionRouter = Router()
 const session = new SessionManager()
@@ -66,8 +67,10 @@ sessionRouter
       res.send(req.user)
     }
   )
-  .get('/profile', (req, res, next) => {
+  .get('/profile', isAuthenticated, (req, res, next) => {
     session.profile(req, res, next)
   })
-
+  .post('/profile/update', (req, res, next) => {
+    session.profileUpdate(req, res, next)
+  })
 export default sessionRouter

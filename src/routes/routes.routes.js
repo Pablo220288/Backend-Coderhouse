@@ -35,7 +35,7 @@ router
   .use('/ticket', ticketRouter)
   .use('/mockingProducts', mockingRouter)
   .use('/recovery', recoveryRouter)
-  .use('/', isAuthenticated)
+  .use('/', isAuthenticated, productRouter)
   .use('*', error404Router)
 
 export default router

@@ -4,6 +4,7 @@ import { io } from '../../../index.js'
 import UserService from '../../../services/userService.js'
 import { sendMailRecovery } from '../../../utils/mail.js'
 import { cartProduct } from '../../../routes/products.routes.js'
+import { findOneRole } from '../../../services/roleService.js'
 
 const userService = new UserService()
 class SessionManager {
@@ -178,6 +179,20 @@ class SessionManager {
     } catch (error) {
       res.status(500).send(`Error al Ingresar a Setting: ${error}`)
     }
+  }
+
+  profileUpdate = async (req, res, next) => {
+    const user = await userService.findByIdUser(req.session.passport.user)
+    const { age, role } = req.body
+
+    // Buscamos el ID del nuevo Role
+    const newRole = await findOneRole(role)
+
+    await userService.updateUser(user.id, {
+      age,
+      roles: [newRole._id]
+    })
+    res.status(200).redirect('/api/session/profile')
   }
 }
 

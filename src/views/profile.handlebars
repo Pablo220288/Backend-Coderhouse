@@ -1,89 +1,86 @@
 <main class='mainHome profile'>
-  <a class='outUser' href='http://localhost:8080/api/session/logout'><ion-icon
-      name='log-out-outline'
-    ></ion-icon></a>
-  <div class='avatar__name'>
-    <div class='avatarContainer'>
-      <ion-icon name='person-outline'></ion-icon>
-      <div class='editImg'>
-        <ion-icon name='pencil'></ion-icon>
-      </div>
-    </div>
-    <h2>{{nameUser}}</h2>
-  </div>
-  <div class='userDataContainer'>
-    <div class='userData'>
-      <div class='dataIcon'>
-        <ion-icon name='id-card-outline'></ion-icon>
-      </div>
-      <div class='dataInfoContainer'>
-        <span class='dataInfo'>{{id}}</span>
-        <div class='dataName'>Id User</div>
-      </div>
-    </div>
-    <div class='userData'>
-      <div class='dataIcon'>
-        <ion-icon name='mail-outline'></ion-icon>
-        <div class='updateData'>
-          <div>
-            <ion-icon name='pencil'></ion-icon>
-          </div>
+  <form method="post" action="/api/session/profile/update" id="formProfile">
+    <a class='outUser' href='http://localhost:8080/api/session/logout'><ion-icon
+        name='log-out-outline'
+      ></ion-icon></a>
+    <div class='avatar__name'>
+      <div class='avatarContainer'>
+        <ion-icon name='person-outline'></ion-icon>
+        <div class='editImg'>
+          <ion-icon name='pencil'></ion-icon>
         </div>
       </div>
-      <div class='dataInfoContainer'>
-        <span class='dataInfo'>{{email}}</span>
-        <div class='dataName'>Email</div>
-      </div>
+      <h2>{{nameUser}}</h2>
     </div>
-    <div class='userData'>
-      <div class='dataIcon'>
-        <ion-icon name='alarm-outline'></ion-icon>
-        <div class='updateData'>
-          <div>
-            <ion-icon name='pencil'></ion-icon>
-          </div>
+    <div class='userDataContainer'>
+      <div class='userData'>
+        <div class='dataIcon'>
+          <ion-icon name='id-card-outline'></ion-icon>
+        </div>
+        <div class='dataInfoContainer'>
+          <span class='dataInfo'>{{id}}</span>
+          <div class='dataName'>Id User</div>
         </div>
       </div>
-      <div class='dataInfoContainer'>
-        <span class='dataInfo'>{{age}}</span>
-        <div class='dataName'>Age</div>
-      </div>
-    </div>
-    <div class='userData'>
-      <div class='dataIcon'>
-        <ion-icon name='shield-outline'></ion-icon>
-        <div class='updateData'>
-          <div id="updateRole">
-            <ion-icon name='pencil'></ion-icon>
-          </div>
+      <div class='userData'>
+        <div class='dataIcon'>
+          <ion-icon name='mail-outline'></ion-icon>
+        </div>
+        <div class='dataInfoContainer'>
+          <span class='dataInfo email'>{{email}}</span>
+          <div class='dataName'>Email</div>
         </div>
       </div>
-      <div class='dataInfoContainer'>
-        <select class='dataInfo role' name="role" disabled="true">
-          <option value="admin" {{#if roleAdmin}} selected{{else}}{{/if}}>Administrator</option>
-          <option value="moderator" {{#if roleModerator}} selected{{else}}{{/if}}>Moderator</option>
-          <option value="user" {{#if roleUser}} selected{{else}}{{/if}}>User</option>
-        </select>
-        {{!-- <input class='dataInfo role' type="text" value={{role}} disabled="true" /> --}}
-        {{!-- <span class='dataInfo role'>{{role}}</span> --}}
-        <div class='dataName'>Role</div>
+      <div class='userData'>
+        <div class='dataIcon'>
+          <ion-icon name='alarm-outline'></ion-icon>
+          <div class='updateData'>
+            <div id="updateAge">
+              <ion-icon name='pencil'></ion-icon>
+            </div>
+          </div>
+        </div>
+        <div class='dataInfoContainer'>
+          <input name="age" class='dataInfo age' type="text" value={{age}} disabled="true" oninput="this.size = this.value.length">
+          <div class='dataName'>Age</div>
+          <i id="selectorInput"></i>
+        </div>
+      </div>
+      <div class='userData'>
+        <div class='dataIcon'>
+          <ion-icon name='shield-outline'></ion-icon>
+          <div class='updateData'>
+            <div id="updateRole">
+              <ion-icon name='pencil'></ion-icon>
+            </div>
+          </div>
+        </div>
+        <div class='dataInfoContainer'>
+          <select name="role" class='dataInfo role' name="role" disabled="true">
+            <option value="admin" name="admin" {{#if roleAdmin}} selected{{else}}{{/if}}>Administrator</option>
+            <option value="moderator" name="moderator" {{#if roleModerator}} selected{{else}}{{/if}}>Moderator</option>
+            <option value="user" name="user" {{#if roleUser}} selected{{else}}{{/if}}>User</option>
+          </select>
+          <i id="selectorRole"></i>
+          <div class='dataName'>Role</div>
+        </div>
+      </div>
+      <div class='userData'>
+        <div class='dataIcon'>
+          <ion-icon name='calendar-outline'></ion-icon>
+        </div>
+        <div class='dataInfoContainer'>
+          <span class='dataInfo'>{{created}}</span>
+          <div class='dataName'>Created</div>
+        </div>
       </div>
     </div>
-    <div class='userData'>
-      <div class='dataIcon'>
-        <ion-icon name='calendar-outline'></ion-icon>
-      </div>
-      <div class='dataInfoContainer'>
-        <span class='dataInfo'>{{created}}</span>
-        <div class='dataName'>Created</div>
+    <div class="profileFooter">
+      <div class="profileBtn">
+        <div class="btn-layer send"></div>
+        <input class="btn-text" type="submit" value="Update" id="updateProfile"/>
       </div>
     </div>
-  </div>
-  <div class="profileFooter">
-    <div class="profileBtn">
-      <div class="btn-layer send"></div>
-      <input class="btn-text" type="submit" value="Update" id="recoverSend"/>
-    </div>
-  </div>
+  </form>
 </main>
 <script type="module" src="js/profile.js"></script>

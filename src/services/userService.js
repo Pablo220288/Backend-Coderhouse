@@ -54,6 +54,12 @@ class UserService {
     )
     return userUpdatePassword
   }
+
+  updateUser = async (id, data) => {
+    return await userModel.findByIdAndUpdate(id, data, {
+      new: true
+    })
+  }
 }
 
 export default UserService
