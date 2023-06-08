@@ -1,17 +1,20 @@
 <main class='mainHome profile'>
-  <form method="post" action="/api/session/profile/update" id="formProfile">
-    <a class='outUser' href='http://localhost:8080/api/session/logout'><ion-icon
-        name='log-out-outline'
-      ></ion-icon></a>
-    <div class='avatar__name'>
-      <div class='avatarContainer'>
-        <ion-icon name='person-outline'></ion-icon>
-        <div class='editImg'>
-          <ion-icon name='pencil'></ion-icon>
-        </div>
+  <a class='outUser' href='http://localhost:8080/api/session/logout'><ion-icon
+      name='log-out-outline'
+    ></ion-icon></a>
+  <div class='avatar__name'>
+    <div class='avatarContainer'>
+      <ion-icon name='person-outline'></ion-icon>
+      <div class='editImg' id="updateAvatar">
+        <ion-icon name='pencil'></ion-icon>
+        <form action="/api/session/profile/update" method="post" enctype="multipart/form-data" id="updateAvatar">
+          <input class="inputAvatar" type="file" name="avatar" />
+        </form>
       </div>
-      <h2>{{nameUser}}</h2>
     </div>
+    <h2>{{nameUser}}</h2>
+  </div>
+  <form method="post" action="/api/session/profile/update" id="formProfile"></form>
     <div class='userDataContainer'>
       <div class='userData'>
         <div class='dataIcon'>

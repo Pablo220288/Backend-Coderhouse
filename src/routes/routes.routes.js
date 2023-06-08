@@ -16,6 +16,8 @@ import purchaseRouter from './purchase.routes.js'
 import mockingRouter from './mocking.routes.js'
 import { isAuthenticated } from '../middlewares/isAuthenticated.js'
 import recoveryRouter from './recovery.routes.js'
+import swaggerUiExpress from 'swagger-ui-express'
+import { specs } from '../utils/swagger.js'
 
 const router = Router()
 
@@ -35,6 +37,7 @@ router
   .use('/ticket', ticketRouter)
   .use('/mockingProducts', mockingRouter)
   .use('/recovery', recoveryRouter)
+  .use('/apidocs', swaggerUiExpress.serve, swaggerUiExpress.setup(specs))
   .use('/', isAuthenticated, productRouter)
   .use('*', error404Router)
 

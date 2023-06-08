@@ -3167,6 +3167,9 @@ form .btn input[type=submit] {
   color: #88c043;
   font-size: 1rem;
 }
+.avatar__name .avatarContainer .editImg .inputAvatar {
+  display: none;
+}
 
 .userDataContainer {
   width: 80%;

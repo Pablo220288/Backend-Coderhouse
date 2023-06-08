@@ -5,6 +5,7 @@ import passport from 'passport'
 import { passportCall } from '../utils/passportCall.js'
 import { authorizationRole } from '../utils/role.js'
 import { isAuthenticated } from '../middlewares/isAuthenticated.js'
+import { upload } from '../utils/multer.js'
 
 const sessionRouter = Router()
 const session = new SessionManager()
@@ -70,7 +71,7 @@ sessionRouter
   .get('/profile', isAuthenticated, (req, res, next) => {
     session.profile(req, res, next)
   })
-  .post('/profile/update', (req, res, next) => {
+  .post('/profile/update', upload.single('avatar'), (req, res, next) => {
     session.profileUpdate(req, res, next)
   })
 export default sessionRouter

@@ -1,3 +1,10 @@
+const updateAvatar = document.getElementById('updateAvatar')
+const inputAvatar = document.querySelector('.inputAvatar')
+
+updateAvatar.addEventListener('click', () => {
+  inputAvatar.click()
+})
+
 const updateRole = document.getElementById('updateRole')
 const roleSelector = document.querySelector('.role')
 const selectorRole = document.getElementById('selectorRole')
