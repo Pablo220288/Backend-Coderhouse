@@ -10,7 +10,9 @@ export const createProduct = async newProduct => {
   return await productModel.create(newProduct)
 }
 export const findByIdAndUpdate = async (id, updateProduct) => {
-  return await productModel.findByIdAndUpdate(id, updateProduct)
+  return await productModel.findByIdAndUpdate(id, updateProduct, {
+    returnOriginal: false
+  })
 }
 export const findByIdAndDelete = async id => {
   return await productModel.findByIdAndDelete(id)

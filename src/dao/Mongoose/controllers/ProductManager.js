@@ -95,25 +95,36 @@ class CrudMongoose {
     }
     // Le agregamos el Usario que lo creo
     newProduct.owner = [user]
-    await productService.createProduct(newProduct)
-    return 'Producto Agregado Correctamente'
+    const nuevo = await productService.createProduct(newProduct)
+    return { message: 'Producto Agregado Correctamente', payload: nuevo }
   }
 
-  updateProducts = async (id, updateProduct) => {
+  updateProducts = async (id, owner, updateProduct) => {
     const product = await this.exist(id)
-    if (!product) return 'Producto no Encontrado'
+    if (!product) return { message: 'Producto no Encontrado' }
     if (this.objectKeys(updateProduct) === 400) {
-      return 'JSON incompleto. Faltan 1 o mas Datos'
+      return { message: 'JSON incompleto. Faltan 1 o mas Datos' }
     }
-    await productService.findByIdAndUpdate(id, updateProduct)
-    return 'Producto Modificado Correctamente'
+    updateProduct.owner = [owner]
+    const productUpdate = await productService.findByIdAndUpdate(
+      id,
+      updateProduct
+    )
+    console.log(productUpdate)
+    return {
+      message: 'Producto Modificado Correctamente',
+      payload: productUpdate
+    }
   }
 
   deleteProductsById = async id => {
     const product = await this.exist(id)
     if (!product) return 'Producto no Encontrado'
     const result = await productService.findByIdAndDelete(id)
-    return `Producto ${result.title} Eliminado`
+    return {
+      success: `Producto ${result.title} Eliminado`,
+      payload: result
+    }
   }
 }
 

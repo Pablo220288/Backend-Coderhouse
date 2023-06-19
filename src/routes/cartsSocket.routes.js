@@ -34,11 +34,11 @@ cartSocketRouter.get('/', async (req, res) => {
         })
       } else {
         const producsInCart = []
-        for (let i = 0; i < byIdCart.products.length; i++) {
+        for (let i = 0; i < byIdCart.payload.products.length; i++) {
           const product = {
-            id: byIdCart.products[i]._id._id,
-            title: byIdCart.products[i]._id.title,
-            quantity: byIdCart.products[i].quantity
+            id: byIdCart.payload.products[i]._id._id,
+            title: byIdCart.payload.products[i]._id.title,
+            quantity: byIdCart.payload.products[i].quantity
           }
           producsInCart.push(product)
         }

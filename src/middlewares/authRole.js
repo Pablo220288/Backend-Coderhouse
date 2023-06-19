@@ -4,6 +4,7 @@ import { findOneRole } from '../services/roleService.js'
 const users = new UserService()
 
 export const isModerator = async (req, res, next) => {
+  console.log(req.session)
   const user = await users.findByIdUser(req.session.passport.user)
   const roles = await findOneRole({ _id: { $in: user.roles } })
 

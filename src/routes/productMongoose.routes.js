@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import CrudMongoose from '../dao/Mongoose/controllers/ProductManager.js'
-import { isAdmin, isModerator } from '../middlewares/authRole.js'
+import { isAdmin } from '../middlewares/authRole.js'
 
 const productMongooseRouter = Router()
 const productsByMongoose = new CrudMongoose()
@@ -21,9 +21,9 @@ productMongooseRouter.get('/:id', async (req, res) => {
     res.status(404).send('Producto no encontrado', err)
   }
 })
-productMongooseRouter.post('/', isModerator, async (req, res) => {
+productMongooseRouter.post('/', isAdmin, async (req, res) => {
   try {
-    res.status(200).send(await productsByMongoose.createProducts(req.body))
+    res.status(200).send(await productsByMongoose.createProducts(req.body, req.session.passport.user))
   } catch (err) {
     res.status(400).send('Error de sintaxis', err)
   }
@@ -32,7 +32,13 @@ productMongooseRouter.put('/:id', isAdmin, async (req, res) => {
   try {
     res
       .status(200)
-      .send(await productsByMongoose.updateProducts(req.params.id, req.body))
+      .send(
+        await productsByMongoose.updateProducts(
+          req.params.id,
+          req.session.passport.user,
+          req.body
+        )
+      )
   } catch (err) {
     res.status(400).send('Error de sintaxis', err)
   }

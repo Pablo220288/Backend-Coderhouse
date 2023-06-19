@@ -28,15 +28,16 @@ const products = async options => {
 }
 export const cartProduct = async idCart => {
   const prod = await carts.findCartsById(idCart)
+  const payload = prod.payload.products
   const productsInCart = []
-  for (let i = 0; i < prod.products.length; i++) {
+  for (let i = 0; i < prod.payload.products.length; i++) {
     productsInCart.push({
-      id: prod.products[i]._id.id,
-      title: prod.products[i]._id.title,
-      thumbnail: prod.products[i]._id.thumbnail,
-      price: prod.products[i]._id.price,
-      totalPrice: prod.products[i].quantity * prod.products[i]._id.price,
-      quantity: prod.products[i].quantity
+      id: payload[i]._id.id,
+      title: payload[i]._id.title,
+      thumbnail: payload[i]._id.thumbnail,
+      price: payload[i]._id.price,
+      totalPrice: payload[i].quantity * payload[i]._id.price,
+      quantity: payload[i].quantity
     })
   }
   const totalCart = productsInCart.reduce(

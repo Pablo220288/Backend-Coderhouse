@@ -46,19 +46,21 @@ socketRouter.get('/', isAdmin, async (req, res) => {
       // Enviamos el Producto creado
       const addProduct = await Products.createProducts(JSON.parse(data), user)
       io.sockets.emit('addProduct', {
-        messaje: addProduct,
+        messaje: addProduct.message,
         products
       })
     })
 
     // Recibimos peticion de Actualizar producto
     socket.on('putProduct', async data => {
+      const owner = req.session.passport.user
       const updateProduct = await Products.updateProducts(
         data.id,
+        owner,
         JSON.parse(data.info)
       )
       io.sockets.emit('putProduct', {
-        messaje: updateProduct,
+        messaje: updateProduct.message,
         products
       })
     })
@@ -67,7 +69,7 @@ socketRouter.get('/', isAdmin, async (req, res) => {
     socket.on('deleteProduct', async data => {
       const deleteProduct = await Products.deleteProductsById(data)
       io.sockets.emit('deleteProduct', {
-        messaje: deleteProduct,
+        messaje: deleteProduct.success,
         products
       })
     })
