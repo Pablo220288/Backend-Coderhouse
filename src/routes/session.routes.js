@@ -74,4 +74,7 @@ sessionRouter
   .post('/profile/update', upload.single('avatar'), (req, res, next) => {
     session.profileUpdate(req, res, next)
   })
+  .post('/profile/deleteAccount', (req, res, next) => {
+    session.deleteUser(req, res, next)
+  })
 export default sessionRouter

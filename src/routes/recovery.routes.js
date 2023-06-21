@@ -23,7 +23,6 @@ recoveryRouter
           if (
             await userService.comparePassword(data.passFirst, user.password)
           ) {
-            console.log('aqui')
             io.sockets.emit('passwordRepeated')
           } else {
             const newPassword = await userService.encryptPassword(

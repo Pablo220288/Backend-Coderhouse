@@ -176,6 +176,18 @@ class SessionManager {
         emptyCart,
         countCart: productsCart.countCart
       })
+
+      // Socket Delete Account
+      io.on('connection', socket => {
+        socket.on('deleteAccount', async data => {
+          const user = await userService.findByIdUser(req.session.passport.user)
+          if (await userService.comparePassword(data.password, user.password)) {
+            io.sockets.emit('deleteAccountSuccess')
+          } else {
+            io.sockets.emit('deleteAccountError')
+          }
+        })
+      })
     } catch (error) {
       res.status(500).send(`Error al Ingresar a Setting: ${error}`)
     }
@@ -193,6 +205,11 @@ class SessionManager {
       roles: [newRole._id]
     })
     res.status(200).redirect('/api/session/profile')
+  }
+
+  deleteUser = async (req, res, next) => {
+    await userService.deleteUser(req.session.passport.user)
+    res.status(200).redirect('/api/session')
   }
 }
 

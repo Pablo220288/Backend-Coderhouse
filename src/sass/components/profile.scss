@@ -185,6 +185,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px;
   .profileBtn {
     height: 50px;
     width: 120px;
@@ -209,6 +210,15 @@
     &:hover .btn-layer {
       left: 0;
     }
+    .delete {
+      background: -webkit-linear-gradient(
+        right,
+        #c04343,
+        #9a3636,
+        #c04343,
+        #9a3636
+      );
+    }
     .btn-text {
       height: 100%;
       width: 100%;
@@ -221,12 +231,18 @@
       border-radius: 5px;
       font-size: 18px;
       font-weight: 500;
+      text-align: center;
       cursor: pointer;
       display: flex;
       justify-content: center;
       align-items: center;
     }
   }
+}
+.deteteAccountMain {
+  transition: all 0.3s ease-out;
+  height: 160px !important;
+  gap: 10px;
 }
 @media (min-width: 768px) {
   .avatar__name {

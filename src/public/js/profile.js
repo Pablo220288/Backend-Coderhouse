@@ -46,3 +46,40 @@ updateProfile.addEventListener('click', e => {
   ageSelector.removeAttribute('disabled')
   formProfile.submit()
 })
+
+const socket = io()
+const deleteUser = document.getElementById('deleteUser')
+const deleteAccountContainer = document.getElementById('deleteAccountContainer')
+const formDeleteAccount = document.getElementById('formDeleteAccount')
+const passwordDeleteAccount = document.getElementById('passwordDeleteAccount')
+const deleteAccountCancel = document.getElementById('deleteAccountCancel')
+const deleteAccount = document.getElementById('deleteAccount')
+
+deleteUser.addEventListener('click', () => {
+  deleteAccountContainer.classList.add('recoverShow')
+})
+deleteAccountCancel.addEventListener('click', () => {
+  deleteAccountContainer.classList.remove('recoverShow')
+})
+
+deleteAccount.addEventListener('click', e => {
+  e.preventDefault()
+  socket.emit('deleteAccount', {
+    password: passwordDeleteAccount.value
+  })
+})
+
+const deleteAccountMessage = document.getElementById('deleteAccountMessage')
+
+socket.on('deleteAccountError', () => {
+  deleteAccountMessage.classList.add('recoveryMessageShow')
+})
+
+passwordDeleteAccount.addEventListener('keydown', () => {
+  if (deleteAccountMessage.classList.contains('recoveryMessageShow')) {
+    deleteAccountMessage.classList.remove('recoveryMessageShow')
+  }
+})
+socket.on('deleteAccountSuccess', () => {
+  formDeleteAccount.submit()
+})

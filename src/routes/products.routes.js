@@ -104,16 +104,17 @@ productsRouter
         })
         socket.on('purchaserCart', async () => {
           const productInCart = await carts.findCartsById(idCart)
+          const payload = productInCart.payload.products
           const productOutOfStock = []
-          for (let i = 0; i < productInCart.products.length; i++) {
-            const quantityCart = productInCart.products[i].quantity
-            const idProduct = productInCart.products[i]._id._id.toString()
+          for (let i = 0; i < payload.length; i++) {
+            const quantityCart = payload[i].quantity
+            const idProduct = payload[i]._id._id.toString()
             const product = await productAll.findProductsById(idProduct)
             const stockProduct = product.stock
             if (quantityCart > stockProduct) {
               productOutOfStock.push({
                 idProduct,
-                title: productInCart.products[i]._id.title
+                title: payload[i]._id.title
               })
             }
           }

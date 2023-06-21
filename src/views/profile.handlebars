@@ -83,7 +83,36 @@
         <div class="btn-layer send"></div>
         <input class="btn-text" type="submit" value="Update" id="updateProfile"/>
       </div>
+      <div class="profileBtn">
+        <div class="btn-layer delete"></div>
+        <input class="btn-text" value="Delete" id="deleteUser"/>
+      </div>
     </div>
   </form>
+  <div class="recoverContainer" id="deleteAccountContainer">
+    <div class="recover-wrapper">
+      <form class="recover" method="post" action="/api/session/profile/deleteAccount" id="formDeleteAccount">
+        <header>
+          <h2>Delete Account</h2>
+        </header>
+        <main class="deteteAccountMain">
+          <label for="deteteAccountMain">Are you sure you want to delete your account? 
+            This will close your session immediately and you will not be able to log in again.</label>
+          <input type="password" name="password" placeholder="Password" id="passwordDeleteAccount"/>
+        </main>
+        <footer>
+          <div class="recoverBtn">
+            <div class="btn-layer"></div>
+            <div class="btn-text" id="deleteAccountCancel">Cancel</div>
+          </div>
+          <div class="recoverBtn">
+            <div class="btn-layer send"></div>
+            <input class="btn-text" type="submit" value="Delete" id="deleteAccount"/>
+          </div>
+        </footer>
+        <label for="recoveryError" class="recoveryMessage recoveryError" id="deleteAccountMessage">Invalid Password</label>
+      </form>
+    </div>
+  </div>
 </main>
 <script type="module" src="js/profile.js"></script>

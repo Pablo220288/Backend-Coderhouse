@@ -13,7 +13,7 @@ class UserService {
   }
 
   findOneUser = async email => {
-    return await this.model.findOne({ email }).populate('roles')
+    return await this.model.findOne({ email })
   }
 
   findByIdUser = async id => {
@@ -59,6 +59,10 @@ class UserService {
     return await userModel.findByIdAndUpdate(id, data, {
       new: true
     })
+  }
+
+  deleteUser = async id => {
+    return await userModel.findByIdAndDelete(id)
   }
 }
 
