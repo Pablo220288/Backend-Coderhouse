@@ -2,4 +2,7 @@ node_modules
 .env
 logs
 uploads/**
-!.gitkeep
+!uploads/accounts/.gitignore
+!uploads/addresses/.gitignore
+!uploads/avatars/.gitignore
+!uploads/identifications/.gitignore
