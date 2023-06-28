@@ -1,3 +1,8 @@
 node_modules
 .env
 logs
+uploads/accounts/**
+uploads/addresses/**
+uploads/avatras/**
+uploads/identifications/**
+!.gitkeep

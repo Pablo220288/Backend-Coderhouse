@@ -1,8 +1,27 @@
 const updateAvatar = document.getElementById('updateAvatar')
 const inputAvatar = document.querySelector('.inputAvatar')
+const formAvatar = document.getElementById('formAvatar')
+const socket = io()
 
 updateAvatar.addEventListener('click', () => {
   inputAvatar.click()
+})
+
+inputAvatar.addEventListener('change', () => {
+  Toastify({
+    text: 'updating avatar ...',
+    className: 'info',
+    style: {
+      background: 'linear-gradient(to right, #88c043, #6d9a36)'
+    },
+    offset: {
+      x: 0,
+      y: 55
+    }
+  }).showToast()
+  setTimeout(() => {
+    formAvatar.submit()
+  }, 2000)
 })
 
 const updateRole = document.getElementById('updateRole')
@@ -47,7 +66,6 @@ updateProfile.addEventListener('click', e => {
   formProfile.submit()
 })
 
-const socket = io()
 const deleteUser = document.getElementById('deleteUser')
 const deleteAccountContainer = document.getElementById('deleteAccountContainer')
 const formDeleteAccount = document.getElementById('formDeleteAccount')
@@ -83,3 +101,46 @@ passwordDeleteAccount.addEventListener('keydown', () => {
 socket.on('deleteAccountSuccess', () => {
   formDeleteAccount.submit()
 })
+
+// Formulario Document Identification
+const identification = document.getElementById('identification')
+const formIdentification = document.getElementById('formIdentification')
+const inputIdentification = document.querySelector('.inputIdentification')
+
+if (identification !== null) {
+  identification.addEventListener('click', () => {
+    inputIdentification.click()
+  })
+  inputIdentification.addEventListener('change', () => {
+    formIdentification.submit()
+  })
+}
+
+// Formulario Document Address
+
+const address = document.getElementById('address')
+const formAddress = document.getElementById('formAddress')
+const inputAddress = document.querySelector('.inputAddress')
+
+if (address !== null) {
+  address.addEventListener('click', () => {
+    inputAddress.click()
+  })
+  inputAddress.addEventListener('change', () => {
+    formAddress.submit()
+  })
+}
+// Formulario Document Account
+
+const account = document.getElementById('account')
+const formAccount = document.getElementById('formAccount')
+const inputAccount = document.querySelector('.inputAccount')
+
+if (account !== null) {
+  account.addEventListener('click', () => {
+    inputAccount.click()
+  })
+  inputAccount.addEventListener('change', () => {
+    formAccount.submit()
+  })
+}

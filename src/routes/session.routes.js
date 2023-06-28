@@ -71,7 +71,21 @@ sessionRouter
   .get('/profile', isAuthenticated, (req, res, next) => {
     session.profile(req, res, next)
   })
-  .post('/profile/update', upload.single('avatar'), (req, res, next) => {
+  .post('/profile/updateAvatar', upload.single('avatar'), (req, res, next) => {
+    session.updateAvatar(req, res, next)
+  })
+  .post(
+    '/profile/updateDocuments',
+    upload.fields([
+      { name: 'identification', maxCount: 1 },
+      { name: 'address', maxCount: 1 },
+      { name: 'account', maxCount: 1 }
+    ]),
+    (req, res, next) => {
+      session.updateDocuments(req, res, next)
+    }
+  )
+  .post('/profile/update', (req, res, next) => {
     session.profileUpdate(req, res, next)
   })
   .post('/profile/deleteAccount', (req, res, next) => {

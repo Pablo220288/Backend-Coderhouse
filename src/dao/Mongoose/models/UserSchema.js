@@ -3,6 +3,17 @@ import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import { cartsModel } from './CartsSchema.js'
 
+const docs = new Schema(
+  {
+    name: { type: String },
+    file: { type: String }
+  },
+  {
+    timestamps: true,
+    versionKey: false
+  }
+)
+
 const UserSchema = new Schema(
   {
     firstName: { type: String },
@@ -20,7 +31,9 @@ const UserSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: 'Cart'
     },
-    password: { type: String }
+    password: { type: String },
+    documents: [docs],
+    lastConnection: { type: String }
   },
   {
     timestamps: true,

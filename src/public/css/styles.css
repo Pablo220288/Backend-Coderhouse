@@ -3139,6 +3139,17 @@ form .btn input[type=submit] {
   transition: all 0.3s ease-in-out;
   opacity: 0.8;
 }
+.avatar__name .avatarContainer .avatarImgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.avatar__name .avatarContainer .avatarImgContainer .avatarImg {
+  width: 100%;
+  border-radius: 50%;
+}
 .avatar__name .avatarContainer ion-icon {
   color: #88c043;
   font-size: 5rem;
@@ -3237,6 +3248,20 @@ form .btn input[type=submit] {
 }
 .userDataContainer .userData .dataInfoContainer .dataInfo {
   font-size: 1.5rem;
+}
+.userDataContainer .userData .dataInfoContainer .dataInfo .uploadInfo {
+  color: #3f9efc;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.userDataContainer .userData .dataInfoContainer .dataInfo .successInfo {
+  color: #88c043;
+  font-size: 2rem;
+}
+.userDataContainer .userData .dataInfoContainer .dataInfo .inputIdentification,
+.userDataContainer .userData .dataInfoContainer .dataInfo .inputAddress,
+.userDataContainer .userData .dataInfoContainer .dataInfo .inputAccount {
+  display: none;
 }
 .userDataContainer .userData .dataInfoContainer .inputContainer {
   min-width: 30px;

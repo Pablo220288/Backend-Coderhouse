@@ -133,6 +133,9 @@ const initializePassword = () => {
             if (await userService.comparePassword(password, user.password)) {
               // const token = await userModel.createToken(user);
               // const accessToken = generateToken(user); Consultamos JWT pero no lo usamos por ahora
+              await userService.updateUser(user._id, {
+                lastConnection: new Date()
+              })
               return done(null, user)
             }
             req.session.signup = false

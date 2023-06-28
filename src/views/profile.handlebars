@@ -4,10 +4,16 @@
     ></ion-icon></a>
   <div class='avatar__name'>
     <div class='avatarContainer'>
-      <ion-icon name='person-outline'></ion-icon>
+      <div class="avatarImgContainer">
+        {{#if avatar}}
+          <img class="avatarImg" src={{fileAvatar}} alt="Avatar">
+        {{else}}
+          <ion-icon name="person-outline"></ion-icon>
+        {{/if}}
+      </div>
       <div class='editImg' id="updateAvatar">
         <ion-icon name='pencil'></ion-icon>
-        <form action="/api/session/profile/update" method="post" enctype="multipart/form-data" id="updateAvatar">
+        <form action="/api/session/profile/updateAvatar" method="post" enctype="multipart/form-data" id="formAvatar">
           <input class="inputAvatar" type="file" name="avatar" />
         </form>
       </div>
@@ -75,6 +81,60 @@
         <div class='dataInfoContainer'>
           <span class='dataInfo'>{{created}}</span>
           <div class='dataName'>Created</div>
+        </div>
+      </div>
+      <div class='userData'>
+        <div class='dataIcon'>
+          <ion-icon name="card-outline"></ion-icon>
+        </div>
+        <div class='dataInfoContainer'>
+          <span class='dataInfo'>
+            {{#if identification}}
+              <ion-icon class="successInfo" name="checkmark-done-outline"></ion-icon>
+            {{else}}
+              <ion-icon class="uploadInfo" name="cloud-upload-outline" id="identification"></ion-icon>
+              <form action="/api/session/profile/updateDocuments" method="post" enctype="multipart/form-data" id="formIdentification">
+                <input class="inputIdentification" type="file" name="identification" />
+              </form>
+            {{/if}}
+          </span>
+          <div class='dataName'>Identification</div>
+        </div>
+      </div>
+      <div class='userData'>
+        <div class='dataIcon'>
+          <ion-icon name="home-outline"></ion-icon>
+        </div>
+        <div class='dataInfoContainer'>
+          <span class='dataInfo'>
+            {{#if address}}
+              <ion-icon class="successInfo" name="checkmark-done-outline"></ion-icon>
+            {{else}}
+              <ion-icon class="uploadInfo" name="cloud-upload-outline" id="address"></ion-icon>
+              <form action="/api/session/profile/updateDocuments" method="post" enctype="multipart/form-data" id="formAddress">
+                <input class="inputAddress" type="file" name="address" />
+              </form>
+            {{/if}}
+          </span>
+          <div class='dataName'>Address</div>
+        </div>
+      </div>
+      <div class='userData'>
+        <div class='dataIcon'>
+          <ion-icon name="trending-up-outline"></ion-icon>
+        </div>
+        <div class='dataInfoContainer'>
+          <span class='dataInfo'>
+            {{#if account}}
+              <ion-icon class="successInfo" name="checkmark-done-outline"></ion-icon>
+            {{else}}
+              <ion-icon class="uploadInfo" name="cloud-upload-outline" id="account"></ion-icon>
+              <form action="/api/session/profile/updateDocuments" method="post" enctype="multipart/form-data" id="formAccount">
+                <input class="inputAccount" type="file" name="account" />
+              </form>
+            {{/if}}
+          </span>
+          <div class='dataName'>Account</div>
         </div>
       </div>
     </div>

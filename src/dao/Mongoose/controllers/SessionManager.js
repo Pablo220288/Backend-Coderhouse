@@ -161,8 +161,33 @@ class SessionManager {
       } else {
         roleUser = true
       }
+      // Gestion avatar => false = icono generico / true = avatar de usuario
+      let avatar = false
+      let fileAvatar = ''
+      if (user.documents.some(documents => documents.name === 'avatar')) {
+        avatar = true
+        const file = user.documents.find(file => file.name === 'avatar')
+        fileAvatar = `/uploads/avatars/${file.file}`
+      }
+
+      // Gestion de documentos
+      let { identification, address, account } = false
+      if (
+        user.documents.some(documents => documents.name === 'identification')
+      ) {
+        identification = true
+      }
+      if (user.documents.some(documents => documents.name === 'address')) {
+        address = true
+      }
+      if (user.documents.some(documents => documents.name === 'account')) {
+        account = true
+      }
+
       res.status(200).render('profile', {
         title: 'Profile | Setting',
+        avatar,
+        fileAvatar,
         nameUser: `${user.firstName} ${user.lastName}`,
         id: user.id,
         email: user.email,
@@ -171,6 +196,9 @@ class SessionManager {
         roleModerator,
         roleUser,
         created: user.createdAt.toLocaleDateString(),
+        identification,
+        address,
+        account,
         cartsProducts: productsCart.productsInCart,
         totalCart: productsCart.totalCart,
         emptyCart,
@@ -191,6 +219,78 @@ class SessionManager {
     } catch (error) {
       res.status(500).send(`Error al Ingresar a Setting: ${error}`)
     }
+  }
+
+  updateAvatar = async (req, res, next) => {
+    const user = await userService.findByIdUser(req.session.passport.user)
+    const documents = user.documents.some(
+      documents => documents.name === 'avatar'
+    )
+    if (!documents) {
+      user.documents.push({ name: 'avatar', file: req.file.filename })
+      await userService.updateUser(req.session.passport.user, {
+        documents: user.documents
+      })
+    } else {
+      const indexDocument = user.documents.findIndex(
+        documents => documents.name === 'avatar'
+      )
+      user.documents[indexDocument].file = req.file.filename
+      await userService.updateUser(req.session.passport.user, {
+        documents: user.documents
+      })
+    }
+
+    res.status(200).redirect('/api/session/profile')
+  }
+
+  documentManagement = async (req, documentType, documentFile) => {
+    const user = await userService.findByIdUser(req.session.passport.user)
+    const documents = user.documents.some(
+      documents => documents.name === documentType
+    )
+    if (!documents) {
+      user.documents.push({
+        name: documentType,
+        file: documentFile
+      })
+      await userService.updateUser(req.session.passport.user, {
+        documents: user.documents
+      })
+    } else {
+      const indexDocument = user.documents.findIndex(
+        documents => documents.name === documentType
+      )
+      user.documents[indexDocument].file = documentFile
+      await userService.updateUser(req.session.passport.user, {
+        documents: user.documents
+      })
+    }
+  }
+
+  updateDocuments = async (req, res, next) => {
+    if (req.files.identification) {
+      this.documentManagement(
+        req,
+        req.files.identification[0].fieldname,
+        req.files.identification[0].filename
+      )
+    } else if (req.files.address) {
+      this.documentManagement(
+        req,
+        req.files.address[0].fieldname,
+        req.files.address[0].filename
+      )
+    } else if (req.files.account) {
+      this.documentManagement(
+        req,
+        req.files.account[0].fieldname,
+        req.files.account[0].filename
+      )
+    } else {
+      console.l('error')
+    }
+    res.status(200).redirect('/api/session/profile')
   }
 
   profileUpdate = async (req, res, next) => {
