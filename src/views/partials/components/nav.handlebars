@@ -18,6 +18,8 @@
             <span></span>Carts</a>
           <a href="/realTimeUsers" data-url="userss" {{#if navUser}} class="menu active" {{else}} class="menu" {{/if}}>
             <span></span>Users</a>
+          <a href="/chatSocket" data-url="userss" {{#if navChat}} class="menu active" {{else}} class="menu" {{/if}}>
+            <span></span>Chat</a>
         {{else}}
         {{/if}}
         <a href="#contacto" data-url="contacto" class="menu"
@@ -59,6 +61,7 @@
         <a class="nav-mobile-item" href="/realTimeProducts"><p>Products</p></a>
         <a class="nav-mobile-item" href="/realTimeCarts"><p>Carts</p></a>
         <a class="nav-mobile-item" href="/realTimeUsers"><p>Users</p></a>
+        <a class="nav-mobile-item" href="/chatSocket"><p>Chat</p></a>
       {{else}}
       {{/if}}
       <a class="nav-mobile-item" href="#contacto"><p>Contact</p></a>
