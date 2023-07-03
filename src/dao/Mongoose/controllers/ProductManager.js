@@ -2,7 +2,7 @@ import { PORT } from '../../../index.js'
 import * as productService from '../../../services/productService.js'
 
 class CrudMongoose {
-  objectKeys (object) {
+  objectKeys = object => {
     if (
       !object.title ||
       !object.author ||
@@ -101,11 +101,16 @@ class CrudMongoose {
 
   updateProducts = async (id, owner, updateProduct) => {
     const product = await this.exist(id)
+    // Si el producto no existe
     if (!product) return { message: 'Producto no Encontrado' }
+    // Si el Objeto esta incompleto
     if (this.objectKeys(updateProduct) === 400) {
       return { message: 'JSON incompleto. Faltan 1 o mas Datos' }
     }
+    // Si la modificacion es por una compra o por modificacion de porducto
+    if (owner.statusOwner === 'purchese') updateProduct.owner = [product.owner]
     updateProduct.owner = [owner]
+
     const productUpdate = await productService.findByIdAndUpdate(
       id,
       updateProduct

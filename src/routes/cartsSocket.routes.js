@@ -2,19 +2,32 @@ import { Router } from 'express'
 import { io } from '../index.js'
 import CartMongooseManager from '../dao/Mongoose/controllers/CartsManager.js'
 import { logger } from '../utils/logger.js'
+import UserService from '../services/userService.js'
+import { cartProduct } from './home.routes.js'
 
 const cartSocketRouter = Router()
 const cartsByMongoose = new CartMongooseManager()
+const userService = new UserService()
 
 cartSocketRouter.get('/', async (req, res) => {
-  io.on('connection', (socket) => {
-    socket.on('messaje', (data) => {
+  const user = await userService.findByIdUser(req.session.passport.user)
+  // Cargamos los productos que tenga en el carrito
+  const productsCart = await cartProduct(user.cart._id.toString())
+  let emptyCart = false
+  if (productsCart.totalCart === 0) emptyCart = true
+  // Le damos los accesos de admin en caso de serlo
+  let { roleAdmin } = false
+  if (user.roles[0].name === 'admin') {
+    roleAdmin = true
+  }
+  io.on('connection', socket => {
+    socket.on('messaje', data => {
       logger.info(data)
       // Mensaje del Servidor
       io.sockets.emit('estado', 'Conectado con el Servidor por Sockets')
     })
     // Consultamos Carritos y Productos en Carrito por ID
-    socket.on('getCart', async (data) => {
+    socket.on('getCart', async data => {
       const byIdCart = await cartsByMongoose.findCartsById(data)
       if (data === '') {
         io.sockets.emit('getCart', {
@@ -63,7 +76,7 @@ cartSocketRouter.get('/', async (req, res) => {
       })
     })
     // Agregar Producto en Carrito
-    socket.on('productInCart', async (data) => {
+    socket.on('productInCart', async data => {
       const addProduct = await cartsByMongoose.addProductToCart(
         data.idCart,
         data.idProduct
@@ -77,7 +90,7 @@ cartSocketRouter.get('/', async (req, res) => {
       })
     })
     // Eliminar Carrito
-    socket.on('deleteCart', async (data) => {
+    socket.on('deleteCart', async data => {
       const deleteCart = await cartsByMongoose.deleteCarts(data)
       io.sockets.emit('deleteCart', {
         messaje: deleteCart,
@@ -91,7 +104,16 @@ cartSocketRouter.get('/', async (req, res) => {
 
   // Render por defecto
   res.render('realTimeCarts', {
-    title: 'MnogoDB | Websockets'
+    title: 'Carts | Websockets',
+    navCarts: true,
+    noFooter: true,
+    nameUser: `${user.firstName} ${user.lastName}`,
+    rol: req.session.role,
+    roleAdmin,
+    cartsProducts: productsCart.productsInCart,
+    totalCart: productsCart.totalCart,
+    emptyCart,
+    countCart: productsCart.countCart
   })
 })
 

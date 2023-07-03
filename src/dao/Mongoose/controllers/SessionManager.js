@@ -3,7 +3,7 @@ import { createHash, validatePassword } from '../../../utils/bcrypt.js'
 import { io } from '../../../index.js'
 import UserService from '../../../services/userService.js'
 import { sendMailRecovery } from '../../../utils/mail.js'
-import { cartProduct } from '../../../routes/products.routes.js'
+import { cartProduct } from '../../../routes/home.routes.js'
 import { findOneRole } from '../../../services/roleService.js'
 
 const userService = new UserService()
@@ -136,8 +136,16 @@ class SessionManager {
     }
   }
 
-  destroySession = (req, res, next) => {
+  destroySession = async (req, res, next) => {
     try {
+      const user = await userService.findByIdUser(req.session.passport.user)
+      console.log(user)
+      console.log(user._id)
+      // Cargamos el momento en el que el usuario se desconecto
+      await userService.updateUser(user._id, {
+        loutConnection: new Date()
+      })
+      // Cerrramos la sesion
       req.session.destroy()
       return res.status(200).redirect('/api/session')
     } catch (err) {
@@ -171,7 +179,10 @@ class SessionManager {
       }
 
       // Gestion de documentos
-      let { identification, address, account } = false
+      let identification = false
+      let address = false
+      let account = false
+      console.log(identification, address, account)
       if (
         user.documents.some(documents => documents.name === 'identification')
       ) {
@@ -182,6 +193,17 @@ class SessionManager {
       }
       if (user.documents.some(documents => documents.name === 'account')) {
         account = true
+      }
+
+      // Si tiene la documentacion puede cambiar su rol a Administrador o Moderador
+      let updateAdmin = false
+      let updateModerator = false
+
+      if (identification && address && account) {
+        updateAdmin = true
+      }
+      if (identification && address) {
+        updateModerator = true
       }
 
       res.status(200).render('profile', {
@@ -199,6 +221,8 @@ class SessionManager {
         identification,
         address,
         account,
+        updateAdmin,
+        updateModerator,
         cartsProducts: productsCart.productsInCart,
         totalCart: productsCart.totalCart,
         emptyCart,
@@ -299,7 +323,6 @@ class SessionManager {
 
     // Buscamos el ID del nuevo Role
     const newRole = await findOneRole(role)
-
     await userService.updateUser(user.id, {
       age,
       roles: [newRole._id]

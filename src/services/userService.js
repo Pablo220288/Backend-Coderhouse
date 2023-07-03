@@ -5,6 +5,11 @@ class UserService {
     this.model = userModel
   }
 
+  exist = async id => {
+    const users = await this.model.find().populate('roles')
+    return users.find(user => user.id === id)
+  }
+
   findAllUsers = async () => {
     return await this.model
       .find({})
@@ -17,7 +22,9 @@ class UserService {
   }
 
   findByIdUser = async id => {
-    return await userModel.findById(id).populate('roles')
+    const user = await this.exist(id)
+    if (!user) return { status: 'error', message: 'Usuario Inexistente' }
+    return user
   }
 
   createUser = async newUser => {
@@ -62,6 +69,8 @@ class UserService {
   }
 
   deleteUser = async id => {
+    const user = await this.exist(id)
+    if (!user) return { status: 'error', message: 'Usuario Inexistente' }
     return await userModel.findByIdAndDelete(id)
   }
 }

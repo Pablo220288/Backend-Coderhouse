@@ -20,7 +20,13 @@ export const isAdmin = async (req, res, next) => {
   if (req.session.role === 'admin') {
     return next()
   } else {
-    res.status(403).send({ error: 'Require Admin role' })
+    /* res.status(403).send({ error: 'Require Admin role' }) */
+    res.status(403).render('403', {
+      title: '403 || Forbidden',
+      noNav: true,
+      noFooter: true,
+      error: 'Require Admin role'
+    })
   }
   /* const user = await users.findByIdUser(req.session.passport.user)
   const roles = await findOneRole({ _id: { $in: user.roles } })

@@ -8,6 +8,8 @@ error404Router
   .use('/', (req, res, next) => {
     res.status(404).render('404', {
       title: '404 || Not Found',
+      noNav: true,
+      noFooter: true,
       error: 'La ruta especificada no existe'
     })
   })

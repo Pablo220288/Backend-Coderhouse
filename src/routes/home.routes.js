@@ -5,7 +5,7 @@ import express, { Router } from 'express'
 import { io } from '../index.js'
 import UserService from '../services/userService.js'
 
-const productsRouter = Router()
+const homeRouter = Router()
 const productAll = new CrudMongoose()
 const carts = new CartMongooseManager()
 const userService = new UserService()
@@ -51,7 +51,7 @@ export const cartProduct = async idCart => {
   return { productsInCart, totalCart, countCart }
 }
 
-productsRouter
+homeRouter
   .use('/', express.static(__dirname + '/public'))
   .get('/:page', async (req, res) => {
     if (req.isAuthenticated()) {
@@ -63,6 +63,11 @@ productsRouter
       const user = await userService.findByIdUser(req.session.passport.user)
       req.session.nameUser = `${user.firstName} ${user.lastName}`
       req.session.role = user.roles[0].name
+      // Le damos los accesos de admin en caso de serlo
+      let { roleAdmin } = false
+      if (user.roles[0].name === 'admin') {
+        roleAdmin = true
+      }
       // Comprobamos si tiene productos en el Carrito
       const productsCart = await cartProduct(user.cart._id.toString())
       let emptyCart = false
@@ -73,8 +78,10 @@ productsRouter
       // Renderizamos Vista con los Productos, Datos del User y Productos en Carrito del User si existen
       res.render('home', {
         ...data,
+        navHome: true,
         nameUser: req.session.nameUser,
         rol: req.session.role,
+        roleAdmin,
         cartsProducts: productsCart.productsInCart,
         totalCart: productsCart.totalCart,
         emptyCart,
@@ -130,4 +137,4 @@ productsRouter
     }
   })
 
-export default productsRouter
+export default homeRouter

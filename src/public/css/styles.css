@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;1,200;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono|Montserrat:700");
 * {
   margin: 0;
   padding: 0;
@@ -217,7 +218,7 @@ p {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
-  padding-top: 70px;
+  padding-top: 90px;
   width: 250px;
   min-height: 100vh;
   z-index: 98;
@@ -548,9 +549,8 @@ p {
 }
 
 .animationNav .navContainer .logo {
-  -webkit-animation: slide-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
-  animation: slide-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
-  animation-delay: 0.5s;
+  -webkit-animation: slide-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .animationNav .navContainer .menu a:nth-child(1) {
   -webkit-animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -572,6 +572,16 @@ p {
   animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation-delay: 1s;
 }
+.animationNav .navContainer .menu a:nth-child(5) {
+  -webkit-animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 1.2s;
+}
+.animationNav .navContainer .menu a:nth-child(6) {
+  -webkit-animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 1.4s;
+}
 .animationNav .navContainer .burger a {
   -webkit-animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -583,7 +593,7 @@ p {
   animation-delay: 0.5s;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .nav .navContainer .burger {
     display: none;
   }
@@ -802,6 +812,17 @@ p {
   visibility: visible;
   transform: scale(1);
 }
+.containerTabs .tabsSelected .lastConnectionTitle {
+  margin-top: 20px;
+}
+.containerTabs .tabsSelected .lasConnectionContent {
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
 .containerTabs .tabsSelected .formTabs {
   width: 100%;
   display: flex;
@@ -823,7 +844,12 @@ p {
   padding-left: 5px;
   outline: none;
   border: none;
-  border-bottom: 2px solid #000000;
+  border-color: #000000;
+  border-bottom: 2px solid;
+  transition: all 0.3s ease;
+}
+.containerTabs .tabsSelected .formTabs .inputTabs input:focus {
+  border-color: #64d569;
 }
 .containerTabs .tabsSelected .formTabs .inputTabs textarea {
   max-width: 100%;
@@ -834,13 +860,39 @@ p {
   outline: none;
   font-size: 0.7rem;
 }
-.containerTabs .tabsSelected .formTabs .btnMassaje {
+.containerTabs .tabsSelected .formTabs .inputTabs .updateUserTabs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+.containerTabs .tabsSelected .formTabs .inputTabs .updateUserTabs .secctionInputs {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.containerTabs .tabsSelected .formTabs .inputTabs .updateUserTabs .secctionInputs .ageInputUser {
+  flex: 1;
+}
+.containerTabs .tabsSelected .formTabs .inputTabs .updateUserTabs .secctionInputs .emailInputUser {
+  flex: 4;
+}
+.containerTabs .tabsSelected .formTabs .inputTabs .updateUserTabs input::placeholder {
+  font-size: 0.7rem;
+  color: #808080;
+}
+.containerTabs .tabsSelected .btnMassaje {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   gap: 15px;
+  position: relative;
 }
-.containerTabs .tabsSelected .formTabs .btnMassaje .btnFormTabs .btn {
+.containerTabs .tabsSelected .btnMassaje .btnFormTabs .btnTabs {
   padding: 5px 10px;
   border: none;
   background-color: transparent;
@@ -851,9 +903,16 @@ p {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-.containerTabs .tabsSelected .formTabs .btnMassaje .btnFormTabs .btn:hover {
+.containerTabs .tabsSelected .btnMassaje .btnFormTabs .btnTabs:hover {
   background-color: #88c043;
   color: #ffffff;
+}
+.containerTabs .tabsSelected .btnMassaje .messageDeleteUser {
+  position: absolute;
+  left: 120%;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
 }
 
 .contentTable {
@@ -1706,6 +1765,8 @@ form .btn input[type=submit] {
   justify-content: center;
   align-items: center;
   z-index: 99;
+  -webkit-animation: roll-in-top 1.6s ease-out 1.5s both;
+  animation: roll-in-top 1.6s ease-out 1.5s both;
 }
 .navigation .menuToggle {
   position: relative;
@@ -1837,6 +1898,35 @@ form .btn input[type=submit] {
   transition-delay: calc(0.75s + var(--i));
 }
 
+@media (min-width: 900px) {
+  .navigation {
+    left: 120px;
+  }
+}
+@-webkit-keyframes roll-in-top {
+  0% {
+    -webkit-transform: translateY(-800px) rotate(-540deg);
+    transform: translateY(-800px) rotate(-540deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(0deg);
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+@keyframes roll-in-top {
+  0% {
+    -webkit-transform: translateY(-800px) rotate(-540deg);
+    transform: translateY(-800px) rotate(-540deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(0deg);
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}
 .main404 {
   width: 100%;
   height: 100vh;
@@ -1904,6 +1994,59 @@ form .btn input[type=submit] {
 }
 .main404 .box__button:hover::before {
   transform: translateX(250px) rotate(45deg);
+}
+
+.main403 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(120deg, #000000 0%, #000000 30%, #88c043 100%);
+}
+.main403 h1 {
+  font-size: 40vw;
+  text-align: center;
+  position: fixed;
+  width: 100vw;
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.1490196078);
+  text-shadow: 0 0 50px rgba(0, 0, 0, 0.07);
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Montserrat", monospace;
+}
+.main403 div {
+  background: rgba(0, 0, 0, 0);
+  width: 70vw;
+  padding: 30px 30px 10px;
+  box-shadow: 0 0 150px -20px rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+.main403 p {
+  font-family: "Share Tech Mono", monospace;
+  color: #f5f5f5;
+  margin: 0px 0px 20px 0px !important;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+.main403 span {
+  font-family: inherit;
+  color: #f0c674;
+}
+.main403 i {
+  font-family: inherit;
+  color: #8abeb7;
+}
+.main403 div a {
+  color: #ffffff;
+  font-family: inherit;
+  text-decoration: none;
+}
+.main403 b {
+  padding: 0px 10px;
+  font-family: inherit;
+  color: #ffffff;
 }
 
 :root {
@@ -3246,6 +3389,10 @@ form .btn input[type=submit] {
   align-items: flex-start;
   position: relative;
 }
+.userDataContainer .userData .dataInfoContainer:hover .tooltipRole {
+  top: -50px;
+  opacity: 1;
+}
 .userDataContainer .userData .dataInfoContainer .dataInfo {
   font-size: 1.5rem;
 }
@@ -3307,6 +3454,23 @@ form .btn input[type=submit] {
 .userDataContainer .userData .dataInfoContainer .dataName {
   font-size: 0.7rem;
   color: #838383;
+}
+.userDataContainer .userData .dataInfoContainer .tooltipRole {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+.userDataContainer .userData .dataInfoContainer .tooltipRole strong {
+  margin-right: 10px;
 }
 
 .profileFooter {

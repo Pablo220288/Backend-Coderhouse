@@ -1,0 +1,133 @@
+<div class='containerTabs'>
+  <div class='tabsSelector'>
+    <label for='tab1'>GET</label>
+    <label for='tab2'>POST</label>
+    <label for='tab3'>PUT</label>
+    <label for='tab4'>DELETE</label>
+  </div>
+  <div class='tabsSelected'>
+    <input type='radio' name='tabs' id='tab1' checked />
+    <div class='tabs1'>
+      <h3>Consulta</h3>
+      <form class='formTabs' id='formGetUser'>
+        <div class='inputTabs'>
+          <label for='idUser'>Id Usuario</label>
+          <span>Ingrese el ID del usuario a Consultar. Consulte vacio para ver
+            todos los usuarios.</span>
+          <input type='text' name='idUser' id='getUser' />
+        </div>
+        <div class='btnMassaje'>
+          <div class='btnFormTabs'>
+            <button class='btnTabs'>Consultar</button>
+          </div>
+          <strong class='massaje' id='resGetUser'></strong>
+        </div>
+      </form>
+    </div>
+    <input type='radio' name='tabs' id='tab2' />
+    <div class='tabs2'>
+      <h3>Agregar Usuarios</h3>
+      <form class='formTabs' id='formPostUser'>
+        <div class='inputTabs'>
+          <span>Complete los datos para agregar Usuario</span>
+          <div class='updateUserTabs'>
+            <div class='secctionInputs'>
+              <input
+                type='text'
+                name='firstName'
+                placeholder='First Name'
+                id='getUser'
+              />
+              <input
+                type='text'
+                name='lastName'
+                placeholder='Last Name'
+                id='getUser'
+              />
+            </div>
+            <div class='secctionInputs'>
+              <input
+                class='ageInputUser'
+                type='text'
+                name='age'
+                placeholder='Age'
+                id='getUser'
+              />
+              <input
+                class='emailInputUser'
+                type='text'
+                name='email'
+                placeholder='Email'
+                id='getUser'
+              />
+            </div>
+            <div class='secctionInputs'>
+              <input
+                type='text'
+                name='password'
+                placeholder='Password'
+                id='getUser'
+              />
+              <input
+                type='text'
+                name='retryPassword'
+                placeholder='Retry Password'
+                id='getUser'
+              />
+            </div>
+          </div>
+        </div>
+        <div class='btnMassaje'>
+          <div class='btnFormTabs'>
+            <button class='btnTabs'>Agregar</button>
+          </div>
+          <strong class='massaje' id='resAddUser'></strong>
+        </div>
+      </form>
+    </div>
+    <input type='radio' name='tabs' id='tab3' />
+    <div class='tabs3'>
+      <h3>Editar Usuarios</h3>
+      <form class='formTabs' id='formProdInUser'>
+        <div class='inputTabs'>
+          <label for='idProduct'>Id Usuario</label>
+          <span>Ingrese el ID del Usuario a editar</span>
+          <input type='text' id='idProduct' />
+        </div>
+        <div class='btnMassaje'>
+          <div class='btnFormTabs'>
+            <button class='btnTabs'>Editar</button>
+          </div>
+          <strong class='massaje' id='resProdInUser'></strong>
+        </div>
+      </form>
+    </div>
+    <input type='radio' name='tabs' id='tab4' />
+    <div class='tabs4'>
+      <h3>Eliminar Usuarios</h3>
+      <form class='formTabs' id='formDeleteUser'>
+        <div class='inputTabs'>
+          <label for='idUser'>Id Usuario</label>
+          <span>Ingrese el ID del Usuario a Eliminar</span>
+          <input type='text' name='idUser' id='deleteUser' />
+        </div>
+        <div class='btnMassaje'>
+          <div class='btnFormTabs'>
+            <button class='btnTabs'>Eliminar</button>
+          </div>
+          <strong class='messageDeleteUser' id='resDeleteUser'></strong>
+        </div>
+      </form>
+      <h3 class='lastConnectionTitle'>Última Conección</h3>
+      <div class='lasConnectionContent'>
+        <span>Eliminar Usuarios que llevan más de 2 días sin conexión</span>
+        <div class='btnMassaje'>
+          <div class='btnFormTabs'>
+            <button class='btnTabs' id="deleteLastUsers">Eliminar</button>
+          </div>
+          <strong class='messageDeleteUser' id='resDeleteLastUsers'></strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

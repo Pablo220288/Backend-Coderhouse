@@ -33,7 +33,8 @@ const UserSchema = new Schema(
     },
     password: { type: String },
     documents: [docs],
-    lastConnection: { type: String }
+    lastConnection: { type: String },
+    loutConnection: { type: String }
   },
   {
     timestamps: true,

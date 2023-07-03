@@ -5,14 +5,23 @@
         <img src="/img/nodejs.png" alt="Node.JS" />
       </a>
       <div class="menu">
-        <a href="/products/1" data-url="home" class="menu active"
-          ><span></span>Inicio</a
+        <a href="/products/1" data-url="home" {{#if navHome}} class="menu active" {{else}} class="menu" {{/if}}
+          ><span></span>Home</a
         >
-        <a href="/products/1" data-url="productos" class="menu"
-          ><span></span>Productos</a
+        <a href="/apidocs" data-url="docs" class="menu"
+          ><span></span>Docs</a
         >
+        {{#if roleAdmin}}
+          <a href="/realTimeProducts" data-url="products" {{#if navProducts}} class="menu active" {{else}} class="menu" {{/if}}>
+            <span></span>Products</a>
+          <a href="/realTimeCarts" data-url="cartss" {{#if navCarts}} class="menu active" {{else}} class="menu" {{/if}}>
+            <span></span>Carts</a>
+          <a href="/realTimeUsers" data-url="userss" {{#if navUser}} class="menu active" {{else}} class="menu" {{/if}}>
+            <span></span>Users</a>
+        {{else}}
+        {{/if}}
         <a href="#contacto" data-url="contacto" class="menu"
-          ><span></span>Contacto</a
+          ><span></span>Contact</a
         >
         <a href="#" id="carrito"
           ><ion-icon class="shop-nav" name="cart-outline"></ion-icon>
@@ -44,9 +53,15 @@
   </nav>
   <nav class="nav-mobile" id="nav-mobile">
     <div class="nav-mobile-container">
-      <a class="nav-mobile-item" href="/products/1"><p>Inicio</p></a>
-      <a class="nav-mobile-item" href="/products/1"><p>Productos</p></a>
-      <a class="nav-mobile-item" href="#contacto"><p>Contacto</p></a>
+      <a class="nav-mobile-item" href="/products/1"><p>Home</p></a>
+      <a class="nav-mobile-item" href="/apidocs"><p>Docs</p></a>
+      {{#if roleAdmin}}
+        <a class="nav-mobile-item" href="/realTimeProducts"><p>Products</p></a>
+        <a class="nav-mobile-item" href="/realTimeCarts"><p>Carts</p></a>
+        <a class="nav-mobile-item" href="/realTimeUsers"><p>Users</p></a>
+      {{else}}
+      {{/if}}
+      <a class="nav-mobile-item" href="#contacto"><p>Contact</p></a>
     </div>
   </nav>
   <div class="modal-carrito" id="modal-carrito">

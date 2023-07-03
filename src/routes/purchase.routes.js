@@ -1,6 +1,6 @@
 import express, { Router } from 'express'
 import __dirname from '../utils.js'
-import { cartProduct } from './products.routes.js'
+import { cartProduct } from './home.routes.js'
 import { createTicket } from '../services/ticketService.js'
 import { nanoid } from 'nanoid'
 import { findCartByIdAndUpdate } from '../services/cartService.js'
@@ -75,7 +75,11 @@ purchaseRouter
         const dataProduct = await dataFilter(idProduct)
         // Actualizamos Stock de DB
         dataProduct.stock = dataProduct.stock - cart.productsInCart[i].quantity
-        await Products.updateProducts(idProduct, dataProduct)
+        await Products.updateProducts(
+          idProduct,
+          { statusOwner: 'purchase' },
+          dataProduct
+        )
       }
 
       // Buscamos los productos del Carrito

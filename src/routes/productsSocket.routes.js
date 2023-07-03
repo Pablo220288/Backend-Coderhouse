@@ -1,13 +1,26 @@
 import { Router } from 'express'
 import CrudMongoose from '../dao/Mongoose/controllers/ProductManager.js'
+import UserService from '../services/userService.js'
 import { io } from '../index.js'
 import { logger } from '../utils/logger.js'
 import { isAdmin } from '../middlewares/authRole.js'
+import { cartProduct } from './home.routes.js'
 
-const socketRouter = Router()
+const productSocketRouter = Router()
 const Products = new CrudMongoose()
+const userService = new UserService()
 
-socketRouter.get('/', isAdmin, async (req, res) => {
+productSocketRouter.get('/', isAdmin, async (req, res) => {
+  const user = await userService.findByIdUser(req.session.passport.user)
+  // Cargamos los productos que tenga en el carrito
+  const productsCart = await cartProduct(user.cart._id.toString())
+  let emptyCart = false
+  if (productsCart.totalCart === 0) emptyCart = true
+  // Le damos los accesos de admin en caso de serlo
+  let { roleAdmin } = false
+  if (user.roles[0].name === 'admin') {
+    roleAdmin = true
+  }
   // Websockets
   const products = await Products.findProductsAll()
   // Recibimos peticion de coneccion Cliente
@@ -78,11 +91,18 @@ socketRouter.get('/', isAdmin, async (req, res) => {
   // Render por defecto
   //  res.send(products)
   res.render('realTimeProducts', {
-    title: 'Express | Websockets',
-    noNav: true,
+    title: 'Products | Websockets',
+    navProducts: true,
     noFooter: true,
-    products
+    nameUser: `${user.firstName} ${user.lastName}`,
+    rol: req.session.role,
+    products,
+    roleAdmin,
+    cartsProducts: productsCart.productsInCart,
+    totalCart: productsCart.totalCart,
+    emptyCart,
+    countCart: productsCart.countCart
   })
 })
 
-export default socketRouter
+export default productSocketRouter
