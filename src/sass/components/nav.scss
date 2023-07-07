@@ -535,6 +535,18 @@
         animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
         animation-delay: 1.4s;
       }
+      a:nth-child(7) {
+        -webkit-animation: slide-in-right 1s
+          cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        animation-delay: 1.6s;
+      }
+      a:nth-child(8) {
+        -webkit-animation: slide-in-right 1s
+          cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        animation-delay: 1.8s;
+      }
     }
     .burger {
       a {

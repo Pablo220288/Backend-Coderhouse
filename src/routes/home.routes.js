@@ -86,7 +86,7 @@ homeRouter
         totalCart: productsCart.totalCart,
         emptyCart,
         countCart: productsCart.countCart,
-        purchaserCart: `/purchase/${user.cart._id.toString()}`
+        purchaserCart: `./purchase/${user.cart._id.toString()}`
       })
       io.on('connection', socket => {
         const idCart = user.cart._id.toString()

@@ -37,6 +37,15 @@ cartsMongooseRouter
       res.status(404).send('Error al agregar', err)
     }
   })
+  .put('/:id', async (req, res) => {
+    try {
+      res
+        .status(200)
+        .send(await cartsByMongoose.updateCart(req.params.id, req.body))
+    } catch (err) {
+      res.status(404).send('Error al Actualizar', err)
+    }
+  })
   .put('/:idc/product/:idp', async (req, res) => {
     try {
       res

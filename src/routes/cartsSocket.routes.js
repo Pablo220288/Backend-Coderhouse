@@ -93,7 +93,7 @@ cartSocketRouter.get('/', async (req, res) => {
     socket.on('deleteCart', async data => {
       const deleteCart = await cartsByMongoose.deleteCarts(data)
       io.sockets.emit('deleteCart', {
-        messaje: deleteCart,
+        messaje: deleteCart.message,
         cart: true,
         carts: await cartsByMongoose.findCarts(),
         itemId: 'Id Carrito',

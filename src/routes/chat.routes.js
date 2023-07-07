@@ -15,7 +15,9 @@ chatRouter
         messaje: 'Bienvenido al Chat 👋',
         time
       },
-      users: usersChat
+      users: usersChat,
+      noNav: true,
+      noFooter: true
     })
   })
   .get('/messaje', async (req, res) => {

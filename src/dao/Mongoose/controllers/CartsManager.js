@@ -60,6 +60,13 @@ class CartMongooseManager {
     }
   }
 
+  updateCart = async (idCart, dataUpdate) => {
+    const cart = await this.existCarts(idCart)
+    if (!cart) return 'Carrito no Encontrado'
+    await cartService.findCartByIdAndUpdate(idCart, { products: dataUpdate })
+    return { status: 'success', message: 'Carrito Actualizado' }
+  }
+
   updateProductToCart = async (idCart, idProduct, newQuantity) => {
     const cart = await this.existCarts(idCart)
     if (!cart) return 'Carrito no Encontrado'

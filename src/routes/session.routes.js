@@ -63,7 +63,7 @@ sessionRouter
   .get(
     '/current',
     passportCall('jwt'),
-    authorizationRole('User'),
+    authorizationRole('admin'),
     (req, res) => {
       res.send(req.user)
     }

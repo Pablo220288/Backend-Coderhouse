@@ -582,6 +582,16 @@ p {
   animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation-delay: 1.4s;
 }
+.animationNav .navContainer .menu a:nth-child(7) {
+  -webkit-animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 1.6s;
+}
+.animationNav .navContainer .menu a:nth-child(8) {
+  -webkit-animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 1.8s;
+}
 .animationNav .navContainer .burger a {
   -webkit-animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -1202,6 +1212,10 @@ p {
     background-position-x: -2242px;
   }
 }
+.mainChat {
+  margin-top: 50px;
+}
+
 .chatSocket {
   display: flex;
   align-items: flex-start;
@@ -1438,11 +1452,13 @@ p {
 .userConnection .usersConnection {
   padding: 10px 20px;
 }
-.userConnection .usersConnection .otherUser, .userConnection .usersConnection .myUser {
+.userConnection .usersConnection .otherUser,
+.userConnection .usersConnection .myUser {
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
-.userConnection .usersConnection .otherUser:hover, .userConnection .usersConnection .myUser:hover {
+.userConnection .usersConnection .otherUser:hover,
+.userConnection .usersConnection .myUser:hover {
   margin-left: 2px;
 }
 .userConnection .usersConnection .myUser {

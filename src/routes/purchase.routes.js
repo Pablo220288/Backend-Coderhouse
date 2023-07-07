@@ -48,11 +48,17 @@ purchaseRouter
       try {
         const cart = await cartProduct(req.params.id)
         req.session.cartId = req.params.id
+        // Acceso admin
+        let roleAdmin = false
+        if (req.session.role === 'admin') {
+          roleAdmin = true
+        }
         // Render de la pagina
         res.render('purchase', {
           title: 'Purchase | Node js',
           nameUser: req.session.nameUser,
           rol: req.session.role,
+          roleAdmin,
           countCart: cart.countCart,
           cartsProducts: cart.productsInCart,
           totalCart: cart.totalCart

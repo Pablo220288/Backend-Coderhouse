@@ -1,3 +1,6 @@
+.mainChat {
+  margin-top: 50px;
+}
 .chatSocket {
   display: flex;
   align-items: flex-start;
@@ -24,7 +27,7 @@
       height: 60px;
       position: relative;
       &::before {
-        content: "";
+        content: '';
         width: 10px;
         height: 10px;
         background-color: #4ad504;
@@ -60,7 +63,7 @@
     background-color: #ece5dd;
     position: relative;
     height: 350px;
-    background-image: url("/img/fondo.png");
+    background-image: url('/img/fondo.png');
     background-position: center center;
     background-size: cover;
     .massajesChat {
@@ -83,9 +86,9 @@
         align-items: flex-start;
         position: relative;
         &:before {
-          content: "";
+          content: '';
           position: absolute;
-          background-image: url("/img/chat.png");
+          background-image: url('/img/chat.png');
           background-position: 50% 50%;
           background-repeat: no-repeat;
           background-size: contain;
@@ -95,25 +98,25 @@
           height: 19px;
         }
       }
-      .myMsg{
+      .myMsg {
         align-self: flex-end;
         background-color: #dcf8c6;
         border-radius: 8px 0px 8px 8px;
         &:before {
-          background-image: url("/img/chat2.png");
+          background-image: url('/img/chat2.png');
           left: 100%;
         }
       }
-      .moreMsg{
+      .moreMsg {
         border-radius: 8px;
         &:before {
           background-image: none;
         }
-        .chat_title{
+        .chat_title {
           display: none;
         }
       }
-      .connection{
+      .connection {
         flex-direction: row;
         align-self: center;
         align-items: center;
@@ -224,20 +227,21 @@
     align-items: center;
     background-color: #128c7e;
     padding: 10px 20px;
-    strong{
+    strong {
       color: #ffffff;
     }
   }
-  .usersConnection{
+  .usersConnection {
     padding: 10px 20px;
-    .otherUser, .myUser{
+    .otherUser,
+    .myUser {
       cursor: pointer;
       transition: 0.2s ease-in-out;
-      &:hover{
+      &:hover {
         margin-left: 2px;
       }
     }
-    .myUser{
+    .myUser {
       color: #25d366;
     }
   }

@@ -8,7 +8,7 @@
         <a href="/products/1" data-url="home" {{#if navHome}} class="menu active" {{else}} class="menu" {{/if}}
           ><span></span>Home</a
         >
-        <a href="/apidocs" data-url="docs" class="menu"
+        <a href="/apidocs" data-url="docs" class="menu" target="_blank"
           ><span></span>Docs</a
         >
         {{#if roleAdmin}}
@@ -18,7 +18,7 @@
             <span></span>Carts</a>
           <a href="/realTimeUsers" data-url="userss" {{#if navUser}} class="menu active" {{else}} class="menu" {{/if}}>
             <span></span>Users</a>
-          <a href="/chatSocket" data-url="userss" {{#if navChat}} class="menu active" {{else}} class="menu" {{/if}}>
+          <a href="/chatSocket" data-url="userss" {{#if navChat}} class="menu active" {{else}} class="menu" {{/if}} target="_blank">
             <span></span>Chat</a>
         {{else}}
         {{/if}}
@@ -56,12 +56,12 @@
   <nav class="nav-mobile" id="nav-mobile">
     <div class="nav-mobile-container">
       <a class="nav-mobile-item" href="/products/1"><p>Home</p></a>
-      <a class="nav-mobile-item" href="/apidocs"><p>Docs</p></a>
+      <a class="nav-mobile-item" href="/apidocs" target="_blank"><p>Docs</p></a>
       {{#if roleAdmin}}
         <a class="nav-mobile-item" href="/realTimeProducts"><p>Products</p></a>
         <a class="nav-mobile-item" href="/realTimeCarts"><p>Carts</p></a>
         <a class="nav-mobile-item" href="/realTimeUsers"><p>Users</p></a>
-        <a class="nav-mobile-item" href="/chatSocket"><p>Chat</p></a>
+        <a class="nav-mobile-item" href="/chatSocket" target="_blank"><p>Chat</p></a>
       {{else}}
       {{/if}}
       <a class="nav-mobile-item" href="#contacto"><p>Contact</p></a>

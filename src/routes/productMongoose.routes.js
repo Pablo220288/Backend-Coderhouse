@@ -23,7 +23,14 @@ productMongooseRouter.get('/:id', async (req, res) => {
 })
 productMongooseRouter.post('/', isAdmin, async (req, res) => {
   try {
-    res.status(200).send(await productsByMongoose.createProducts(req.body, req.session.passport.user))
+    res
+      .status(200)
+      .send(
+        await productsByMongoose.createProducts(
+          req.body,
+          req.session.passport.user
+        )
+      )
   } catch (err) {
     res.status(400).send('Error de sintaxis', err)
   }
